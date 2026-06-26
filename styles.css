@@ -800,6 +800,55 @@ button {
   background: var(--teal-soft);
 }
 
+.mate-apply-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.45rem;
+  align-items: end;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--line);
+}
+
+.mate-apply-form textarea {
+  width: 100%;
+  min-height: 2.55rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  resize: vertical;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.mate-apply-form button {
+  min-height: 2.55rem;
+  padding: 0 0.75rem;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--teal);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.mate-apply-form button:disabled {
+  color: #7d878b;
+  background: #edf0ef;
+  cursor: default;
+}
+
+.mate-apply-status {
+  grid-column: 1 / -1;
+  min-height: 1rem;
+  color: var(--teal) !important;
+  font-size: 0.7rem !important;
+}
+
 .profile-sheet {
   position: absolute;
   inset: 0;
@@ -1161,6 +1210,48 @@ button {
   background: #fff;
 }
 
+.dashboard-axis-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.dashboard-axis-panel article {
+  min-width: 0;
+  padding: 0.95rem;
+  border: 1px solid rgba(31, 37, 40, 0.1);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(31, 37, 40, 0.06);
+}
+
+.dashboard-axis-panel span,
+.dashboard-axis-panel strong,
+.dashboard-axis-panel p {
+  display: block;
+}
+
+.dashboard-axis-panel span {
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.dashboard-axis-panel strong {
+  margin-top: 0.32rem;
+  line-height: 1.2;
+}
+
+.dashboard-axis-panel p {
+  margin: 0.45rem 0 0;
+  color: #3f484d;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
 .opportunity-topline {
   display: grid;
   gap: 0.32rem;
@@ -1246,7 +1337,7 @@ button {
 
 .dashboard-menu-tabs {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.45rem;
   margin-top: 1rem;
 }
@@ -1672,6 +1763,10 @@ button {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.65rem;
   margin-top: 1rem;
+}
+
+.action-menu-grid.compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .action-menu-grid button {
@@ -2170,11 +2265,13 @@ button {
   .dashboard-grid,
   .action-menu-grid,
   .league-team-grid,
+  .dashboard-axis-panel,
   .revenue-opportunity-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .dashboard-menu-tabs {
+  .dashboard-menu-tabs,
+  .action-menu-grid.compact {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -2239,6 +2336,7 @@ button {
 
   .generate-row,
   .mate-compose,
+  .mate-apply-form,
   .mate-form-preview,
   .form-grid,
   .modal-detail-grid,
@@ -2250,7 +2348,8 @@ button {
   .builder-form-grid,
   .voice-category-grid,
   .action-menu-grid,
-  .league-team-grid {
+  .league-team-grid,
+  .dashboard-axis-panel {
     grid-template-columns: 1fr;
   }
 

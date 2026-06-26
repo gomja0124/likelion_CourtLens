@@ -298,6 +298,7 @@ const mateCreateModal = document.querySelector("#mate-create-modal");
 const mateCreateForm = document.querySelector("#mate-create-form");
 const mateCloseButtons = document.querySelectorAll("[data-close-mate]");
 const mateDateInput = document.querySelector("#mate-date-input");
+const mateLocationInput = document.querySelector("#mate-location-input");
 const mateGameInput = document.querySelector("#mate-game-input");
 const mateSeatInput = document.querySelector("#mate-seat-input");
 const mateStyleInput = document.querySelector("#mate-style-input");
@@ -830,12 +831,12 @@ function updateMatePanel(context) {
   setText("#mate-main-title", "같이 직관가실 분 구해요!");
   setText(
     "#mate-main-copy",
-    `${team.venue} ${team.opponent}전에서 ${context.shooterName} 하이라이트를 같이 볼 메이트를 추천합니다.`,
+    `${team.name} 홈·원정 경기에서 ${context.shooterName} 하이라이트를 같이 볼 메이트를 추천합니다.`,
   );
-  setText("#mate-venue", `${team.venue} · ${team.opponent}전`);
-  setText("#mate-seat", `${team.city} 응원석 선호`);
-  setText("#mate-game-choice", `${team.opponent}전`);
-  setText("#mate-seat-choice", `${team.city} 응원석`);
+  setText("#mate-venue", `${team.venue} 또는 원정 경기 · ${team.opponent}전`);
+  setText("#mate-seat", "홈/원정 좌석 선택 가능");
+  setText("#mate-game-choice", `홈·원정 ${team.opponent}전`);
+  setText("#mate-seat-choice", "응원석/원정석");
   setText("#mate-style-choice", "초보 환영");
 
   const mateCards = document.querySelectorAll(".mate-card:not(.user-created)");
@@ -867,6 +868,8 @@ function updateMatePanel(context) {
       tag.textContent = item.tags[tagIndex] || tags[tagIndex] || team.name;
     });
   });
+
+  ensureMateApplyForms();
 }
 
 function updateMateCount() {
@@ -945,8 +948,12 @@ function dashboardRecommendations(context = currentContext) {
     scene: item.scene,
     reaction: item.proof,
     action: item.action.replace(" 추천", ""),
-    campaign: item.campaignName,
+    event: opportunityEventName(item),
   }));
+}
+
+function opportunityEventName(item) {
+  return item?.eventName || item?.campaignName || "팬 앱 이벤트";
 }
 
 function revenueOpportunities(context = currentContext) {
@@ -957,8 +964,10 @@ function revenueOpportunities(context = currentContext) {
       proof: "저장 1,204 · 공유율 18%",
       effect: "예매 CTA 클릭 +128건",
       difficulty: "낮음",
-      action: "응원석 예매 CTA 추천",
-      campaignName: `${context.shooterName} 하이라이트 응원석 예매`,
+      action: "응원석 단기성 이벤트 추천",
+      eventName: `${context.shooterName} 하이라이트 응원석 이벤트`,
+      eventType: "단기성 이벤트",
+      marketingHorizon: "시즌 중 빠른 실행",
       target: `${context.shooterName} 하이라이트를 저장하거나 공유한 팬`,
       placement: "하이라이트 카드 하단",
       copy: "이 장면, 경기장에서 직접 볼래요?",
@@ -974,8 +983,10 @@ function revenueOpportunities(context = currentContext) {
       proof: "저장률 24% · 신규 팬 유입 +9%",
       effect: "굿즈 CTA 클릭 +92건",
       difficulty: "보통",
-      action: "선수 굿즈/포토카드 캠페인 추천",
-      campaignName: `${context.rebounderName} 골밑 포토카드 테스트`,
+      action: "선수 굿즈/포토카드 이벤트 추천",
+      eventName: `${context.rebounderName} 골밑 포토카드 테스트`,
+      eventType: "굿즈 테스트 이벤트",
+      marketingHorizon: "프랜차이즈/선수 자산 테스트",
       target: `${context.rebounderName} 리바운드/골밑 장면을 본 팬`,
       placement: "입덕패스 카드뉴스 하단",
       copy: "골밑 장악력, 포토카드로 소장할래요?",
@@ -992,7 +1003,9 @@ function revenueOpportunities(context = currentContext) {
       effect: "동행 이벤트 참여 84팀",
       difficulty: "낮음",
       action: "다음 홈경기 동행 이벤트 추천",
-      campaignName: `${context.team.shortName} 첫 직관 동행 이벤트`,
+      eventName: `${context.team.shortName} 첫 직관 동행 이벤트`,
+      eventType: "직관메이트 이벤트",
+      marketingHorizon: "경기일 운영 개선",
       target: "직관메이트를 클릭했지만 예매 CTA까지 가지 않은 팬",
       placement: "직관메이트 모집글 작성 완료 화면",
       copy: "혼자보다 같이, 다음 홈경기 같이 갈래요?",
@@ -1011,7 +1024,7 @@ function fanVoiceInsights(context = currentContext) {
       label: "좌석",
       signal: "응원석 시야와 초보 팬 좌석 추천 문의 증가",
       volume: "138건",
-      action: "응원석 첫 직관 가이드 캠페인",
+      action: "응원석 첫 직관 가이드 이벤트",
       recommendation: "좌석 선택 단계에 초보 팬 안내 카드와 직관메이트 추천을 함께 노출",
     },
     goods: {
@@ -1025,7 +1038,7 @@ function fanVoiceInsights(context = currentContext) {
       label: "경기장 경험",
       signal: "매점 대기 불만 증가",
       volume: "74건",
-      action: "모바일 픽업 안내 캠페인",
+      action: "모바일 픽업 안내 이벤트",
       recommendation: "하프타임 전 팬 앱에 모바일 픽업 안내와 혼잡 시간대를 노출",
     },
     content: {
@@ -1064,7 +1077,7 @@ function renderRevenueOpportunities(context = currentContext) {
     const proof = document.createElement("p");
     const detailGrid = document.createElement("div");
     const actions = document.createElement("div");
-    const campaignButton = document.createElement("button");
+    const eventButton = document.createElement("button");
     const sponsorButton = document.createElement("button");
 
     card.className = "revenue-opportunity-card clickable-card";
@@ -1096,13 +1109,13 @@ function renderRevenueOpportunities(context = currentContext) {
     });
 
     actions.className = "opportunity-actions";
-    campaignButton.type = "button";
-    campaignButton.dataset.campaignBuilder = String(index);
-    campaignButton.textContent = "캠페인 만들기";
+    eventButton.type = "button";
+    eventButton.dataset.eventBuilder = String(index);
+    eventButton.textContent = "이벤트 만들기";
     sponsorButton.type = "button";
     sponsorButton.dataset.sponsorBuilder = String(index);
     sponsorButton.textContent = "스폰서 제안서";
-    actions.append(campaignButton, sponsorButton);
+    actions.append(eventButton, sponsorButton);
 
     card.append(top, proof, detailGrid, actions);
     revenueOpportunityGrid.append(card);
@@ -1121,7 +1134,7 @@ function dashboardSectionModel(context = currentContext) {
     "fan-insight": {
       kicker: "Fan Insight",
       title: "Fan Insight",
-      copy: `${topPlayerName} 중심 팬 반응을 저장, 공유, 직관메이트 클릭으로 나눠 캠페인 후보를 정리합니다.`,
+      copy: `${topPlayerName} 중심 팬 반응을 저장, 공유, 직관메이트 클릭, Fan Voice, Player Context DB로 나눠 분석합니다.`,
       kpis: [
         ["상위 선수", topPlayerName, "팬 반응 점수 1위"],
         ["저장 추정", `${savedEstimate.toLocaleString("ko-KR")}회`, "하이라이트 저장"],
@@ -1129,92 +1142,42 @@ function dashboardSectionModel(context = currentContext) {
       ],
       workflow: [
         "선수별 반응 점수 비교",
-        "저장/공유/직관메이트 클릭을 분해",
-        "상위 반응 선수를 콘텐츠와 굿즈 후보로 이동",
+        "Fan Voice와 Player Context DB로 팬 의견과 선수 맥락 보강",
+        "저장/공유/직관메이트 클릭을 Revenue Playbook 입력값으로 전달",
       ],
-      action: { label: "상위 선수 상세", type: "player", value: "0" },
+      action: { label: "선수 인사이트 보기", type: "player-context", value: "0" },
     },
     playbook: {
       kicker: "Revenue Playbook",
       title: "Revenue Playbook",
-      copy: "이번 주 바로 실행할 매출 기회를 티켓, 굿즈, 스폰서, 경기일 운영 액션으로 우선순위화합니다.",
+      copy: "팬 반응을 단기성 이벤트, 라운드 이벤트, 장기 프랜차이즈 마케팅으로 번역해 우선순위화합니다.",
       kpis: [
         ["매출 기회", `${opportunityCount}개`, "Top 3 추천"],
-        ["예매 클릭", "128건", "대표 캠페인 예상"],
+        ["예매 클릭", "128건", "대표 이벤트 예상"],
         ["굿즈 클릭", "92건", "포토카드 테스트"],
       ],
       workflow: [
         "팬 반응 급상승 장면 확인",
-        "예상 효과와 실행 난이도 비교",
-        "캠페인 또는 스폰서 패키지로 전환",
+        "Event Builder로 단기 이벤트 또는 라운드 이벤트 초안 생성",
+        "필요 시 Sponsor Package Builder로 스폰서 제안서 파생",
       ],
       action: { label: "Top 3 상세 보기", type: "opportunity", value: "0" },
     },
-    campaign: {
-      kicker: "Campaign Builder",
-      title: "Campaign Builder",
-      copy: "추천 액션을 대상, 문구, 노출 위치, 기간이 있는 팬 앱 캠페인 초안으로 바꿉니다.",
+    performance: {
+      kicker: "Performance",
+      title: "Performance",
+      copy: "CTA 클릭, 이벤트 참여, 굿즈 반응, 스폰서 이벤트 반응, 예상 매출 기여를 추적합니다.",
       kpis: [
-        ["대상 세그먼트", `${context.shooterName} 팬`, "저장/공유 기반"],
-        ["노출 위치", "하이라이트 하단", "팬 앱 CTA"],
-        ["성과 추적", "예매 클릭", "게시 후 확인"],
-      ],
-      workflow: [
-        "추천 액션 확인",
-        "캠페인 초안 생성",
-        "문구/대상/노출 위치 수정",
-        "팬 앱 게시 후 성과 추적",
-      ],
-      action: { label: "캠페인 초안 열기", type: "campaign", value: "0" },
-    },
-    sponsor: {
-      kicker: "Sponsor Package",
-      title: "Sponsor Package",
-      copy: "인기 장면과 팬 반응 데이터를 스폰서 영업 자료로 바로 쓸 수 있는 제안서 초안으로 묶습니다.",
-      kpis: [
-        ["패키지 후보", "4개", "장면 기반 상품"],
-        ["대표 장면", `${context.shooterName} 3점`, "브랜드 노출 후보"],
-        ["제안서 상태", "초안 가능", "생성 결과함 저장"],
-      ],
-      workflow: [
-        "인기 장면 선택",
-        "조회/저장/공유 지표 첨부",
-        "스폰서 노출 위치와 제안 문구 생성",
-        "제안서 초안 저장",
-      ],
-      action: { label: "스폰서 제안서 열기", type: "sponsor", value: "0" },
-    },
-    "funnel-roi": {
-      kicker: "Funnel / ROI",
-      title: "Funnel / ROI",
-      copy: "하이라이트부터 예매·굿즈 CTA까지 단계별 이탈, 전환, 예상 매출 기여를 추적합니다.",
-      kpis: [
-        ["예매 CTA", "128건", "대표 캠페인 클릭"],
+        ["예매 CTA", "128건", "대표 이벤트 클릭"],
         ["굿즈 CTA", "92건", "포토카드 클릭"],
         ["예상 기여", "660만원", "샘플 합산"],
       ],
       workflow: [
         "퍼널 단계별 전환율 확인",
-        "이탈률이 높은 단계의 콘텐츠와 선수 확인",
-        "개선 액션을 캠페인으로 전환",
+        "직관메이트, 좌석 선호, 이벤트 반응을 Matchday Ops 관점으로 확인",
+        "성과 리포트를 저장하고 다음 이벤트 개선안으로 연결",
       ],
-      action: { label: "ROI 단계 보기", type: "funnel", value: "ticket-cta" },
-    },
-    "fan-voice": {
-      kicker: "Fan Voice",
-      title: "Fan Voice",
-      copy: "팬 의견을 좌석, 굿즈, 경기장 경험, 선수 콘텐츠, 이벤트, 응원 문화로 분류해 운영 개선 액션으로 연결합니다.",
-      kpis: [
-        ["분류 카테고리", `${voiceCount}개`, "자동 태깅"],
-        ["상위 의견", "매점 대기", "경기장 경험"],
-        ["추천 액션", "모바일 픽업", "운영 캠페인"],
-      ],
-      workflow: [
-        "팬 의견과 투표 수집",
-        "AI가 카테고리와 감성을 분류",
-        "운영 개선 리포트 또는 굿즈 테스트 캠페인 생성",
-      ],
-      action: { label: "Fan Voice 보기", type: "fan-voice", value: "venue" },
+      action: { label: "Performance 상세 보기", type: "funnel", value: "ticket-cta" },
     },
   };
 }
@@ -1304,8 +1267,13 @@ function openDashboardBoardAction(button) {
     return;
   }
 
-  if (actionType === "campaign") {
-    showCampaignBuilder(Number(actionValue || 0));
+  if (actionType === "campaign" || actionType === "event") {
+    showEventBuilder(Number(actionValue || 0));
+    return;
+  }
+
+  if (actionType === "player-context") {
+    showPlayerContext(Number(actionValue || 0));
     return;
   }
 
@@ -1321,6 +1289,11 @@ function openDashboardBoardAction(button) {
 
   if (actionType === "fan-voice") {
     showFanVoiceDetail(actionValue || "venue");
+    return;
+  }
+
+  if (actionType === "matchday-ops") {
+    showMatchdayOps();
   }
 }
 
@@ -1434,8 +1407,8 @@ function closeDashboardModal() {
 
 function assetKindFor(label) {
   if (label.includes("스폰서") || label.includes("리포트")) return "스폰서 제안서";
-  if (label.includes("굿즈")) return "굿즈 캠페인";
-  if (label.includes("팬 앱") || label.includes("캠페인")) return "팬 앱 캠페인";
+  if (label.includes("굿즈")) return "굿즈 이벤트";
+  if (label.includes("팬 앱") || label.includes("이벤트") || label.includes("캠페인")) return "팬 앱 이벤트";
   if (label.includes("콘텐츠")) return "콘텐츠 패키지";
   return "실행 문서";
 }
@@ -1467,7 +1440,7 @@ function createGeneratedAsset(label, sourceOverride, details = {}) {
       ["대상 구단", currentContext.team.fullName],
       ["핵심 선수", `${currentContext.shooterName}, ${currentContext.playmakerName}, ${currentContext.rebounderName}`],
       ["노출 위치", "팬 앱 하이라이트 하단 · 구단 대시보드 생성 결과함"],
-      ["다음 액션", "담당자 승인 후 팬 앱 캠페인 카드와 스폰서 제안서에 반영"],
+      ["다음 액션", "담당자 승인 후 팬 앱 이벤트 카드와 스폰서 제안서에 반영"],
     ],
   };
 
@@ -1486,7 +1459,7 @@ function updateAssetVault() {
   if (!generatedAssets.length) {
     const empty = document.createElement("div");
     empty.className = "asset-empty";
-    empty.textContent = "액션 메뉴나 추천 캠페인에서 생성한 문서가 여기에 저장됩니다.";
+    empty.textContent = "액션 메뉴나 추천 이벤트에서 생성한 문서가 여기에 저장됩니다.";
     assetList.append(empty);
     return;
   }
@@ -1617,22 +1590,29 @@ function appendModalOutput(asset) {
   showToast("생성 결과함에 저장됐습니다.");
 }
 
-function createCampaignAsset(index = 0) {
+function createEventAsset(index = 0) {
   const item = revenueOpportunities()[index] || revenueOpportunities()[0];
+  const eventName = opportunityEventName(item);
 
-  return createGeneratedAsset("팬 앱 캠페인 게시", "Campaign Builder", {
-    kind: "팬 앱 캠페인",
-    title: `${item.campaignName} · ${currentContext.team.shortName}`,
-    summary: `${item.scene} 반응을 기반으로 ${item.target}에게 ${item.action}을 노출하는 캠페인 초안입니다.`,
+  return createGeneratedAsset("팬 앱 이벤트 게시", "Event Builder", {
+    kind: "팬 앱 이벤트",
+    title: `${eventName} · ${currentContext.team.shortName}`,
+    summary: `${item.scene} 반응을 기반으로 ${item.target}에게 ${item.action}을 노출하는 이벤트 초안입니다.`,
     sections: [
+      ["이벤트 유형", item.eventType || "단기성 이벤트"],
+      ["마케팅 범위", item.marketingHorizon || "시즌 중 실행"],
       ["대상 팬 세그먼트", item.target],
-      ["캠페인명", item.campaignName],
+      ["이벤트명", eventName],
       ["노출 위치", item.placement],
       ["CTA 문구", item.copy],
       ["운영 기간", item.period],
       ["성과 지표", `${item.effect} · ${item.revenue}`],
     ],
   });
+}
+
+function createCampaignAsset(index = 0) {
+  return createEventAsset(index);
 }
 
 function createSponsorAsset(index = 0) {
@@ -1667,7 +1647,7 @@ function createFanVoiceAsset(category = "venue") {
       ["의견량", item.volume],
       ["추천 액션", item.action],
       ["운영 제안", item.recommendation],
-      ["연결 캠페인", "팬 앱 안내 카드 또는 굿즈/이벤트 테스트 캠페인으로 전환"],
+      ["연결 이벤트", "팬 앱 안내 카드 또는 굿즈/좌석 테스트 이벤트로 전환"],
     ],
   });
 }
@@ -1687,17 +1667,18 @@ function showRevenueOpportunityDetail(index = 0) {
       </div>
       <div class="modal-stat-grid">
         <div class="modal-preview-card"><span>실행 난이도</span><strong>${escapeHtml(item.difficulty)}</strong></div>
-        <div class="modal-preview-card"><span>추천 액션</span><strong>${escapeHtml(item.action)}</strong></div>
+        <div class="modal-preview-card"><span>이벤트 유형</span><strong>${escapeHtml(item.eventType || "단기성 이벤트")}</strong></div>
+        <div class="modal-preview-card"><span>마케팅 범위</span><strong>${escapeHtml(item.marketingHorizon || "시즌 중 실행")}</strong></div>
         <div class="modal-preview-card"><span>매출 기여</span><strong>${escapeHtml(item.revenue)}</strong></div>
       </div>
       <ul class="workflow-list">
         <li>추천 액션 확인</li>
-        <li>캠페인 초안 생성</li>
+        <li>이벤트 초안 생성</li>
         <li>팬 앱 노출 또는 스폰서 제안서로 전환</li>
-        <li>Funnel / ROI에서 예매·굿즈 클릭 추적</li>
+        <li>Performance에서 예매·굿즈·스폰서 반응 추적</li>
       </ul>
       <div class="modal-action-row">
-        <button type="button" data-campaign-builder="${index}">캠페인 만들기</button>
+        <button type="button" data-event-builder="${index}">이벤트 만들기</button>
         <button type="button" data-sponsor-builder="${index}">스폰서 제안서</button>
         <button type="button" data-funnel-stage="ticket-cta">ROI 확인</button>
       </div>
@@ -1705,29 +1686,44 @@ function showRevenueOpportunityDetail(index = 0) {
   });
 }
 
-function showCampaignBuilder(index = 0) {
+function showEventBuilder(index = 0) {
   const item = revenueOpportunities()[index] || revenueOpportunities()[0];
+  const eventName = opportunityEventName(item);
 
   openDashboardModal({
-    kicker: "Campaign Builder",
-    title: item.campaignName,
-    subtitle: "추천 액션을 대상, 문구, 노출 위치, 기간이 있는 팬 앱 캠페인 초안으로 바꿉니다.",
+    kicker: "Event Builder",
+    title: eventName,
+    subtitle: "Revenue Playbook 추천을 단기성 이벤트, 라운드 이벤트, 장기 프랜차이즈 마케팅 실행 카드로 바꿉니다.",
     body: `
-      <ol class="builder-flow" aria-label="캠페인 생성 흐름">
+      <ol class="builder-flow" aria-label="이벤트 생성 흐름">
         <li>추천 액션 확인</li>
-        <li>캠페인 초안 생성</li>
+        <li>이벤트 초안 생성</li>
         <li>문구/대상/노출 위치 수정</li>
-        <li>팬 앱에 게시</li>
-        <li>성과 추적</li>
+        <li>구단 담당자 승인</li>
+        <li>팬 앱 게시</li>
+        <li>Performance에서 성과 추적</li>
       </ol>
+      <div class="modal-detail-grid">
+        <div class="modal-detail-card"><span>이벤트 유형</span><strong>${escapeHtml(item.eventType || "단기성 이벤트")}</strong></div>
+        <div class="modal-detail-card"><span>마케팅 범위</span><strong>${escapeHtml(item.marketingHorizon || "시즌 중 실행")}</strong></div>
+        <div class="modal-detail-card"><span>추천 액션</span><strong>${escapeHtml(item.action)}</strong></div>
+      </div>
       <div class="builder-form-grid">
+        <label>
+          <span>이벤트 유형</span>
+          <select>
+            <option>${escapeHtml(item.eventType || "단기성 이벤트")}</option>
+            <option>라운드 이벤트</option>
+            <option>장기 프랜차이즈 마케팅</option>
+          </select>
+        </label>
         <label>
           <span>대상 팬 세그먼트</span>
           <input type="text" value="${escapeHtml(item.target)}" />
         </label>
         <label>
-          <span>캠페인명</span>
-          <input type="text" value="${escapeHtml(item.campaignName)}" />
+          <span>이벤트명</span>
+          <input type="text" value="${escapeHtml(eventName)}" />
         </label>
         <label>
           <span>노출 위치</span>
@@ -1747,17 +1743,21 @@ function showCampaignBuilder(index = 0) {
         </label>
       </div>
       <div class="modal-detail-grid">
-        <div class="modal-detail-card"><span>추천 액션</span><strong>${escapeHtml(item.action)}</strong></div>
+        <div class="modal-detail-card"><span>대표 장면</span><strong>${escapeHtml(item.scene)}</strong></div>
         <div class="modal-detail-card"><span>예상 효과</span><strong>${escapeHtml(item.effect)}</strong></div>
         <div class="modal-detail-card"><span>성과 추적</span><strong>${escapeHtml(item.revenue)}</strong></div>
       </div>
       <div class="modal-action-row">
-        <button type="button" data-save-campaign-builder="${index}" data-campaign-save-kind="publish">팬 앱에 게시</button>
-        <button type="button" data-save-campaign-builder="${index}" data-campaign-save-kind="draft">캠페인 초안 저장</button>
+        <button type="button" data-save-event-builder="${index}" data-event-save-kind="publish">팬 앱 이벤트 게시</button>
+        <button type="button" data-save-event-builder="${index}" data-event-save-kind="draft">이벤트 초안 저장</button>
         <button type="button" data-funnel-stage="ticket-cta">성과 추적 보기</button>
       </div>
     `,
   });
+}
+
+function showCampaignBuilder(index = 0) {
+  showEventBuilder(index);
 }
 
 function showSponsorBuilder(index = 0) {
@@ -1766,7 +1766,7 @@ function showSponsorBuilder(index = 0) {
   openDashboardModal({
     kicker: "Sponsor Package Builder",
     title: item.sponsorName,
-    subtitle: "인기 장면과 팬 반응 지표를 스폰서 영업 자료로 바로 쓸 수 있는 제안서 초안으로 묶습니다.",
+    subtitle: "Event Builder에서 파생된 이벤트 반응을 스폰서 영업 자료로 바로 쓸 수 있는 제안서 초안으로 묶습니다.",
     body: `
       <div class="modal-detail-grid">
         <div class="modal-detail-card"><span>대표 장면</span><strong>${escapeHtml(item.scene)}</strong></div>
@@ -1789,13 +1789,13 @@ function showSponsorBuilder(index = 0) {
       </div>
       <ul class="modal-list">
         <li><strong>상품 예시</strong> 오늘의 클러치 플레이 presented by 브랜드</li>
-        <li><strong>상품 예시</strong> 작전판AI 전술 해설 스폰서</li>
+        <li><strong>상품 예시</strong> 라운드 MVP 팬 투표 sponsored by 브랜드</li>
         <li><strong>상품 예시</strong> 직관메이트 매칭 이벤트 스폰서</li>
-        <li><strong>상품 예시</strong> 입덕패스 경기 프리뷰 스폰서</li>
+        <li><strong>상품 예시</strong> 프랜차이즈 스타 굿즈 스폰서</li>
       </ul>
       <div class="modal-action-row">
         <button type="button" data-save-sponsor-builder="${index}">스폰서 제안서 저장</button>
-        <button type="button" data-campaign-builder="${index}">연결 캠페인 만들기</button>
+        <button type="button" data-event-builder="${index}">연결 이벤트 만들기</button>
       </div>
     `,
   });
@@ -1808,7 +1808,7 @@ function showFanVoiceDetail(category = "venue") {
   openDashboardModal({
     kicker: "Fan Voice",
     title: `${item.label} 인사이트`,
-    subtitle: "팬 의견을 운영 개선 액션과 캠페인 테스트로 연결합니다.",
+    subtitle: "팬 의견을 운영 개선 액션과 이벤트 테스트로 연결합니다.",
     body: `
       <div class="voice-category-grid" aria-label="Fan Voice 카테고리">
         ${Object.entries(insights)
@@ -1825,12 +1825,12 @@ function showFanVoiceDetail(category = "venue") {
       </div>
       <ul class="modal-list">
         <li><strong>운영 제안</strong> ${escapeHtml(item.recommendation)}</li>
-        <li><strong>연결 방식</strong> 팬 앱 안내 카드, 굿즈 테스트, 이벤트 캠페인 중 하나로 전환</li>
-        <li><strong>성과 확인</strong> Funnel / ROI에서 클릭률과 불만 감소 신호를 추적</li>
+        <li><strong>연결 방식</strong> 팬 앱 안내 카드, 굿즈 테스트, 좌석/동행 이벤트 중 하나로 전환</li>
+        <li><strong>성과 확인</strong> Performance에서 클릭률과 불만 감소 신호를 추적</li>
       </ul>
       <div class="modal-action-row">
         <button type="button" data-save-fan-voice-report="${escapeHtml(category)}">운영 개선 리포트 생성</button>
-        <button type="button" data-campaign-builder="2">캠페인 테스트 만들기</button>
+        <button type="button" data-event-builder="2">이벤트 테스트 만들기</button>
       </div>
     `,
   });
@@ -1951,7 +1951,7 @@ function showPlayerDetail(index) {
   openDashboardModal({
     kicker: "Fan Engagement",
     title: `${name} 팬 반응 상세`,
-    subtitle: "구단이 어떤 선수를 콘텐츠와 굿즈 캠페인으로 밀어야 하는지 판단하는 화면입니다.",
+    subtitle: "구단이 어떤 선수를 콘텐츠, 이벤트, 굿즈, 스폰서 자산으로 밀어야 하는지 판단하는 화면입니다.",
     body: `
       <div class="modal-detail-grid">
         <div class="modal-detail-card"><span>기본 정보</span><strong>${escapeHtml(currentContext.team.name)} · ${escapeHtml(player.position || "POS")} · #${escapeHtml(player.backNumber || "-")}</strong></div>
@@ -1965,10 +1965,89 @@ function showPlayerDetail(index) {
       </div>
       <ul class="modal-list">
         <li><strong>인기 하이라이트</strong> ${escapeHtml(name)} 중심 AI 하이라이트 · 작전판AI 열람률 높음</li>
-        <li><strong>추천 캠페인</strong> ${escapeHtml(name)} 장면 하단에 응원석 예매 CTA와 굿즈 배너 노출</li>
+        <li><strong>추천 이벤트</strong> ${escapeHtml(name)} 장면 하단에 응원석 예매 CTA와 굿즈 배너 노출</li>
         <li><strong>구단 액션</strong> 숏폼 3개 생성 후 팬 앱 첫 화면과 스폰서 패키지에 저장</li>
       </ul>
-      ${modalActions(["콘텐츠 생성", "굿즈 캠페인 만들기", "스폰서 패키지로 저장"])}
+      <div class="modal-action-row">
+        <button type="button" data-event-builder="${index}">선수 이벤트 만들기</button>
+        <button type="button" data-player-context="${index}">Player Context DB</button>
+        <button type="button" data-sponsor-builder="${index}">스폰서 패키지</button>
+      </div>
+    `,
+  });
+}
+
+function showPlayerContext(index = 0) {
+  const row = currentContext.uniqueLeaders[index] || currentContext.uniqueLeaders[0];
+  if (!row) return;
+
+  const stats = statRowForPlayer(row);
+  const player = rosterEntryForPlayer(row);
+  const name = playerName(stats, player.name);
+  const score = [92, 90, 86, 84][index] || 82;
+  const isFranchiseCandidate = score >= 88 ? "프랜차이즈 스타 후보" : "장기 육성 후보";
+  const totalMinutes = statValue(stats, "playMin");
+  const avgMinutes = (totalMinutes / gameCount(stats)).toFixed(1);
+
+  openDashboardModal({
+    kicker: "Player Context DB",
+    title: `${name} 선수 컨텍스트`,
+    subtitle: "공식 공개 정보 기반으로 선수 역할, 최근 폼, 출전 시간, 부상/복귀 예정, 라운드 활약, 장기 마케팅 자산 여부를 관리합니다.",
+    body: `
+      <div class="modal-detail-grid">
+        <div class="modal-detail-card"><span>역할/포지션</span><strong>${escapeHtml(currentContext.team.name)} · ${escapeHtml(player.position || "POS")} · #${escapeHtml(player.backNumber || "-")}</strong></div>
+        <div class="modal-detail-card"><span>최근 폼</span><strong>하이라이트 반응 상승 · 팬 반응 ${score}</strong></div>
+        <div class="modal-detail-card"><span>시즌 기록</span><strong>${formatPerGame(stats, "score", "PTS")} · ${formatPerGame(stats, "ast", "AST")}</strong></div>
+      </div>
+      <div class="modal-stat-grid">
+        <div class="modal-preview-card"><span>출전 시간</span><strong>${avgMinutes} MIN · 총 ${totalMinutes.toLocaleString("ko-KR")}분</strong></div>
+        <div class="modal-preview-card"><span>부상/복귀 예정</span><strong>공식 공개 정보 확인 필요</strong></div>
+        <div class="modal-preview-card"><span>라운드 활약</span><strong>베스트 장면 후보</strong></div>
+        <div class="modal-preview-card"><span>자산 분류</span><strong>${escapeHtml(isFranchiseCandidate)}</strong></div>
+      </div>
+      <ul class="modal-list">
+        <li><strong>Event Builder 근거</strong> ${escapeHtml(name)} 반응을 응원석 단기 이벤트나 라운드 베스트 장면 투표로 전환</li>
+        <li><strong>Sponsor Builder 근거</strong> 인기 장면, 저장률, 공유율을 선수 굿즈/라운드 MVP 스폰서 제안에 첨부</li>
+        <li><strong>데이터 관리</strong> 실제 서비스에서는 KBL 공식 기록, 구단 공개 소식, 부상/복귀 공지를 함께 동기화</li>
+      </ul>
+      <div class="modal-action-row">
+        <button type="button" data-event-builder="${index}">이 선수로 이벤트 생성</button>
+        <button type="button" data-sponsor-builder="${index}">스폰서 패키지</button>
+        <button type="button" data-funnel-stage="ticket-cta">Performance 확인</button>
+      </div>
+    `,
+  });
+}
+
+function showMatchdayOps() {
+  const mateClicks = Math.round(92 * 2.3).toLocaleString("ko-KR");
+
+  openDashboardModal({
+    kicker: "Matchday Ops",
+    title: "경기일 운영 인사이트",
+    subtitle: "직관메이트, 좌석 선호, 경기장 불만, 이벤트 반응을 모아 다음 홈·원정 경기 운영 개선으로 연결합니다.",
+    body: `
+      <div class="modal-detail-grid">
+        <div class="modal-detail-card"><span>직관메이트 클릭</span><strong>${mateClicks}회</strong></div>
+        <div class="modal-detail-card"><span>좌석 선호 응답</span><strong>응원석/시야 문의 +31%</strong></div>
+        <div class="modal-detail-card"><span>이벤트 반응</span><strong>동행 이벤트 참여 84팀</strong></div>
+      </div>
+      <ul class="workflow-list">
+        <li>홈·원정 경기 날짜와 좌석/응원 성향 수집</li>
+        <li>직관메이트 모집글과 응원석 안내 이벤트를 팬 앱에 노출</li>
+        <li>매점 대기, 시야, 이동 동선 불만을 Fan Voice로 분류</li>
+        <li>이벤트 참여와 예매 CTA 클릭을 Performance에서 추적</li>
+      </ul>
+      <ul class="modal-list">
+        <li><strong>운영 액션</strong> 초보 팬 좌석 안내 카드와 동행 모집글을 경기 D-7부터 노출</li>
+        <li><strong>수익화 액션</strong> 직관메이트 매칭 이벤트 스폰서와 응원석 예매 CTA를 함께 제안</li>
+        <li><strong>다음 확인</strong> 신청 멘트, 좌석 선호, 홈/원정 선택 데이터를 다음 경기 추천에 반영</li>
+      </ul>
+      <div class="modal-action-row">
+        <button type="button" data-event-builder="2">직관메이트 이벤트 만들기</button>
+        <button type="button" data-save-fan-voice-report="venue">운영 리포트 저장</button>
+        <button type="button" data-funnel-stage="mate-click">Performance 확인</button>
+      </div>
     `,
   });
 }
@@ -1997,7 +2076,7 @@ function showContentPreview(index) {
       mate: `${currentContext.rebounderName} 골밑 장면 같이 볼 사람`,
     },
     {
-      title: `${currentContext.team.name} 홈경기 캠페인`,
+      title: `${currentContext.team.name} 홈경기 이벤트`,
       thumbnail: "하이라이트 본 팬에게 바로 다음 경기",
       card: "AI 클립 반응이 높은 팬에게 응원석/굿즈/직관메이트 CTA를 분기 노출",
       pass: `${currentContext.team.shortName} 첫 직관 팬을 위한 경기 전 3분 코스`,
@@ -2034,8 +2113,8 @@ function showRevenueAction(index) {
 
   openDashboardModal({
     kicker: "Revenue Playbook",
-    title: item.campaign,
-    subtitle: `${item.scene}의 ${item.reaction} 반응을 실제 캠페인 실행으로 연결합니다.`,
+    title: item.event,
+    subtitle: `${item.scene}의 ${item.reaction} 반응을 실제 이벤트 실행으로 연결합니다.`,
     body: `
       <div class="modal-detail-grid">
         <div class="modal-detail-card"><span>추천 장면</span><strong>${escapeHtml(item.scene)}</strong></div>
@@ -2044,7 +2123,7 @@ function showRevenueAction(index) {
       </div>
       <ul class="workflow-list">
         <li>추천 장면 선택</li>
-        <li>${escapeHtml(item.action)} 캠페인 템플릿 생성</li>
+        <li>${escapeHtml(item.action)} 이벤트 템플릿 생성</li>
         <li>구단 담당자 승인</li>
         <li>팬 앱 하이라이트 하단 노출</li>
         <li>클릭률, 예매 전환, 굿즈 CTA 반응 추적</li>
@@ -2055,11 +2134,38 @@ function showRevenueAction(index) {
         <div class="modal-detail-card"><span>예상 매출 기여</span><strong>${escapeHtml(opportunity.revenue)}</strong></div>
       </div>
       <div class="modal-action-row">
-        <button type="button" data-campaign-builder="${index}">캠페인 만들기</button>
+        <button type="button" data-event-builder="${index}">이벤트 만들기</button>
         <button type="button" data-sponsor-builder="${index}">스폰서 패키지</button>
         <button type="button" data-funnel-stage="ticket-cta">ROI 보기</button>
       </div>
     `,
+  });
+}
+
+function createPerformanceAsset(stage = "ticket-cta") {
+  const data =
+    {
+      "highlight-create": ["하이라이트 생성", "11K", "26%", "선수 미선택 이탈 18%", currentContext.playmakerName, "선택 선수 기반 생성", "예상 후속 CTA 1,840건", "선수 선택 기본값과 추천 조합을 먼저 제시"],
+      "tactics-view": ["작전판AI 열람", "7.4K", "67%", "해설 난이도 전환 전 이탈 14%", currentContext.shooterName, "3점 작전판AI 해설", "입덕패스 열람 +1.2K", "초보 해설 첫 문장을 더 짧게 노출"],
+      "mate-click": ["직관메이트 클릭", "3.2K", "43%", "좌석 정보 부족 이탈 12%", currentContext.shooterName, "같은 선수 관심 매칭", "동행 이벤트 참여 84팀", "좌석/응원 성향을 모집글 카드에 먼저 표시"],
+      "ticket-cta": ["예매 CTA 클릭", "128", "4.0%", "예매 링크 전환 전 이탈 9%", currentContext.shooterName, "응원석 예매 CTA", "예상 예매 매출 384만원", "하이라이트 카드 하단 CTA 문구를 응원석 중심으로 변경"],
+      "goods-cta": ["굿즈 CTA 클릭", "92", "2.9%", "상품 상세 전 이탈 11%", currentContext.rebounderName, "포토카드/굿즈 이벤트", "예상 굿즈 매출 276만원", "저장률 높은 골밑 장면과 한정 포토카드 문구를 연결"],
+      "sponsor-event": ["스폰서 이벤트 참여", "56", "1.7%", "쿠폰 저장 전 이탈 8%", currentContext.shooterName, "직관메이트 매칭 이벤트 스폰서", "스폰서 노출 가치 140만원", "이벤트 카드 CTA와 쿠폰 저장 버튼을 분리 노출"],
+    }[stage] || {};
+
+  return createGeneratedAsset("Performance 리포트 저장", "Performance", {
+    kind: "성과 리포트",
+    title: `${data[0] || "Performance"} 성과 리포트 · ${currentContext.team.shortName}`,
+    summary: "팬 앱에서 발생한 CTA 클릭, 이벤트 참여, 굿즈 반응, 스폰서 이벤트 반응과 예상 매출 기여를 정리한 성과 리포트입니다.",
+    sections: [
+      ["단계", data[0] || "Performance"],
+      ["사용자 수", data[1] || "-"],
+      ["전환율", data[2] || "-"],
+      ["이탈 신호", data[3] || "-"],
+      ["관련 선수", data[4] || "-"],
+      ["예상 기여", data[6] || "-"],
+      ["추천 개선 액션", data[7] || "-"],
+    ],
   });
 }
 
@@ -2069,15 +2175,16 @@ function showFunnelDetail(stage) {
     "tactics-view": ["작전판AI 열람", "7.4K", "67%", "해설 난이도 전환 전 이탈 14%", currentContext.shooterName, "3점 작전판AI 해설", "입덕패스 열람 +1.2K", "초보 해설 첫 문장을 더 짧게 노출"],
     "mate-click": ["직관메이트 클릭", "3.2K", "43%", "좌석 정보 부족 이탈 12%", currentContext.shooterName, "같은 선수 관심 매칭", "동행 이벤트 참여 84팀", "좌석/응원 성향을 모집글 카드에 먼저 표시"],
     "ticket-cta": ["예매 CTA 클릭", "128", "4.0%", "예매 링크 전환 전 이탈 9%", currentContext.shooterName, "응원석 예매 CTA", "예상 예매 매출 384만원", "하이라이트 카드 하단 CTA 문구를 응원석 중심으로 변경"],
-    "goods-cta": ["굿즈 CTA 클릭", "92", "2.9%", "상품 상세 전 이탈 11%", currentContext.rebounderName, "포토카드/굿즈 캠페인", "예상 굿즈 매출 276만원", "저장률 높은 골밑 장면과 한정 포토카드 문구를 연결"],
+    "goods-cta": ["굿즈 CTA 클릭", "92", "2.9%", "상품 상세 전 이탈 11%", currentContext.rebounderName, "포토카드/굿즈 이벤트", "예상 굿즈 매출 276만원", "저장률 높은 골밑 장면과 한정 포토카드 문구를 연결"],
+    "sponsor-event": ["스폰서 이벤트 참여", "56", "1.7%", "쿠폰 저장 전 이탈 8%", currentContext.shooterName, "직관메이트 매칭 이벤트 스폰서", "스폰서 노출 가치 140만원", "이벤트 카드 CTA와 쿠폰 저장 버튼을 분리 노출"],
   }[stage];
 
   if (!data) return;
 
   openDashboardModal({
-    kicker: "Funnel / ROI",
+    kicker: "Performance",
     title: data[0],
-    subtitle: "단계별 전환, 이탈, 예상 매출 기여와 다음 개선 액션을 확인합니다.",
+    subtitle: "CTA 클릭, 이벤트 참여, 굿즈 반응, 스폰서 이벤트 반응과 예상 매출 기여를 확인합니다.",
     body: `
       <div class="modal-detail-grid">
         <div class="modal-detail-card"><span>사용자 수</span><strong>${escapeHtml(data[1])}</strong></div>
@@ -2089,10 +2196,11 @@ function showFunnelDetail(stage) {
         <li><strong>관련 선수</strong> ${escapeHtml(data[4])}</li>
         <li><strong>관련 콘텐츠</strong> ${escapeHtml(data[5])}</li>
         <li><strong>추천 개선 액션</strong> ${escapeHtml(data[7])}</li>
+        <li><strong>추적 범위</strong> 예매 CTA, 이벤트 참여, 굿즈 반응, 스폰서 이벤트 참여</li>
       </ul>
       <div class="modal-action-row">
-        <button type="button" data-campaign-builder="0">캠페인으로 전환</button>
-        <button type="button" data-save-campaign-builder="0">ROI 리포트 저장</button>
+        <button type="button" data-event-builder="0">이벤트로 전환</button>
+        <button type="button" data-save-performance-report="${escapeHtml(stage)}">Performance 리포트 저장</button>
       </div>
     `,
   });
@@ -2101,13 +2209,13 @@ function showFunnelDetail(stage) {
 function showDashboardMenu(menu) {
   const menuData = {
     campaign: [
-      "Campaign Builder",
-      "Revenue Playbook 추천을 팬 앱 캠페인 카드로 바꾸는 메뉴입니다.",
+      "Event Builder",
+      "Revenue Playbook 추천을 팬 앱 이벤트 카드로 바꾸는 메뉴입니다.",
       ["추천 장면 불러오기", "CTA 문구 생성", "구단 담당자 승인", "팬 앱 노출 예약"],
     ],
     sponsor: [
-      "Sponsor Package",
-      "인기 장면과 팬 반응을 스폰서 제안서 형태로 묶습니다.",
+      "Sponsor Package Builder",
+      "Event Builder에서 파생된 인기 장면과 팬 반응을 스폰서 제안서 형태로 묶습니다.",
       ["상위 하이라이트 선택", "조회/저장/공유 지표 첨부", "브랜드 노출 위치 추천", "PDF 제안서 저장"],
     ],
     voice: [
@@ -2223,6 +2331,68 @@ function closeProfile() {
   profileButton.setAttribute("aria-expanded", "false");
 }
 
+function dateInputValueAfter(days) {
+  const date = new Date();
+  date.setDate(date.getDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+function formatMateDate(value) {
+  if (!value) return "선택 날짜";
+
+  const [year, month, day] = value.split("-");
+  if (!year || !month || !day) return value;
+
+  return `${year}.${month}.${day}`;
+}
+
+function createMateApplyForm() {
+  const form = document.createElement("form");
+  const textarea = document.createElement("textarea");
+  const button = document.createElement("button");
+  const status = document.createElement("small");
+
+  form.className = "mate-apply-form";
+  textarea.name = "message";
+  textarea.rows = 2;
+  textarea.placeholder = "신청 멘트를 간단히 적어주세요.";
+  button.type = "submit";
+  button.textContent = "신청";
+  status.className = "mate-apply-status";
+  status.setAttribute("aria-live", "polite");
+
+  form.append(textarea, button, status);
+  return form;
+}
+
+function ensureMateApplyForms() {
+  document.querySelectorAll(".mate-card").forEach((card) => {
+    if (card.querySelector(".mate-apply-form")) return;
+    card.append(createMateApplyForm());
+  });
+}
+
+function handleMateApplySubmit(event) {
+  const form = event.target.closest(".mate-apply-form");
+  if (!form) return;
+
+  event.preventDefault();
+
+  const card = form.closest(".mate-card");
+  const title = card?.querySelector("strong")?.textContent || "직관메이트";
+  const textarea = form.querySelector("textarea");
+  const button = form.querySelector("button");
+  const status = form.querySelector(".mate-apply-status");
+  const message = textarea.value.trim() || "같이 직관 가고 싶어요!";
+
+  textarea.value = message;
+  textarea.disabled = true;
+  button.disabled = true;
+  button.textContent = "신청 완료";
+  status.textContent = "신청 멘트가 전송됐습니다.";
+  showToast(`${title} 신청이 완료됐습니다.`);
+}
+
 function populateMateForm() {
   if (!matePlayerInput) return;
 
@@ -2237,7 +2407,11 @@ function populateMateForm() {
     matePlayerInput.append(option);
   });
 
-  if (mateDateInput) mateDateInput.value = "다음 홈경기";
+  if (mateDateInput) {
+    mateDateInput.min = dateInputValueAfter(0);
+    mateDateInput.value = dateInputValueAfter(7);
+  }
+  if (mateLocationInput) mateLocationInput.value = "홈 경기";
   if (mateGameInput) mateGameInput.options[0].textContent = `${currentContext.team.opponent}전`;
   if (mateSeatInput) mateSeatInput.options[0].textContent = `${currentContext.team.city} 응원석`;
   if (mateNoteInput) {
@@ -2270,13 +2444,14 @@ function createMatePostCard(values) {
   const tags = document.createElement("div");
 
   titleEl.textContent = `${currentContext.team.shortName} ${values.player} 하이라이트 같이 볼 메이트`;
-  metaEl.textContent = `${values.date} · ${values.game} · ${values.seat} · ${values.style}`;
+  metaEl.textContent = `${formatMateDate(values.date)} · ${values.location} · ${values.game} · ${values.seat} · ${values.style}`;
   noteEl.className = "safety-note";
   noteEl.textContent = values.note;
   tags.className = "mate-tags";
 
   [
     values.player,
+    values.location,
     values.style,
     "같은 선수 하이라이트 본 팬에게 추천",
     "신고·차단 안내 포함",
@@ -2291,6 +2466,7 @@ function createMatePostCard(values) {
   card.append(copy, tags);
 
   mateList.prepend(card);
+  ensureMateApplyForms();
   updateMateCount();
 }
 
@@ -2298,7 +2474,8 @@ function submitMatePost(event) {
   event.preventDefault();
 
   createMatePostCard({
-    date: mateDateInput?.value || "다음 홈경기",
+    date: mateDateInput?.value || dateInputValueAfter(7),
+    location: mateLocationInput?.value || "홈 경기",
     game: mateGameInput?.value || `${currentContext.team.opponent}전`,
     seat: mateSeatInput?.value || `${currentContext.team.city} 응원석`,
     style: mateStyleInput?.value || "초보 환영",
@@ -2481,6 +2658,8 @@ mateCloseButtons.forEach((button) => {
 
 mateCreateForm?.addEventListener("submit", submitMatePost);
 
+document.querySelector(".mate-list")?.addEventListener("submit", handleMateApplySubmit);
+
 dashboardCloseButtons.forEach((button) => {
   button.addEventListener("click", closeDashboardModal);
 });
@@ -2492,9 +2671,27 @@ document.querySelector("#club-view")?.addEventListener("click", (event) => {
     return;
   }
 
+  const eventBuilder = event.target.closest("[data-event-builder]");
+  if (eventBuilder) {
+    showEventBuilder(Number(eventBuilder.dataset.eventBuilder || 0));
+    return;
+  }
+
   const campaignBuilder = event.target.closest("[data-campaign-builder]");
   if (campaignBuilder) {
-    showCampaignBuilder(Number(campaignBuilder.dataset.campaignBuilder || 0));
+    showEventBuilder(Number(campaignBuilder.dataset.campaignBuilder || 0));
+    return;
+  }
+
+  const playerContext = event.target.closest("[data-player-context]");
+  if (playerContext) {
+    showPlayerContext(Number(playerContext.dataset.playerContext || 0));
+    return;
+  }
+
+  const matchdayOps = event.target.closest("[data-matchday-ops]");
+  if (matchdayOps) {
+    showMatchdayOps();
     return;
   }
 
@@ -2591,9 +2788,27 @@ dashboardModalBody?.addEventListener("click", (event) => {
     return;
   }
 
+  const eventBuilder = event.target.closest("[data-event-builder]");
+  if (eventBuilder) {
+    showEventBuilder(Number(eventBuilder.dataset.eventBuilder || 0));
+    return;
+  }
+
   const campaignBuilder = event.target.closest("[data-campaign-builder]");
   if (campaignBuilder) {
-    showCampaignBuilder(Number(campaignBuilder.dataset.campaignBuilder || 0));
+    showEventBuilder(Number(campaignBuilder.dataset.campaignBuilder || 0));
+    return;
+  }
+
+  const playerContext = event.target.closest("[data-player-context]");
+  if (playerContext) {
+    showPlayerContext(Number(playerContext.dataset.playerContext || 0));
+    return;
+  }
+
+  const matchdayOps = event.target.closest("[data-matchday-ops]");
+  if (matchdayOps) {
+    showMatchdayOps();
     return;
   }
 
@@ -2615,9 +2830,15 @@ dashboardModalBody?.addEventListener("click", (event) => {
     return;
   }
 
+  const saveEvent = event.target.closest("[data-save-event-builder]");
+  if (saveEvent) {
+    appendModalOutput(createEventAsset(Number(saveEvent.dataset.saveEventBuilder || 0)));
+    return;
+  }
+
   const saveCampaign = event.target.closest("[data-save-campaign-builder]");
   if (saveCampaign) {
-    appendModalOutput(createCampaignAsset(Number(saveCampaign.dataset.saveCampaignBuilder || 0)));
+    appendModalOutput(createEventAsset(Number(saveCampaign.dataset.saveCampaignBuilder || 0)));
     return;
   }
 
@@ -2630,6 +2851,12 @@ dashboardModalBody?.addEventListener("click", (event) => {
   const saveVoice = event.target.closest("[data-save-fan-voice-report]");
   if (saveVoice) {
     appendModalOutput(createFanVoiceAsset(saveVoice.dataset.saveFanVoiceReport));
+    return;
+  }
+
+  const savePerformance = event.target.closest("[data-save-performance-report]");
+  if (savePerformance) {
+    appendModalOutput(createPerformanceAsset(savePerformance.dataset.savePerformanceReport));
     return;
   }
 
