@@ -1131,6 +1131,254 @@ button {
   color: rgba(255, 255, 255, 0.72);
 }
 
+.revenue-opportunity-panel {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(31, 37, 40, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(245, 197, 66, 0.14), rgba(255, 255, 255, 0)),
+    #fff;
+  box-shadow: 0 8px 24px rgba(31, 37, 40, 0.07);
+}
+
+.revenue-opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.revenue-opportunity-card {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+  min-height: 16rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(31, 37, 40, 0.1);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fff;
+}
+
+.opportunity-topline {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.opportunity-topline span,
+.opportunity-proof,
+.opportunity-detail-grid span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.opportunity-topline strong {
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.opportunity-proof {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.opportunity-detail-grid {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.opportunity-detail-grid div {
+  min-width: 0;
+  padding: 0.55rem;
+  border-radius: 8px;
+  background: #f8faf8;
+}
+
+.opportunity-detail-grid span,
+.opportunity-detail-grid strong {
+  display: block;
+}
+
+.opportunity-detail-grid strong {
+  margin-top: 0.18rem;
+  overflow-wrap: anywhere;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+
+.opportunity-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+  margin-top: auto;
+}
+
+.opportunity-actions button {
+  min-width: 0;
+  min-height: 2.3rem;
+  padding: 0 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.opportunity-actions button:first-child {
+  border-color: transparent;
+  color: #fff;
+  background: var(--ink);
+}
+
+.dashboard-command-panel {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(31, 37, 40, 0.1);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(31, 37, 40, 0.07);
+}
+
+.dashboard-menu-tabs {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.dashboard-menu-tab {
+  min-width: 0;
+  min-height: 2.7rem;
+  padding: 0 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background: #f8faf8;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: normal;
+}
+
+.dashboard-menu-tab.active {
+  border-color: rgba(138, 21, 56, 0.28);
+  color: #fff;
+  background: var(--ink);
+}
+
+.dashboard-menu-tab:hover,
+.dashboard-menu-tab:focus-visible {
+  outline: none;
+  border-color: rgba(138, 21, 56, 0.32);
+  box-shadow: 0 8px 20px rgba(138, 21, 56, 0.1);
+}
+
+.club-menu-board {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: 0.85rem;
+  align-items: stretch;
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.menu-board-copy {
+  min-width: 0;
+}
+
+.menu-board-copy h3,
+.menu-board-copy p {
+  margin: 0;
+}
+
+.menu-board-copy h3 {
+  font-size: clamp(1.25rem, 3vw, 1.7rem);
+  line-height: 1.12;
+}
+
+.menu-board-copy p {
+  margin-top: 0.55rem;
+  color: #3f484d;
+  line-height: 1.55;
+}
+
+.menu-board-action {
+  margin-top: 0.85rem;
+}
+
+.menu-kpi-grid {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.menu-kpi-grid div {
+  min-width: 0;
+  padding: 0.72rem;
+  border: 1px solid rgba(31, 37, 40, 0.09);
+  border-radius: 8px;
+  background: #f8faf8;
+}
+
+.menu-kpi-grid span,
+.menu-kpi-grid small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.menu-kpi-grid strong {
+  display: block;
+  margin: 0.22rem 0;
+  overflow-wrap: anywhere;
+  font-size: 1.08rem;
+  line-height: 1.15;
+}
+
+.menu-workflow-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: dashboard-menu-flow;
+}
+
+.menu-workflow-list li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: start;
+  min-width: 0;
+  padding: 0.72rem;
+  border: 1px solid rgba(31, 37, 40, 0.09);
+  border-radius: 8px;
+  color: #3f484d;
+  background: #fff;
+  line-height: 1.42;
+}
+
+.menu-workflow-list li::before {
+  counter-increment: dashboard-menu-flow;
+  content: counter(dashboard-menu-flow);
+  display: grid;
+  width: 1.55rem;
+  height: 1.55rem;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
 .metric-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1562,6 +1810,112 @@ button {
   line-height: 1.45;
 }
 
+.builder-flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.45rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: builder-flow;
+}
+
+.builder-flow li {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 0.72rem;
+  border: 1px solid rgba(31, 37, 40, 0.1);
+  border-radius: 8px;
+  color: #3f484d;
+  background: #f8faf8;
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.builder-flow li::before {
+  counter-increment: builder-flow;
+  content: counter(builder-flow);
+  display: grid;
+  width: 1.55rem;
+  height: 1.55rem;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.builder-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.builder-form-grid label {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.builder-form-grid label.full {
+  grid-column: span 2;
+}
+
+.builder-form-grid label > span {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.builder-form-grid input,
+.builder-form-grid select,
+.builder-form-grid textarea {
+  width: 100%;
+  min-height: 2.65rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.builder-form-grid textarea {
+  resize: vertical;
+  line-height: 1.45;
+}
+
+.voice-category-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.voice-category-grid button {
+  min-width: 0;
+  min-height: 2.35rem;
+  padding: 0 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.voice-category-grid button.active {
+  border-color: rgba(138, 21, 56, 0.28);
+  color: #fff;
+  background: var(--ink);
+}
+
 .modal-actions {
   display: flex;
   justify-content: flex-end;
@@ -1815,8 +2169,26 @@ button {
   .metric-grid,
   .dashboard-grid,
   .action-menu-grid,
-  .league-team-grid {
+  .league-team-grid,
+  .revenue-opportunity-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-menu-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .builder-flow,
+  .voice-category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .club-menu-board {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-kpi-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .dashboard-card.wide,
@@ -1871,12 +2243,19 @@ button {
   .form-grid,
   .modal-detail-grid,
   .modal-stat-grid,
+  .dashboard-menu-tabs,
+  .menu-kpi-grid,
+  .revenue-opportunity-grid,
+  .builder-flow,
+  .builder-form-grid,
+  .voice-category-grid,
   .action-menu-grid,
   .league-team-grid {
     grid-template-columns: 1fr;
   }
 
-  .form-grid label.full {
+  .form-grid label.full,
+  .builder-form-grid label.full {
     grid-column: auto;
   }
 
@@ -1903,6 +2282,10 @@ button {
   }
 
   .asset-item {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity-actions {
     grid-template-columns: 1fr;
   }
 
