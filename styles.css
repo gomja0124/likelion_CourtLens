@@ -1754,8 +1754,57 @@ button {
   grid-column: span 3;
 }
 
+.ai-strategy-card {
+  grid-column: span 3;
+}
+
 .asset-vault-card {
   grid-column: span 3;
+}
+
+.ai-strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.ai-strategy-grid div {
+  min-width: 0;
+  padding: 0.9rem;
+  border: 1px solid rgba(31, 37, 40, 0.1);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.ai-strategy-grid span,
+.ai-strategy-grid strong,
+.ai-strategy-grid p {
+  display: block;
+}
+
+.ai-strategy-grid span {
+  color: var(--teal);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.ai-strategy-grid strong {
+  margin-top: 0.35rem;
+  line-height: 1.2;
+}
+
+.ai-strategy-grid p {
+  margin: 0.42rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.38;
+}
+
+.ai-strategy-card .secondary-action {
+  margin-top: 0.85rem;
 }
 
 .action-menu-grid {
@@ -2265,6 +2314,7 @@ button {
   .dashboard-grid,
   .action-menu-grid,
   .league-team-grid,
+  .ai-strategy-grid,
   .dashboard-axis-panel,
   .revenue-opportunity-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2290,6 +2340,7 @@ button {
 
   .dashboard-card.wide,
   .action-menu-card,
+  .ai-strategy-card,
   .asset-vault-card {
     grid-column: span 2;
   }
@@ -2348,6 +2399,7 @@ button {
   .builder-form-grid,
   .voice-category-grid,
   .action-menu-grid,
+  .ai-strategy-grid,
   .league-team-grid,
   .dashboard-axis-panel {
     grid-template-columns: 1fr;

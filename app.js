@@ -1150,7 +1150,7 @@ function dashboardSectionModel(context = currentContext) {
     playbook: {
       kicker: "Revenue Playbook",
       title: "Revenue Playbook",
-      copy: "팬 반응을 단기성 이벤트, 라운드 이벤트, 장기 프랜차이즈 마케팅으로 번역해 우선순위화합니다.",
+      copy: "AI Strategy Engine이 팬 반응을 단기성 이벤트, 라운드 이벤트, 장기 프랜차이즈 마케팅으로 번역해 우선순위화합니다.",
       kpis: [
         ["매출 기회", `${opportunityCount}개`, "Top 3 추천"],
         ["예매 클릭", "128건", "대표 이벤트 예상"],
@@ -1158,6 +1158,7 @@ function dashboardSectionModel(context = currentContext) {
       ],
       workflow: [
         "팬 반응 급상승 장면 확인",
+        "GPT-5.4 mini/nano로 후보를 분류하고 GPT-5.5로 전략 초안 생성",
         "Event Builder로 단기 이벤트 또는 라운드 이벤트 초안 생성",
         "필요 시 Sponsor Package Builder로 스폰서 제안서 파생",
       ],
@@ -2052,6 +2053,39 @@ function showMatchdayOps() {
   });
 }
 
+function showAiStrategyDecision() {
+  openDashboardModal({
+    kicker: "AI Strategy Engine",
+    title: "구단에게 제공하는 AI 전략·이벤트 기획 방식",
+    subtitle: "팬 행동 데이터를 바로 게시 가능한 이벤트 브리프와 스폰서 제안서로 바꾸는 운영 의사결정 레이어입니다.",
+    body: `
+      <div class="modal-detail-grid">
+        <div class="modal-detail-card"><span>전략 생성</span><strong>GPT-5.5</strong></div>
+        <div class="modal-detail-card"><span>대량 분류</span><strong>GPT-5.4 mini/nano</strong></div>
+        <div class="modal-detail-card"><span>음성/자막</span><strong>gpt-4o-transcribe</strong></div>
+      </div>
+      <ol class="builder-flow" aria-label="AI 전략 생성 흐름">
+        <li>Fan Insight에서 선수별 반응, 하이라이트 저장·공유, 직관메이트 클릭, Fan Voice를 집계</li>
+        <li>Player Context DB와 경기 일정, 좌석/굿즈 재고, 스폰서 제약 조건을 함께 검색</li>
+        <li>GPT-5.4 mini/nano가 팬 의견과 행동 로그를 분류하고 매출 기회 후보를 점수화</li>
+        <li>GPT-5.5가 Top 3 기회, 이벤트 초안, 스폰서 패키지, Performance 개선안을 구조화</li>
+        <li>구단 담당자가 승인하면 팬 앱 이벤트 카드로 게시하고 ROI를 추적</li>
+      </ol>
+      <ul class="modal-list">
+        <li><strong>구단 제공 산출물</strong> 이번 주 매출 기회 Top 3, 이벤트 브리프, 대상 팬 세그먼트, CTA 문구, 노출 위치, 예상 KPI</li>
+        <li><strong>스폰서 산출물</strong> 대표 장면, 팬 반응 지표, 예상 노출 위치, 제안 문구가 포함된 스폰서 제안서 초안</li>
+        <li><strong>품질 관리</strong> RAG 기반 근거 첨부, 구조화 JSON 출력, 자동 게시 금지, 담당자 승인, 결과 로그 재학습</li>
+        <li><strong>모델 원칙</strong> MVP는 GPT-5.6 preview에 의존하지 않고, 정확도 검증 후 비용·지연이 낮은 모델로 단계적 전환</li>
+      </ul>
+      <div class="modal-action-row">
+        <button type="button" data-event-builder="0">Event Builder 열기</button>
+        <button type="button" data-sponsor-builder="0">스폰서 제안서 보기</button>
+        <button type="button" data-funnel-stage="ticket-cta">Performance 확인</button>
+      </div>
+    `,
+  });
+}
+
 function showContentPreview(index) {
   const content = [
     {
@@ -2695,6 +2729,12 @@ document.querySelector("#club-view")?.addEventListener("click", (event) => {
     return;
   }
 
+  const aiStrategy = event.target.closest("[data-ai-strategy]");
+  if (aiStrategy) {
+    showAiStrategyDecision();
+    return;
+  }
+
   const sponsorBuilder = event.target.closest("[data-sponsor-builder]");
   if (sponsorBuilder) {
     showSponsorBuilder(Number(sponsorBuilder.dataset.sponsorBuilder || 0));
@@ -2809,6 +2849,12 @@ dashboardModalBody?.addEventListener("click", (event) => {
   const matchdayOps = event.target.closest("[data-matchday-ops]");
   if (matchdayOps) {
     showMatchdayOps();
+    return;
+  }
+
+  const aiStrategy = event.target.closest("[data-ai-strategy]");
+  if (aiStrategy) {
+    showAiStrategyDecision();
     return;
   }
 
