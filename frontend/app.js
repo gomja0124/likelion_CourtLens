@@ -52,6 +52,16 @@ const TEAM_CONFIGS = {
         gameCount: 1,
       },
       {
+        player: { name: "박지훈", team: "대한민국", pcode: "kor-3", teamCode: "KR", position: "GD", backNumber: "3" },
+        records: { score: 0, ast: 0, rb: 1, threep: 0, stl: 0 },
+        gameCount: 1,
+      },
+      {
+        player: { name: "유기상", team: "대한민국", pcode: "kor-7", teamCode: "KR", position: "GD", backNumber: "7" },
+        records: { score: 2, ast: 0, rb: 1, threep: 0, stl: 0 },
+        gameCount: 1,
+      },
+      {
         player: { name: "문정현", team: "대한민국", pcode: "kor-12", teamCode: "KR", position: "FD", backNumber: "12" },
         records: { score: 0, ast: 0, rb: 1, threep: 0, stl: 0 },
         gameCount: 1,
@@ -59,6 +69,16 @@ const TEAM_CONFIGS = {
       {
         player: { name: "이승현", team: "대한민국", pcode: "kor-33", teamCode: "KR", position: "FD", backNumber: "33" },
         records: { score: 0, ast: 0, rb: 0, threep: 0, stl: 0 },
+        gameCount: 1,
+      },
+      {
+        player: { name: "이현중", team: "대한민국", pcode: "kor-23", teamCode: "KR", position: "FD", backNumber: "23" },
+        records: { score: 0, ast: 0, rb: 0, threep: 0, stl: 0 },
+        gameCount: 1,
+      },
+      {
+        player: { name: "다니엘 에디", team: "대한민국", pcode: "kor-36", teamCode: "KR", position: "C", backNumber: "36" },
+        records: { score: 0, ast: 0, rb: 1, threep: 0, stl: 1 },
         gameCount: 1,
       },
     ],
@@ -471,16 +491,16 @@ const FEATURED_FIBA_MATCH = {
     shortName: "KOR",
     name: "대한민국",
     fullName: "대한민국 남자농구 대표팀",
-    score: 65,
-    quarters: [15, 26, 24],
+    score: 80,
+    quarters: [25, 16, 24, 10, 5],
   },
   away: {
     code: "TPE",
     shortName: "TPE",
     name: "Chinese Taipei",
     fullName: "Chinese Taipei",
-    score: 49,
-    quarters: [13, 17, 19],
+    score: 82,
+    quarters: [17, 13, 19, 26, 7],
   },
   preGame: {
     title: "대한민국 vs Chinese Taipei 대표팀 응원",
@@ -503,7 +523,7 @@ const FEATURED_FIBA_MATCH = {
     title: "대한민국 vs Chinese Taipei",
     flow: ["My Team 선택", "경기 summary 확인", "Play-by-Play timeline 선택", "잘린 클립으로 핵심 장면 확인"],
     summary: [
-      "1Q~3Q play-by-play를 score, defensive rebound, turnover, foul cut point로 나눠 possession 단위 클립으로 연결했습니다.",
+      "1Q~4Q play-by-play를 score, defensive rebound, turnover, foul cut point로 나눠 possession 단위 클립으로 연결하고, OT1은 공식 timeline으로 표시했습니다.",
       "대한민국 대표팀 장면은 KBL 구단 카드와 같은 UI 틀에서 팀 컬러만 대표팀 톤으로 바꿔 보여줍니다.",
       "여준석, 장재석, 이우석, 최준용, 이정현의 득점·리바운드·파울 유도 장면이 대표팀 입덕패스의 핵심 재료입니다.",
     ],
@@ -519,7 +539,7 @@ const FEATURED_FIBA_MATCH = {
         teamCode: "KR",
         role: "대표팀 핵심 포워드",
         line: "득점 · 수비 리바운드 · 페인트존 마무리",
-        reason: "1Q~3Q possession 클립에서 수비 리바운드와 득점 연결 장면이 반복적으로 등장",
+        reason: "1Q~4Q possession 클립에서 수비 리바운드와 득점 연결 장면이 반복적으로 등장",
       },
       {
         pcode: "kor-31",
@@ -547,8 +567,12 @@ const FEATURED_FIBA_MATCH = {
       ["kor-2", "최준용", "FD", "2", 3, 0, 1, 1, 0, 0, "10:00", 0],
       ["kor-6", "이정현", "GD", "6", 3, 0, 1, 1, 0, 0, "10:00", 0],
       ["kor-5", "변준형", "GD", "5", 0, 0, 1, 0, 0, 0, "10:00", 0],
+      ["kor-3", "박지훈", "GD", "3", 0, 1, 0, 0, 0, 0, "10:00", 0],
+      ["kor-7", "유기상", "GD", "7", 2, 1, 0, 0, 0, 0, "10:00", 0],
       ["kor-12", "문정현", "FD", "12", 0, 1, 0, 0, 0, 0, "10:00", 0],
       ["kor-33", "이승현", "FD", "33", 0, 0, 0, 0, 0, 0, "10:00", 0],
+      ["kor-23", "이현중", "FD", "23", 0, 0, 0, 0, 0, 0, "00:00", 0],
+      ["kor-36", "다니엘 에디", "C", "36", 0, 1, 0, 0, 1, 0, "10:00", 0],
     ],
   },
   inactivePlayers: {},
@@ -8141,11 +8165,18 @@ let isGeneratingHighlight = false;
 let generatedAssetSequence = 1;
 let activeDashboardSection = "fan-insight";
 let activePbpClip = null;
+let authenticatedUser = null;
 const generatedAssets = [];
 
 const BASE_CLIP_COUNT = 12;
-const PBP_QUARTERS = ["Q1", "Q2", "Q3", "Q4"];
+const PBP_QUARTERS = ["Q1", "Q2", "Q3", "Q4", "OT1"];
 let selectedPbpQuarter = "Q1";
+const PBP_CLIP_DIRECTORIES = {
+  "Q1": "./q1_cutpoint_segmentss",
+  "Q2": "./q2_cutpoint_segmentss",
+  "Q3": "./q3_cutpoint_segmentss",
+  "Q4": "./q4_cutpoint_segmentss"
+};
 const PBP_CLIPS_BY_QUARTER = {
   "Q1": [
     {
@@ -9340,17 +9371,512 @@ const PBP_CLIPS_BY_QUARTER = {
       "startEvent": "31 Jaeseok Jang turnover; bad pass",
       "endEvent": "7 Ai-Che Yu foul drawn / 7 Kisang Yu Personal foul"
     }
+  ],
+  "Q4": [
+    {
+      "id": 1,
+      "quarter": "Q4",
+      "clock": "09:46_to_09:37/09:37",
+      "start": 10,
+      "end": 35,
+      "duration": 25,
+      "startType": "turnover",
+      "endType": "foul",
+      "startEvent": "22 Jun Seok Yeo turnover; travelling",
+      "endEvent": "9 Ying-Chun Chen foul drawn / 7 Kisang Yu Personal foul"
+    },
+    {
+      "id": 2,
+      "quarter": "Q4",
+      "clock": "09:37/09:37_to_09:25",
+      "start": 35,
+      "end": 72,
+      "duration": 37,
+      "startType": "foul",
+      "endType": "score",
+      "startEvent": "9 Ying-Chun Chen foul drawn / 7 Kisang Yu Personal foul",
+      "endEvent": "9 Ying-Chun Chen | +2 | 2PtsFG under the basket, points after turnover, driving layup made"
+    },
+    {
+      "id": 3,
+      "quarter": "Q4",
+      "clock": "09:25_to_09:07",
+      "start": 72,
+      "end": 90,
+      "duration": 18,
+      "startType": "score",
+      "endType": "defensive_rebound",
+      "startEvent": "9 Ying-Chun Chen | +2 | 2PtsFG under the basket, points after turnover, driving layup made",
+      "endEvent": "1 Bachir Gadiaga defensive rebound"
+    },
+    {
+      "id": 4,
+      "quarter": "Q4",
+      "clock": "09:07_to_08:59",
+      "start": 90,
+      "end": 98,
+      "duration": 8,
+      "startType": "defensive_rebound",
+      "endType": "score",
+      "startEvent": "1 Bachir Gadiaga defensive rebound",
+      "endEvent": "9 Ying-Chun Chen | +2 | 2pt step back jump shot made"
+    },
+    {
+      "id": 5,
+      "quarter": "Q4",
+      "clock": "08:59_to_08:35",
+      "start": 98,
+      "end": 122,
+      "duration": 24,
+      "startType": "score",
+      "endType": "turnover",
+      "startEvent": "9 Ying-Chun Chen | +2 | 2pt step back jump shot made",
+      "endEvent": "3 Jihoon Park turnover; ball handling"
+    },
+    {
+      "id": 6,
+      "quarter": "Q4",
+      "clock": "08:35_to_08:29",
+      "start": 122,
+      "end": 128,
+      "duration": 6,
+      "startType": "turnover",
+      "endType": "score",
+      "startEvent": "3 Jihoon Park turnover; ball handling",
+      "endEvent": "9 Ying-Chun Chen | +3 | 3PtsFG outside left, points from fastbreak + after turnover, jump shot made"
+    },
+    {
+      "id": 7,
+      "quarter": "Q4",
+      "clock": "08:29_to_08:15/08:15",
+      "start": 128,
+      "end": 235,
+      "duration": 107,
+      "startType": "score",
+      "endType": "foul",
+      "startEvent": "9 Ying-Chun Chen | +3 | 3PtsFG outside left, points from fastbreak + after turnover, jump shot made",
+      "endEvent": "22 Jun Seok Yeo foul drawn / 7 Ai-Che Yu Personal foul"
+    },
+    {
+      "id": 8,
+      "quarter": "Q4",
+      "clock": "08:15/08:15_to_08:10/08:10",
+      "start": 235,
+      "end": 260,
+      "duration": 25,
+      "startType": "foul",
+      "endType": "foul",
+      "startEvent": "22 Jun Seok Yeo foul drawn / 7 Ai-Che Yu Personal foul",
+      "endEvent": "31 Jaeseok Jang foul drawn / 9 Ying-Chun Chen Personal foul"
+    },
+    {
+      "id": 9,
+      "quarter": "Q4",
+      "clock": "08:10/08:10_to_07:55",
+      "start": 260,
+      "end": 303,
+      "duration": 43,
+      "startType": "foul",
+      "endType": "score",
+      "startEvent": "31 Jaeseok Jang foul drawn / 9 Ying-Chun Chen Personal foul",
+      "endEvent": "11 Woosuk Lee | +2 | 2PtsFG under the basket, layup made"
+    },
+    {
+      "id": 10,
+      "quarter": "Q4",
+      "clock": "07:55_to_07:48",
+      "start": 303,
+      "end": 310,
+      "duration": 7,
+      "startType": "score",
+      "endType": "score",
+      "startEvent": "11 Woosuk Lee | +2 | 2PtsFG under the basket, layup made",
+      "endEvent": "1 Bachir Gadiaga | +2 | 2PtsFG under the basket, fast break, driving layup made"
+    },
+    {
+      "id": 11,
+      "quarter": "Q4",
+      "clock": "07:48_to_07:40/07:40",
+      "start": 310,
+      "end": 318,
+      "duration": 8,
+      "startType": "score",
+      "endType": "score;foul",
+      "startEvent": "1 Bachir Gadiaga | +2 | 2PtsFG under the basket, fast break, driving layup made",
+      "endEvent": "9 Ying-Chun Chen | +1 | 1st free throw made / 5 Junhyeong Byeon Technical foul; 1 free throw awarded"
+    },
+    {
+      "id": 12,
+      "quarter": "Q4",
+      "clock": "07:40/07:40_to_07:27",
+      "start": 318,
+      "end": 391,
+      "duration": 73,
+      "startType": "score;foul",
+      "endType": "turnover",
+      "startEvent": "9 Ying-Chun Chen | +1 | 1st free throw made / 5 Junhyeong Byeon Technical foul; 1 free throw awarded",
+      "endEvent": "2 Junyong Choi turnover; ball handling"
+    },
+    {
+      "id": 13,
+      "quarter": "Q4",
+      "clock": "07:27_to_07:21",
+      "start": 391,
+      "end": 395,
+      "duration": 4,
+      "startType": "turnover",
+      "endType": "score",
+      "startEvent": "2 Junyong Choi turnover; ball handling",
+      "endEvent": "1 Bachir Gadiaga | +2 | 2PtsFG under the basket, points from fastbreak + after turnover, driving layup made"
+    },
+    {
+      "id": 14,
+      "quarter": "Q4",
+      "clock": "07:21_to_07:06",
+      "start": 395,
+      "end": 410,
+      "duration": 15,
+      "startType": "score",
+      "endType": "score",
+      "startEvent": "1 Bachir Gadiaga | +2 | 2PtsFG under the basket, points from fastbreak + after turnover, driving layup made",
+      "endEvent": "33 Seounghyun Lee | +2 | 2PtsFG inside center, jump shot made"
+    },
+    {
+      "id": 15,
+      "quarter": "Q4",
+      "clock": "07:06_to_06:43",
+      "start": 410,
+      "end": 434,
+      "duration": 24,
+      "startType": "score",
+      "endType": "turnover",
+      "startEvent": "33 Seounghyun Lee | +2 | 2PtsFG inside center, jump shot made",
+      "endEvent": "34 Brandon Gilbeck turnover; bad pass"
+    },
+    {
+      "id": 16,
+      "quarter": "Q4",
+      "clock": "06:43_to_06:26",
+      "start": 434,
+      "end": 461,
+      "duration": 27,
+      "startType": "turnover",
+      "endType": "turnover",
+      "startEvent": "34 Brandon Gilbeck turnover; bad pass",
+      "endEvent": "22 Jun Seok Yeo turnover; ball handling"
+    },
+    {
+      "id": 17,
+      "quarter": "Q4",
+      "clock": "06:26_to_06:19/06:19/06:19",
+      "start": 461,
+      "end": 484,
+      "duration": 23,
+      "startType": "turnover",
+      "endType": "foul;turnover;foul",
+      "startEvent": "22 Jun Seok Yeo turnover; ball handling",
+      "endEvent": "5 Junhyeong Byeon foul drawn / 34 Brandon Gilbeck turnover / 34 Brandon Gilbeck Offensive foul"
+    },
+    {
+      "id": 18,
+      "quarter": "Q4",
+      "clock": "06:19/06:19/06:19_to_06:01",
+      "start": 484,
+      "end": 536,
+      "duration": 52,
+      "startType": "foul;turnover;foul",
+      "endType": "turnover",
+      "startEvent": "5 Junhyeong Byeon foul drawn / 34 Brandon Gilbeck turnover / 34 Brandon Gilbeck Offensive foul",
+      "endEvent": "5 Junhyeong Byeon 2PtsFG under the basket, points after turnover, layup missed"
+    },
+    {
+      "id": 19,
+      "quarter": "Q4",
+      "clock": "06:01_to_05:58",
+      "start": 536,
+      "end": 540,
+      "duration": 4,
+      "startType": "turnover",
+      "endType": "defensive_rebound",
+      "startEvent": "5 Junhyeong Byeon 2PtsFG under the basket, points after turnover, layup missed",
+      "endEvent": "34 Brandon Gilbeck defensive rebound"
+    },
+    {
+      "id": 20,
+      "quarter": "Q4",
+      "clock": "05:58_to_05:49",
+      "start": 540,
+      "end": 549,
+      "duration": 9,
+      "startType": "defensive_rebound",
+      "endType": "defensive_rebound",
+      "startEvent": "34 Brandon Gilbeck defensive rebound",
+      "endEvent": "33 Seounghyun Lee defensive rebound"
+    },
+    {
+      "id": 21,
+      "quarter": "Q4",
+      "clock": "05:49_to_05:30",
+      "start": 549,
+      "end": 568,
+      "duration": 19,
+      "startType": "defensive_rebound",
+      "endType": "defensive_rebound",
+      "startEvent": "33 Seounghyun Lee defensive rebound",
+      "endEvent": "7 Ai-Che Yu defensive rebound"
+    },
+    {
+      "id": 22,
+      "quarter": "Q4",
+      "clock": "05:30_to_05:10",
+      "start": 568,
+      "end": 588,
+      "duration": 20,
+      "startType": "defensive_rebound",
+      "endType": "defensive_rebound",
+      "startEvent": "7 Ai-Che Yu defensive rebound",
+      "endEvent": "33 Seounghyun Lee defensive rebound"
+    },
+    {
+      "id": 23,
+      "quarter": "Q4",
+      "clock": "05:10_to_04:49",
+      "start": 588,
+      "end": 609,
+      "duration": 21,
+      "startType": "defensive_rebound",
+      "endType": "defensive_rebound",
+      "startEvent": "33 Seounghyun Lee defensive rebound",
+      "endEvent": "7 Ai-Che Yu defensive rebound"
+    },
+    {
+      "id": 24,
+      "quarter": "Q4",
+      "clock": "04:49_to_04:47/04:47/04:47/04:47",
+      "start": 609,
+      "end": 611,
+      "duration": 2,
+      "startType": "defensive_rebound",
+      "endType": "score;foul;foul;score",
+      "startEvent": "7 Ai-Che Yu defensive rebound",
+      "endEvent": "2 Riven Ma | +1 | 1st free throw made / 2 Riven Ma foul drawn / 33 Seounghyun Lee Personal foul; 1 free throw awarded / 2 Riven Ma | +2 | 2PtsFG under the basket, fast break, layup made"
+    },
+    {
+      "id": 25,
+      "quarter": "Q4",
+      "clock": "04:47/04:47/04:47/04:47_to_04:13",
+      "start": 611,
+      "end": 700,
+      "duration": 89,
+      "startType": "score;foul;foul;score",
+      "endType": "defensive_rebound",
+      "startEvent": "2 Riven Ma | +1 | 1st free throw made / 2 Riven Ma foul drawn / 33 Seounghyun Lee Personal foul; 1 free throw awarded / 2 Riven Ma | +2 | 2PtsFG under the basket, fast break, layup made",
+      "endEvent": "team defensive rebound"
+    },
+    {
+      "id": 26,
+      "quarter": "Q4",
+      "clock": "04:13_to_03:50",
+      "start": 700,
+      "end": 750,
+      "duration": 50,
+      "startType": "defensive_rebound",
+      "endType": "defensive_rebound",
+      "startEvent": "team defensive rebound",
+      "endEvent": "2 Junyong Choi defensive rebound"
+    },
+    {
+      "id": 27,
+      "quarter": "Q4",
+      "clock": "03:50_to_03:29",
+      "start": 750,
+      "end": 770,
+      "duration": 20,
+      "startType": "defensive_rebound",
+      "endType": "defensive_rebound",
+      "startEvent": "2 Junyong Choi defensive rebound",
+      "endEvent": "34 Brandon Gilbeck defensive rebound"
+    },
+    {
+      "id": 28,
+      "quarter": "Q4",
+      "clock": "03:29_to_03:19",
+      "start": 770,
+      "end": 780,
+      "duration": 10,
+      "startType": "defensive_rebound",
+      "endType": "score",
+      "startEvent": "34 Brandon Gilbeck defensive rebound",
+      "endEvent": "7 Ai-Che Yu | +2 | 2PtsFG under the basket, driving layup made"
+    },
+    {
+      "id": 29,
+      "quarter": "Q4",
+      "clock": "03:19_to_02:51",
+      "start": 780,
+      "end": 808,
+      "duration": 28,
+      "startType": "score",
+      "endType": "defensive_rebound",
+      "startEvent": "7 Ai-Che Yu | +2 | 2PtsFG under the basket, driving layup made",
+      "endEvent": "1 Bachir Gadiaga defensive rebound"
+    },
+    {
+      "id": 30,
+      "quarter": "Q4",
+      "clock": "02:51_to_02:38",
+      "start": 808,
+      "end": 821,
+      "duration": 13,
+      "startType": "defensive_rebound",
+      "endType": "score",
+      "startEvent": "1 Bachir Gadiaga defensive rebound",
+      "endEvent": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket, dunk made"
+    },
+    {
+      "id": 31,
+      "quarter": "Q4",
+      "clock": "02:38_to_02:21/02:21",
+      "start": 821,
+      "end": 838,
+      "duration": 17,
+      "startType": "score",
+      "endType": "foul",
+      "startEvent": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket, dunk made",
+      "endEvent": "6 Junghyun Lee foul drawn / 7 Ai-Che Yu Personal foul"
+    },
+    {
+      "id": 32,
+      "quarter": "Q4",
+      "clock": "02:21/02:21_to_01:50",
+      "start": 838,
+      "end": 946,
+      "duration": 108,
+      "startType": "foul",
+      "endType": "defensive_rebound",
+      "startEvent": "6 Junghyun Lee foul drawn / 7 Ai-Che Yu Personal foul",
+      "endEvent": "1 Bachir Gadiaga defensive rebound"
+    },
+    {
+      "id": 33,
+      "quarter": "Q4",
+      "clock": "01:50_to_01:27",
+      "start": 946,
+      "end": 972,
+      "duration": 26,
+      "startType": "defensive_rebound",
+      "endType": "score",
+      "startEvent": "1 Bachir Gadiaga defensive rebound",
+      "endEvent": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket made"
+    },
+    {
+      "id": 34,
+      "quarter": "Q4",
+      "clock": "01:27_to_01:14",
+      "start": 972,
+      "end": 985,
+      "duration": 13,
+      "startType": "score",
+      "endType": "turnover",
+      "startEvent": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket made",
+      "endEvent": "11 Woosuk Lee turnover; ball handling"
+    },
+    {
+      "id": 35,
+      "quarter": "Q4",
+      "clock": "01:14_to_01:03/01:02/01:02/01:02",
+      "start": 985,
+      "end": 996,
+      "duration": 11,
+      "startType": "turnover",
+      "endType": "defensive_rebound;foul;foul;score",
+      "startEvent": "11 Woosuk Lee turnover; ball handling",
+      "endEvent": "11 Woosuk Lee defensive rebound / 11 Woosuk Lee foul drawn / 9 Ying-Chun Chen Personal foul; 1 free throw awarded / 11 Woosuk Lee | +2 | 2PtsFG under the basket, fast break, driving layup made"
+    },
+    {
+      "id": 36,
+      "quarter": "Q4",
+      "clock": "01:03/01:02/01:02/01:02_to_01:01",
+      "start": 996,
+      "end": 998,
+      "duration": 2,
+      "startType": "defensive_rebound;foul;foul;score",
+      "endType": "score",
+      "startEvent": "11 Woosuk Lee defensive rebound / 11 Woosuk Lee foul drawn / 9 Ying-Chun Chen Personal foul; 1 free throw awarded / 11 Woosuk Lee | +2 | 2PtsFG under the basket, fast break, driving layup made",
+      "endEvent": "11 Woosuk Lee | +1 | 1st free throw made"
+    }
   ]
+};
+
+const PBP_TIMELINE_ONLY_BY_QUARTER = {
+  "OT1": [
+    { id: 1, quarter: "OT1", clock: "00:00", score: "80 - 82", event: "END OF GAME" },
+    { id: 2, quarter: "OT1", clock: "00:00", score: "80 - 82", event: "END OF PERIOD" },
+    { id: 3, quarter: "OT1", clock: "00:00", score: "80 - 82", event: "31 Jaeseok Jang 3pt jump shot missed" },
+    { id: 4, quarter: "OT1", clock: "00:01", score: "80 - 82", event: "31 Jaeseok Jang offensive rebound" },
+    { id: 5, quarter: "OT1", clock: "00:04", score: "80 - 82", event: "34 Brandon Gilbeck blocked the shot" },
+    { id: 6, quarter: "OT1", clock: "00:04", score: "80 - 82", event: "6 Junghyun Lee 2PtsFG under the basket, driving layup missed" },
+    { id: 7, quarter: "OT1", clock: "00:20", score: "80 - 82", event: "22 Jun Seok Yeo defensive rebound" },
+    { id: 8, quarter: "OT1", clock: "00:20", score: "80 - 82", event: "34 Brandon Gilbeck 2nd of 2 free throws missed" },
+    { id: 9, quarter: "OT1", clock: "00:20", score: "80 - 82", event: "34 Brandon Gilbeck | +1 | 1st of 2 free throws made" },
+    { id: 10, quarter: "OT1", clock: "00:20", score: "80 - 81", event: "34 Brandon Gilbeck foul drawn" },
+    { id: 11, quarter: "OT1", clock: "00:20", score: "80 - 81", event: "31 Jaeseok Jang Personal foul; 2 free throws awarded" },
+    { id: 12, quarter: "OT1", clock: "00:21", score: "80 - 81", event: "34 Brandon Gilbeck defensive rebound" },
+    { id: 13, quarter: "OT1", clock: "00:24", score: "80 - 81", event: "6 Junghyun Lee 3pt jump shot from center missed" },
+    { id: 14, quarter: "OT1", clock: "00:39", score: "80 - 81", event: "2 Riven Ma | +2 | 2PtsFG under the basket, points after turnover, layup made" },
+    { id: 15, quarter: "OT1", clock: "00:57", score: "80 - 79", event: "6 Junghyun Lee turnover; ball handling" },
+    { id: 16, quarter: "OT1", clock: "01:07", score: "80 - 79", event: "5 Junhyeong Byeon defensive rebound" },
+    { id: 17, quarter: "OT1", clock: "01:11", score: "80 - 79", event: "1 Bachir Gadiaga 2pt hook shot missed" },
+    { id: 18, quarter: "OT1", clock: "01:30", score: "80 - 79", event: "6 Junghyun Lee | +1 | 2nd of 2 free throws made" },
+    { id: 19, quarter: "OT1", clock: "01:30", score: "79 - 79", event: "6 Junghyun Lee | +1 | 1st of 2 free throws made" },
+    { id: 20, quarter: "OT1", clock: "01:30", score: "78 - 79", event: "6 Junghyun Lee | IN" },
+    { id: 21, quarter: "OT1", clock: "01:30", score: "78 - 79", event: "11 Woosuk Lee | OUT" },
+    { id: 22, quarter: "OT1", clock: "01:30", score: "78 - 79", event: "11 Woosuk Lee foul drawn" },
+    { id: 23, quarter: "OT1", clock: "01:30", score: "78 - 79", event: "7 Ai-Che Yu Personal foul; 2 free throws awarded" },
+    { id: 24, quarter: "OT1", clock: "01:34", score: "78 - 79", event: "2 Junyong Choi defensive rebound" },
+    { id: 25, quarter: "OT1", clock: "01:39", score: "78 - 79", event: "0 Benson Lin 2pt pullup jump shot missed" },
+    { id: 26, quarter: "OT1", clock: "01:59", score: "78 - 79", event: "34 Brandon Gilbeck defensive rebound" },
+    { id: 27, quarter: "OT1", clock: "02:02", score: "78 - 79", event: "5 Junhyeong Byeon 3pt jump shot missed" },
+    { id: 28, quarter: "OT1", clock: "02:29", score: "78 - 79", event: "34 Brandon Gilbeck made the assist" },
+    { id: 29, quarter: "OT1", clock: "02:29", score: "78 - 79", event: "0 Benson Lin | +2 | 2pt floating jump shot made" },
+    { id: 30, quarter: "OT1", clock: "02:43", score: "78 - 77", event: "2 Junyong Choi | IN" },
+    { id: 31, quarter: "OT1", clock: "02:43", score: "78 - 77", event: "36 Daniel Edi | OUT" },
+    { id: 32, quarter: "OT1", clock: "02:44", score: "78 - 77", event: "team defensive rebound" },
+    { id: 33, quarter: "OT1", clock: "02:46", score: "78 - 77", event: "5 Junhyeong Byeon 3pt jump shot from center missed" },
+    { id: 34, quarter: "OT1", clock: "02:54", score: "78 - 77", event: "36 Daniel Edi defensive rebound" },
+    { id: 35, quarter: "OT1", clock: "03:00", score: "78 - 77", event: "0 Benson Lin 2PtsFG under the basket, floating jump shot missed" },
+    { id: 36, quarter: "OT1", clock: "03:14", score: "78 - 77", event: "5 Junhyeong Byeon made the assist" },
+    { id: 37, quarter: "OT1", clock: "03:14", score: "78 - 77", event: "22 Jun Seok Yeo | +2 | 2PtsFG under the basket, points after turnover, jump shot made" },
+    { id: 38, quarter: "OT1", clock: "03:30", score: "76 - 77", event: "5 Junhyeong Byeon steal" },
+    { id: 39, quarter: "OT1", clock: "03:30", score: "76 - 77", event: "1 Bachir Gadiaga turnover; ball handling" },
+    { id: 40, quarter: "OT1", clock: "03:50", score: "76 - 77", event: "31 Jaeseok Jang turnover; travelling" },
+    { id: 41, quarter: "OT1", clock: "03:52", score: "76 - 77", event: "31 Jaeseok Jang offensive rebound" },
+    { id: 42, quarter: "OT1", clock: "03:55", score: "76 - 77", event: "11 Woosuk Lee 3pt jump shot from center missed" },
+    { id: 43, quarter: "OT1", clock: "04:13", score: "76 - 77", event: "2 Riven Ma made the assist" },
+    { id: 44, quarter: "OT1", clock: "04:13", score: "76 - 77", event: "34 Brandon Gilbeck | +2 | 2PtsFG under the basket, alley oop dunk made" },
+    { id: 45, quarter: "OT1", clock: "04:24", score: "76 - 75", event: "11 Woosuk Lee made the assist" },
+    { id: 46, quarter: "OT1", clock: "04:24", score: "76 - 75", event: "22 Jun Seok Yeo | +1 | 2nd of 2 free throws made" },
+    { id: 47, quarter: "OT1", clock: "04:24", score: "75 - 75", event: "22 Jun Seok Yeo 1st of 2 free throws missed" },
+    { id: 48, quarter: "OT1", clock: "04:24", score: "75 - 75", event: "22 Jun Seok Yeo foul drawn" },
+    { id: 49, quarter: "OT1", clock: "04:24", score: "75 - 75", event: "2 Riven Ma Personal foul; 2 free throws awarded" },
+    { id: 50, quarter: "OT1", clock: "04:40", score: "75 - 75", event: "36 Daniel Edi steal" },
+    { id: 51, quarter: "OT1", clock: "04:40", score: "75 - 75", event: "7 Ai-Che Yu turnover; ball handling" },
+    { id: 52, quarter: "OT1", clock: "04:40", score: "75 - 75", event: "jump ball situation; throw-in" },
+    { id: 53, quarter: "OT1", clock: "05:00", score: "75 - 75", event: "START OF PERIOD" },
+  ],
 };
 
 const modeButtons = document.querySelectorAll(".mode-button");
 const fanView = document.querySelector("#fan-view");
 const clubView = document.querySelector("#club-view");
 const clipList = document.querySelector("#clip-list");
+const playByPlayPanel = document.querySelector(".play-by-play-panel");
 const pbpTimeline = document.querySelector("#pbp-timeline");
+const pbpMatchTitle = document.querySelector("#pbp-match-title");
 const pbpMatchCount = document.querySelector("#pbp-match-count");
 const pbpQuarterPill = document.querySelector("#pbp-quarter-pill");
 const pbpQuarterButtons = document.querySelectorAll(".pbp-quarter-button[data-pbp-quarter]");
+const pbpSideLabelItems = document.querySelectorAll(".pbp-side-labels span");
 const pbpVideoShell = document.querySelector("#pbp-video-shell");
 const pbpVideo = document.querySelector("#pbp-video");
 const pbpVideoTitle = document.querySelector("#pbp-video-title");
@@ -9382,6 +9908,8 @@ const profileCloseButtons = document.querySelectorAll("[data-close-profile]");
 const teamOptionList = document.querySelector(".team-option-list");
 const authForm = document.querySelector("#auth-form");
 const authStatus = document.querySelector("#auth-status");
+const authLoginButton = document.querySelector("#auth-login");
+const authRegisterButton = document.querySelector("#auth-register");
 const authLogoutButton = document.querySelector("#auth-logout");
 const mateCreateButtons = document.querySelectorAll("[data-open-mate-create]");
 const mateCreateModal = document.querySelector("#mate-create-modal");
@@ -9444,9 +9972,20 @@ function escapeHtml(value) {
 
 function formatPbpClock(clock) {
   const [rawStart = "", rawEnd = ""] = clock.split("_to_");
-  const firstStart = rawStart.split(" / ")[0] || rawStart;
-  const firstEnd = rawEnd.split(" / ")[0] || rawEnd;
-  return firstEnd ? `${firstStart} → ${firstEnd}` : firstStart;
+  const normalizeClockPart = (value) => {
+    const uniqueParts = [];
+    String(value)
+      .split("/")
+      .map((part) => part.trim())
+      .filter(Boolean)
+      .forEach((part) => {
+        if (!uniqueParts.includes(part)) uniqueParts.push(part);
+      });
+    return uniqueParts.join("/");
+  };
+  const start = normalizeClockPart(rawStart);
+  const end = normalizeClockPart(rawEnd);
+  return end ? `${start} → ${end}` : start;
 }
 
 function formatPbpType(type) {
@@ -9520,31 +10059,162 @@ function currentPbpClips() {
   return PBP_CLIPS_BY_QUARTER[selectedPbpQuarter] || [];
 }
 
+function currentPbpTimelineOnlyEvents() {
+  return PBP_TIMELINE_ONLY_BY_QUARTER[selectedPbpQuarter] || [];
+}
+
+function kblScheduleTimelineEvents(context = currentContext) {
+  const match = context?.match;
+  if (!match || hasPlayByPlayData(context)) return [];
+
+  const scoreText = match.isEnded
+    ? `${match.home.shortName} ${match.home.score} - ${match.away.score} ${match.away.shortName}`
+    : `${match.time || "시간 미정"} 예정`;
+  const sourceLabel = "KBL 공식 일정 timeline";
+
+  return [
+    {
+      clock: match.dateLabel || match.date || "일정 미정",
+      score: match.category || match.seasonName || seasonName,
+      event: `${match.home.name} vs ${match.away.name}`,
+      sourceLabel,
+      team: "neutral",
+    },
+    {
+      clock: match.time || "시간 미정",
+      score: match.venue || "경기장 미정",
+      event: match.isEnded ? `Final score ${scoreText}` : `${scoreText} · ${match.venue || "경기장 미정"}`,
+      sourceLabel,
+      team: "neutral",
+    },
+    {
+      clock: "KBL",
+      score: match.tv || "중계 정보 업데이트 예정",
+      event: `상세 play-by-play 클립은 대한민국 남자농구 대표팀 경기만 연결되어 있습니다. 그 외 경기는 ${KBL_SCHEDULE_SOURCE.page} 기준 일정 timeline만 표시합니다.`,
+      sourceLabel,
+      team: "neutral",
+    },
+  ];
+}
+
+function playByPlayMatchTitle(context = currentContext) {
+  const match = context?.match;
+  if (!match) return `${context?.team?.name || "선택 팀"} Play-by-Play`;
+  return `${match.home.name} vs ${match.away.name}`;
+}
+
+function hasPlayByPlayData(context = currentContext) {
+  return context?.team?.code === "KR" && context?.match?.id === FEATURED_FIBA_MATCH.id;
+}
+
+function pbpTimelineEventType(event) {
+  const lower = event.toLowerCase();
+  if (lower.includes("end of game") || lower.includes("end of period")) return "FINAL";
+  if (lower.includes("start of period")) return "START";
+  if (lower.includes("made") && !lower.includes("made the assist")) return "SCORE";
+  if (lower.includes("defensive rebound") || lower.includes("offensive rebound")) return "REB";
+  if (lower.includes("turnover")) return "TOV";
+  if (lower.includes("foul")) return "FOUL";
+  if (lower.includes("missed")) return "MISS";
+  if (lower.includes("steal")) return "STL";
+  if (lower.includes("blocked")) return "BLK";
+  if (lower.includes("assist")) return "AST";
+  return "EVENT";
+}
+
+function renderTimelineOnlyEvents(events) {
+  events.forEach((item) => {
+    const team = item.team || eventTeam(item.event);
+    const sourceLabel = item.sourceLabel || teamLabel(team);
+    const row = document.createElement("div");
+    row.className = `pbp-row pbp-row-static ${team}`;
+    row.dataset.pbpTeam = team;
+
+    const eventCard = document.createElement("span");
+    eventCard.className = `pbp-event ${team}`;
+    eventCard.innerHTML = `
+      <span class="pbp-before">${escapeHtml(item.score)}</span>
+      <strong>${escapeHtml(item.event)}</strong>
+      <small>${escapeHtml(sourceLabel)} · ${pbpTimelineEventType(item.event)} · 영상 클립 없음</small>
+    `;
+
+    const time = document.createElement("span");
+    time.className = "pbp-time";
+    time.innerHTML = `
+      <span class="pbp-clock">${escapeHtml(item.clock)}</span>
+      <span class="pbp-score-badge">${escapeHtml(item.score)}</span>
+    `;
+
+    row.append(eventCard, time);
+    pbpTimeline.append(row);
+  });
+}
+
 function renderPlayByPlayTimeline() {
   if (!pbpTimeline) return;
 
   pbpTimeline.innerHTML = "";
-  const clips = currentPbpClips();
+  const hasData = hasPlayByPlayData(currentContext);
+  const timelineOnlyEvents = hasData
+    ? currentPbpTimelineOnlyEvents()
+    : kblScheduleTimelineEvents(currentContext);
+  const clips = hasData && timelineOnlyEvents.length === 0 ? currentPbpClips() : [];
 
-  if (pbpQuarterPill) pbpQuarterPill.textContent = `FIBA ${selectedPbpQuarter}`;
-  if (pbpMatchCount) pbpMatchCount.textContent = `${selectedPbpQuarter} · ${clips.length} clips`;
+  if (playByPlayPanel) playByPlayPanel.classList.toggle("pbp-unavailable", false);
+  if (pbpMatchTitle) pbpMatchTitle.textContent = playByPlayMatchTitle(currentContext);
+  if (pbpQuarterPill) pbpQuarterPill.textContent = hasData ? `FIBA ${selectedPbpQuarter}` : "KBL 일정";
+  if (pbpMatchCount) {
+    pbpMatchCount.textContent = hasData
+      ? timelineOnlyEvents.length
+        ? `${selectedPbpQuarter} · ${timelineOnlyEvents.length} timeline events · Final 80-82`
+        : `${selectedPbpQuarter} · ${clips.length} clips`
+      : `${timelineOnlyEvents.length} schedule events`;
+  }
+  if (pbpSideLabelItems.length >= 2) {
+    pbpSideLabelItems[0].textContent = hasData
+      ? timelineOnlyEvents.length
+        ? "대한민국 timeline"
+        : "대한민국 하이라이트"
+      : "KBL 공식 일정";
+    pbpSideLabelItems[1].textContent = hasData
+      ? timelineOnlyEvents.length
+        ? "Chinese Taipei timeline"
+        : "Chinese Taipei 하이라이트"
+      : "상세 PBP 미연동";
+  }
   pbpQuarterButtons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.pbpQuarter === selectedPbpQuarter);
+    button.disabled = !hasData;
+    button.classList.toggle("active", hasData && button.dataset.pbpQuarter === selectedPbpQuarter);
   });
+
+  if (!hasData && !timelineOnlyEvents.length) {
+    const empty = document.createElement("p");
+    empty.className = "pbp-empty";
+    empty.textContent = `${currentContext.team.name} 경기는 아직 KBL 공식 일정 timeline 데이터가 연결되지 않았습니다. 상세 play-by-play 클립은 대한민국 남자농구 대표팀 경기에서만 제공합니다.`;
+    pbpTimeline.append(empty);
+    return;
+  }
+
+  if (timelineOnlyEvents.length) {
+    renderTimelineOnlyEvents(timelineOnlyEvents);
+    return;
+  }
 
   if (!clips.length) {
     const empty = document.createElement("p");
     empty.className = "pbp-empty";
-    empty.textContent = `${selectedPbpQuarter} clipped 영상은 아직 생성되지 않았습니다. 1Q~3Q는 아래 timeline에서 바로 재생할 수 있습니다.`;
+    empty.textContent = `${selectedPbpQuarter} clipped 영상은 아직 생성되지 않았습니다. 1Q~4Q는 아래 timeline에서 바로 재생할 수 있습니다.`;
     pbpTimeline.append(empty);
     return;
   }
 
   clips.forEach((clip) => {
-    const team = eventTeam(`${clip.startEvent} ${clip.endEvent}`);
+    const endTeam = eventTeam(clip.endEvent);
+    const team = endTeam === "neutral" ? eventTeam(`${clip.startEvent} ${clip.endEvent}`) : endTeam;
     const row = document.createElement("button");
-    row.className = "pbp-row";
+    row.className = `pbp-row ${team}`;
     row.type = "button";
+    row.dataset.pbpTeam = team;
     row.dataset.pbpClipQuarter = clip.quarter;
     row.dataset.pbpClipId = String(clip.id);
     row.setAttribute(
@@ -10042,8 +10712,8 @@ function buildClips(context) {
         title: "여준석 수비 리바운드 → 대표팀 공격 전환",
         meta: "여준석 · defensive rebound",
         easy: "수비 리바운드를 확보하면서 대만 공격을 끊고 대한민국이 다시 공격권을 가져온 장면입니다. 처음 보는 팬도 possession 전환을 이해하기 좋은 대표팀 하이라이트입니다.",
-        pro: "FIBA 1Q~3Q play-by-play에서 defensive rebound를 cut point로 삼아 다음 공격 흐름까지 분리했습니다. 리바운드 이후 전환 속도와 매치업 정리를 확인하기 좋은 구간입니다.",
-        reason: "여준석은 KOR-TPE 1Q~3Q 클립에서 수비 리바운드와 득점 연결 장면이 반복적으로 등장합니다.",
+        pro: "FIBA 1Q~4Q play-by-play에서 defensive rebound를 cut point로 삼아 다음 공격 흐름까지 분리했습니다. 리바운드 이후 전환 속도와 매치업 정리를 확인하기 좋은 구간입니다.",
+        reason: "여준석은 KOR-TPE 1Q~4Q 클립에서 수비 리바운드와 득점 연결 장면이 반복적으로 등장합니다.",
         next: "Play-by-Play 탭에서 같은 possession 구간을 눌러 잘린 클립으로 바로 확인할 수 있습니다.",
         ctaTitle: "대표팀 Play-by-Play 클립 보기",
         ctaCopy: "리바운드, 파울, 득점 cut point를 기준으로 대만전 흐름을 따라갑니다.",
@@ -10054,7 +10724,7 @@ function buildClips(context) {
         meta: "대표팀 · 3점슛",
         easy: "대표팀 공격이 외곽으로 벌어지면서 3점 기회가 만들어진 장면입니다. 점수 변화가 명확해서 입덕패스 설명에 바로 쓰기 좋습니다.",
         pro: "score cut point 이후 다음 possession까지 이어지는 구간을 보면 대만 수비가 안쪽으로 몰린 뒤 외곽 슈터에게 공간이 생기는 흐름을 확인할 수 있습니다.",
-        reason: "최준용과 이정현의 3점 장면은 KOR-TPE 1Q~3Q 대표팀 공격 하이라이트의 핵심입니다.",
+        reason: "최준용과 이정현의 3점 장면은 KOR-TPE 1Q~4Q 대표팀 공격 하이라이트의 핵심입니다.",
         next: "득점 직후 이어지는 대만 possession과 비교하면 경기 흐름을 더 쉽게 설명할 수 있습니다.",
         ctaTitle: "대만전 3점 장면 모아보기",
         ctaCopy: "대표팀 외곽 득점을 저장한 팬에게 다음 FIBA 경기 알림을 추천합니다.",
@@ -10065,7 +10735,7 @@ function buildClips(context) {
         meta: "장재석 · 골밑/자유투",
         easy: "장재석이 골밑에서 파울을 얻거나 자유투로 점수를 만든 구간입니다. 득점과 파울이 같이 기록돼 있어 play-by-play를 영상으로 이해하기 좋습니다.",
         pro: "foul drawn, free throws made, defensive rebound가 같은 흐름 안에서 묶이는 possession 단위 클립입니다. 공격권 전환과 세트 오펜스 진입을 함께 볼 수 있습니다.",
-        reason: "장재석은 1Q~3Q에서 자유투, 리바운드, 골밑 마무리를 대표팀 빅맨 관전 포인트로 보여줍니다.",
+        reason: "장재석은 1Q~4Q에서 자유투, 리바운드, 골밑 마무리를 대표팀 빅맨 관전 포인트로 보여줍니다.",
         next: "입덕패스에서는 골밑 싸움과 자유투 흐름을 초보자용 카드로 재가공할 수 있습니다.",
         ctaTitle: "대표팀 골밑 관전 포인트",
         ctaCopy: "장재석과 여준석의 골밑 장면을 좋아한 팬에게 대표팀 응원 콘텐츠를 추천합니다.",
@@ -10162,6 +10832,10 @@ function setFanPanel(panel) {
   fanPanels.forEach((item) => {
     item.classList.toggle("panel-active", item.dataset.panel === panel);
   });
+
+  if (panel === "play-by-play") {
+    renderPlayByPlayTimeline();
+  }
 }
 
 function updateAnalysis() {
@@ -11193,7 +11867,7 @@ function updateDashboard(context) {
     {
       label: "기록 선수",
       value: context.stats.length,
-      note: team.code === "KR" ? "FIBA 1Q~3Q play-by-play 기반" : `${seasonName} 정규시즌 기록 보유`,
+      note: team.code === "KR" ? "FIBA 1Q~4Q play-by-play 기반" : `${seasonName} 정규시즌 기록 보유`,
     },
     {
       label: "AI 클립 후보",
@@ -12218,6 +12892,12 @@ function updateProfileSheet(context) {
 function updateAuthStatus(user) {
   if (!authStatus) return;
 
+  authenticatedUser = user || null;
+  authForm?.classList.toggle("is-logged-in", Boolean(user));
+  if (authLoginButton) authLoginButton.hidden = Boolean(user);
+  if (authRegisterButton) authRegisterButton.hidden = Boolean(user);
+  if (authLogoutButton) authLogoutButton.hidden = !user;
+
   if (user) {
     authStatus.textContent = `${user.name}님으로 로그인 중 · ${currentContext.team.fullName} 세션`;
     profileButton.textContent = user.name.slice(0, 2).toUpperCase();
@@ -12228,9 +12908,9 @@ function updateAuthStatus(user) {
   profileButton.textContent = "MY";
 }
 
-async function requestAuth(path, payload) {
+async function requestAuth(path, payload, method = "POST") {
   const response = await fetch(path, {
-    method: "POST",
+    method,
     headers: { "content-type": "application/json" },
     body: JSON.stringify(payload),
   });
@@ -12260,13 +12940,17 @@ async function handleAuthSubmit(event) {
   event.preventDefault();
   const formData = new FormData(authForm);
   const payload = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    password: formData.get("password"),
+    name: String(formData.get("name") || "").trim(),
+    email: String(formData.get("email") || "").trim(),
+    password: String(formData.get("password") || ""),
     favoriteTeamCode: currentContext.team.code,
   };
 
   try {
+    if (action === "register" && !payload.name) {
+      throw new Error("회원가입에는 이름을 입력해 주세요.");
+    }
+
     submitter.disabled = true;
     authStatus.textContent = action === "register" ? "회원가입 중..." : "로그인 중...";
     const data = await requestAuth(`/api/auth/${action}`, payload);
@@ -12284,6 +12968,19 @@ async function logoutUser() {
     await requestAuth("/api/auth/logout", {});
     updateAuthStatus(null);
     showToast("로그아웃되었습니다.");
+  } catch (error) {
+    authStatus.textContent = error.message;
+  }
+}
+
+async function saveFavoriteTeam(teamCode) {
+  if (!authenticatedUser) return;
+
+  try {
+    authStatus.textContent = `${currentContext.team.fullName} 선호팀 저장 중...`;
+    const data = await requestAuth("/api/auth/favorite-team", { favoriteTeamCode: teamCode });
+    updateAuthStatus(data.user);
+    showToast(`${currentContext.team.fullName} 선호팀이 서버 세션에 저장되었습니다.`);
   } catch (error) {
     authStatus.textContent = error.message;
   }
@@ -12310,6 +13007,7 @@ function renderTeam(teamCode = selectedTeamCode) {
   updateProfileSheet(currentContext);
   setSelectedClip(selectedClip);
   updateFollowCount();
+  renderPlayByPlayTimeline();
 }
 
 function openProfile() {
@@ -12797,7 +13495,9 @@ profileSheet?.addEventListener("click", (event) => {
   const teamButton = event.target.closest(".team-option");
   if (!teamButton) return;
 
-  renderTeam(teamButton.dataset.teamCode);
+  const teamCode = teamButton.dataset.teamCode;
+  renderTeam(teamCode);
+  saveFavoriteTeam(teamCode);
 });
 
 authForm?.addEventListener("submit", handleAuthSubmit);

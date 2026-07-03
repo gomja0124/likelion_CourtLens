@@ -30,6 +30,10 @@ QUARTER_CONFIGS = {
         "plan_file": "q3_cutpoint_segments_plan.json",
         "clip_directory": "q3_cutpoint_segmentss",
     },
+    "Q4": {
+        "plan_file": "q4_cutpoint_segments_plan.json",
+        "clip_directory": "q4_cutpoint_segmentss",
+    },
 }
 
 ROOT_ASSETS = {"app.js", "styles.css", "kbl-data.js"}
@@ -135,6 +139,27 @@ def current_user(request):
     return JsonResponse({"ok": True, "user": public_user(request.user) if request.user.is_authenticated else None})
 
 
+@csrf_exempt
+@require_http_methods(["POST"])
+def update_favorite_team(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({"ok": False, "message": "로그인이 필요합니다."}, status=401)
+
+    try:
+        body = read_json_body(request)
+    except json.JSONDecodeError:
+        return JsonResponse({"ok": False, "message": "JSON 형식이 올바르지 않습니다."}, status=400)
+
+    favorite_team_code = str(body.get("favoriteTeamCode") or "").strip()
+    if not favorite_team_code:
+        return JsonResponse({"ok": False, "message": "선호팀을 선택해 주세요."}, status=400)
+
+    profile, _ = UserProfile.objects.get_or_create(user=request.user)
+    profile.favorite_team_code = favorite_team_code
+    profile.save(update_fields=["favorite_team_code", "updated_at"])
+    return JsonResponse({"ok": True, "user": public_user(request.user)})
+
+
 def normalize_quarter(value):
     return str(value or "").strip().upper()
 
@@ -150,6 +175,24 @@ def list_clip_files(directory_name):
     return sorted(item.name for item in directory.iterdir() if item.suffix == ".mov")
 
 
+def dedupe_clock_part(value):
+    parts = []
+    for part in str(value or "").split("/"):
+        part = part.strip()
+        if part and part not in parts:
+            parts.append(part)
+    return "/".join(parts)
+
+
+def normalize_clock_range(value):
+    raw_value = str(value or "")
+    if "_to_" not in raw_value:
+        return dedupe_clock_part(raw_value)
+
+    start, end = raw_value.split("_to_", 1)
+    return f"{dedupe_clock_part(start)}_to_{dedupe_clock_part(end)}"
+
+
 def normalize_highlight_clip(record, quarter, clip_files, index):
     config = QUARTER_CONFIGS[quarter]
     clip_id = int(record.get("clip_id") or record.get("event_id") or index + 1)
@@ -159,7 +202,7 @@ def normalize_highlight_clip(record, quarter, clip_files, index):
     return {
         "id": clip_id,
         "quarter": quarter,
-        "clock": record.get("game_clock_range") or record.get("clock_remaining") or "",
+        "clock": normalize_clock_range(record.get("game_clock_range") or record.get("clock_remaining") or ""),
         "duration": int(record.get("duration_sec") or 0),
         "start": int(record.get("video_start_sec") or record.get("clip_start_sec") or 0),
         "end": int(record.get("video_end_sec") or record.get("clip_end_sec") or 0),

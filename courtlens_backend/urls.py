@@ -16,9 +16,10 @@ urlpatterns = [
     path("api/auth/login", views.login_user),
     path("api/auth/logout", views.logout_user),
     path("api/auth/me", views.current_user),
+    path("api/auth/favorite-team", views.update_favorite_team),
     path("api/highlights/quarters", views.highlight_quarters),
     path("api/highlights/clips", views.highlight_clips),
     path("api/highlights/clips/<str:quarter>/<int:clip_id>", views.highlight_clip_detail),
     path("api/highlights/clips/<str:quarter>/<int:clip_id>/video", views.highlight_clip_video),
-    re_path(r"^media/clips/(?P<directory>q[123]_cutpoint_segmentss)/(?P<filename>[^/]+\.mov)$", views.clip_file),
+    re_path(r"^media/clips/(?P<directory>q[1234]_cutpoint_segmentss)/(?P<filename>[^/]+\.mov)$", views.clip_file),
 ]
