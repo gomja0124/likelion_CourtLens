@@ -130,13 +130,38 @@
             </section>
 
             <nav class="content-tabs" aria-label="팬 웹서비스 주요 메뉴">
-              <button class="content-tab active" type="button" data-panel="highlight">하이라이트</button>
+              <button class="content-tab active" type="button" data-panel="play-by-play">Play-by-Play</button>
+              <button class="content-tab" type="button" data-panel="highlight">하이라이트</button>
               <button class="content-tab" type="button" data-panel="pass">입덕패스</button>
               <button class="content-tab" type="button" data-panel="mate">직관메이트</button>
             </nav>
 
             <section
-              class="highlight-feed fan-panel panel-active"
+              class="play-by-play-panel fan-panel panel-active"
+              data-panel="play-by-play"
+              aria-label="FIBA play-by-play highlight matching"
+            >
+              <div class="section-title-row">
+                <div>
+                  <span class="pill">FIBA 1Q</span>
+                  <h3>Play-by-Play 하이라이트 매칭</h3>
+                </div>
+                <span class="section-count" id="pbp-match-count">0 clips</span>
+              </div>
+
+              <div class="pbp-video-shell" id="pbp-video-shell" hidden>
+                <video id="pbp-video" controls playsinline preload="metadata"></video>
+                <div class="pbp-video-copy">
+                  <strong id="pbp-video-title">타임라인을 선택하세요</strong>
+                  <span id="pbp-video-meta">FIBA timeline cut point 기준 possession 구간</span>
+                </div>
+              </div>
+
+              <div class="pbp-timeline" id="pbp-timeline" aria-live="polite"></div>
+            </section>
+
+            <section
+              class="highlight-feed fan-panel"
               data-panel="highlight"
               aria-label="개인화 하이라이트 피드"
             >
@@ -220,26 +245,6 @@
                   <span class="clip-score">+2</span>
                 </button>
               </div>
-
-              <section class="play-by-play-panel" aria-label="FIBA play-by-play highlight matching">
-                <div class="section-title-row">
-                  <div>
-                    <span class="pill">FIBA 1Q</span>
-                    <h3>Play-by-Play 하이라이트 매칭</h3>
-                  </div>
-                  <span class="section-count" id="pbp-match-count">0 clips</span>
-                </div>
-
-                <div class="pbp-video-shell" id="pbp-video-shell" hidden>
-                  <video id="pbp-video" controls playsinline preload="metadata"></video>
-                  <div class="pbp-video-copy">
-                    <strong id="pbp-video-title">타임라인을 선택하세요</strong>
-                    <span id="pbp-video-meta">FIBA timeline cut point 기준 possession 구간</span>
-                  </div>
-                </div>
-
-                <div class="pbp-timeline" id="pbp-timeline" aria-live="polite"></div>
-              </section>
 
               <section class="inline-tactic-panel" aria-label="AI 생성 하이라이트 작전판AI" hidden>
                 <div class="panel-topline">

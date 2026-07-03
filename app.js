@@ -7957,7 +7957,7 @@ function persistTeamCode(teamCode) {
 let selectedTeamCode = getInitialTeamCode();
 let selectedClip = "assist";
 let selectedLevel = "easy";
-let activePanel = "highlight";
+let activePanel = "play-by-play";
 let selectedMatchId = "S47G01N258";
 let selectedCalendarMonth = "2026-04";
 let currentContext = buildTeamContext(selectedTeamCode);

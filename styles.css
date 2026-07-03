@@ -881,7 +881,7 @@ button {
 
 .content-tabs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.25rem;
   margin-top: 1rem;
   padding: 0.25rem;
@@ -899,7 +899,10 @@ button {
   color: var(--muted);
   background: transparent;
   cursor: pointer;
-  font-size: 0.82rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.78rem;
   font-weight: 800;
 }
 
@@ -3200,6 +3203,17 @@ button {
   .fan-web-header {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .content-tabs {
+    gap: 0.18rem;
+    padding: 0.18rem;
+  }
+
+  .content-tab {
+    min-height: 2.05rem;
+    padding: 0 0.16rem;
+    font-size: 0.68rem;
   }
 
   .highlight-card {
