@@ -7969,6 +7969,8 @@ let isGeneratingHighlight = false;
 let generatedAssetSequence = 1;
 let activeDashboardSection = "fan-insight";
 const generatedAssets = [];
+const highlightComments = new Map();
+let activeHighlightPostClip = "assist";
 
 const BASE_CLIP_COUNT = 12;
 
@@ -7980,7 +7982,7 @@ const clipCountLabel = document.querySelector("#clip-count-label");
 const clipFilterButtons = document.querySelectorAll(".clip-filter-button");
 const generatedEmptyState = document.querySelector("#ai-generated-empty");
 const inlineTacticPanel = document.querySelector(".inline-tactic-panel");
-const levelButtons = document.querySelectorAll(".level-button");
+const levelButtons = document.querySelectorAll("[data-level]");
 const followChipRow = document.querySelector("#player-chip-row");
 const followCount = document.querySelector("#follow-count");
 const selectionHint = document.querySelector("#selection-hint");
@@ -8003,6 +8005,21 @@ const mateSeatInput = document.querySelector("#mate-seat-input");
 const mateStyleInput = document.querySelector("#mate-style-input");
 const matePlayerInput = document.querySelector("#mate-player-input");
 const mateNoteInput = document.querySelector("#mate-note-input");
+const highlightPostModal = document.querySelector("#highlight-post-modal");
+const highlightPostCloseButtons = document.querySelectorAll("[data-close-highlight-post]");
+const highlightPostTitle = document.querySelector("#highlight-post-title");
+const highlightPostMeta = document.querySelector("#highlight-post-meta");
+const highlightPostTeam = document.querySelector("#highlight-post-team");
+const highlightPostSummary = document.querySelector("#highlight-post-summary");
+const highlightPostProgress = document.querySelector("#highlight-post-progress");
+const highlightPostTags = document.querySelector("#highlight-post-tags");
+const highlightPostVideo = document.querySelector("#highlight-post-video");
+const highlightVideoFallback = document.querySelector("#highlight-video-fallback");
+const highlightCommentList = document.querySelector("#highlight-comment-list");
+const highlightCommentCount = document.querySelector("#highlight-comment-count");
+const highlightCommentForm = document.querySelector("#highlight-comment-form");
+const highlightCommentInput = document.querySelector("#highlight-comment-input");
+const highlightPostLevelButtons = document.querySelectorAll("[data-post-level]");
 const dashboardModal = document.querySelector("#dashboard-modal");
 const dashboardModalTitle = document.querySelector("#dashboard-modal-title");
 const dashboardModalSubtitle = document.querySelector("#dashboard-modal-subtitle");
@@ -8591,15 +8608,133 @@ function syncGeneratedAiPanel() {
   const generatedCards = [...document.querySelectorAll("#clip-list .highlight-card.generated")];
   const isGeneratedView = activeClipFilter === "generated";
   const hasGeneratedCards = generatedCards.length > 0;
-  const selectedGenerated = isGeneratedView && isGeneratedClip();
 
   if (generatedEmptyState) {
     generatedEmptyState.hidden = !(isGeneratedView && !hasGeneratedCards);
   }
 
   if (inlineTacticPanel) {
-    inlineTacticPanel.hidden = !selectedGenerated;
+    inlineTacticPanel.hidden = true;
   }
+}
+
+function commentsForClip(clipId) {
+  if (!highlightComments.has(clipId)) {
+    const clip = currentContext.clips[clipId] || currentContext.clips.assist;
+    highlightComments.set(clipId, [
+      {
+        author: "농구입문자",
+        text: `${clip.title} 이 장면 설명 보니까 왜 좋은 플레이인지 바로 이해됐어요.`,
+        meta: "3분 전 · 좋아요 4개",
+      },
+      {
+        author: "LG팬_941",
+        text: "이 클립 저장해두고 다음 직관 전에 다시 볼래요.",
+        meta: "방금 전 · 좋아요 1개",
+      },
+    ]);
+  }
+
+  return highlightComments.get(clipId);
+}
+
+function renderHighlightComments(clipId) {
+  if (!highlightCommentList) return;
+
+  const comments = commentsForClip(clipId);
+  highlightCommentList.innerHTML = "";
+  if (highlightCommentCount) highlightCommentCount.textContent = `${comments.length}개`;
+
+  comments.forEach((comment) => {
+    const item = document.createElement("article");
+    const avatar = document.createElement("span");
+    const copy = document.createElement("div");
+    const author = document.createElement("strong");
+    const text = document.createElement("p");
+    const meta = document.createElement("small");
+
+    item.className = "highlight-comment";
+    avatar.className = "highlight-comment-avatar";
+    avatar.textContent = comment.author.slice(0, 1).toUpperCase();
+    author.textContent = comment.author;
+    text.textContent = comment.text;
+    meta.textContent = comment.meta;
+    copy.append(author, text, meta);
+    item.append(avatar, copy);
+    highlightCommentList.append(item);
+  });
+}
+
+function renderHighlightPost(clipId) {
+  const clip = currentContext.clips[clipId] || currentContext.clips.assist;
+  const names = clip.playerNames?.length
+    ? clip.playerNames
+    : [currentContext.playmakerName, currentContext.shooterName, currentContext.rebounderName].filter(Boolean);
+
+  if (highlightPostTitle) highlightPostTitle.textContent = clip.title;
+  if (highlightPostMeta) highlightPostMeta.textContent = clip.meta;
+  if (highlightPostTeam) highlightPostTeam.textContent = `${currentContext.team.shortName} Highlight`;
+  if (highlightPostSummary) highlightPostSummary.textContent = clip[selectedLevel] || clip.easy;
+  if (highlightPostVideo) {
+    if (clip.videoSrc) {
+      if (highlightPostVideo.getAttribute("src") !== clip.videoSrc) {
+        highlightPostVideo.setAttribute("src", clip.videoSrc);
+      }
+      highlightPostVideo.hidden = false;
+      if (highlightVideoFallback) highlightVideoFallback.hidden = true;
+    } else {
+      highlightPostVideo.removeAttribute("src");
+      highlightPostVideo.hidden = true;
+      if (highlightVideoFallback) highlightVideoFallback.hidden = false;
+    }
+  }
+  if (highlightPostProgress) highlightPostProgress.style.width = clip.progress || "68%";
+  if (highlightPostTags) {
+    highlightPostTags.innerHTML = "";
+    [
+      `#${currentContext.team.shortName}`,
+      ...names.slice(0, 3).map((name) => `#${name.replaceAll(" ", "")}`),
+      "#작전판AI",
+    ].forEach((tag) => {
+      const item = document.createElement("span");
+      item.textContent = tag;
+      highlightPostTags.append(item);
+    });
+  }
+
+  highlightPostLevelButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.postLevel === selectedLevel);
+  });
+  renderHighlightComments(clipId);
+}
+
+function openHighlightPost(clipId) {
+  activeHighlightPostClip = clipId;
+  selectedClip = clipId;
+  renderHighlightPost(clipId);
+  highlightPostModal?.classList.add("open");
+  highlightPostModal?.setAttribute("aria-hidden", "false");
+  highlightCommentInput?.focus();
+}
+
+function closeHighlightPost() {
+  highlightPostModal?.classList.remove("open");
+  highlightPostModal?.setAttribute("aria-hidden", "true");
+}
+
+function submitHighlightComment(event) {
+  event.preventDefault();
+  const text = highlightCommentInput?.value.trim();
+  if (!text) return;
+
+  commentsForClip(activeHighlightPostClip).push({
+    author: "나",
+    text,
+    meta: "방금 전 · 좋아요 0개",
+  });
+  highlightCommentInput.value = "";
+  renderHighlightComments(activeHighlightPostClip);
+  showToast("하이라이트 게시물에 댓글이 추가됐습니다.");
 }
 
 function applyClipFilter() {
@@ -10908,6 +11043,7 @@ function generateHighlightFromSelection() {
     activeClipFilter = "generated";
     setSelectedClip(clipId);
     applyClipFilter();
+    openHighlightPost(clipId);
 
     isGeneratingHighlight = false;
     generateButton.textContent = "하이라이트 생성";
@@ -10925,6 +11061,7 @@ clipList.addEventListener("click", (event) => {
   if (!card) return;
 
   setSelectedClip(card.dataset.clip);
+  openHighlightPost(card.dataset.clip);
 });
 
 levelButtons.forEach((button) => {
@@ -10934,8 +11071,24 @@ levelButtons.forEach((button) => {
     levelButtons.forEach((item) => item.classList.remove("active"));
     button.classList.add("active");
     updateAnalysis();
+    if (highlightPostModal?.classList.contains("open")) {
+      renderHighlightPost(activeHighlightPostClip);
+    }
   });
 });
+
+highlightPostLevelButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    selectedLevel = button.dataset.postLevel;
+    renderHighlightPost(activeHighlightPostClip);
+  });
+});
+
+highlightPostCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeHighlightPost);
+});
+
+highlightCommentForm?.addEventListener("submit", submitHighlightComment);
 
 followChipRow.addEventListener("click", (event) => {
   const chip = event.target.closest(".follow-chip");
@@ -11272,6 +11425,10 @@ document.addEventListener("keydown", (event) => {
 
   if (mateCreateModal?.classList.contains("open")) {
     closeMateModal();
+  }
+
+  if (highlightPostModal?.classList.contains("open")) {
+    closeHighlightPost();
   }
 
   if (dashboardModal?.classList.contains("open")) {

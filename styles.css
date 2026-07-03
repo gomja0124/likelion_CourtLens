@@ -2408,6 +2408,200 @@ button {
   width: min(58rem, 100%);
 }
 
+.highlight-post-modal {
+  align-items: flex-start;
+  padding: max(1rem, env(safe-area-inset-top)) clamp(0.75rem, 2vw, 2rem) 1rem;
+  overflow-y: auto;
+}
+
+.highlight-post-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(18rem, 1.05fr) minmax(20rem, 0.95fr);
+  width: min(74rem, 100%);
+  max-height: calc(100dvh - 2rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fff;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+}
+
+.highlight-post-media {
+  display: grid;
+  align-content: center;
+  min-height: 30rem;
+  padding: 1.2rem;
+  background:
+    linear-gradient(135deg, rgba(33, 25, 29, 0.94), rgba(33, 25, 29, 0.78)),
+    var(--ink);
+}
+
+.highlight-post-media .clip-stage {
+  min-height: min(52vh, 27rem);
+}
+
+.highlight-video-frame {
+  display: grid;
+  align-content: center;
+  width: 100%;
+}
+
+.highlight-video-frame video {
+  width: 100%;
+  max-height: min(58vh, 32rem);
+  border-radius: 8px;
+  background: #000;
+}
+
+.highlight-video-fallback {
+  width: 100%;
+}
+
+.highlight-post-detail {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  min-height: 0;
+  overflow: hidden;
+  border-left: 1px solid var(--line);
+}
+
+.highlight-post-header,
+.highlight-post-summary,
+.highlight-comment-panel,
+.highlight-comment-form {
+  padding: 1rem;
+}
+
+.highlight-post-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.highlight-post-header h3 {
+  margin: 0.15rem 0 0;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.highlight-post-header small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.highlight-post-summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.highlight-post-summary p {
+  margin: 0;
+  color: #3f484d;
+  line-height: 1.55;
+}
+
+.highlight-post-summary .section-title-row {
+  margin-bottom: 0.65rem;
+}
+
+.highlight-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+}
+
+.highlight-post-tags span {
+  color: #315cff;
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
+.highlight-comment-panel {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.highlight-comment-list {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 0.8rem;
+}
+
+.highlight-comment {
+  display: grid;
+  grid-template-columns: 2.2rem minmax(0, 1fr);
+  gap: 0.65rem;
+}
+
+.highlight-comment-avatar {
+  display: grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 950;
+}
+
+.highlight-comment strong,
+.highlight-comment p,
+.highlight-comment small {
+  margin: 0;
+}
+
+.highlight-comment strong {
+  font-size: 0.84rem;
+}
+
+.highlight-comment p {
+  margin-top: 0.12rem;
+  color: #31383c;
+  line-height: 1.42;
+}
+
+.highlight-comment small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.highlight-comment-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.65rem;
+  border-top: 1px solid var(--line);
+}
+
+.highlight-comment-form input {
+  min-width: 0;
+  min-height: 2.55rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0 0.9rem;
+}
+
+.highlight-comment-form button {
+  min-width: 4rem;
+  min-height: 2.55rem;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--ink);
+  cursor: pointer;
+  font-weight: 950;
+}
+
 .modal-topline {
   display: flex;
   align-items: center;
@@ -2985,6 +3179,24 @@ button {
 
   .modal-actions {
     display: grid;
+  }
+
+  .highlight-post-card {
+    grid-template-columns: 1fr;
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+
+  .highlight-post-media {
+    min-height: auto;
+  }
+
+  .highlight-post-media .clip-stage {
+    min-height: 16rem;
+  }
+
+  .highlight-post-detail {
+    border-left: 0;
   }
 
   .match-chip {
