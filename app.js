@@ -242,6 +242,7701 @@ const TEAM_CONFIGS = {
 const TEAM_ORDER = ["50", "06", "64", "10", "35", "16", "55", "66", "60", "70"];
 const TEAM_STORAGE_KEY = "courtlens:selectedTeam";
 
+const FEATURED_KBL_MATCH = {
+  id: "S47G01N258",
+  source: {
+    page: "https://www.kbl.or.kr/match/record/S47G01N258/20260403",
+    game: "https://api.kbl.or.kr/match/S47G01N258",
+    playerStats: "https://api.kbl.or.kr/match/S47G01N258/player-stat",
+    teamRecord: "https://api.kbl.or.kr/match/S47G01N258/team-record",
+    preview: "https://api.kbl.or.kr/match/getPreviewData/20260403/S47G01N258",
+    highlight: "https://api.kbl.or.kr/match/highlight/S47G01N258/20260403",
+  },
+  date: "2026-04-03",
+  dateRaw: "20260403",
+  dateLabel: "2026.04.03 (금)",
+  seasonName: "2025-2026",
+  category: "정규시즌",
+  time: "19:00",
+  endTime: "20:52",
+  venue: "수원 KT 소닉붐 아레나",
+  tv: "tvN SPORTS",
+  crowd: 1963,
+  isEnded: true,
+  home: {
+    code: "06",
+    shortName: "KT",
+    name: "수원 KT",
+    fullName: "수원 KT 소닉붐",
+    score: 60,
+    quarters: [7, 20, 12, 21],
+  },
+  away: {
+    code: "50",
+    shortName: "LG",
+    name: "창원 LG",
+    fullName: "창원 LG 세이커스",
+    score: 87,
+    quarters: [28, 21, 21, 17],
+  },
+  preGame: {
+    title: "LG 원정 직관메이트 모집",
+    flow: ["팀 선택", "경기 선택", "직관메이트 창", "직관메이트 찾기/모집"],
+    summary: [
+      "수원 KT 홈, 창원 LG 원정 경기로 2026년 4월 3일 19시에 열린 정규시즌 매치업입니다.",
+      "사전 프리뷰 기준 창원 LG는 시즌 35승 16패, 수원 KT는 25승 26패 흐름으로 맞붙습니다.",
+      "시즌 상대전적은 LG 우위라 원정 응원석과 처음 직관 팬을 묶기 좋은 경기입니다.",
+    ],
+    mate: {
+      title: "LG 원정 응원 같이 가실 분",
+      copy: "수원 KT 소닉붐 아레나 원정석에서 LG 하이라이트와 응원 포인트를 같이 볼 메이트를 추천합니다.",
+      gameChoice: "수원 KT vs 창원 LG",
+      seatChoice: "원정 응원석",
+      styleChoice: "초보 환영",
+      tags: ["원정 응원석", "처음 직관 환영", "경기 전 30분 합류"],
+    },
+  },
+  postGame: {
+    title: "창원 LG 87-60 승리",
+    flow: ["팀 선택", "경기 선택", "경기 summary/오늘 잘한 선수 확인", "하이라이트 메이커에서 출전 선수만 선택", "AI 하이라이트 생성"],
+    summary: [
+      "LG가 1쿼터를 28-7로 크게 앞서며 경기 흐름을 먼저 잡았습니다.",
+      "LG는 3점 12개와 어시스트 25개로 공격을 분산했고, 팀 리바운드도 44-32로 앞섰습니다.",
+      "마레이의 21점 15리바운드 8어시스트, 유기상의 3점 4개, 양준석의 6어시스트가 경기 후 하이라이트의 핵심 재료입니다.",
+    ],
+    fanComments: [
+      "마레이가 패스까지 해주니까 경기 이해가 쉬웠어요.",
+      "유기상 3점 위치만 모아보니 다음엔 현장에서 보고 싶어요.",
+      "처음 본 친구한테도 1쿼터 흐름 설명하기 좋았습니다.",
+    ],
+    starPlayers: [
+      {
+        pcode: "291432",
+        name: "아셈 마레이",
+        teamCode: "50",
+        role: "오늘의 스타 플레이어",
+        line: "21PTS · 15REB · 8AST · 2BLK",
+        reason: "득점, 리바운드, 패스가 모두 경기 흐름을 만든 중심축",
+      },
+      {
+        pcode: "291640",
+        name: "유기상",
+        teamCode: "50",
+        role: "외곽 하이라이트",
+        line: "12PTS · 3P 4/8 · 3BLK",
+        reason: "처음 보는 팬도 바로 이해할 수 있는 3점 장면이 많음",
+      },
+      {
+        pcode: "291576",
+        name: "양준석",
+        teamCode: "50",
+        role: "연결 플레이",
+        line: "10PTS · 6AST · 3P 2/2",
+        reason: "하이라이트를 작전판AI 해설로 연결하기 좋은 패스 장면 보유",
+      },
+    ],
+  },
+  playerStats: {
+    "50": [
+      ["290284", "허일영", "FD", "11", 2, 3, 0, 0, 0, 0, "09:35", -8],
+      ["290478", "장민국", "FD", "3", 3, 1, 0, 1, 0, 0, "03:16", 7],
+      ["290648", "한상혁", "GD", "6", 7, 2, 4, 1, 0, 0, "13:24", 13],
+      ["290996", "정인덕", "FD", "16", 7, 5, 1, 2, 0, 1, "27:18", 36],
+      ["291091", "양홍석", "FD", "4", 0, 1, 0, 0, 0, 0, "10:33", -1],
+      ["291363", "윤원상", "GD", "10", 2, 3, 1, 0, 0, 0, "09:46", 1],
+      ["291432", "아셈 마레이", "C", "50", 21, 15, 8, 0, 1, 2, "23:02", 32],
+      ["291576", "양준석", "GD", "5", 10, 1, 6, 2, 0, 0, "16:50", 13],
+      ["291640", "유기상", "GD", "1", 12, 3, 2, 4, 2, 3, "30:52", 29],
+      ["291699", "칼 타마요", "FD", "33", 11, 4, 2, 0, 0, 1, "29:18", 20],
+      ["291771", "최형찬", "GD", "7", 0, 1, 1, 0, 0, 0, "09:08", -2],
+      ["291879", "카이린 갤러웨이", "FD", "14", 12, 5, 0, 2, 2, 0, "16:58", -5],
+    ],
+    "06": [
+      ["290407", "김선형", "GD", "5", 9, 2, 2, 1, 2, 0, "28:01", -15],
+      ["290454", "정창영", "GD", "7", 4, 2, 0, 0, 1, 0, "15:37", -4],
+      ["290583", "한희원", "FD", "1", 2, 2, 2, 0, 0, 1, "17:32", -19],
+      ["290661", "문성곤", "FD", "10", 0, 0, 0, 0, 0, 0, "05:34", -8],
+      ["291226", "박준영", "FD", "23", 6, 3, 0, 0, 1, 0, "25:40", -11],
+      ["291352", "박지원", "GD", "9", 0, 0, 0, 0, 0, 0, "03:02", 999],
+      ["291586", "이두원", "C", "21", 2, 0, 0, 0, 0, 0, "08:46", -21],
+      ["291667", "문정현", "FD", "12", 6, 4, 0, 0, 2, 0, "31:52", -16],
+      ["291791", "데릭 윌리엄스", "FD", "24", 8, 4, 2, 0, 0, 0, "17:12", -14],
+      ["291842", "강성욱", "GD", "77", 13, 2, 1, 1, 3, 0, "23:56", -14],
+      ["291878", "조나단 윌리엄스", "C", "13", 10, 13, 3, 0, 0, 0, "22:48", -13],
+    ],
+  },
+  inactivePlayers: {
+    "50": [
+      { pcode: "290738", name: "두경민", position: "GD", backNumber: "30", reason: "해당 경기 미출전" },
+    ],
+    "06": [
+      { pcode: "291351", name: "이윤기", position: "FD", backNumber: "3", reason: "출전 시간 0분" },
+      { pcode: "291492", name: "하윤기", position: "C", backNumber: "0", reason: "해당 경기 미출전" },
+    ],
+  },
+  dashboardSignals: [
+    "유기상 3점 장면을 응원석 예매 CTA로 연결",
+    "마레이 골밑/패스 장면을 포토카드와 작전판AI 스폰서 패키지로 연결",
+    "원정 직관메이트 니즈를 다음 홈·원정 동행 이벤트로 연결",
+  ],
+};
+
+const KBL_SCHEDULE_SOURCE = {
+  page: "https://www.kbl.or.kr/match/schedule",
+  api: "https://api.kbl.or.kr/match/list",
+  seasonName: "2025-2026",
+  fetchedAt: "2026-07-03",
+};
+
+const KBL_SEASON_GAMES = [
+  {
+    "id": "S47G01N1",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-03",
+    "dateRaw": "20251003",
+    "dateLabel": "2025.10.03 (금)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 81
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 89
+    }
+  },
+  {
+    "id": "S47G01N2",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-03",
+    "dateRaw": "20251003",
+    "dateLabel": "2025.10.03 (금)",
+    "time": "14:00",
+    "venue": "잠실실내체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 82
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 89
+    }
+  },
+  {
+    "id": "S47G01N3",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-03",
+    "dateRaw": "20251003",
+    "dateLabel": "2025.10.03 (금)",
+    "time": "16:30",
+    "venue": "울산동천체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 68
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N4",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-04",
+    "dateRaw": "20251004",
+    "dateLabel": "2025.10.04 (토)",
+    "time": "14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 85
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 67
+    }
+  },
+  {
+    "id": "S47G01N5",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-04",
+    "dateRaw": "20251004",
+    "dateLabel": "2025.10.04 (토)",
+    "time": "14:00",
+    "venue": "대구체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 76
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 98
+    }
+  },
+  {
+    "id": "S47G01N6",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-04",
+    "dateRaw": "20251004",
+    "dateLabel": "2025.10.04 (토)",
+    "time": "16:30",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 69
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 50
+    }
+  },
+  {
+    "id": "S47G01N7",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-05",
+    "dateRaw": "20251005",
+    "dateLabel": "2025.10.05 (일)",
+    "time": "14:00",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 104
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 64
+    }
+  },
+  {
+    "id": "S47G01N8",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-05",
+    "dateRaw": "20251005",
+    "dateLabel": "2025.10.05 (일)",
+    "time": "14:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 79
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 82
+    }
+  },
+  {
+    "id": "S47G01N9",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-05",
+    "dateRaw": "20251005",
+    "dateLabel": "2025.10.05 (일)",
+    "time": "16:30",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 72
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N10",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-06",
+    "dateRaw": "20251006",
+    "dateLabel": "2025.10.06 (월)",
+    "time": "14:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 83
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 66
+    }
+  },
+  {
+    "id": "S47G01N11",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-07",
+    "dateRaw": "20251007",
+    "dateLabel": "2025.10.07 (화)",
+    "time": "14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 74
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 73
+    }
+  },
+  {
+    "id": "S47G01N12",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-08",
+    "dateRaw": "20251008",
+    "dateLabel": "2025.10.08 (수)",
+    "time": "14:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 75
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 69
+    }
+  },
+  {
+    "id": "S47G01N13",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-08",
+    "dateRaw": "20251008",
+    "dateLabel": "2025.10.08 (수)",
+    "time": "16:30",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 82
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 78
+    }
+  },
+  {
+    "id": "S47G01N14",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-09",
+    "dateRaw": "20251009",
+    "dateLabel": "2025.10.09 (목)",
+    "time": "14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 74
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 66
+    }
+  },
+  {
+    "id": "S47G01N15",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-10",
+    "dateRaw": "20251010",
+    "dateLabel": "2025.10.10 (금)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 74
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N16",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-11",
+    "dateRaw": "20251011",
+    "dateLabel": "2025.10.11 (토)",
+    "time": "14:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 68
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 86
+    }
+  },
+  {
+    "id": "S47G01N17",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-11",
+    "dateRaw": "20251011",
+    "dateLabel": "2025.10.11 (토)",
+    "time": "14:00",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 70
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N18",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-11",
+    "dateRaw": "20251011",
+    "dateLabel": "2025.10.11 (토)",
+    "time": "16:30",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 75
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 66
+    }
+  },
+  {
+    "id": "S47G01N19",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-12",
+    "dateRaw": "20251012",
+    "dateLabel": "2025.10.12 (일)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 69
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 53
+    }
+  },
+  {
+    "id": "S47G01N20",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-12",
+    "dateRaw": "20251012",
+    "dateLabel": "2025.10.12 (일)",
+    "time": "14:00",
+    "venue": "대구체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 80
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 86
+    }
+  },
+  {
+    "id": "S47G01N21",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-12",
+    "dateRaw": "20251012",
+    "dateLabel": "2025.10.12 (일)",
+    "time": "16:30",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 80
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 83
+    }
+  },
+  {
+    "id": "S47G01N22",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-13",
+    "dateRaw": "20251013",
+    "dateLabel": "2025.10.13 (월)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 67
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N23",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-14",
+    "dateRaw": "20251014",
+    "dateLabel": "2025.10.14 (화)",
+    "time": "19:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 82
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N24",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-15",
+    "dateRaw": "20251015",
+    "dateLabel": "2025.10.15 (수)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 62
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 70
+    }
+  },
+  {
+    "id": "S47G01N25",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-16",
+    "dateRaw": "20251016",
+    "dateLabel": "2025.10.16 (목)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 84
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 86
+    }
+  },
+  {
+    "id": "S47G01N26",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-17",
+    "dateRaw": "20251017",
+    "dateLabel": "2025.10.17 (금)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 75
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 78
+    }
+  },
+  {
+    "id": "S47G01N27",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-18",
+    "dateRaw": "20251018",
+    "dateLabel": "2025.10.18 (토)",
+    "time": "14:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 83
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 76
+    }
+  },
+  {
+    "id": "S47G01N28",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-18",
+    "dateRaw": "20251018",
+    "dateLabel": "2025.10.18 (토)",
+    "time": "16:30",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 68
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 65
+    }
+  },
+  {
+    "id": "S47G01N29",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-18",
+    "dateRaw": "20251018",
+    "dateLabel": "2025.10.18 (토)",
+    "time": "16:30",
+    "venue": "창원체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 75
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 64
+    }
+  },
+  {
+    "id": "S47G01N30",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-19",
+    "dateRaw": "20251019",
+    "dateLabel": "2025.10.19 (일)",
+    "time": "14:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 79
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 66
+    }
+  },
+  {
+    "id": "S47G01N31",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-19",
+    "dateRaw": "20251019",
+    "dateLabel": "2025.10.19 (일)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 58
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 64
+    }
+  },
+  {
+    "id": "S47G01N32",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-19",
+    "dateRaw": "20251019",
+    "dateLabel": "2025.10.19 (일)",
+    "time": "16:30",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 81
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 66
+    }
+  },
+  {
+    "id": "S47G01N33",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-20",
+    "dateRaw": "20251020",
+    "dateLabel": "2025.10.20 (월)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 76
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 68
+    }
+  },
+  {
+    "id": "S47G01N34",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-21",
+    "dateRaw": "20251021",
+    "dateLabel": "2025.10.21 (화)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 81
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 84
+    }
+  },
+  {
+    "id": "S47G01N35",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-22",
+    "dateRaw": "20251022",
+    "dateLabel": "2025.10.22 (수)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 60
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 57
+    }
+  },
+  {
+    "id": "S47G01N36",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-23",
+    "dateRaw": "20251023",
+    "dateLabel": "2025.10.23 (목)",
+    "time": "19:00",
+    "venue": "잠실실내체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 76
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N37",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-24",
+    "dateRaw": "20251024",
+    "dateLabel": "2025.10.24 (금)",
+    "time": "19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 77
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N38",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-25",
+    "dateRaw": "20251025",
+    "dateLabel": "2025.10.25 (토)",
+    "time": "14:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 75
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 87
+    }
+  },
+  {
+    "id": "S47G01N39",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-25",
+    "dateRaw": "20251025",
+    "dateLabel": "2025.10.25 (토)",
+    "time": "14:00",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 61
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N40",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-25",
+    "dateRaw": "20251025",
+    "dateLabel": "2025.10.25 (토)",
+    "time": "16:30",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 80
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 94
+    }
+  },
+  {
+    "id": "S47G01N41",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-26",
+    "dateRaw": "20251026",
+    "dateLabel": "2025.10.26 (일)",
+    "time": "14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 87
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 92
+    }
+  },
+  {
+    "id": "S47G01N42",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-26",
+    "dateRaw": "20251026",
+    "dateLabel": "2025.10.26 (일)",
+    "time": "14:00",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 83
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 81
+    }
+  },
+  {
+    "id": "S47G01N43",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-26",
+    "dateRaw": "20251026",
+    "dateLabel": "2025.10.26 (일)",
+    "time": "16:30",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 85
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 83
+    }
+  },
+  {
+    "id": "S47G01N44",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-27",
+    "dateRaw": "20251027",
+    "dateLabel": "2025.10.27 (월)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 81
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 72
+    }
+  },
+  {
+    "id": "S47G01N45",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-28",
+    "dateRaw": "20251028",
+    "dateLabel": "2025.10.28 (화)",
+    "time": "19:00",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 83
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 74
+    }
+  },
+  {
+    "id": "S47G01N46",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-29",
+    "dateRaw": "20251029",
+    "dateLabel": "2025.10.29 (수)",
+    "time": "19:00",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 73
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 87
+    }
+  },
+  {
+    "id": "S47G01N47",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-30",
+    "dateRaw": "20251030",
+    "dateLabel": "2025.10.30 (목)",
+    "time": "19:00",
+    "venue": "울산동천체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 73
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 76
+    }
+  },
+  {
+    "id": "S47G01N48",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-10-31",
+    "dateRaw": "20251031",
+    "dateLabel": "2025.10.31 (금)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 79
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N49",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-01",
+    "dateRaw": "20251101",
+    "dateLabel": "2025.11.01 (토)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 74
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 64
+    }
+  },
+  {
+    "id": "S47G01N50",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-01",
+    "dateRaw": "20251101",
+    "dateLabel": "2025.11.01 (토)",
+    "time": "14:00",
+    "venue": "잠실실내체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 100
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N51",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-01",
+    "dateRaw": "20251101",
+    "dateLabel": "2025.11.01 (토)",
+    "time": "16:30",
+    "venue": "원주DB프로미아레나",
+    "tv": "",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 86
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 81
+    }
+  },
+  {
+    "id": "S47G01N52",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-02",
+    "dateRaw": "20251102",
+    "dateLabel": "2025.11.02 (일)",
+    "time": "14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 60
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N53",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-02",
+    "dateRaw": "20251102",
+    "dateLabel": "2025.11.02 (일)",
+    "time": "14:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 78
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N54",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-02",
+    "dateRaw": "20251102",
+    "dateLabel": "2025.11.02 (일)",
+    "time": "16:30",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 75
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N55",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-03",
+    "dateRaw": "20251103",
+    "dateLabel": "2025.11.03 (월)",
+    "time": "19:00",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 79
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 92
+    }
+  },
+  {
+    "id": "S47G01N56",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-04",
+    "dateRaw": "20251104",
+    "dateLabel": "2025.11.04 (화)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 76
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 68
+    }
+  },
+  {
+    "id": "S47G01N57",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-05",
+    "dateRaw": "20251105",
+    "dateLabel": "2025.11.05 (수)",
+    "time": "19:00",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 89
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N58",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-06",
+    "dateRaw": "20251106",
+    "dateLabel": "2025.11.06 (목)",
+    "time": "19:00",
+    "venue": "울산동천체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 74
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 68
+    }
+  },
+  {
+    "id": "S47G01N59",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-07",
+    "dateRaw": "20251107",
+    "dateLabel": "2025.11.07 (금)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 66
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 68
+    }
+  },
+  {
+    "id": "S47G01N60",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-08",
+    "dateRaw": "20251108",
+    "dateLabel": "2025.11.08 (토)",
+    "time": "14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 81
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 89
+    }
+  },
+  {
+    "id": "S47G01N61",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-08",
+    "dateRaw": "20251108",
+    "dateLabel": "2025.11.08 (토)",
+    "time": "14:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 66
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 59
+    }
+  },
+  {
+    "id": "S47G01N62",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-08",
+    "dateRaw": "20251108",
+    "dateLabel": "2025.11.08 (토)",
+    "time": "16:30",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 80
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 85
+    }
+  },
+  {
+    "id": "S47G01N63",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-09",
+    "dateRaw": "20251109",
+    "dateLabel": "2025.11.09 (일)",
+    "time": "14:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 50
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 76
+    }
+  },
+  {
+    "id": "S47G01N64",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-09",
+    "dateRaw": "20251109",
+    "dateLabel": "2025.11.09 (일)",
+    "time": "14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 63
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 85
+    }
+  },
+  {
+    "id": "S47G01N65",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-09",
+    "dateRaw": "20251109",
+    "dateLabel": "2025.11.09 (일)",
+    "time": "16:30",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 67
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N66",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-10",
+    "dateRaw": "20251110",
+    "dateLabel": "2025.11.10 (월)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 83
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 61
+    }
+  },
+  {
+    "id": "S47G01N67",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-11",
+    "dateRaw": "20251111",
+    "dateLabel": "2025.11.11 (화)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 64
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 65
+    }
+  },
+  {
+    "id": "S47G01N68",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-12",
+    "dateRaw": "20251112",
+    "dateLabel": "2025.11.12 (수)",
+    "time": "19:00",
+    "venue": "잠실실내체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 83
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 95
+    }
+  },
+  {
+    "id": "S47G01N69",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-13",
+    "dateRaw": "20251113",
+    "dateLabel": "2025.11.13 (목)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 84
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 63
+    }
+  },
+  {
+    "id": "S47G01N70",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-13",
+    "dateRaw": "20251113",
+    "dateLabel": "2025.11.13 (목)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 93
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 82
+    }
+  },
+  {
+    "id": "S47G01N71",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-15",
+    "dateRaw": "20251115",
+    "dateLabel": "2025.11.15 (토)",
+    "time": "14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 67
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 82
+    }
+  },
+  {
+    "id": "S47G01N72",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-15",
+    "dateRaw": "20251115",
+    "dateLabel": "2025.11.15 (토)",
+    "time": "14:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 87
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 84
+    }
+  },
+  {
+    "id": "S47G01N73",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-15",
+    "dateRaw": "20251115",
+    "dateLabel": "2025.11.15 (토)",
+    "time": "16:30",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 88
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N74",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-16",
+    "dateRaw": "20251116",
+    "dateLabel": "2025.11.16 (일)",
+    "time": "14:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 70
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 78
+    }
+  },
+  {
+    "id": "S47G01N75",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-16",
+    "dateRaw": "20251116",
+    "dateLabel": "2025.11.16 (일)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 72
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N76",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-16",
+    "dateRaw": "20251116",
+    "dateLabel": "2025.11.16 (일)",
+    "time": "16:30",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 67
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 57
+    }
+  },
+  {
+    "id": "S47G01N77",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-17",
+    "dateRaw": "20251117",
+    "dateLabel": "2025.11.17 (월)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 85
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 83
+    }
+  },
+  {
+    "id": "S47G01N78",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-18",
+    "dateRaw": "20251118",
+    "dateLabel": "2025.11.18 (화)",
+    "time": "19:00",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 93
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 94
+    }
+  },
+  {
+    "id": "S47G01N79",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-18",
+    "dateRaw": "20251118",
+    "dateLabel": "2025.11.18 (화)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 82
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 93
+    }
+  },
+  {
+    "id": "S47G01N80",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-19",
+    "dateRaw": "20251119",
+    "dateLabel": "2025.11.19 (수)",
+    "time": "19:00",
+    "venue": "울산동천체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 68
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 89
+    }
+  },
+  {
+    "id": "S47G01N81",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-19",
+    "dateRaw": "20251119",
+    "dateLabel": "2025.11.19 (수)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 62
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 68
+    }
+  },
+  {
+    "id": "S47G01N82",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-20",
+    "dateRaw": "20251120",
+    "dateLabel": "2025.11.20 (목)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 84
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 79
+    }
+  },
+  {
+    "id": "S47G01N83",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-11-20",
+    "dateRaw": "20251120",
+    "dateLabel": "2025.11.20 (목)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 74
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 85
+    }
+  },
+  {
+    "id": "S47G01N84",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-04",
+    "dateRaw": "20251204",
+    "dateLabel": "2025.12.04 (목)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 64
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 66
+    }
+  },
+  {
+    "id": "S47G01N85",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-04",
+    "dateRaw": "20251204",
+    "dateLabel": "2025.12.04 (목)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 72
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N86",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-05",
+    "dateRaw": "20251205",
+    "dateLabel": "2025.12.05 (금)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 72
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 79
+    }
+  },
+  {
+    "id": "S47G01N87",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-05",
+    "dateRaw": "20251205",
+    "dateLabel": "2025.12.05 (금)",
+    "time": "19:00",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 96
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N88",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-06",
+    "dateRaw": "20251206",
+    "dateLabel": "2025.12.06 (토)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 90
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 60
+    }
+  },
+  {
+    "id": "S47G01N89",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-06",
+    "dateRaw": "20251206",
+    "dateLabel": "2025.12.06 (토)",
+    "time": "14:00",
+    "venue": "대구체육관",
+    "tv": "",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 67
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N90",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-06",
+    "dateRaw": "20251206",
+    "dateLabel": "2025.12.06 (토)",
+    "time": "16:30",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 80
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N91",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-07",
+    "dateRaw": "20251207",
+    "dateLabel": "2025.12.07 (일)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 66
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 63
+    }
+  },
+  {
+    "id": "S47G01N92",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-07",
+    "dateRaw": "20251207",
+    "dateLabel": "2025.12.07 (일)",
+    "time": "14:00",
+    "venue": "잠실실내체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 59
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N93",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-07",
+    "dateRaw": "20251207",
+    "dateLabel": "2025.12.07 (일)",
+    "time": "16:30",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 83
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N94",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-08",
+    "dateRaw": "20251208",
+    "dateLabel": "2025.12.08 (월)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 82
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N95",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-09",
+    "dateRaw": "20251209",
+    "dateLabel": "2025.12.09 (화)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 78
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 87
+    }
+  },
+  {
+    "id": "S47G01N96",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-10",
+    "dateRaw": "20251210",
+    "dateLabel": "2025.12.10 (수)",
+    "time": "19:00",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 80
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 76
+    }
+  },
+  {
+    "id": "S47G01N97",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-11",
+    "dateRaw": "20251211",
+    "dateLabel": "2025.12.11 (목)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 65
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 63
+    }
+  },
+  {
+    "id": "S47G01N98",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-12",
+    "dateRaw": "20251212",
+    "dateLabel": "2025.12.12 (금)",
+    "time": "19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 89
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 69
+    }
+  },
+  {
+    "id": "S47G01N100",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-13",
+    "dateRaw": "20251213",
+    "dateLabel": "2025.12.13 (토)",
+    "time": "14:00",
+    "venue": "대구체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 81
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N99",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-13",
+    "dateRaw": "20251213",
+    "dateLabel": "2025.12.13 (토)",
+    "time": "14:00",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 77
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 55
+    }
+  },
+  {
+    "id": "S47G01N101",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-13",
+    "dateRaw": "20251213",
+    "dateLabel": "2025.12.13 (토)",
+    "time": "16:30",
+    "venue": "울산동천체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 61
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 84
+    }
+  },
+  {
+    "id": "S47G01N102",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-14",
+    "dateRaw": "20251214",
+    "dateLabel": "2025.12.14 (일)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 75
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N103",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-14",
+    "dateRaw": "20251214",
+    "dateLabel": "2025.12.14 (일)",
+    "time": "14:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 103
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 76
+    }
+  },
+  {
+    "id": "S47G01N104",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-14",
+    "dateRaw": "20251214",
+    "dateLabel": "2025.12.14 (일)",
+    "time": "16:30",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 68
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N105",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-15",
+    "dateRaw": "20251215",
+    "dateLabel": "2025.12.15 (월)",
+    "time": "19:00",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 73
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 76
+    }
+  },
+  {
+    "id": "S47G01N106",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-16",
+    "dateRaw": "20251216",
+    "dateLabel": "2025.12.16 (화)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 85
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 86
+    }
+  },
+  {
+    "id": "S47G01N107",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-17",
+    "dateRaw": "20251217",
+    "dateLabel": "2025.12.17 (수)",
+    "time": "19:00",
+    "venue": "울산동천체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 63
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 66
+    }
+  },
+  {
+    "id": "S47G01N108",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-18",
+    "dateRaw": "20251218",
+    "dateLabel": "2025.12.18 (목)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 88
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 84
+    }
+  },
+  {
+    "id": "S47G01N109",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-19",
+    "dateRaw": "20251219",
+    "dateLabel": "2025.12.19 (금)",
+    "time": "19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 81
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 83
+    }
+  },
+  {
+    "id": "S47G01N110",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-20",
+    "dateRaw": "20251220",
+    "dateLabel": "2025.12.20 (토)",
+    "time": "14:00",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 74
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 73
+    }
+  },
+  {
+    "id": "S47G01N111",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-20",
+    "dateRaw": "20251220",
+    "dateLabel": "2025.12.20 (토)",
+    "time": "14:00",
+    "venue": "대구체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 66
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N112",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-20",
+    "dateRaw": "20251220",
+    "dateLabel": "2025.12.20 (토)",
+    "time": "16:30",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 108
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 81
+    }
+  },
+  {
+    "id": "S47G01N113",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-21",
+    "dateRaw": "20251221",
+    "dateLabel": "2025.12.21 (일)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 74
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 69
+    }
+  },
+  {
+    "id": "S47G01N114",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-21",
+    "dateRaw": "20251221",
+    "dateLabel": "2025.12.21 (일)",
+    "time": "14:00",
+    "venue": "잠실학생체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 74
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 87
+    }
+  },
+  {
+    "id": "S47G01N115",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-21",
+    "dateRaw": "20251221",
+    "dateLabel": "2025.12.21 (일)",
+    "time": "16:30",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 94
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 87
+    }
+  },
+  {
+    "id": "S47G01N116",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-22",
+    "dateRaw": "20251222",
+    "dateLabel": "2025.12.22 (월)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 90
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 82
+    }
+  },
+  {
+    "id": "S47G01N117",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-23",
+    "dateRaw": "20251223",
+    "dateLabel": "2025.12.23 (화)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 74
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N118",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-24",
+    "dateRaw": "20251224",
+    "dateLabel": "2025.12.24 (수)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 98
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 91
+    }
+  },
+  {
+    "id": "S47G01N119",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-25",
+    "dateRaw": "20251225",
+    "dateLabel": "2025.12.25 (목)",
+    "time": "14:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 64
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 74
+    }
+  },
+  {
+    "id": "S47G01N120",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-25",
+    "dateRaw": "20251225",
+    "dateLabel": "2025.12.25 (목)",
+    "time": "14:00",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 83
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N121",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-25",
+    "dateRaw": "20251225",
+    "dateLabel": "2025.12.25 (목)",
+    "time": "16:30",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 63
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 69
+    }
+  },
+  {
+    "id": "S47G01N122",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-26",
+    "dateRaw": "20251226",
+    "dateLabel": "2025.12.26 (금)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 101
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 109
+    }
+  },
+  {
+    "id": "S47G01N123",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-27",
+    "dateRaw": "20251227",
+    "dateLabel": "2025.12.27 (토)",
+    "time": "14:00",
+    "venue": "대구체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 66
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 67
+    }
+  },
+  {
+    "id": "S47G01N124",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-27",
+    "dateRaw": "20251227",
+    "dateLabel": "2025.12.27 (토)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 92
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 98
+    }
+  },
+  {
+    "id": "S47G01N125",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-27",
+    "dateRaw": "20251227",
+    "dateLabel": "2025.12.27 (토)",
+    "time": "16:30",
+    "venue": "울산동천체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 75
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 78
+    }
+  },
+  {
+    "id": "S47G01N126",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-28",
+    "dateRaw": "20251228",
+    "dateLabel": "2025.12.28 (일)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 56
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 72
+    }
+  },
+  {
+    "id": "S47G01N127",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-28",
+    "dateRaw": "20251228",
+    "dateLabel": "2025.12.28 (일)",
+    "time": "14:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 81
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 67
+    }
+  },
+  {
+    "id": "S47G01N128",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-28",
+    "dateRaw": "20251228",
+    "dateLabel": "2025.12.28 (일)",
+    "time": "16:30",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 78
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 84
+    }
+  },
+  {
+    "id": "S47G01N129",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-29",
+    "dateRaw": "20251229",
+    "dateLabel": "2025.12.29 (월)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 70
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N130",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-30",
+    "dateRaw": "20251230",
+    "dateLabel": "2025.12.30 (화)",
+    "time": "19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 111
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 86
+    }
+  },
+  {
+    "id": "S47G01N131",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-31",
+    "dateRaw": "20251231",
+    "dateLabel": "2025.12.31 (수)",
+    "time": "19:00",
+    "venue": "울산동천체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 68
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N132",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2025-12-31",
+    "dateRaw": "20251231",
+    "dateLabel": "2025.12.31 (수)",
+    "time": "21:30",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 82
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 99
+    }
+  },
+  {
+    "id": "S47G01N133",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-01",
+    "dateRaw": "20260101",
+    "dateLabel": "2026.01.01 (목)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 70
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 69
+    }
+  },
+  {
+    "id": "S47G01N134",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-01",
+    "dateRaw": "20260101",
+    "dateLabel": "2026.01.01 (목)",
+    "time": "16:30",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 65
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N135",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-02",
+    "dateRaw": "20260102",
+    "dateLabel": "2026.01.02 (금)",
+    "time": "19:00",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 62
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N136",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-03",
+    "dateRaw": "20260103",
+    "dateLabel": "2026.01.03 (토)",
+    "time": "14:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 77
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 79
+    }
+  },
+  {
+    "id": "S47G01N137",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-03",
+    "dateRaw": "20260103",
+    "dateLabel": "2026.01.03 (토)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 64
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 76
+    }
+  },
+  {
+    "id": "S47G01N138",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-03",
+    "dateRaw": "20260103",
+    "dateLabel": "2026.01.03 (토)",
+    "time": "16:30",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 78
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 74
+    }
+  },
+  {
+    "id": "S47G01N139",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-04",
+    "dateRaw": "20260104",
+    "dateLabel": "2026.01.04 (일)",
+    "time": "14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 76
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N140",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-04",
+    "dateRaw": "20260104",
+    "dateLabel": "2026.01.04 (일)",
+    "time": "14:00",
+    "venue": "잠실실내체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 76
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 83
+    }
+  },
+  {
+    "id": "S47G01N141",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-04",
+    "dateRaw": "20260104",
+    "dateLabel": "2026.01.04 (일)",
+    "time": "16:30",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 76
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 68
+    }
+  },
+  {
+    "id": "S47G01N142",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-05",
+    "dateRaw": "20260105",
+    "dateLabel": "2026.01.05 (월)",
+    "time": "19:00",
+    "venue": "대구체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 67
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N143",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-06",
+    "dateRaw": "20260106",
+    "dateLabel": "2026.01.06 (화)",
+    "time": "19:00",
+    "venue": "울산동천체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 81
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 66
+    }
+  },
+  {
+    "id": "S47G01N144",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-07",
+    "dateRaw": "20260107",
+    "dateLabel": "2026.01.07 (수)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 83
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 70
+    }
+  },
+  {
+    "id": "S47G01N145",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-08",
+    "dateRaw": "20260108",
+    "dateLabel": "2026.01.08 (목)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 82
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N146",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-09",
+    "dateRaw": "20260109",
+    "dateLabel": "2026.01.09 (금)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 78
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 76
+    }
+  },
+  {
+    "id": "S47G01N147",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-10",
+    "dateRaw": "20260110",
+    "dateLabel": "2026.01.10 (토)",
+    "time": "14:00",
+    "venue": "잠실학생체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 94
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 84
+    }
+  },
+  {
+    "id": "S47G01N148",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-10",
+    "dateRaw": "20260110",
+    "dateLabel": "2026.01.10 (토)",
+    "time": "14:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 75
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 89
+    }
+  },
+  {
+    "id": "S47G01N149",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-10",
+    "dateRaw": "20260110",
+    "dateLabel": "2026.01.10 (토)",
+    "time": "16:30",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 87
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 74
+    }
+  },
+  {
+    "id": "S47G01N150",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-11",
+    "dateRaw": "20260111",
+    "dateLabel": "2026.01.11 (일)",
+    "time": "14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 74
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 58
+    }
+  },
+  {
+    "id": "S47G01N151",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-11",
+    "dateRaw": "20260111",
+    "dateLabel": "2026.01.11 (일)",
+    "time": "14:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 73
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 65
+    }
+  },
+  {
+    "id": "S47G01N152",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-11",
+    "dateRaw": "20260111",
+    "dateLabel": "2026.01.11 (일)",
+    "time": "16:30",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 89
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 92
+    }
+  },
+  {
+    "id": "S47G01N153",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-12",
+    "dateRaw": "20260112",
+    "dateLabel": "2026.01.12 (월)",
+    "time": "19:00",
+    "venue": "대구체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 80
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 72
+    }
+  },
+  {
+    "id": "S47G01N154",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-12",
+    "dateRaw": "20260112",
+    "dateLabel": "2026.01.12 (월)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 96
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 90
+    }
+  },
+  {
+    "id": "S47G01N155",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-13",
+    "dateRaw": "20260113",
+    "dateLabel": "2026.01.13 (화)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 93
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 65
+    }
+  },
+  {
+    "id": "S47G01N156",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-13",
+    "dateRaw": "20260113",
+    "dateLabel": "2026.01.13 (화)",
+    "time": "19:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 75
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 74
+    }
+  },
+  {
+    "id": "S47G01N157",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-14",
+    "dateRaw": "20260114",
+    "dateLabel": "2026.01.14 (수)",
+    "time": "19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 107
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 95
+    }
+  },
+  {
+    "id": "S47G01N158",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-14",
+    "dateRaw": "20260114",
+    "dateLabel": "2026.01.14 (수)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 79
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 67
+    }
+  },
+  {
+    "id": "S47G01N159",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-15",
+    "dateRaw": "20260115",
+    "dateLabel": "2026.01.15 (목)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 89
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 76
+    }
+  },
+  {
+    "id": "S47G01N160",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-15",
+    "dateRaw": "20260115",
+    "dateLabel": "2026.01.15 (목)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 90
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G10N2",
+    "seasonName": "2025-2026",
+    "category": "올스타게임",
+    "date": "2026-01-17",
+    "dateRaw": "20260117",
+    "dateLabel": "2026.01.17 (토)",
+    "time": "14:00",
+    "venue": "잠실실내체육관",
+    "tv": "",
+    "isEnded": true,
+    "home": {
+      "code": "4A",
+      "name": "팀 아시아",
+      "fullName": "팀 아시아",
+      "shortName": "팀 아시아",
+      "score": 82
+    },
+    "away": {
+      "code": "5A",
+      "name": "팀 루키",
+      "fullName": "팀 루키",
+      "shortName": "팀 루키",
+      "score": 79
+    }
+  },
+  {
+    "id": "S47G10N1",
+    "seasonName": "2025-2026",
+    "category": "올스타게임",
+    "date": "2026-01-18",
+    "dateRaw": "20260118",
+    "dateLabel": "2026.01.18 (일)",
+    "time": "14:00",
+    "venue": "잠실실내체육관",
+    "tv": "",
+    "isEnded": true,
+    "home": {
+      "code": "62",
+      "name": "팀 브라운",
+      "fullName": "팀 브라운",
+      "shortName": "팀 브라운",
+      "score": 131
+    },
+    "away": {
+      "code": "63",
+      "name": "팀 코니",
+      "fullName": "팀 코니",
+      "shortName": "팀 코니",
+      "score": 109
+    }
+  },
+  {
+    "id": "S47G01N161",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-21",
+    "dateRaw": "20260121",
+    "dateLabel": "2026.01.21 (수)",
+    "time": "19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 62
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 73
+    }
+  },
+  {
+    "id": "S47G01N162",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-21",
+    "dateRaw": "20260121",
+    "dateLabel": "2026.01.21 (수)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 99
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 74
+    }
+  },
+  {
+    "id": "S47G01N163",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-22",
+    "dateRaw": "20260122",
+    "dateLabel": "2026.01.22 (목)",
+    "time": "19:00",
+    "venue": "울산동천체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 78
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N164",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-22",
+    "dateRaw": "20260122",
+    "dateLabel": "2026.01.22 (목)",
+    "time": "19:00",
+    "venue": "잠실실내체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 92
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 85
+    }
+  },
+  {
+    "id": "S47G01N165",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-23",
+    "dateRaw": "20260123",
+    "dateLabel": "2026.01.23 (금)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 65
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 64
+    }
+  },
+  {
+    "id": "S47G01N166",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-23",
+    "dateRaw": "20260123",
+    "dateLabel": "2026.01.23 (금)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 65
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 82
+    }
+  },
+  {
+    "id": "S47G01N167",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-24",
+    "dateRaw": "20260124",
+    "dateLabel": "2026.01.24 (토)",
+    "time": "14:00",
+    "venue": "울산동천체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 86
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 78
+    }
+  },
+  {
+    "id": "S47G01N168",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-24",
+    "dateRaw": "20260124",
+    "dateLabel": "2026.01.24 (토)",
+    "time": "14:00",
+    "venue": "잠실학생체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 95
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 81
+    }
+  },
+  {
+    "id": "S47G01N169",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-24",
+    "dateRaw": "20260124",
+    "dateLabel": "2026.01.24 (토)",
+    "time": "16:30",
+    "venue": "잠실실내체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 71
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 78
+    }
+  },
+  {
+    "id": "S47G01N170",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-25",
+    "dateRaw": "20260125",
+    "dateLabel": "2026.01.25 (일)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 76
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 53
+    }
+  },
+  {
+    "id": "S47G01N171",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-25",
+    "dateRaw": "20260125",
+    "dateLabel": "2026.01.25 (일)",
+    "time": "14:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 72
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 102
+    }
+  },
+  {
+    "id": "S47G01N172",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-25",
+    "dateRaw": "20260125",
+    "dateLabel": "2026.01.25 (일)",
+    "time": "16:30",
+    "venue": "잠실실내체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 77
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 91
+    }
+  },
+  {
+    "id": "S47G01N173",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-26",
+    "dateRaw": "20260126",
+    "dateLabel": "2026.01.26 (월)",
+    "time": "19:00",
+    "venue": "대구체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 74
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N174",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-27",
+    "dateRaw": "20260127",
+    "dateLabel": "2026.01.27 (화)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 99
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 54
+    }
+  },
+  {
+    "id": "S47G01N175",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-28",
+    "dateRaw": "20260128",
+    "dateLabel": "2026.01.28 (수)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 86
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 88
+    }
+  },
+  {
+    "id": "S47G01N176",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-29",
+    "dateRaw": "20260129",
+    "dateLabel": "2026.01.29 (목)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 76
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 85
+    }
+  },
+  {
+    "id": "S47G01N177",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-30",
+    "dateRaw": "20260130",
+    "dateLabel": "2026.01.30 (금)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 108
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 103
+    }
+  },
+  {
+    "id": "S47G01N178",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-31",
+    "dateRaw": "20260131",
+    "dateLabel": "2026.01.31 (토)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 76
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 65
+    }
+  },
+  {
+    "id": "S47G01N179",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-31",
+    "dateRaw": "20260131",
+    "dateLabel": "2026.01.31 (토)",
+    "time": "14:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 103
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 90
+    }
+  },
+  {
+    "id": "S47G01N180",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-01-31",
+    "dateRaw": "20260131",
+    "dateLabel": "2026.01.31 (토)",
+    "time": "16:30",
+    "venue": "잠실학생체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 79
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 59
+    }
+  },
+  {
+    "id": "S47G01N181",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-01",
+    "dateRaw": "20260201",
+    "dateLabel": "2026.02.01 (일)",
+    "time": "14:00",
+    "venue": "울산동천체육관",
+    "tv": "",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 73
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 88
+    }
+  },
+  {
+    "id": "S47G01N182",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-01",
+    "dateRaw": "20260201",
+    "dateLabel": "2026.02.01 (일)",
+    "time": "14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 89
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 96
+    }
+  },
+  {
+    "id": "S47G01N183",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-01",
+    "dateRaw": "20260201",
+    "dateLabel": "2026.02.01 (일)",
+    "time": "16:30",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 80
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 62
+    }
+  },
+  {
+    "id": "S47G01N184",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-02",
+    "dateRaw": "20260202",
+    "dateLabel": "2026.02.02 (월)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 77
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 120
+    }
+  },
+  {
+    "id": "S47G01N185",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-03",
+    "dateRaw": "20260203",
+    "dateLabel": "2026.02.03 (화)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 81
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 69
+    }
+  },
+  {
+    "id": "S47G01N186",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-04",
+    "dateRaw": "20260204",
+    "dateLabel": "2026.02.04 (수)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 95
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 89
+    }
+  },
+  {
+    "id": "S47G01N187",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-05",
+    "dateRaw": "20260205",
+    "dateLabel": "2026.02.05 (목)",
+    "time": "19:00",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 79
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 107
+    }
+  },
+  {
+    "id": "S47G01N188",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-06",
+    "dateRaw": "20260206",
+    "dateLabel": "2026.02.06 (금)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 78
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N189",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-07",
+    "dateRaw": "20260207",
+    "dateLabel": "2026.02.07 (토)",
+    "time": "14:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 91
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 79
+    }
+  },
+  {
+    "id": "S47G01N190",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-07",
+    "dateRaw": "20260207",
+    "dateLabel": "2026.02.07 (토)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 92
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 78
+    }
+  },
+  {
+    "id": "S47G01N191",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-07",
+    "dateRaw": "20260207",
+    "dateLabel": "2026.02.07 (토)",
+    "time": "16:30",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 80
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 83
+    }
+  },
+  {
+    "id": "S47G01N192",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-08",
+    "dateRaw": "20260208",
+    "dateLabel": "2026.02.08 (일)",
+    "time": "14:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 84
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 65
+    }
+  },
+  {
+    "id": "S47G01N193",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-08",
+    "dateRaw": "20260208",
+    "dateLabel": "2026.02.08 (일)",
+    "time": "14:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 69
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N194",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-08",
+    "dateRaw": "20260208",
+    "dateLabel": "2026.02.08 (일)",
+    "time": "16:30",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 65
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 66
+    }
+  },
+  {
+    "id": "S47G01N195",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-09",
+    "dateRaw": "20260209",
+    "dateLabel": "2026.02.09 (월)",
+    "time": "19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 104
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 101
+    }
+  },
+  {
+    "id": "S47G01N196",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-10",
+    "dateRaw": "20260210",
+    "dateLabel": "2026.02.10 (화)",
+    "time": "19:00",
+    "venue": "대구체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 72
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N197",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-11",
+    "dateRaw": "20260211",
+    "dateLabel": "2026.02.11 (수)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 81
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 64
+    }
+  },
+  {
+    "id": "S47G01N198",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-12",
+    "dateRaw": "20260212",
+    "dateLabel": "2026.02.12 (목)",
+    "time": "19:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 87
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N199",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-13",
+    "dateRaw": "20260213",
+    "dateLabel": "2026.02.13 (금)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 74
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 65
+    }
+  },
+  {
+    "id": "S47G01N200",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-14",
+    "dateRaw": "20260214",
+    "dateLabel": "2026.02.14 (토)",
+    "time": "14:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 76
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 87
+    }
+  },
+  {
+    "id": "S47G01N201",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-14",
+    "dateRaw": "20260214",
+    "dateLabel": "2026.02.14 (토)",
+    "time": "14:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 88
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 76
+    }
+  },
+  {
+    "id": "S47G01N202",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-14",
+    "dateRaw": "20260214",
+    "dateLabel": "2026.02.14 (토)",
+    "time": "16:30",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 80
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 58
+    }
+  },
+  {
+    "id": "S47G01N203",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-15",
+    "dateRaw": "20260215",
+    "dateLabel": "2026.02.15 (일)",
+    "time": "14:00",
+    "venue": "잠실학생체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 80
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N204",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-15",
+    "dateRaw": "20260215",
+    "dateLabel": "2026.02.15 (일)",
+    "time": "14:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 83
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 81
+    }
+  },
+  {
+    "id": "S47G01N205",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-15",
+    "dateRaw": "20260215",
+    "dateLabel": "2026.02.15 (일)",
+    "time": "16:30",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 71
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 87
+    }
+  },
+  {
+    "id": "S47G01N206",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-16",
+    "dateRaw": "20260216",
+    "dateLabel": "2026.02.16 (월)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 62
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 79
+    }
+  },
+  {
+    "id": "S47G01N207",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-16",
+    "dateRaw": "20260216",
+    "dateLabel": "2026.02.16 (월)",
+    "time": "16:30",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 90
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N208",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-17",
+    "dateRaw": "20260217",
+    "dateLabel": "2026.02.17 (화)",
+    "time": "14:00",
+    "venue": "대구체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 86
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 98
+    }
+  },
+  {
+    "id": "S47G01N209",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-17",
+    "dateRaw": "20260217",
+    "dateLabel": "2026.02.17 (화)",
+    "time": "16:30",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 79
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 82
+    }
+  },
+  {
+    "id": "S47G01N210",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-18",
+    "dateRaw": "20260218",
+    "dateLabel": "2026.02.18 (수)",
+    "time": "14:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 89
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 59
+    }
+  },
+  {
+    "id": "S47G01N211",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-18",
+    "dateRaw": "20260218",
+    "dateLabel": "2026.02.18 (수)",
+    "time": "16:30",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 74
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 94
+    }
+  },
+  {
+    "id": "S47G01N212",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-19",
+    "dateRaw": "20260219",
+    "dateLabel": "2026.02.19 (목)",
+    "time": "19:00",
+    "venue": "대구체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 86
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N213",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-02-19",
+    "dateRaw": "20260219",
+    "dateLabel": "2026.02.19 (목)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 86
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 64
+    }
+  },
+  {
+    "id": "S47G01N214",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-05",
+    "dateRaw": "20260305",
+    "dateLabel": "2026.03.05 (목)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 75
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 73
+    }
+  },
+  {
+    "id": "S47G01N215",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-05",
+    "dateRaw": "20260305",
+    "dateLabel": "2026.03.05 (목)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 84
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 104
+    }
+  },
+  {
+    "id": "S47G01N216",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-06",
+    "dateRaw": "20260306",
+    "dateLabel": "2026.03.06 (금)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 83
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N217",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-06",
+    "dateRaw": "20260306",
+    "dateLabel": "2026.03.06 (금)",
+    "time": "19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 81
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 70
+    }
+  },
+  {
+    "id": "S47G01N218",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-07",
+    "dateRaw": "20260307",
+    "dateLabel": "2026.03.07 (토)",
+    "time": "14:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 81
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 95
+    }
+  },
+  {
+    "id": "S47G01N219",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-07",
+    "dateRaw": "20260307",
+    "dateLabel": "2026.03.07 (토)",
+    "time": "14:00",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 79
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 81
+    }
+  },
+  {
+    "id": "S47G01N220",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-07",
+    "dateRaw": "20260307",
+    "dateLabel": "2026.03.07 (토)",
+    "time": "16:30",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 66
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 64
+    }
+  },
+  {
+    "id": "S47G01N221",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-08",
+    "dateRaw": "20260308",
+    "dateLabel": "2026.03.08 (일)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 70
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N222",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-08",
+    "dateRaw": "20260308",
+    "dateLabel": "2026.03.08 (일)",
+    "time": "14:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 95
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 83
+    }
+  },
+  {
+    "id": "S47G01N223",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-08",
+    "dateRaw": "20260308",
+    "dateLabel": "2026.03.08 (일)",
+    "time": "16:30",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 93
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 79
+    }
+  },
+  {
+    "id": "S47G01N224",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-09",
+    "dateRaw": "20260309",
+    "dateLabel": "2026.03.09 (월)",
+    "time": "19:00",
+    "venue": "잠실실내체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 79
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 84
+    }
+  },
+  {
+    "id": "S47G01N225",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-10",
+    "dateRaw": "20260310",
+    "dateLabel": "2026.03.10 (화)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 90
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 89
+    }
+  },
+  {
+    "id": "S47G01N226",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-11",
+    "dateRaw": "20260311",
+    "dateLabel": "2026.03.11 (수)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 70
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 74
+    }
+  },
+  {
+    "id": "S47G01N227",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-12",
+    "dateRaw": "20260312",
+    "dateLabel": "2026.03.12 (목)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 89
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 68
+    }
+  },
+  {
+    "id": "S47G01N228",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-13",
+    "dateRaw": "20260313",
+    "dateLabel": "2026.03.13 (금)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 97
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 88
+    }
+  },
+  {
+    "id": "S47G01N229",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-14",
+    "dateRaw": "20260314",
+    "dateLabel": "2026.03.14 (토)",
+    "time": "14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 69
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N230",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-14",
+    "dateRaw": "20260314",
+    "dateLabel": "2026.03.14 (토)",
+    "time": "14:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 86
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 91
+    }
+  },
+  {
+    "id": "S47G01N231",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-14",
+    "dateRaw": "20260314",
+    "dateLabel": "2026.03.14 (토)",
+    "time": "16:30",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 84
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 74
+    }
+  },
+  {
+    "id": "S47G01N232",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-15",
+    "dateRaw": "20260315",
+    "dateLabel": "2026.03.15 (일)",
+    "time": "14:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 69
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N233",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-15",
+    "dateRaw": "20260315",
+    "dateLabel": "2026.03.15 (일)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 98
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N234",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-15",
+    "dateRaw": "20260315",
+    "dateLabel": "2026.03.15 (일)",
+    "time": "16:30",
+    "venue": "울산동천체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 85
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 74
+    }
+  },
+  {
+    "id": "S47G01N235",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-16",
+    "dateRaw": "20260316",
+    "dateLabel": "2026.03.16 (월)",
+    "time": "19:00",
+    "venue": "대구체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 80
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 68
+    }
+  },
+  {
+    "id": "S47G01N236",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-18",
+    "dateRaw": "20260318",
+    "dateLabel": "2026.03.18 (수)",
+    "time": "19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 66
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 69
+    }
+  },
+  {
+    "id": "S47G01N237",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-19",
+    "dateRaw": "20260319",
+    "dateLabel": "2026.03.19 (목)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 111
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N238",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-20",
+    "dateRaw": "20260320",
+    "dateLabel": "2026.03.20 (금)",
+    "time": "19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 84
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 82
+    }
+  },
+  {
+    "id": "S47G01N239",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-21",
+    "dateRaw": "20260321",
+    "dateLabel": "2026.03.21 (토)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 90
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 86
+    }
+  },
+  {
+    "id": "S47G01N240",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-21",
+    "dateRaw": "20260321",
+    "dateLabel": "2026.03.21 (토)",
+    "time": "16:30",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 100
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 81
+    }
+  },
+  {
+    "id": "S47G01N241",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-22",
+    "dateRaw": "20260322",
+    "dateLabel": "2026.03.22 (일)",
+    "time": "14:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 86
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 77
+    }
+  },
+  {
+    "id": "S47G01N242",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-22",
+    "dateRaw": "20260322",
+    "dateLabel": "2026.03.22 (일)",
+    "time": "16:30",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 78
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 74
+    }
+  },
+  {
+    "id": "S47G01N243",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-23",
+    "dateRaw": "20260323",
+    "dateLabel": "2026.03.23 (월)",
+    "time": "19:00",
+    "venue": "잠실실내체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 76
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 73
+    }
+  },
+  {
+    "id": "S47G01N244",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-24",
+    "dateRaw": "20260324",
+    "dateLabel": "2026.03.24 (화)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 84
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 87
+    }
+  },
+  {
+    "id": "S47G01N245",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-25",
+    "dateRaw": "20260325",
+    "dateLabel": "2026.03.25 (수)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 77
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 78
+    }
+  },
+  {
+    "id": "S47G01N246",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-26",
+    "dateRaw": "20260326",
+    "dateLabel": "2026.03.26 (목)",
+    "time": "19:00",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 67
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G01N247",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-27",
+    "dateRaw": "20260327",
+    "dateLabel": "2026.03.27 (금)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 79
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 84
+    }
+  },
+  {
+    "id": "S47G01N248",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-28",
+    "dateRaw": "20260328",
+    "dateLabel": "2026.03.28 (토)",
+    "time": "14:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 58
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 69
+    }
+  },
+  {
+    "id": "S47G01N249",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-28",
+    "dateRaw": "20260328",
+    "dateLabel": "2026.03.28 (토)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 81
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 92
+    }
+  },
+  {
+    "id": "S47G01N250",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-28",
+    "dateRaw": "20260328",
+    "dateLabel": "2026.03.28 (토)",
+    "time": "16:30",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 71
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 62
+    }
+  },
+  {
+    "id": "S47G01N251",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-29",
+    "dateRaw": "20260329",
+    "dateLabel": "2026.03.29 (일)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 67
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 55
+    }
+  },
+  {
+    "id": "S47G01N252",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-29",
+    "dateRaw": "20260329",
+    "dateLabel": "2026.03.29 (일)",
+    "time": "14:00",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 80
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 87
+    }
+  },
+  {
+    "id": "S47G01N253",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-29",
+    "dateRaw": "20260329",
+    "dateLabel": "2026.03.29 (일)",
+    "time": "16:30",
+    "venue": "잠실실내체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 78
+    },
+    "away": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 83
+    }
+  },
+  {
+    "id": "S47G01N254",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-30",
+    "dateRaw": "20260330",
+    "dateLabel": "2026.03.30 (월)",
+    "time": "19:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 81
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 90
+    }
+  },
+  {
+    "id": "S47G01N255",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-03-31",
+    "dateRaw": "20260331",
+    "dateLabel": "2026.03.31 (화)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 84
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 74
+    }
+  },
+  {
+    "id": "S47G01N256",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-01",
+    "dateRaw": "20260401",
+    "dateLabel": "2026.04.01 (수)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 81
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 79
+    }
+  },
+  {
+    "id": "S47G01N257",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-02",
+    "dateRaw": "20260402",
+    "dateLabel": "2026.04.02 (목)",
+    "time": "19:00",
+    "venue": "대구체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 78
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 76
+    }
+  },
+  {
+    "id": "S47G01N258",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-03",
+    "dateRaw": "20260403",
+    "dateLabel": "2026.04.03 (금)",
+    "time": "19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 60
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 87
+    }
+  },
+  {
+    "id": "S47G01N259",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-04",
+    "dateRaw": "20260404",
+    "dateLabel": "2026.04.04 (토)",
+    "time": "14:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 95
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 71
+    }
+  },
+  {
+    "id": "S47G01N260",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-04",
+    "dateRaw": "20260404",
+    "dateLabel": "2026.04.04 (토)",
+    "time": "14:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 80
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G01N261",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-04",
+    "dateRaw": "20260404",
+    "dateLabel": "2026.04.04 (토)",
+    "time": "16:30",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 106
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 102
+    }
+  },
+  {
+    "id": "S47G01N262",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-05",
+    "dateRaw": "20260405",
+    "dateLabel": "2026.04.05 (일)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 65
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 74
+    }
+  },
+  {
+    "id": "S47G01N263",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-05",
+    "dateRaw": "20260405",
+    "dateLabel": "2026.04.05 (일)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 65
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 61
+    }
+  },
+  {
+    "id": "S47G01N264",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-05",
+    "dateRaw": "20260405",
+    "dateLabel": "2026.04.05 (일)",
+    "time": "16:30",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 73
+    },
+    "away": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 69
+    }
+  },
+  {
+    "id": "S47G01N265",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-06",
+    "dateRaw": "20260406",
+    "dateLabel": "2026.04.06 (월)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 75
+    },
+    "away": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 93
+    }
+  },
+  {
+    "id": "S47G01N266",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-08",
+    "dateRaw": "20260408",
+    "dateLabel": "2026.04.08 (수)",
+    "time": "19:00",
+    "venue": "울산동천체육관",
+    "tv": "IB SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "10",
+      "name": "울산 현대모비스",
+      "fullName": "울산 현대모비스 피버스",
+      "shortName": "현대모비스",
+      "score": 78
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 56
+    }
+  },
+  {
+    "id": "S47G01N267",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-08",
+    "dateRaw": "20260408",
+    "dateLabel": "2026.04.08 (수)",
+    "time": "19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "tv": "GOLF&PBA",
+    "isEnded": true,
+    "home": {
+      "code": "06",
+      "name": "수원 KT",
+      "fullName": "수원 KT 소닉붐",
+      "shortName": "KT",
+      "score": 76
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 72
+    }
+  },
+  {
+    "id": "S47G01N268",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-08",
+    "dateRaw": "20260408",
+    "dateLabel": "2026.04.08 (수)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 67
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 65
+    }
+  },
+  {
+    "id": "S47G01N269",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-08",
+    "dateRaw": "20260408",
+    "dateLabel": "2026.04.08 (수)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 101
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 109
+    }
+  },
+  {
+    "id": "S47G01N270",
+    "seasonName": "2025-2026",
+    "category": "정규시즌",
+    "date": "2026-04-08",
+    "dateRaw": "20260408",
+    "dateLabel": "2026.04.08 (수)",
+    "time": "19:00",
+    "venue": "잠실실내체육관",
+    "tv": "",
+    "isEnded": true,
+    "home": {
+      "code": "35",
+      "name": "서울 삼성",
+      "fullName": "서울 삼성 썬더스",
+      "shortName": "삼성",
+      "score": 73
+    },
+    "away": {
+      "code": "64",
+      "name": "대구 한국가스공사",
+      "fullName": "대구 한국가스공사 페가수스",
+      "shortName": "가스공사",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G03N1",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-12",
+    "dateRaw": "20260412",
+    "dateLabel": "2026.04.12 (일)",
+    "time": "14:00",
+    "venue": "잠실학생체육관",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 76
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 105
+    }
+  },
+  {
+    "id": "S47G03N2",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-13",
+    "dateRaw": "20260413",
+    "dateLabel": "2026.04.13 (월)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 78
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 81
+    }
+  },
+  {
+    "id": "S47G03N3",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-14",
+    "dateRaw": "20260414",
+    "dateLabel": "2026.04.14 (화)",
+    "time": "19:00",
+    "venue": "잠실학생체육관",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 72
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G03N4",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-15",
+    "dateRaw": "20260415",
+    "dateLabel": "2026.04.15 (수)",
+    "time": "19:00",
+    "venue": "원주DB프로미아레나",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 97
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 105
+    }
+  },
+  {
+    "id": "S47G03N5",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-16",
+    "dateRaw": "20260416",
+    "dateLabel": "2026.04.16 (목)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 66
+    },
+    "away": {
+      "code": "55",
+      "name": "서울 SK",
+      "fullName": "서울 SK 나이츠",
+      "shortName": "SK",
+      "score": 65
+    }
+  },
+  {
+    "id": "S47G03N6",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-17",
+    "dateRaw": "20260417",
+    "dateLabel": "2026.04.17 (금)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 98
+    },
+    "away": {
+      "code": "16",
+      "name": "원주 DB",
+      "fullName": "원주 DB 프로미",
+      "shortName": "DB",
+      "score": 89
+    }
+  },
+  {
+    "id": "S47G03N11",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-23",
+    "dateRaw": "20260423",
+    "dateLabel": "2026.04.23 (목)",
+    "time": "19:00",
+    "venue": "창원체육관",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 63
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 69
+    }
+  },
+  {
+    "id": "S47G03N12",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-24",
+    "dateRaw": "20260424",
+    "dateLabel": "2026.04.24 (금)",
+    "time": "19:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 75
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 91
+    }
+  },
+  {
+    "id": "S47G03N13",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-25",
+    "dateRaw": "20260425",
+    "dateLabel": "2026.04.25 (토)",
+    "time": "14:00",
+    "venue": "창원체육관",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 76
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 85
+    }
+  },
+  {
+    "id": "S47G03N14",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-26",
+    "dateRaw": "20260426",
+    "dateLabel": "2026.04.26 (일)",
+    "time": "14:00",
+    "venue": "안양 정관장 아레나",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 91
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 83
+    }
+  },
+  {
+    "id": "S47G03N15",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-27",
+    "dateRaw": "20260427",
+    "dateLabel": "2026.04.27 (월)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 90
+    },
+    "away": {
+      "code": "50",
+      "name": "창원 LG",
+      "fullName": "창원 LG 세이커스",
+      "shortName": "LG",
+      "score": 80
+    }
+  },
+  {
+    "id": "S47G03N16",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-28",
+    "dateRaw": "20260428",
+    "dateLabel": "2026.04.28 (화)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 83
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 79
+    }
+  },
+  {
+    "id": "S47G03N18",
+    "seasonName": "2025-2026",
+    "category": "플레이오프",
+    "date": "2026-04-30",
+    "dateRaw": "20260430",
+    "dateLabel": "2026.04.30 (목)",
+    "time": "19:00",
+    "venue": "부산사직체육관",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 84
+    },
+    "away": {
+      "code": "70",
+      "name": "안양 정관장",
+      "fullName": "안양 정관장 레드부스터스",
+      "shortName": "정관장",
+      "score": 67
+    }
+  },
+  {
+    "id": "S47G04N1",
+    "seasonName": "2025-2026",
+    "category": "챔피언결정전",
+    "date": "2026-05-05",
+    "dateRaw": "20260505",
+    "dateLabel": "2026.05.05 (화)",
+    "time": "14:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 67
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 75
+    }
+  },
+  {
+    "id": "S47G04N2",
+    "seasonName": "2025-2026",
+    "category": "챔피언결정전",
+    "date": "2026-05-07",
+    "dateRaw": "20260507",
+    "dateLabel": "2026.05.07 (목)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 78
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 96
+    }
+  },
+  {
+    "id": "S47G04N3",
+    "seasonName": "2025-2026",
+    "category": "챔피언결정전",
+    "date": "2026-05-09",
+    "dateRaw": "20260509",
+    "dateLabel": "2026.05.09 (토)",
+    "time": "14:00",
+    "venue": "부산사직체육관",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 88
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 87
+    }
+  },
+  {
+    "id": "S47G04N4",
+    "seasonName": "2025-2026",
+    "category": "챔피언결정전",
+    "date": "2026-05-10",
+    "dateRaw": "20260510",
+    "dateLabel": "2026.05.10 (일)",
+    "time": "16:30",
+    "venue": "부산사직체육관",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 80
+    },
+    "away": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 81
+    }
+  },
+  {
+    "id": "S47G04N5",
+    "seasonName": "2025-2026",
+    "category": "챔피언결정전",
+    "date": "2026-05-13",
+    "dateRaw": "20260513",
+    "dateLabel": "2026.05.13 (수)",
+    "time": "19:00",
+    "venue": "고양소노아레나",
+    "tv": "IB SPORTS / tvN SPORTS",
+    "isEnded": true,
+    "home": {
+      "code": "66",
+      "name": "고양 소노",
+      "fullName": "고양 소노 스카이거너스",
+      "shortName": "소노",
+      "score": 68
+    },
+    "away": {
+      "code": "60",
+      "name": "부산 KCC",
+      "fullName": "부산 KCC 이지스",
+      "shortName": "KCC",
+      "score": 76
+    }
+  }
+].map((game) => ({
+  ...game,
+  source: {
+    schedule: `${KBL_SCHEDULE_SOURCE.api}?fromDate=${game.dateRaw.slice(0, 6)}01&toDate=${game.dateRaw.slice(0, 6)}31&tcodeList=all`,
+    record: `https://www.kbl.or.kr/match/record/${game.id}/${game.dateRaw}`,
+  },
+}));
+
 function getInitialTeamCode() {
   try {
     const storedTeamCode = localStorage.getItem(TEAM_STORAGE_KEY);
@@ -263,6 +7958,8 @@ let selectedTeamCode = getInitialTeamCode();
 let selectedClip = "assist";
 let selectedLevel = "easy";
 let activePanel = "highlight";
+let selectedMatchId = "S47G01N258";
+let selectedCalendarMonth = "2026-04";
 let currentContext = buildTeamContext(selectedTeamCode);
 let generatedClipCount = 0;
 let generatedClipSequence = 1;
@@ -350,6 +8047,198 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function gameIncludesTeam(game, teamCode) {
+  return [game?.home?.code, game?.away?.code].includes(teamCode);
+}
+
+function seasonGamesForTeam(teamCode) {
+  return KBL_SEASON_GAMES.filter((game) => gameIncludesTeam(game, teamCode));
+}
+
+function winnerForMatch(match) {
+  if (!match?.isEnded) return null;
+  return match.home.score > match.away.score ? match.home : match.away;
+}
+
+function loserForMatch(match) {
+  const winner = winnerForMatch(match);
+  if (!winner) return null;
+  return winner.code === match.home.code ? match.away : match.home;
+}
+
+function selectedTeamResultForGame(game, teamCode) {
+  const side = game.home.code === teamCode ? game.home : game.away;
+  const opponent = side.code === game.home.code ? game.away : game.home;
+  if (!game.isEnded) return `${game.time} 예정`;
+  const result = side.score > opponent.score ? "승" : side.score < opponent.score ? "패" : "무";
+  return `${result} ${side.score}-${opponent.score}`;
+}
+
+function createMatchFromSeasonGame(game) {
+  const winner = winnerForMatch(game);
+  const loser = loserForMatch(game);
+  const winnerText = winner && loser ? `${winner.name} ${winner.score}-${loser.score} 승리` : "경기 예정";
+
+  return {
+    ...game,
+    source: {
+      ...KBL_SCHEDULE_SOURCE,
+      ...game.source,
+    },
+    crowd: null,
+    preGame: {
+      title: `${game.home.shortName} vs ${game.away.shortName} 직관메이트`,
+      flow: ["팀 선택", "경기 선택", "직관메이트 창", "직관메이트 찾기/모집"],
+      summary: [
+        `${game.seasonName} ${game.category} 공식 일정에 등록된 ${game.home.name} vs ${game.away.name} 경기입니다.`,
+        `${game.dateLabel} ${game.time}, ${game.venue}에서 열리는 매치업으로 경기 전에는 직관메이트 모집을 먼저 보여줍니다.`,
+        `${game.tv || "중계 정보 업데이트 예정"} 편성 기준으로 경기 전 알림, 좌석 선호, 응원 스타일을 묶어 메이트를 추천합니다.`,
+      ],
+      mate: {
+        title: `${game.home.shortName} vs ${game.away.shortName} 같이 볼 팬 찾기`,
+        copy: `${game.venue}에서 ${game.category} 분위기를 같이 볼 팬을 모집합니다.`,
+        gameChoice: `${game.home.name} vs ${game.away.name}`,
+        seatChoice: game.home.code === "50" ? "창원 홈 응원석" : "응원석",
+        styleChoice: "초보 환영",
+        tags: [game.category, game.venue, "초보 환영"],
+      },
+    },
+    postGame: {
+      title: winnerText,
+      flow: ["팀 선택", "경기 선택", "경기 summary/오늘 잘한 선수 확인", "하이라이트 메이커에서 출전 선수만 선택", "AI 하이라이트 생성"],
+      summary: [
+        `${game.category} ${game.home.name} ${game.home.score}-${game.away.score} ${game.away.name} 경기 결과를 기반으로 summary를 구성합니다.`,
+        `${winnerText}로 기록됐고, 경기 후 팬 앱에서는 선택 팀의 시즌 기록 상위 선수를 하이라이트 후보로 먼저 보여줍니다.`,
+        "상세 출전 기록이 연결된 경기에서는 실제 출전 선수만 선택 가능하고, 그 외 경기는 공식 일정+시즌 선수 기록 기반 시연으로 표시합니다.",
+      ],
+      fanComments: [
+        `${game.home.shortName} vs ${game.away.shortName} 경기는 결과만 봐도 관전 포인트가 명확했어요.`,
+        "경기 summary를 먼저 보니까 농구를 잘 몰라도 오늘 흐름을 이해하기 쉬웠습니다.",
+        "다음에는 이 경기 하이라이트로 직관메이트를 구해보고 싶어요.",
+      ],
+      starPlayers: [],
+    },
+    playerStats: {},
+    inactivePlayers: {},
+    dashboardSignals: [
+      `${game.category} 경기 반응을 다음 홈경기 이벤트로 연결`,
+      `${game.home.shortName} vs ${game.away.shortName} 하이라이트를 스폰서 패키지 소재로 활용`,
+      "경기 선택, summary 열람, 하이라이트 생성 흐름을 ROI 퍼널로 추적",
+    ],
+  };
+}
+
+function matchById(matchId) {
+  if (matchId === FEATURED_KBL_MATCH.id) return FEATURED_KBL_MATCH;
+
+  const seasonGame = KBL_SEASON_GAMES.find((game) => game.id === matchId);
+  return seasonGame ? createMatchFromSeasonGame(seasonGame) : null;
+}
+
+function featuredMatchForTeam(teamCode) {
+  const teamGames = seasonGamesForTeam(teamCode);
+  const nextMatchId = teamGames.some((game) => game.id === selectedMatchId)
+    ? selectedMatchId
+    : teamGames[0]?.id;
+
+  if (!nextMatchId) return null;
+  selectedMatchId = nextMatchId;
+  return matchById(nextMatchId);
+}
+
+function parsePlayClock(clock = "00:00") {
+  const [minutes, seconds] = String(clock).split(":").map((part) => Number(part));
+  return {
+    minutes: Number.isFinite(minutes) ? minutes : 0,
+    seconds: Number.isFinite(seconds) ? seconds : 0,
+  };
+}
+
+function matchOpponentFor(match, teamCode) {
+  if (!match) return null;
+  return match.home.code === teamCode ? match.away : match.home;
+}
+
+function matchSideFor(match, teamCode) {
+  if (!match) return null;
+  return match.home.code === teamCode ? match.home : match.away;
+}
+
+function matchStatRowsFor(teamCode, match = FEATURED_KBL_MATCH) {
+  const rows = match?.playerStats?.[teamCode];
+  if (!rows) return null;
+
+  return rows.map(
+    ([
+      pcode,
+      name,
+      position,
+      backNumber,
+      score,
+      rb,
+      ast,
+      threep,
+      stl,
+      bs,
+      playClock,
+      marginCn,
+    ]) => {
+      const { minutes, seconds } = parsePlayClock(playClock);
+
+      return {
+        player: {
+          pcode,
+          name,
+          teamCode,
+          team: TEAM_CONFIGS[teamCode]?.name || "",
+          position,
+          backNumber,
+        },
+        records: {
+          score,
+          rb,
+          ast,
+          threep,
+          stl,
+          bs,
+          playMin: minutes,
+          playSec: seconds,
+          marginCn,
+        },
+        gameCount: 1,
+        startCount: 0,
+        matchAvailable: true,
+        playClock,
+      };
+    },
+  );
+}
+
+function matchPlayerOptions(context) {
+  if (!context.match) return null;
+
+  const teamCode = context.team.code;
+  const playedRows = matchStatRowsFor(teamCode, context.match) || [];
+  const inactiveRows = context.match.inactivePlayers?.[teamCode] || [];
+
+  if (!playedRows.length && !inactiveRows.length) return null;
+
+  return [
+    ...playedRows.map((row) => ({
+      ...row.player,
+      matchAvailable: true,
+      matchLine: `${row.records.score}점 · ${row.records.rb}리바운드 · ${row.playClock}`,
+    })),
+    ...inactiveRows.map((player) => ({
+      ...player,
+      teamCode,
+      team: context.team.name,
+      matchAvailable: false,
+      matchLine: player.reason,
+    })),
+  ];
 }
 
 function statRowForPlayer(playerOrRow) {
@@ -458,6 +8347,9 @@ function topUniquePlayers(stats) {
 }
 
 function displayRosterPlayers(context) {
+  const matchPlayers = matchPlayerOptions(context);
+  if (matchPlayers) return matchPlayers;
+
   const playersByCode = new Map();
 
   context.roster.forEach((player) => {
@@ -493,6 +8385,7 @@ function displayRosterPlayers(context) {
 function defaultSelectedPlayerCodes(context) {
   return new Set(
     displayRosterPlayers(context)
+      .filter((player) => player.matchAvailable !== false)
       .slice(0, 4)
       .map((player) => player.pcode)
       .filter(Boolean),
@@ -510,7 +8403,8 @@ function selectedPlayers() {
 
 function buildTeamContext(teamCode) {
   const team = TEAM_CONFIGS[teamCode] || TEAM_CONFIGS["50"];
-  const stats = teamStatsFor(team.code);
+  const match = featuredMatchForTeam(team.code);
+  const stats = matchStatRowsFor(team.code, match) || teamStatsFor(team.code);
   const roster = rosterFor(team.code);
   const activeEntries = activeEntriesFor(team.code);
   const assistLeader = topByStat(stats, "ast", 1);
@@ -527,6 +8421,9 @@ function buildTeamContext(teamCode) {
 
   return {
     team,
+    match,
+    matchSide: matchSideFor(match, team.code),
+    opponentSide: matchOpponentFor(match, team.code),
     stats,
     roster,
     activeEntries,
@@ -653,11 +8550,18 @@ function updateFollowCount() {
     selectionHint.textContent = isGeneratingHighlight
       ? "AI가 경기 이벤트와 선수별 장면을 분석해 클립을 편집 중입니다."
       : activeCount
-      ? `${names.slice(0, 3).join(" · ")} 중심으로 AI 클립을 생성합니다.`
+      ? currentContext.match
+        ? `${names.slice(0, 3).join(" · ")}의 ${currentContext.match.dateLabel} 경기 장면으로 AI 클립을 생성합니다.`
+        : `${names.slice(0, 3).join(" · ")} 중심으로 AI 클립을 생성합니다.`
       : "선수를 1명 이상 선택해 주세요.";
   }
 
-  if (generateButton) generateButton.disabled = activeCount === 0 || isGeneratingHighlight;
+  if (generateButton) {
+    generateButton.disabled = activeCount === 0 || isGeneratingHighlight;
+    if (!isGeneratingHighlight) {
+      generateButton.textContent = "하이라이트 생성";
+    }
+  }
 }
 
 function updateClipCount() {
@@ -762,24 +8666,247 @@ function renderPlayerChips(context) {
     button.type = "button";
     button.dataset.playerCode = code;
     button.dataset.playerName = player.name;
+    button.dataset.matchAvailable = String(player.matchAvailable !== false);
+    button.disabled = player.matchAvailable === false;
     button.classList.toggle("active", selectedPlayerCodes.has(code));
+    button.classList.toggle("disabled", player.matchAvailable === false);
+    button.setAttribute(
+      "aria-pressed",
+      String(selectedPlayerCodes.has(code) && player.matchAvailable !== false),
+    );
 
     name.textContent = player.name;
-    meta.textContent = [player.position, backNumber].filter(Boolean).join(" · ");
+    meta.textContent =
+      player.matchLine ||
+      [player.position, backNumber].filter(Boolean).join(" · ");
 
     button.append(name, meta);
     followChipRow.append(button);
   });
 }
 
+function monthKeyForGame(game) {
+  return game?.date?.slice(0, 7) || "2026-04";
+}
+
+function calendarMonthsForTeam(teamCode) {
+  return [...new Set(seasonGamesForTeam(teamCode).map(monthKeyForGame))].sort();
+}
+
+function formatCalendarMonth(monthKey) {
+  const [year, month] = monthKey.split("-");
+  return `${year}.${month}`;
+}
+
+function dateKeyFromParts(year, month, day) {
+  return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
+function renderSelectedCalendarGame(context, gamesByDate) {
+  const selectedCard = document.querySelector("#calendar-selected-card");
+  if (!selectedCard) return;
+
+  const match = context.match;
+  if (!match) {
+    selectedCard.innerHTML = "<p>선택된 경기가 없습니다.</p>";
+    return;
+  }
+
+  const opponent = match.home.code === context.team.code ? match.away : match.home;
+  const status = match.isEnded
+    ? selectedTeamResultForGame(match, context.team.code)
+    : `${match.time} 예정`;
+  const sameDateGames = gamesByDate.get(match.date) || [];
+
+  selectedCard.innerHTML = `
+    <div>
+      <span>${escapeHtml(match.dateLabel)} · ${escapeHtml(match.category || "경기")}</span>
+      <strong>${escapeHtml(context.team.shortName)} vs ${escapeHtml(opponent.shortName || opponent.name)}</strong>
+      <small>${escapeHtml(status)} · ${escapeHtml(match.venue)}</small>
+    </div>
+    <em>${sameDateGames.length > 1 ? `${sameDateGames.length}경기` : match.tv || "중계 정보 업데이트 예정"}</em>
+  `;
+}
+
+function renderSeasonCalendar(context) {
+  const grid = document.querySelector("#season-calendar-grid");
+  if (!grid) return;
+
+  const games = seasonGamesForTeam(context.team.code);
+  const months = calendarMonthsForTeam(context.team.code);
+  const matchMonth = monthKeyForGame(context.match);
+
+  if (!months.includes(selectedCalendarMonth)) {
+    selectedCalendarMonth = months.includes(matchMonth) ? matchMonth : months[0] || matchMonth;
+  }
+
+  setText(
+    "#season-source-label",
+    `${KBL_SCHEDULE_SOURCE.seasonName} KBL 공식 일정 · ${games.length}경기`,
+  );
+  setText("#calendar-month-label", formatCalendarMonth(selectedCalendarMonth));
+
+  const gamesByDate = new Map();
+  games.forEach((game) => {
+    if (!gamesByDate.has(game.date)) gamesByDate.set(game.date, []);
+    gamesByDate.get(game.date).push(game);
+  });
+
+  const [yearText, monthText] = selectedCalendarMonth.split("-");
+  const year = Number(yearText);
+  const month = Number(monthText);
+  const firstDay = new Date(year, month - 1, 1).getDay();
+  const lastDate = new Date(year, month, 0).getDate();
+  const totalCells = Math.ceil((firstDay + lastDate) / 7) * 7;
+
+  grid.innerHTML = "";
+  for (let index = 0; index < totalCells; index += 1) {
+    const dayNumber = index - firstDay + 1;
+    const cell = document.createElement("button");
+
+    cell.type = "button";
+    cell.className = "calendar-day";
+
+    if (dayNumber < 1 || dayNumber > lastDate) {
+      cell.disabled = true;
+      cell.classList.add("muted");
+      cell.textContent = "";
+      grid.append(cell);
+      continue;
+    }
+
+    const dateKey = dateKeyFromParts(year, month, dayNumber);
+    const dayGames = gamesByDate.get(dateKey) || [];
+    const firstGame = dayGames[0];
+
+    cell.textContent = String(dayNumber);
+    cell.disabled = dayGames.length === 0;
+    cell.classList.toggle("has-game", dayGames.length > 0);
+    cell.classList.toggle("active", firstGame?.id === context.match?.id);
+
+    if (firstGame) {
+      cell.dataset.calendarGame = firstGame.id;
+      cell.setAttribute(
+        "aria-label",
+        `${firstGame.dateLabel} ${firstGame.home.name} 대 ${firstGame.away.name}`,
+      );
+    }
+
+    grid.append(cell);
+  }
+
+  const prevButton = document.querySelector('[data-calendar-month="prev"]');
+  const nextButton = document.querySelector('[data-calendar-month="next"]');
+  const currentIndex = months.indexOf(selectedCalendarMonth);
+  if (prevButton) prevButton.disabled = currentIndex <= 0;
+  if (nextButton) nextButton.disabled = currentIndex === -1 || currentIndex >= months.length - 1;
+
+  renderSelectedCalendarGame(context, gamesByDate);
+}
+
+function starPlayersForContext(context) {
+  if (!context.match) return [];
+
+  const directStars = context.match.postGame.starPlayers.filter(
+    (player) => player.teamCode === context.team.code,
+  );
+
+  if (directStars.length) return directStars;
+
+  return [...context.stats]
+    .sort((a, b) => statValue(b, "score") - statValue(a, "score"))
+    .slice(0, 3)
+    .map((row, index) => ({
+      pcode: playerCode(row),
+      name: playerName(row),
+      role: index === 0 ? "팀 내 최다 득점" : "주요 출전 선수",
+      line: `${statValue(row, "score")}PTS · ${statValue(row, "rb")}REB · ${statValue(row, "ast")}AST`,
+      reason: "선택 팀 기준 경기 후 하이라이트 후보",
+    }));
+}
+
+function updateMatchFlowPanel(context) {
+  const match = context.match;
+  renderSeasonCalendar(context);
+
+  if (!match) {
+    setText("#flow-selected-team", context.team.fullName);
+    setText("#flow-selected-game", "데모 경기 선택 대기");
+    setText("#match-flow-title", `${context.team.shortName} 데모 경기`);
+    setText("#match-flow-status", "KBL 경기 데이터 연결 준비");
+    setText("#match-home-label", context.team.name);
+    setText("#match-home-score", "-");
+    setText("#match-away-label", "상대팀");
+    setText("#match-away-score", "-");
+    setText("#match-location", context.team.venue);
+    setText("#match-result-label", "경기 선택 후 표시");
+    const starRow = document.querySelector("#match-star-row");
+    if (starRow) starRow.innerHTML = "";
+    return;
+  }
+
+  const winner = winnerForMatch(match);
+  const loser = loserForMatch(match);
+  const stars = starPlayersForContext(context);
+  const starRow = document.querySelector("#match-star-row");
+
+  setText("#flow-selected-team", context.team.fullName);
+  setText("#flow-selected-game", `${match.dateLabel} ${match.home.shortName} vs ${match.away.shortName}`);
+  setText("#match-flow-title", `${match.home.shortName} vs ${match.away.shortName} 경기 정보`);
+  setText(
+    "#match-flow-status",
+    `${match.dateLabel} · ${match.time} · ${match.tv || "중계 정보 업데이트 예정"}`,
+  );
+  setText("#match-home-label", match.home.name);
+  setText("#match-home-score", match.isEnded ? String(match.home.score) : "예정");
+  setText("#match-away-label", match.away.name);
+  setText("#match-away-score", match.isEnded ? String(match.away.score) : match.time);
+  setText(
+    "#match-location",
+    match.crowd
+      ? `${match.venue} · 관중 ${match.crowd.toLocaleString("ko-KR")}명`
+      : `${match.venue} · ${match.category}`,
+  );
+  setText(
+    "#match-result-label",
+    match.isEnded && winner && loser ? `${winner.name} ${winner.score}-${loser.score} 승` : "경기 예정",
+  );
+
+  if (!starRow) return;
+
+  starRow.innerHTML = "";
+  stars.forEach((player) => {
+    const item = document.createElement("article");
+    const role = document.createElement("span");
+    const name = document.createElement("strong");
+    const line = document.createElement("small");
+    const reason = document.createElement("p");
+
+    role.textContent = player.role;
+    name.textContent = player.name;
+    line.textContent = player.line;
+    reason.textContent = player.reason;
+    item.append(role, name, line, reason);
+    starRow.append(item);
+  });
+}
+
 function updateFanApp(context) {
   const { team } = context;
+  const matchStar = starPlayersForContext(context)[0];
 
   setText(".app-header strong", `${team.fullName} 맞춤 코트`);
-  setText(".spotlight-copy h2", `${context.shooterName} 3점 하이라이트 모음`);
+  setText(
+    ".spotlight-copy h2",
+    context.match
+      ? `${context.match.postGame.title} · ${matchStar?.name || context.shooterName}`
+      : `${context.shooterName} 3점 하이라이트 모음`,
+  );
   setText(
     ".spotlight-copy p",
-    `팔로우한 ${team.name} 장면만 2분 18초로 압축했어요.`,
+    context.match
+      ? `${matchStar?.line || "KBL 공식 기록"} 기준으로 경기 summary와 선수 하이라이트를 만들어요.`
+      : `팔로우한 ${team.name} 장면만 2분 18초로 압축했어요.`,
   );
 
   const dataStrip = document.querySelector(".kbl-data-strip");
@@ -802,53 +8929,108 @@ function updateFanApp(context) {
   setText("#rebound-leader-stat", formatPerGame(context.reboundLeader, "rb", "REB"));
 
   renderPlayerChips(context);
+  updateMatchFlowPanel(context);
   updateHighlightCards(context);
   applyClipFilter();
 }
 
 function updatePassPanel(context) {
+  const match = context.match;
+  const stars = starPlayersForContext(context);
+
   setText("#pass-title", `${context.team.shortName} 입덕패스`);
   setText(
     "#pass-copy",
-    `${context.playmakerName}의 패스, ${context.shooterName}의 3점, ${context.rebounderName}의 리바운드를 초보자 설명으로 묶었습니다.`,
+    match
+      ? match.postGame.summary[2]
+      : `${context.playmakerName}의 패스, ${context.shooterName}의 3점, ${context.rebounderName}의 리바운드를 초보자 설명으로 묶었습니다.`,
   );
 
   const items = document.querySelectorAll(".pass-list li");
-  [
-    `${context.playmakerName}이 만든 찬스를 30초 카드로 설명`,
-    `${context.shooterName} 3점 위치를 코트맵으로 정리`,
-    `${context.rebounderName} 리바운드 후 세컨드 찬스 모음`,
-  ].forEach((text, index) => {
+  const passItems = match
+    ? [
+        match.postGame.summary[0],
+        `${stars[0]?.name || context.rebounderName}: ${stars[0]?.line || "오늘 잘한 선수"}`,
+        `${stars[1]?.name || context.shooterName}: ${stars[1]?.reason || "하이라이트 후보"}`,
+      ]
+    : [
+        `${context.playmakerName}이 만든 찬스를 30초 카드로 설명`,
+        `${context.shooterName} 3점 위치를 코트맵으로 정리`,
+        `${context.rebounderName} 리바운드 후 세컨드 찬스 모음`,
+      ];
+
+  passItems.forEach((text, index) => {
     if (items[index]) items[index].lastChild.textContent = ` ${text}`;
+  });
+
+  const commentList = document.querySelector("#pass-comment-list");
+  if (!commentList) return;
+
+  commentList.innerHTML = "";
+  (match?.postGame.fanComments || [
+    `${context.shooterName} 장면만 모아보니 다음 경기 관전 포인트가 생겼어요.`,
+    `${context.rebounderName} 골밑 장면은 직관으로 보고 싶어요.`,
+  ]).forEach((comment, index) => {
+    const item = document.createElement("article");
+    const text = document.createElement("p");
+    const reactions = document.createElement("div");
+
+    item.className = "pass-comment-card";
+    text.textContent = comment;
+    reactions.className = "pass-reaction-row";
+
+    [
+      { type: "like", label: `공감 ${12 + index * 4}`, count: 12 + index * 4 },
+      { type: "mate", label: "직관 가고 싶음" },
+      { type: "goods", label: "굿즈 관심" },
+    ].forEach(({ type, label, count }) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.dataset.commentReaction = type;
+      if (count) button.dataset.reactionCount = String(count);
+      button.textContent = label;
+      reactions.append(button);
+    });
+
+    item.append(text, reactions);
+    commentList.append(item);
   });
 }
 
 function updateMatePanel(context) {
   const { team } = context;
-  const tags = team.mateTags;
+  const match = context.match;
+  const tags = match?.preGame.mate.tags || team.mateTags;
+  const opponent = matchOpponentFor(match, team.code);
 
   updateMateCount();
-  setText("#mate-main-title", "같이 직관가실 분 구해요!");
+  setText("#mate-main-title", match?.preGame.mate.title || "같이 직관가실 분 구해요!");
   setText(
     "#mate-main-copy",
-    `${team.name} 홈·원정 경기에서 ${context.shooterName} 하이라이트를 같이 볼 메이트를 추천합니다.`,
+    match?.preGame.mate.copy ||
+      `${team.name} 홈·원정 경기에서 ${context.shooterName} 하이라이트를 같이 볼 메이트를 추천합니다.`,
   );
-  setText("#mate-venue", `${team.venue} 또는 원정 경기 · ${team.opponent}전`);
-  setText("#mate-seat", "홈/원정 좌석 선택 가능");
-  setText("#mate-game-choice", `홈·원정 ${team.opponent}전`);
-  setText("#mate-seat-choice", "응원석/원정석");
-  setText("#mate-style-choice", "초보 환영");
+  setText(
+    "#mate-venue",
+    match
+      ? `${match.dateLabel} ${match.venue}`
+      : `${team.venue} 또는 원정 경기 · ${team.opponent}전`,
+  );
+  setText("#mate-seat", match ? `${opponent?.name || "상대팀"}전 직관 모집` : "홈/원정 좌석 선택 가능");
+  setText("#mate-game-choice", match?.preGame.mate.gameChoice || `홈·원정 ${team.opponent}전`);
+  setText("#mate-seat-choice", match?.preGame.mate.seatChoice || "응원석/원정석");
+  setText("#mate-style-choice", match?.preGame.mate.styleChoice || "초보 환영");
 
   const mateCards = document.querySelectorAll(".mate-card:not(.user-created)");
   const cardData = [
     {
       title: `${team.shortName} 첫 직관 같이 가요`,
-      meta: `${team.city} · 초보자 환영 · 2명 모집`,
+      meta: match ? `${match.venue} · 초보자 환영 · 2명 모집` : `${team.city} · 초보자 환영 · 2명 모집`,
       tags: [tags[0], tags[2]],
     },
     {
       title: `${context.shooterName} 3점 보러 가실 분`,
-      meta: `${team.opponent}전 · 응원가 크게 부르는 편`,
+      meta: `${opponent?.name || team.opponent}전 · 응원가 크게 부르는 편`,
       tags: [tags[1], "하이라이트 분석 공유"],
     },
     {
@@ -869,7 +9051,7 @@ function updateMatePanel(context) {
     });
   });
 
-  ensureMateApplyForms();
+  ensureMateCommentThreads();
 }
 
 function updateMateCount() {
@@ -1300,9 +9482,15 @@ function openDashboardBoardAction(button) {
 
 function updateDashboard(context) {
   const { team } = context;
+  const match = context.match;
 
-  setText(".match-chip span", "내 팀 기준");
-  setText(".match-chip strong", team.fullName);
+  setText(".match-chip span", match ? "선택 경기" : "내 팀 기준");
+  setText(
+    ".match-chip strong",
+    match
+      ? `${match.home.shortName} ${match.home.score} - ${match.away.score} ${match.away.shortName}`
+      : team.fullName,
+  );
   renderLeagueTeamGrid();
   renderRevenueOpportunities(context);
 
@@ -1385,7 +9573,12 @@ function updateDashboard(context) {
         timeStyle: "short",
       }).format(new Date(kblData.source.fetchedAt))
     : "로컬 샘플";
-  setText("#dashboard-source-label", `KBL 공식 API · ${seasonName} · ${fetchedAt}`);
+  setText(
+    "#dashboard-source-label",
+    match
+      ? `KBL 공식 경기 API · ${match.dateLabel} · ${fetchedAt}`
+      : `KBL 공식 API · ${seasonName} · ${fetchedAt}`,
+  );
   updateAssetVault();
   renderDashboardMenuBoard(context);
 }
@@ -2042,7 +10235,7 @@ function showMatchdayOps() {
       <ul class="modal-list">
         <li><strong>운영 액션</strong> 초보 팬 좌석 안내 카드와 동행 모집글을 경기 D-7부터 노출</li>
         <li><strong>수익화 액션</strong> 직관메이트 매칭 이벤트 스폰서와 응원석 예매 CTA를 함께 제안</li>
-        <li><strong>다음 확인</strong> 신청 멘트, 좌석 선호, 홈/원정 선택 데이터를 다음 경기 추천에 반영</li>
+        <li><strong>다음 확인</strong> 댓글 반응, 좌석 선호, 홈/원정 선택 데이터를 다음 경기 추천에 반영</li>
       </ul>
       <div class="modal-action-row">
         <button type="button" data-event-builder="2">직관메이트 이벤트 만들기</button>
@@ -2334,6 +10527,7 @@ function updateProfileSheet(context) {
 function renderTeam(teamCode = selectedTeamCode) {
   selectedTeamCode = teamCode;
   currentContext = buildTeamContext(selectedTeamCode);
+  selectedCalendarMonth = monthKeyForGame(currentContext.match);
   selectedClip = "assist";
   selectedPlayerCodes = defaultSelectedPlayerCodes(currentContext);
   activeClipFilter = "all";
@@ -2380,51 +10574,114 @@ function formatMateDate(value) {
   return `${year}.${month}.${day}`;
 }
 
-function createMateApplyForm() {
+const MATE_SEED_COMMENTS = [
+  {
+    author: "현장팬",
+    comment: "관심 있어요. 경기 전 30분 전에 맞춰서 합류할 수 있어요.",
+  },
+  {
+    author: "입덕팬",
+    comment: "처음 직관이라 응원석 분위기 같이 보면 좋겠어요.",
+  },
+  {
+    author: "전술팬",
+    comment: "하이라이트 장면 얘기하면서 같이 보면 재미있을 것 같아요.",
+  },
+];
+
+function createMateCommentItem(author, comment, options = {}) {
+  const item = document.createElement("div");
+  const avatar = document.createElement("span");
+  const body = document.createElement("div");
+  const meta = document.createElement("span");
+  const text = document.createElement("p");
+
+  item.className = `mate-comment${options.mine ? " mine" : ""}`;
+  avatar.className = "mate-comment-avatar";
+  avatar.textContent = options.mine ? "나" : author.slice(0, 1);
+  meta.className = "mate-comment-meta";
+  meta.textContent = options.meta || `${author} · 댓글`;
+  text.textContent = comment;
+
+  body.append(meta, text);
+  item.append(avatar, body);
+  return item;
+}
+
+function updateMateCommentCount(thread) {
+  const count = thread.querySelectorAll(".mate-comment").length;
+  const countEl = thread.querySelector(".mate-comment-count");
+  if (countEl) countEl.textContent = `댓글 ${count}`;
+}
+
+function createMateCommentThread(index = 0) {
+  const seedComment = MATE_SEED_COMMENTS[index % MATE_SEED_COMMENTS.length];
+  const thread = document.createElement("div");
+  const header = document.createElement("div");
+  const label = document.createElement("span");
+  const count = document.createElement("strong");
+  const list = document.createElement("div");
   const form = document.createElement("form");
-  const textarea = document.createElement("textarea");
+  const input = document.createElement("input");
   const button = document.createElement("button");
   const status = document.createElement("small");
 
-  form.className = "mate-apply-form";
-  textarea.name = "message";
-  textarea.rows = 2;
-  textarea.placeholder = "신청 멘트를 간단히 적어주세요.";
+  thread.className = "mate-comment-thread";
+  header.className = "mate-comment-header";
+  label.textContent = "공개 댓글";
+  count.className = "mate-comment-count";
+  list.className = "mate-comment-list";
+  list.append(createMateCommentItem(seedComment.author, seedComment.comment));
+
+  form.className = "mate-comment-form";
+  input.type = "text";
+  input.name = "comment";
+  input.placeholder = "댓글로 같이 갈 의사를 남겨보세요.";
+  input.setAttribute("aria-label", "직관메이트 댓글");
   button.type = "submit";
-  button.textContent = "신청";
-  status.className = "mate-apply-status";
+  button.textContent = "댓글 등록";
+  status.className = "mate-comment-status";
   status.setAttribute("aria-live", "polite");
 
-  form.append(textarea, button, status);
-  return form;
+  header.append(label, count);
+  form.append(input, button, status);
+  thread.append(header, list, form);
+  updateMateCommentCount(thread);
+  return thread;
 }
 
-function ensureMateApplyForms() {
-  document.querySelectorAll(".mate-card").forEach((card) => {
-    if (card.querySelector(".mate-apply-form")) return;
-    card.append(createMateApplyForm());
+function ensureMateCommentThreads() {
+  document.querySelectorAll(".mate-card").forEach((card, index) => {
+    if (card.querySelector(".mate-comment-thread")) return;
+    card.append(createMateCommentThread(index));
   });
 }
 
-function handleMateApplySubmit(event) {
-  const form = event.target.closest(".mate-apply-form");
+function handleMateCommentSubmit(event) {
+  const form = event.target.closest(".mate-comment-form");
   if (!form) return;
 
   event.preventDefault();
 
   const card = form.closest(".mate-card");
   const title = card?.querySelector("strong")?.textContent || "직관메이트";
-  const textarea = form.querySelector("textarea");
-  const button = form.querySelector("button");
-  const status = form.querySelector(".mate-apply-status");
-  const message = textarea.value.trim() || "같이 직관 가고 싶어요!";
+  const thread = form.closest(".mate-comment-thread");
+  const list = thread?.querySelector(".mate-comment-list");
+  const input = form.querySelector("[name='comment']");
+  const status = form.querySelector(".mate-comment-status");
+  const comment = input.value.trim();
 
-  textarea.value = message;
-  textarea.disabled = true;
-  button.disabled = true;
-  button.textContent = "신청 완료";
-  status.textContent = "신청 멘트가 전송됐습니다.";
-  showToast(`${title} 신청이 완료됐습니다.`);
+  if (!comment) {
+    status.textContent = "댓글 내용을 입력해 주세요.";
+    input.focus();
+    return;
+  }
+
+  list?.append(createMateCommentItem("나", comment, { mine: true, meta: "나 · 방금 전" }));
+  input.value = "";
+  status.textContent = "댓글이 등록됐습니다.";
+  if (thread) updateMateCommentCount(thread);
+  showToast(`${title} 모집글에 댓글을 남겼습니다.`);
 }
 
 function populateMateForm() {
@@ -2432,24 +10689,38 @@ function populateMateForm() {
 
   const pickedPlayers = selectedPlayers();
   const players = pickedPlayers.length ? pickedPlayers : displayRosterPlayers(currentContext).slice(0, 6);
+  const match = currentContext.match;
+  const opponent = matchOpponentFor(match, currentContext.team.code);
 
   matePlayerInput.innerHTML = "";
-  players.forEach((player) => {
-    const option = document.createElement("option");
-    option.value = player.name;
-    option.textContent = player.name;
-    matePlayerInput.append(option);
-  });
+  players
+    .filter((player) => player.matchAvailable !== false)
+    .forEach((player) => {
+      const option = document.createElement("option");
+      option.value = player.name;
+      option.textContent = player.name;
+      matePlayerInput.append(option);
+    });
 
   if (mateDateInput) {
     mateDateInput.min = dateInputValueAfter(0);
-    mateDateInput.value = dateInputValueAfter(7);
+    mateDateInput.value = match?.date || dateInputValueAfter(7);
   }
-  if (mateLocationInput) mateLocationInput.value = "홈 경기";
-  if (mateGameInput) mateGameInput.options[0].textContent = `${currentContext.team.opponent}전`;
-  if (mateSeatInput) mateSeatInput.options[0].textContent = `${currentContext.team.city} 응원석`;
+  if (mateLocationInput) {
+    mateLocationInput.value = match?.away.code === currentContext.team.code ? "원정 경기" : "홈 경기";
+  }
+  if (mateGameInput) {
+    mateGameInput.options[0].textContent =
+      match?.preGame.mate.gameChoice || `${currentContext.team.opponent}전`;
+  }
+  if (mateSeatInput) {
+    mateSeatInput.options[0].textContent =
+      match?.preGame.mate.seatChoice || `${currentContext.team.city} 응원석`;
+  }
   if (mateNoteInput) {
-    mateNoteInput.value = `${currentContext.shooterName} 하이라이트 보고 같이 경기 보실 분 찾아요. 처음 직관이어도 편하게 오세요.`;
+    mateNoteInput.value = match
+      ? `${match.dateLabel} ${opponent?.name || "상대팀"}전 같이 보실 분 찾아요. 경기 전 직관메이트로 만나서 오늘 관전 포인트 같이 보고 싶어요.`
+      : `${currentContext.shooterName} 하이라이트 보고 같이 경기 보실 분 찾아요. 처음 직관이어도 편하게 오세요.`;
   }
 }
 
@@ -2500,7 +10771,7 @@ function createMatePostCard(values) {
   card.append(copy, tags);
 
   mateList.prepend(card);
-  ensureMateApplyForms();
+  ensureMateCommentThreads();
   updateMateCount();
 }
 
@@ -2644,6 +10915,11 @@ followChipRow.addEventListener("click", (event) => {
   const chip = event.target.closest(".follow-chip");
   if (!chip) return;
 
+  if (chip.disabled || chip.dataset.matchAvailable === "false") {
+    showToast("해당 경기를 뛰지 않은 선수는 선택할 수 없습니다.");
+    return;
+  }
+
   const code = chip.dataset.playerCode;
   if (!code) return;
 
@@ -2654,12 +10930,49 @@ followChipRow.addEventListener("click", (event) => {
   }
 
   chip.classList.toggle("active", selectedPlayerCodes.has(code));
+  chip.setAttribute("aria-pressed", String(selectedPlayerCodes.has(code)));
   updateFollowCount();
   applyClipFilter();
 });
 
 tabButtons.forEach((button) => {
   button.addEventListener("click", () => setFanPanel(button.dataset.panel));
+});
+
+fanView?.addEventListener("click", (event) => {
+  const calendarMonthButton = event.target.closest("[data-calendar-month]");
+  if (calendarMonthButton) {
+    const months = calendarMonthsForTeam(currentContext.team.code);
+    const currentIndex = months.indexOf(selectedCalendarMonth);
+    const direction = calendarMonthButton.dataset.calendarMonth === "prev" ? -1 : 1;
+    const nextMonth = months[currentIndex + direction];
+    if (nextMonth) {
+      selectedCalendarMonth = nextMonth;
+      updateMatchFlowPanel(currentContext);
+    }
+    return;
+  }
+
+  const calendarGameButton = event.target.closest("[data-calendar-game]");
+  if (calendarGameButton) {
+    selectedMatchId = calendarGameButton.dataset.calendarGame;
+    const selectedGame = KBL_SEASON_GAMES.find((game) => game.id === selectedMatchId);
+    if (selectedGame) selectedCalendarMonth = monthKeyForGame(selectedGame);
+    renderTeam(currentContext.team.code);
+    showToast(`${selectedGame?.dateLabel || "선택 경기"} 기준으로 팬 앱 흐름을 갱신했습니다.`);
+    return;
+  }
+
+  const commentReactionButton = event.target.closest("[data-comment-reaction]");
+  if (commentReactionButton) {
+    const isActive = commentReactionButton.classList.toggle("active");
+    const baseCount = Number(commentReactionButton.dataset.reactionCount || 0);
+    if (commentReactionButton.dataset.commentReaction === "like" && baseCount) {
+      commentReactionButton.textContent = `공감 ${baseCount + (isActive ? 1 : 0)}`;
+    }
+    showToast("팬 댓글 반응이 Fan Voice 분석 입력으로 반영되었습니다.");
+    return;
+  }
 });
 
 clipFilterButtons.forEach((button) => {
@@ -2692,7 +11005,7 @@ mateCloseButtons.forEach((button) => {
 
 mateCreateForm?.addEventListener("submit", submitMatePost);
 
-document.querySelector(".mate-list")?.addEventListener("submit", handleMateApplySubmit);
+document.querySelector(".mate-list")?.addEventListener("submit", handleMateCommentSubmit);
 
 dashboardCloseButtons.forEach((button) => {
   button.addEventListener("click", closeDashboardModal);

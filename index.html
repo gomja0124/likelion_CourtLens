@@ -57,27 +57,60 @@
               </div>
             </section>
 
-            <section class="follow-panel" aria-label="팔로우 선택">
+            <section class="match-flow-panel" aria-label="선택 경기 전후 이용 흐름">
               <div class="section-title-row">
-                <h3>내 팀/선수</h3>
-                <span id="follow-count">3명 선택됨</span>
+                <h3 id="match-flow-title">LG vs KT 선택 경기</h3>
+                <span id="match-flow-status">2026.04.03 경기</span>
               </div>
-              <div class="chip-row player-chip-row" id="player-chip-row" aria-label="하이라이트 생성 선수 선택">
-                <button class="follow-chip active" type="button">유기상</button>
-                <button class="follow-chip active" type="button">아셈 마레이</button>
-                <button class="follow-chip active" type="button">양준석</button>
-                <button class="follow-chip" type="button">칼 타마요</button>
-                <button class="follow-chip" type="button">정인덕</button>
-                <button class="follow-chip" type="button">양홍석</button>
-                <button class="follow-chip" type="button">두경민</button>
-                <button class="follow-chip" type="button">허일영</button>
+              <div class="match-context-grid" aria-label="팀 선택과 경기 선택 상태">
+                <div>
+                  <span>팀 선택</span>
+                  <strong id="flow-selected-team">창원 LG 세이커스</strong>
+                </div>
+                <div>
+                  <span>경기 선택</span>
+                  <strong id="flow-selected-game">2026.04.03 KT vs LG</strong>
+                </div>
               </div>
-              <div class="generate-row">
-                <span id="selection-hint">선택한 선수 기준으로 AI가 하이라이트를 생성합니다.</span>
-                <button class="generate-button" id="generate-highlight-button" type="button">
-                  하이라이트 생성
-                </button>
+              <div class="season-game-panel" aria-label="이번 시즌 경기 선택">
+                <div class="season-game-heading">
+                  <span>이번 시즌 경기 선택</span>
+                  <small id="season-source-label">KBL 공식 일정 API 기준</small>
+                </div>
+                <div class="season-calendar" id="season-calendar">
+                  <div class="calendar-toolbar">
+                    <button type="button" data-calendar-month="prev" aria-label="이전 달">&lt;</button>
+                    <strong id="calendar-month-label">2026.04</strong>
+                    <button type="button" data-calendar-month="next" aria-label="다음 달">&gt;</button>
+                  </div>
+                  <div class="calendar-weekdays" aria-hidden="true">
+                    <span>일</span>
+                    <span>월</span>
+                    <span>화</span>
+                    <span>수</span>
+                    <span>목</span>
+                    <span>금</span>
+                    <span>토</span>
+                  </div>
+                  <div class="calendar-grid" id="season-calendar-grid"></div>
+                  <div class="calendar-selected-card" id="calendar-selected-card"></div>
+                </div>
               </div>
+              <div class="match-score-strip" aria-label="경기 정보 및 결과">
+                <div>
+                  <span id="match-home-label">수원 KT</span>
+                  <strong id="match-home-score">60</strong>
+                </div>
+                <div class="match-score-meta">
+                  <span id="match-location">수원 KT 소닉붐 아레나</span>
+                  <strong id="match-result-label">창원 LG 87-60 승</strong>
+                </div>
+                <div>
+                  <span id="match-away-label">창원 LG</span>
+                  <strong id="match-away-score">87</strong>
+                </div>
+              </div>
+              <div class="match-star-row" id="match-star-row" aria-label="오늘 잘한 선수"></div>
             </section>
 
             <nav class="content-tabs" aria-label="팬 앱 주요 메뉴">
@@ -95,6 +128,28 @@
                 <h3>방금 생성된 클립</h3>
                 <span id="clip-count-label">12개</span>
               </div>
+              <section class="follow-panel" aria-label="하이라이트 메이커">
+                <div class="section-title-row">
+                  <h3>하이라이트 메이커</h3>
+                  <span id="follow-count">3명 선택됨</span>
+                </div>
+                <div class="chip-row player-chip-row" id="player-chip-row" aria-label="하이라이트 생성 선수 선택">
+                  <button class="follow-chip active" type="button">유기상</button>
+                  <button class="follow-chip active" type="button">아셈 마레이</button>
+                  <button class="follow-chip active" type="button">양준석</button>
+                  <button class="follow-chip" type="button">칼 타마요</button>
+                  <button class="follow-chip" type="button">정인덕</button>
+                  <button class="follow-chip" type="button">양홍석</button>
+                  <button class="follow-chip" type="button">두경민</button>
+                  <button class="follow-chip" type="button">허일영</button>
+                </div>
+                <div class="generate-row">
+                  <span id="selection-hint">선택한 선수 기준으로 AI가 하이라이트를 생성합니다.</span>
+                  <button class="generate-button" id="generate-highlight-button" type="button">
+                    하이라이트 생성
+                  </button>
+                </div>
+              </section>
               <div class="clip-filter-row" aria-label="하이라이트 필터">
                 <button class="clip-filter-button active" type="button" data-clip-filter="all">
                   전체
@@ -165,6 +220,7 @@
                   <li><span></span> 유기상 3점 위치를 코트맵으로 정리</li>
                   <li><span></span> 아셈 마레이 리바운드 후 세컨드 찬스 모음</li>
                 </ul>
+                <div class="pass-comment-list" id="pass-comment-list" aria-label="팬 댓글 반응"></div>
               </article>
             </section>
 
