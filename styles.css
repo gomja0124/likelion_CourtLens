@@ -102,9 +102,10 @@ button {
 
 .view-grid {
   display: none;
-  grid-template-columns: minmax(320px, 430px) 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(1rem, 2.5vw, 2rem);
-  align-items: stretch;
+  align-items: start;
+  justify-items: center;
 }
 
 .view-grid.view-active {
@@ -119,38 +120,18 @@ button {
   display: block;
 }
 
-.phone-frame {
+.fan-service-shell {
   position: relative;
+  width: min(100%, 980px);
   min-height: 760px;
-  padding: 1.1rem;
-  border: 10px solid #171d20;
-  border-radius: 36px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: var(--paper);
+  padding: clamp(0.95rem, 2vw, 1.35rem);
+  border: 1px solid rgba(31, 37, 40, 0.12);
+  border-radius: 16px;
+  overflow: visible;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 250, 244, 0.92)),
+    var(--paper);
   box-shadow: var(--shadow);
-}
-
-.phone-frame::before {
-  content: "";
-  position: absolute;
-  top: 0.45rem;
-  left: 50%;
-  width: 6.8rem;
-  height: 1.4rem;
-  border-radius: 999px;
-  transform: translateX(-50%);
-  background: #171d20;
-  z-index: 3;
-}
-
-.phone-status {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 0.6rem 0.65rem;
-  color: #2f373a;
-  font-size: 0.75rem;
-  font-weight: 700;
 }
 
 .app-header,
@@ -170,6 +151,74 @@ button {
   line-height: 1.25;
 }
 
+.fan-web-header {
+  align-items: flex-start;
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.fan-web-header strong {
+  max-width: none;
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+}
+
+.fan-web-header p {
+  margin: 0.35rem 0 0;
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.fan-service-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+}
+
+.fan-service-strip div {
+  min-width: 0;
+  padding: 0.75rem;
+  border: 1px solid rgba(138, 21, 56, 0.14);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.fan-service-strip span {
+  display: inline-grid;
+  width: 1.55rem;
+  height: 1.55rem;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.fan-service-strip strong,
+.fan-service-strip small {
+  display: block;
+}
+
+.fan-service-strip strong {
+  margin-top: 0.45rem;
+  font-size: 0.86rem;
+  line-height: 1.25;
+}
+
+.fan-service-strip small {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
 .avatar-button {
   display: grid;
   width: 2.65rem;
@@ -186,6 +235,7 @@ button {
 .spotlight-card,
 .match-flow-panel,
 .follow-panel,
+.inline-tactic-panel,
 .analysis-card,
 .timeline-card,
 .cta-panel,
@@ -744,8 +794,8 @@ button {
 }
 
 .clip-filter-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(5.5rem, 1fr));
   gap: 0.4rem;
   margin-top: 0.7rem;
 }
@@ -766,6 +816,67 @@ button {
   border-color: rgba(138, 21, 56, 0.24);
   color: var(--teal);
   background: var(--teal-soft);
+}
+
+.ai-generated-empty {
+  margin-top: 0.8rem;
+  padding: 1rem;
+  border: 1px dashed rgba(138, 21, 56, 0.24);
+  border-radius: 8px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.ai-generated-empty strong,
+.ai-generated-empty p {
+  display: block;
+  margin: 0;
+}
+
+.ai-generated-empty strong {
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.ai-generated-empty p {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.inline-tactic-panel {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.inline-tactic-panel[hidden],
+.ai-generated-empty[hidden] {
+  display: none;
+}
+
+.inline-tactic-panel .panel-topline {
+  align-items: flex-start;
+}
+
+.inline-tactic-panel .panel-topline h3 {
+  margin: 0.55rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.inline-tactic-grid {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.95fr) minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: stretch;
+}
+
+.inline-tactic-grid .clip-preview,
+.inline-tactic-grid .analysis-card {
+  min-width: 0;
 }
 
 .content-tabs {
@@ -799,7 +910,7 @@ button {
 
 .highlight-feed {
   margin-top: 1rem;
-  padding-bottom: 4.75rem;
+  padding-bottom: 0.5rem;
 }
 
 .clip-list {
@@ -926,7 +1037,7 @@ button {
 .pass-panel,
 .mate-panel {
   margin-top: 1rem;
-  padding-bottom: 4.75rem;
+  padding-bottom: 0.5rem;
 }
 
 .pass-card,
@@ -2705,13 +2816,8 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .phone-frame,
-  .detail-panel {
+  .fan-service-shell {
     min-height: auto;
-  }
-
-  .detail-panel {
-    border-radius: 12px;
   }
 
   .metric-grid,
@@ -2779,10 +2885,19 @@ button {
     transform: none;
   }
 
-  .phone-frame {
-    padding: 0.9rem;
-    border-width: 7px;
-    border-radius: 28px;
+  .fan-service-shell {
+    padding: 0.85rem;
+    border-radius: 12px;
+  }
+
+  .fan-web-header,
+  .fan-service-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .fan-web-header {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .highlight-card {
@@ -2812,6 +2927,7 @@ button {
   .mate-comment-form,
   .mate-form-preview,
   .form-grid,
+  .inline-tactic-grid,
   .modal-detail-grid,
   .modal-stat-grid,
   .dashboard-menu-tabs,

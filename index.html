@@ -15,22 +15,20 @@
             <h1>CourtLens</h1>
           </div>
           <div class="mode-switch" aria-label="프로토타입 화면 전환">
-            <button class="mode-button active" type="button" data-view="fan">팬 앱</button>
-            <button class="mode-button" type="button" data-view="club">구단 대시보드</button>
+            <button class="mode-button active" type="button" data-view="fan">팬 웹서비스</button>
+            <button class="mode-button" type="button" data-view="club">구단 웹 대시보드</button>
           </div>
         </header>
 
-        <section class="view-grid view-active" id="fan-view">
-          <article class="phone-frame" aria-label="CourtLens 팬 앱 화면">
-            <div class="phone-status">
-              <span>9:41</span>
-              <span>5G 82%</span>
-            </div>
-
-            <div class="app-header">
+        <section class="view-grid fan-web-view view-active" id="fan-view">
+          <article class="fan-service-shell" aria-label="CourtLens 팬 웹서비스 화면">
+            <header class="app-header fan-web-header">
               <div>
-                <span class="mini-label">오늘의 코트</span>
+                <span class="mini-label">팬 웹서비스</span>
                 <strong>창원 LG 세이커스 맞춤 코트</strong>
+                <p id="fan-web-subtitle">
+                  팀과 경기를 고르면 하이라이트, 입덕패스, 직관메이트가 한 화면에서 이어집니다.
+                </p>
               </div>
               <button
                 class="avatar-button"
@@ -41,6 +39,24 @@
               >
                 MY
               </button>
+            </header>
+
+            <div class="fan-service-strip" aria-label="팬 웹서비스 핵심 흐름">
+              <div>
+                <span>1</span>
+                <strong>경기 선택</strong>
+                <small>경기가 있는 날짜만 달력에서 선택</small>
+              </div>
+              <div>
+                <span>2</span>
+                <strong>AI 하이라이트</strong>
+                <small>출전 선수 기준으로 클립 생성</small>
+              </div>
+              <div>
+                <span>3</span>
+                <strong>팬 액션</strong>
+                <small>댓글, 입덕패스, 직관메이트 반응 연결</small>
+              </div>
             </div>
 
             <section class="spotlight-card">
@@ -113,7 +129,7 @@
               <div class="match-star-row" id="match-star-row" aria-label="오늘 잘한 선수"></div>
             </section>
 
-            <nav class="content-tabs" aria-label="팬 앱 주요 메뉴">
+            <nav class="content-tabs" aria-label="팬 웹서비스 주요 메뉴">
               <button class="content-tab active" type="button" data-panel="highlight">하이라이트</button>
               <button class="content-tab" type="button" data-panel="pass">입덕패스</button>
               <button class="content-tab" type="button" data-panel="mate">직관메이트</button>
@@ -157,9 +173,11 @@
                 <button class="clip-filter-button" type="button" data-clip-filter="generated">
                   AI 생성
                 </button>
-                <button class="clip-filter-button" type="button" data-clip-filter="selected">
-                  선택 선수
-                </button>
+              </div>
+
+              <div class="ai-generated-empty" id="ai-generated-empty" hidden>
+                <strong>아직 생성된 AI 영상이 없습니다.</strong>
+                <p>선수를 선택하고 하이라이트를 생성하면 이곳에 AI 생성 영상과 작전판AI 해설이 함께 표시됩니다.</p>
               </div>
 
               <div class="clip-list" id="clip-list">
@@ -202,6 +220,63 @@
                   <span class="clip-score">+2</span>
                 </button>
               </div>
+
+              <section class="inline-tactic-panel" aria-label="AI 생성 하이라이트 작전판AI" hidden>
+                <div class="panel-topline">
+                  <div>
+                    <span class="pill">작전판AI</span>
+                    <h3>AI 생성 클립 해설</h3>
+                  </div>
+                  <div class="explain-toggle" aria-label="해설 난이도">
+                    <button class="level-button active" type="button" data-level="easy">초보</button>
+                    <button class="level-button" type="button" data-level="pro">농잘알</button>
+                  </div>
+                </div>
+
+                <section class="kbl-data-strip" aria-label="KBL 공식 창원 LG 선수 데이터">
+                  <article>
+                    <span>LG 어시스트 1위</span>
+                    <strong id="assist-leader-name">양준석</strong>
+                    <small id="assist-leader-stat">6.0 AST · 총 293개</small>
+                  </article>
+                  <article>
+                    <span>LG 3점 1위</span>
+                    <strong id="score-leader-name">유기상</strong>
+                    <small id="score-leader-stat">2.6 3PM · 총 132개</small>
+                  </article>
+                  <article>
+                    <span>LG 리바운드 1위</span>
+                    <strong id="rebound-leader-name">아셈 마레이</strong>
+                    <small id="rebound-leader-stat">14.2 REB · 총 739개</small>
+                  </article>
+                </section>
+
+                <section class="inline-tactic-grid">
+                  <div class="clip-preview">
+                    <div class="clip-stage court-visual">
+                      <span class="scan-line"></span>
+                      <span class="player-dot dot-a"></span>
+                      <span class="player-dot dot-b"></span>
+                      <span class="player-dot dot-c"></span>
+                      <span class="ball-dot"></span>
+                    </div>
+                    <div class="playback-bar">
+                      <span></span>
+                    </div>
+                  </div>
+
+                  <section class="analysis-card">
+                    <div class="section-title-row">
+                      <h2 id="analysis-title">양준석 픽앤롤 → 유기상 코너 3점</h2>
+                      <span id="analysis-meta">양준석 · 어시스트</span>
+                    </div>
+                    <p id="analysis-text">
+                      양준석이 스크린을 타고 들어가며 수비를 안쪽으로 끌어당겼어요.
+                      그 순간 코너의 유기상에게 패스가 빠르게 나가면서 좋은 3점 찬스가 만들어졌습니다.
+                    </p>
+                  </section>
+                </section>
+              </section>
             </section>
 
             <section class="pass-panel fan-panel" data-panel="pass" aria-label="입덕패스">
@@ -341,83 +416,6 @@
             </section>
           </article>
 
-          <aside class="detail-panel" aria-label="선택한 하이라이트 상세">
-            <div class="panel-topline">
-              <span class="pill">작전판AI</span>
-              <div class="explain-toggle" aria-label="해설 난이도">
-                <button class="level-button active" type="button" data-level="easy">초보</button>
-                <button class="level-button" type="button" data-level="pro">농잘알</button>
-              </div>
-            </div>
-
-            <section class="kbl-data-strip" aria-label="KBL 공식 창원 LG 선수 데이터">
-              <article>
-                <span>LG 어시스트 1위</span>
-                <strong id="assist-leader-name">양준석</strong>
-                <small id="assist-leader-stat">6.0 AST · 총 293개</small>
-              </article>
-              <article>
-                <span>LG 3점 1위</span>
-                <strong id="score-leader-name">유기상</strong>
-                <small id="score-leader-stat">2.6 3PM · 총 132개</small>
-              </article>
-              <article>
-                <span>LG 리바운드 1위</span>
-                <strong id="rebound-leader-name">아셈 마레이</strong>
-                <small id="rebound-leader-stat">14.2 REB · 총 739개</small>
-              </article>
-            </section>
-
-            <section class="clip-preview">
-              <div class="clip-stage court-visual">
-                <span class="scan-line"></span>
-                <span class="player-dot dot-a"></span>
-                <span class="player-dot dot-b"></span>
-                <span class="player-dot dot-c"></span>
-                <span class="ball-dot"></span>
-              </div>
-              <div class="playback-bar">
-                <span></span>
-              </div>
-            </section>
-
-            <section class="analysis-card">
-              <div class="section-title-row">
-                <h2 id="analysis-title">양준석 픽앤롤 → 유기상 코너 3점</h2>
-                <span id="analysis-meta">양준석 · 어시스트</span>
-              </div>
-              <p id="analysis-text">
-                양준석이 스크린을 타고 들어가며 수비를 안쪽으로 끌어당겼어요.
-                그 순간 코너의 유기상에게 패스가 빠르게 나가면서 좋은 3점 찬스가 만들어졌습니다.
-              </p>
-            </section>
-
-            <section class="timeline-card">
-              <h3>입덕패스</h3>
-              <div class="story-stack">
-                <div>
-                  <strong>오늘 봐야 할 이유</strong>
-                  <p id="story-reason">양준석은 LG 내부 어시스트 1위라 패스 장면을 입덕 포인트로 잡기 좋아요.</p>
-                </div>
-                <div>
-                  <strong>다음 행동</strong>
-                  <p id="story-next">창원 LG 홈경기에서 같은 2대2 전개와 코너 3점 패턴을 이어서 볼 수 있어요.</p>
-                </div>
-              </div>
-            </section>
-
-            <section class="cta-panel">
-              <div>
-                <span class="mini-label">직관메이트</span>
-                <h3 id="cta-title">창원체육관 홈경기 알림</h3>
-                <p id="cta-copy">양준석-유기상 연결 장면과 응원석 추천을 같이 확인하세요.</p>
-              </div>
-              <div class="cta-actions">
-                <button class="primary-action" type="button" data-open-mate-create>메이트 찾기</button>
-                <button class="secondary-action" type="button" data-open-mate-create>모집글 쓰기</button>
-              </div>
-            </section>
-          </aside>
         </section>
 
         <section class="club-dashboard" id="club-view" aria-label="구단용 팬 데이터 대시보드">
@@ -441,7 +439,7 @@
             <div class="revenue-opportunity-grid" id="revenue-opportunity-grid"></div>
           </section>
 
-          <section class="dashboard-axis-panel" aria-label="구단 대시보드 3축">
+          <section class="dashboard-axis-panel" aria-label="구단 웹 대시보드 3축">
             <article>
               <span>Fan Insight</span>
               <strong>팬의 세계를 읽기</strong>
@@ -459,12 +457,12 @@
             </article>
           </section>
 
-          <section class="dashboard-command-panel" aria-label="구단 대시보드 3축 메뉴">
+          <section class="dashboard-command-panel" aria-label="구단 웹 대시보드 3축 메뉴">
             <div class="section-title-row">
-              <h3>구단 대시보드 3축</h3>
+              <h3>구단 웹 대시보드 3축</h3>
               <span>Fan Insight → Revenue Playbook → Performance</span>
             </div>
-            <nav class="dashboard-menu-tabs" aria-label="구단 대시보드 3축 메뉴">
+            <nav class="dashboard-menu-tabs" aria-label="구단 웹 대시보드 3축 메뉴">
               <button class="dashboard-menu-tab active" type="button" data-dashboard-section="fan-insight" aria-pressed="true">
                 Fan Insight
               </button>
@@ -504,7 +502,7 @@
               <ol class="menu-workflow-list" id="menu-workflow-list" aria-label="선택 메뉴 실행 흐름">
                 <li>공식 API 수집 상태 확인</li>
                 <li>로스터와 시즌 기록 매칭</li>
-                <li>팬 앱과 구단 대시보드에 같은 기준 반영</li>
+                <li>팬 웹서비스와 구단 웹 대시보드에 같은 기준 반영</li>
               </ol>
             </div>
           </section>
@@ -618,7 +616,7 @@
                 <h3>Revenue Playbook 실행</h3>
                 <span>추천 → 게시 → 성과 확인</span>
               </div>
-              <div class="action-menu-grid compact" aria-label="구단 대시보드 실행 액션">
+              <div class="action-menu-grid compact" aria-label="구단 웹 대시보드 실행 액션">
                 <button type="button" data-event-builder="0">
                   <strong>이벤트 생성</strong>
                   <span>추천 액션을 단기성 이벤트/라운드 이벤트/장기 마케팅 카드로 생성</span>
