@@ -7968,14 +7968,332 @@ let activeClipFilter = "all";
 let isGeneratingHighlight = false;
 let generatedAssetSequence = 1;
 let activeDashboardSection = "fan-insight";
+let activePbpClip = null;
 const generatedAssets = [];
 
 const BASE_CLIP_COUNT = 12;
+const PBP_CLIP_DIRECTORY = "./q1_cutpoint_segmentss";
+const PBP_CLIPS = [
+  {
+    id: 1,
+    clock: "08:51 / 08:51 / 08:51_to_08:49",
+    start: 2,
+    end: 27,
+    duration: 25,
+    startType: "score;foul;foul",
+    endType: "defensive_rebound",
+    startEvent: "34 Brandon Gilbeck | +1 | 1st of 2 free throws made / 34 Brandon Gilbeck foul drawn / 31 Jaeseok Jang Personal foul; 2 free throws awarded",
+    endEvent: "22 Jun Seok Yeo defensive rebound",
+  },
+  {
+    id: 2,
+    clock: "08:49_to_08:33",
+    start: 27,
+    end: 43,
+    duration: 16,
+    startType: "defensive_rebound",
+    endType: "defensive_rebound",
+    startEvent: "22 Jun Seok Yeo defensive rebound",
+    endEvent: "34 Brandon Gilbeck defensive rebound",
+  },
+  {
+    id: 3,
+    clock: "08:33_to_08:20",
+    start: 43,
+    end: 56,
+    duration: 13,
+    startType: "defensive_rebound",
+    endType: "defensive_rebound",
+    startEvent: "34 Brandon Gilbeck defensive rebound",
+    endEvent: "31 Jaeseok Jang defensive rebound",
+  },
+  {
+    id: 4,
+    clock: "08:20_to_08:10",
+    start: 56,
+    end: 66,
+    duration: 10,
+    startType: "defensive_rebound",
+    endType: "defensive_rebound",
+    startEvent: "31 Jaeseok Jang defensive rebound",
+    endEvent: "34 Brandon Gilbeck defensive rebound",
+  },
+  {
+    id: 5,
+    clock: "08:10_to_07:51",
+    start: 66,
+    end: 109,
+    duration: 43,
+    startType: "defensive_rebound",
+    endType: "score",
+    startEvent: "34 Brandon Gilbeck defensive rebound",
+    endEvent: "10 Long-Mao Hu | +3 | 3pt jump shot made",
+  },
+  {
+    id: 6,
+    clock: "07:51_to_07:35",
+    start: 109,
+    end: 125,
+    duration: 16,
+    startType: "score",
+    endType: "defensive_rebound",
+    startEvent: "10 Long-Mao Hu | +3 | 3pt jump shot made",
+    endEvent: "9 Ying-Chun Chen defensive rebound",
+  },
+  {
+    id: 7,
+    clock: "07:35_to_07:29",
+    start: 125,
+    end: 131,
+    duration: 6,
+    startType: "defensive_rebound",
+    endType: "defensive_rebound",
+    startEvent: "9 Ying-Chun Chen defensive rebound",
+    endEvent: "31 Jaeseok Jang defensive rebound",
+  },
+  {
+    id: 8,
+    clock: "07:29_to_07:14 / 07:14 / 07:14",
+    start: 131,
+    end: 146,
+    duration: 15,
+    startType: "defensive_rebound",
+    endType: "score;foul;foul",
+    startEvent: "31 Jaeseok Jang defensive rebound",
+    endEvent: "31 Jaeseok Jang | +1 | 2nd of 2 free throws made / 31 Jaeseok Jang foul drawn / 1 Bachir Gadiaga Personal foul; 2 free throws awarded",
+  },
+  {
+    id: 9,
+    clock: "07:14 / 07:14 / 07:14_to_06:47",
+    start: 146,
+    end: 233,
+    duration: 87,
+    startType: "score;foul;foul",
+    endType: "score",
+    startEvent: "31 Jaeseok Jang | +1 | 2nd of 2 free throws made / 31 Jaeseok Jang foul drawn / 1 Bachir Gadiaga Personal foul; 2 free throws awarded",
+    endEvent: "1 Bachir Gadiaga | +2 | 2PtsFG under the basket, jump shot made",
+  },
+  {
+    id: 10,
+    clock: "06:47_to_06:28",
+    start: 233,
+    end: 252,
+    duration: 19,
+    startType: "score",
+    endType: "defensive_rebound",
+    startEvent: "1 Bachir Gadiaga | +2 | 2PtsFG under the basket, jump shot made",
+    endEvent: "34 Brandon Gilbeck defensive rebound",
+  },
+  {
+    id: 11,
+    clock: "06:28_to_06:08",
+    start: 252,
+    end: 272,
+    duration: 20,
+    startType: "defensive_rebound",
+    endType: "score",
+    startEvent: "34 Brandon Gilbeck defensive rebound",
+    endEvent: "9 Ying-Chun Chen | +3 | 3pt jump shot made",
+  },
+  {
+    id: 12,
+    clock: "06:08_to_05:50 / 05:50",
+    start: 272,
+    end: 290,
+    duration: 18,
+    startType: "score",
+    endType: "foul",
+    startEvent: "9 Ying-Chun Chen | +3 | 3pt jump shot made",
+    endEvent: "2 Junyong Choi foul drawn / 9 Ying-Chun Chen Personal foul",
+  },
+  {
+    id: 13,
+    clock: "05:50 / 05:50_to_05:45",
+    start: 290,
+    end: 320,
+    duration: 30,
+    startType: "foul",
+    endType: "score",
+    startEvent: "2 Junyong Choi foul drawn / 9 Ying-Chun Chen Personal foul",
+    endEvent: "22 Jun Seok Yeo | +2 | 2pt fadeaway jump shot made",
+  },
+  {
+    id: 14,
+    clock: "05:45_to_05:23",
+    start: 320,
+    end: 341,
+    duration: 21,
+    startType: "score",
+    endType: "turnover",
+    startEvent: "22 Jun Seok Yeo | +2 | 2pt fadeaway jump shot made",
+    endEvent: "34 Brandon Gilbeck turnover; ball handling",
+  },
+  {
+    id: 15,
+    clock: "05:23_to_05:06",
+    start: 341,
+    end: 359,
+    duration: 18,
+    startType: "turnover",
+    endType: "score",
+    startEvent: "34 Brandon Gilbeck turnover; ball handling",
+    endEvent: "6 Junghyun Lee | +3 | 3pt jump shot made",
+  },
+  {
+    id: 16,
+    clock: "05:06_to_04:37",
+    start: 359,
+    end: 388,
+    duration: 29,
+    startType: "score",
+    endType: "defensive_rebound",
+    startEvent: "6 Junghyun Lee | +3 | 3pt jump shot made",
+    endEvent: "team defensive rebound",
+  },
+  {
+    id: 17,
+    clock: "04:37_to_04:28",
+    start: 388,
+    end: 409,
+    duration: 21,
+    startType: "defensive_rebound",
+    endType: "score",
+    startEvent: "team defensive rebound",
+    endEvent: "22 Jun Seok Yeo | +2 | 2PtsFG under the basket, driving layup made",
+  },
+  {
+    id: 18,
+    clock: "04:28_to_04:10 / 04:10",
+    start: 409,
+    end: 427,
+    duration: 18,
+    startType: "score",
+    endType: "foul",
+    startEvent: "22 Jun Seok Yeo | +2 | 2PtsFG under the basket, driving layup made",
+    endEvent: "34 Brandon Gilbeck foul drawn / 33 Seounghyun Lee Personal foul",
+  },
+  {
+    id: 19,
+    clock: "04:10 / 04:10_to_03:53",
+    start: 427,
+    end: 552,
+    duration: 125,
+    startType: "foul",
+    endType: "defensive_rebound",
+    startEvent: "34 Brandon Gilbeck foul drawn / 33 Seounghyun Lee Personal foul",
+    endEvent: "11 Woosuk Lee defensive rebound",
+  },
+  {
+    id: 20,
+    clock: "03:53_to_03:35",
+    start: 552,
+    end: 570,
+    duration: 18,
+    startType: "defensive_rebound",
+    endType: "defensive_rebound",
+    startEvent: "11 Woosuk Lee defensive rebound",
+    endEvent: "39 Chun Hsiang Lu defensive rebound",
+  },
+  {
+    id: 21,
+    clock: "03:35_to_03:20",
+    start: 570,
+    end: 586,
+    duration: 16,
+    startType: "defensive_rebound",
+    endType: "score",
+    startEvent: "39 Chun Hsiang Lu defensive rebound",
+    endEvent: "0 Benson Lin | +2 | 2pt pullup jump shot made",
+  },
+  {
+    id: 22,
+    clock: "03:20_to_03:02",
+    start: 586,
+    end: 603,
+    duration: 17,
+    startType: "score",
+    endType: "score",
+    startEvent: "0 Benson Lin | +2 | 2pt pullup jump shot made",
+    endEvent: "2 Junyong Choi | +3 | 3pt jump shot made",
+  },
+  {
+    id: 23,
+    clock: "03:02_to_02:33 / 02:33 / 02:33",
+    start: 603,
+    end: 632,
+    duration: 29,
+    startType: "score",
+    endType: "score;foul;foul",
+    startEvent: "2 Junyong Choi | +3 | 3pt jump shot made",
+    endEvent: "34 Brandon Gilbeck | +1 | 2nd of 2 free throws made / 34 Brandon Gilbeck foul drawn / 33 Seounghyun Lee Personal foul; 2 free throws awarded",
+  },
+  {
+    id: 24,
+    clock: "02:33 / 02:33 / 02:33_to_02:20 / 02:20 / 02:20 / 02:20",
+    start: 632,
+    end: 715,
+    duration: 83,
+    startType: "score;foul;foul",
+    endType: "score;foul;foul",
+    startEvent: "34 Brandon Gilbeck | +1 | 2nd of 2 free throws made / 34 Brandon Gilbeck foul drawn / 33 Seounghyun Lee Personal foul; 2 free throws awarded",
+    endEvent: "11 Woosuk Lee | +1 | 2nd of 2 free throws made / 11 Woosuk Lee | +1 | 1st of 2 free throws made / 11 Woosuk Lee foul drawn / 39 Chun Hsiang Lu Personal foul; 2 free throws awarded",
+  },
+  {
+    id: 25,
+    clock: "02:20 / 02:20 / 02:20 / 02:20_to_02:01",
+    start: 715,
+    end: 791,
+    duration: 76,
+    startType: "score;foul;foul",
+    endType: "score",
+    startEvent: "11 Woosuk Lee | +1 | 2nd of 2 free throws made / 11 Woosuk Lee | +1 | 1st of 2 free throws made / 11 Woosuk Lee foul drawn / 39 Chun Hsiang Lu Personal foul; 2 free throws awarded",
+    endEvent: "2 Riven Ma | +3 | 3pt pullup jump shot made",
+  },
+  {
+    id: 26,
+    clock: "02:01_to_01:42",
+    start: 791,
+    end: 810,
+    duration: 19,
+    startType: "score",
+    endType: "score",
+    startEvent: "2 Riven Ma | +3 | 3pt pullup jump shot made",
+    endEvent: "31 Jaeseok Jang | +2 | 2pt floating jump shot made",
+  },
+  {
+    id: 27,
+    clock: "01:42_to_01:34 / 01:34",
+    start: 810,
+    end: 818,
+    duration: 8,
+    startType: "score",
+    endType: "foul",
+    startEvent: "31 Jaeseok Jang | +2 | 2pt floating jump shot made",
+    endEvent: "9 Ying-Chun Chen foul drawn / 5 Junhyeong Byeon Personal foul",
+  },
+  {
+    id: 28,
+    clock: "01:34 / 01:34_to_01:13",
+    start: 818,
+    end: 870,
+    duration: 52,
+    startType: "foul",
+    endType: "defensive_rebound",
+    startEvent: "9 Ying-Chun Chen foul drawn / 5 Junhyeong Byeon Personal foul",
+    endEvent: "12 Jeonghyeon Moon defensive rebound",
+  },
+];
 
 const modeButtons = document.querySelectorAll(".mode-button");
 const fanView = document.querySelector("#fan-view");
 const clubView = document.querySelector("#club-view");
 const clipList = document.querySelector("#clip-list");
+const pbpTimeline = document.querySelector("#pbp-timeline");
+const pbpMatchCount = document.querySelector("#pbp-match-count");
+const pbpVideoShell = document.querySelector("#pbp-video-shell");
+const pbpVideo = document.querySelector("#pbp-video");
+const pbpVideoTitle = document.querySelector("#pbp-video-title");
+const pbpVideoMeta = document.querySelector("#pbp-video-meta");
 const clipCountLabel = document.querySelector("#clip-count-label");
 const clipFilterButtons = document.querySelectorAll(".clip-filter-button");
 const generatedEmptyState = document.querySelector("#ai-generated-empty");
@@ -8049,6 +8367,156 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function formatPbpClock(clock) {
+  const [rawStart = "", rawEnd = ""] = clock.split("_to_");
+  const firstStart = rawStart.split(" / ")[0] || rawStart;
+  const firstEnd = rawEnd.split(" / ")[0] || rawEnd;
+  return firstEnd ? `${firstStart} → ${firstEnd}` : firstStart;
+}
+
+function formatPbpType(type) {
+  return type
+    .split(";")
+    .map((item) => {
+      if (item === "defensive_rebound") return "DEF REB";
+      if (item === "turnover") return "TOV";
+      if (item === "score") return "SCORE";
+      if (item === "foul") return "FOUL";
+      return item.toUpperCase();
+    })
+    .join(" + ");
+}
+
+function eventTeam(eventText) {
+  const koreaNames = [
+    "Jun Seok Yeo",
+    "Junyong Choi",
+    "Jaeseok Jang",
+    "Woosuk Lee",
+    "Junghyun Lee",
+    "Jeonghyeon Moon",
+    "Kisang Yu",
+    "Junhyeong Byeon",
+    "Jihoon Park",
+    "Seounghyun Lee",
+  ];
+  const taipeiNames = [
+    "Brandon Gilbeck",
+    "Benson Lin",
+    "Long-Mao Hu",
+    "Ying-Chun Chen",
+    "Chun Hsiang Lu",
+    "Riven Ma",
+    "Bachir Gadiaga",
+    "Ai-Che Yu",
+    "Chia-Kang Li",
+  ];
+
+  const matches = [
+    ...koreaNames.map((name) => ({ team: "korea", index: eventText.indexOf(name) })),
+    ...taipeiNames.map((name) => ({ team: "taipei", index: eventText.indexOf(name) })),
+  ].filter((match) => match.index >= 0);
+
+  matches.sort((a, b) => a.index - b.index);
+  return matches[0]?.team || "neutral";
+}
+
+function teamLabel(team) {
+  if (team === "korea") return "Korea";
+  if (team === "taipei") return "Chinese Taipei";
+  return "Neutral";
+}
+
+function sanitizePbpClipPart(value) {
+  return value
+    .replaceAll(" / ", "/")
+    .replaceAll(";", "-")
+    .replaceAll(":", "")
+    .replaceAll("/", "-")
+    .replaceAll(" ", "_");
+}
+
+function pbpClipSource(clip) {
+  const fileName = [
+    String(clip.id).padStart(3, "0"),
+    "Q1",
+    sanitizePbpClipPart(clip.clock),
+    "q1_cutpoint_segment",
+  ].join("_");
+
+  return `${PBP_CLIP_DIRECTORY}/${fileName}.mov`;
+}
+
+function renderPlayByPlayTimeline() {
+  if (!pbpTimeline) return;
+
+  pbpTimeline.innerHTML = "";
+  if (pbpMatchCount) pbpMatchCount.textContent = `1Q · ${PBP_CLIPS.length} clips`;
+
+  PBP_CLIPS.forEach((clip) => {
+    const team = eventTeam(`${clip.startEvent} ${clip.endEvent}`);
+    const row = document.createElement("button");
+    row.className = "pbp-row";
+    row.type = "button";
+    row.dataset.pbpClipId = String(clip.id);
+    row.setAttribute(
+      "aria-label",
+      `${formatPbpClock(clip.clock)} ${clip.startEvent} to ${clip.endEvent}`,
+    );
+
+    const eventCard = document.createElement("span");
+    eventCard.className = `pbp-event ${team}`;
+    eventCard.innerHTML = `
+      <span class="pbp-before">${escapeHtml(clip.startEvent)}</span>
+      <strong>${escapeHtml(clip.endEvent)}</strong>
+      <small>${teamLabel(team)} · ${formatPbpType(clip.startType)} → ${formatPbpType(clip.endType)}</small>
+    `;
+
+    const time = document.createElement("span");
+    time.className = "pbp-time";
+    time.innerHTML = `
+      <span class="pbp-clock">${formatPbpClock(clip.clock)}</span>
+      <span class="pbp-play" aria-hidden="true"></span>
+      <span>${clip.duration}s</span>
+    `;
+
+    row.append(eventCard, time);
+    pbpTimeline.append(row);
+  });
+}
+
+function openPbpClip(clipId) {
+  const clip = PBP_CLIPS.find((item) => item.id === Number(clipId));
+  if (!clip || !pbpVideo || !pbpVideoShell) return;
+
+  activePbpClip = { ...clip, playbackEnd: clip.duration };
+  pbpTimeline?.querySelectorAll(".pbp-row").forEach((row) => {
+    row.classList.toggle("active", row.dataset.pbpClipId === String(clip.id));
+  });
+
+  pbpVideoShell.hidden = false;
+  const clipSource = pbpClipSource(clip);
+  const seekAndPlay = () => {
+    pbpVideo.currentTime = 0;
+    pbpVideo.play().catch(() => {});
+  };
+
+  if (pbpVideo.getAttribute("src") !== clipSource) {
+    pbpVideo.src = clipSource;
+    pbpVideo.load();
+    pbpVideo.addEventListener("loadedmetadata", seekAndPlay, { once: true });
+  } else {
+    seekAndPlay();
+  }
+
+  if (pbpVideoTitle) {
+    pbpVideoTitle.textContent = `${formatPbpClock(clip.clock)} · ${clip.endEvent}`;
+  }
+  if (pbpVideoMeta) {
+    pbpVideoMeta.textContent = `${clip.duration}s · ${formatPbpType(clip.startType)} → ${formatPbpType(clip.endType)} · ${clip.startEvent}`;
+  }
 }
 
 function gameIncludesTeam(game, teamCode) {
@@ -10927,6 +11395,20 @@ clipList.addEventListener("click", (event) => {
   setSelectedClip(card.dataset.clip);
 });
 
+pbpTimeline?.addEventListener("click", (event) => {
+  const row = event.target.closest(".pbp-row");
+  if (!row) return;
+
+  openPbpClip(row.dataset.pbpClipId);
+});
+
+pbpVideo?.addEventListener("timeupdate", () => {
+  if (!activePbpClip || pbpVideo.currentTime < activePbpClip.playbackEnd) return;
+
+  pbpVideo.pause();
+  pbpVideo.currentTime = activePbpClip.playbackEnd;
+});
+
 levelButtons.forEach((button) => {
   button.addEventListener("click", () => {
     selectedLevel = button.dataset.level;
@@ -11279,5 +11761,6 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+renderPlayByPlayTimeline();
 setFanPanel(activePanel);
 renderTeam(selectedTeamCode);
