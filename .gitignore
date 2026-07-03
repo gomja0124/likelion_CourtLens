@@ -4,3 +4,10 @@ outputs/pdf/.DS_Store
 tmp/
 node_modules/
 *.log
+
+# Local-only presentation artifacts
+outputs/
+*.pptx
+*.pdf
+발표대본.md
+발표자료_ppt.pdf
