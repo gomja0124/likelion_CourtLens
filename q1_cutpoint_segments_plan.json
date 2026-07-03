@@ -2,7 +2,7 @@
   {
     "event_id": 1,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 2,
     "video_time": "00:02",
     "clip_start_sec": 2,
@@ -21,7 +21,7 @@
   {
     "event_id": 2,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 27,
     "video_time": "00:27",
     "clip_start_sec": 27,
@@ -40,7 +40,7 @@
   {
     "event_id": 3,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 43,
     "video_time": "00:43",
     "clip_start_sec": 43,
@@ -59,7 +59,7 @@
   {
     "event_id": 4,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 56,
     "video_time": "00:56",
     "clip_start_sec": 56,
@@ -78,7 +78,7 @@
   {
     "event_id": 5,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 66,
     "video_time": "01:06",
     "clip_start_sec": 66,
@@ -97,7 +97,7 @@
   {
     "event_id": 6,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 109,
     "video_time": "01:49",
     "clip_start_sec": 109,
@@ -116,7 +116,7 @@
   {
     "event_id": 7,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 125,
     "video_time": "02:05",
     "clip_start_sec": 125,
@@ -135,7 +135,7 @@
   {
     "event_id": 8,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 131,
     "video_time": "02:11",
     "clip_start_sec": 131,
@@ -154,7 +154,7 @@
   {
     "event_id": 9,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 146,
     "video_time": "02:26",
     "clip_start_sec": 146,
@@ -173,7 +173,7 @@
   {
     "event_id": 10,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 233,
     "video_time": "03:53",
     "clip_start_sec": 233,
@@ -192,7 +192,7 @@
   {
     "event_id": 11,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 252,
     "video_time": "04:12",
     "clip_start_sec": 252,
@@ -211,7 +211,7 @@
   {
     "event_id": 12,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 272,
     "video_time": "04:32",
     "clip_start_sec": 272,
@@ -230,7 +230,7 @@
   {
     "event_id": 13,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 290,
     "video_time": "04:50",
     "clip_start_sec": 290,
@@ -249,7 +249,7 @@
   {
     "event_id": 14,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 320,
     "video_time": "05:20",
     "clip_start_sec": 320,
@@ -268,7 +268,7 @@
   {
     "event_id": 15,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 341,
     "video_time": "05:41",
     "clip_start_sec": 341,
@@ -287,7 +287,7 @@
   {
     "event_id": 16,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 359,
     "video_time": "05:59",
     "clip_start_sec": 359,
@@ -306,7 +306,7 @@
   {
     "event_id": 17,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 388,
     "video_time": "06:28",
     "clip_start_sec": 388,
@@ -325,7 +325,7 @@
   {
     "event_id": 18,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 409,
     "video_time": "06:49",
     "clip_start_sec": 409,
@@ -344,7 +344,7 @@
   {
     "event_id": 19,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 427,
     "video_time": "07:07",
     "clip_start_sec": 427,
@@ -363,7 +363,7 @@
   {
     "event_id": 20,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 552,
     "video_time": "09:12",
     "clip_start_sec": 552,
@@ -382,7 +382,7 @@
   {
     "event_id": 21,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 570,
     "video_time": "09:30",
     "clip_start_sec": 570,
@@ -401,7 +401,7 @@
   {
     "event_id": 22,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 586,
     "video_time": "09:46",
     "clip_start_sec": 586,
@@ -420,7 +420,7 @@
   {
     "event_id": 23,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 603,
     "video_time": "10:03",
     "clip_start_sec": 603,
@@ -439,7 +439,7 @@
   {
     "event_id": 24,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 632,
     "video_time": "10:32",
     "clip_start_sec": 632,
@@ -458,7 +458,7 @@
   {
     "event_id": 25,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 715,
     "video_time": "11:55",
     "clip_start_sec": 715,
@@ -477,7 +477,7 @@
   {
     "event_id": 26,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 791,
     "video_time": "13:11",
     "clip_start_sec": 791,
@@ -496,7 +496,7 @@
   {
     "event_id": 27,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 810,
     "video_time": "13:30",
     "clip_start_sec": 810,
@@ -515,7 +515,7 @@
   {
     "event_id": 28,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "video/1Q.mov",
     "video_sec": 818,
     "video_time": "13:38",
     "clip_start_sec": 818,

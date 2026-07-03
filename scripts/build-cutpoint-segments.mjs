@@ -165,7 +165,7 @@ for (let index = 0; index < mergedCutpoints.length - 1; index += 1) {
   segments.push({
     event_id: segments.length + 1,
     matched: "yes",
-    source_video: `영상자료/${sampleQuarter}.mov`,
+    source_video: `video/${sampleQuarter}.mov`,
     video_sec: start.video_sec,
     video_time: formatSeconds(start.video_sec),
     clip_start_sec: start.video_sec,

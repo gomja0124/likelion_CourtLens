@@ -69,7 +69,11 @@ func exportClip(asset: AVURLAsset, start: Int, end: Int, outputURL: URL) async t
 
   try? FileManager.default.removeItem(at: outputURL)
 
-  guard let exporter = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetPassthrough) else {
+  let presetName = ProcessInfo.processInfo.environment["COMPACT_CLIPS"] == "1"
+    ? AVAssetExportPreset960x540
+    : AVAssetExportPresetPassthrough
+
+  guard let exporter = AVAssetExportSession(asset: asset, presetName: presetName) else {
     throw NSError(domain: "cut-clips", code: 1, userInfo: [NSLocalizedDescriptionKey: "Could not create export session"])
   }
 
