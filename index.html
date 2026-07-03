@@ -137,12 +137,15 @@
               data-panel="play-by-play"
               aria-label="FIBA play-by-play highlight matching"
             >
-              <div class="section-title-row">
-                <div>
-                  <span class="pill" id="pbp-quarter-pill">FIBA 1Q</span>
-                  <h3>Play-by-Play 하이라이트 매칭</h3>
-                </div>
+              <div class="pbp-match-header">
+                <span class="pill" id="pbp-quarter-pill">FIBA 1Q</span>
+                <h3 id="pbp-match-title">대한민국 vs Chinese Taipei</h3>
                 <span class="section-count" id="pbp-match-count">0 clips</span>
+              </div>
+
+              <div class="pbp-side-labels" aria-hidden="true">
+                <span>대한민국 하이라이트</span>
+                <span>Chinese Taipei 하이라이트</span>
               </div>
 
               <nav class="pbp-quarter-tabs" aria-label="Play-by-Play quarter 선택">
@@ -150,6 +153,7 @@
                 <button class="pbp-quarter-button" type="button" data-pbp-quarter="Q2">2Q</button>
                 <button class="pbp-quarter-button" type="button" data-pbp-quarter="Q3">3Q</button>
                 <button class="pbp-quarter-button" type="button" data-pbp-quarter="Q4">4Q</button>
+                <button class="pbp-quarter-button" type="button" data-pbp-quarter="OT1">OT1</button>
               </nav>
 
               <div class="pbp-video-shell" id="pbp-video-shell" hidden>
@@ -526,7 +530,7 @@
         <div class="pbp-post-detail">
           <header class="pbp-post-header">
             <div>
-              <span class="mini-label">FIBA 1Q~3Q Highlight</span>
+              <span class="mini-label">FIBA 1Q~4Q Highlight</span>
               <h3 id="pbp-post-title">Play-by-Play 하이라이트</h3>
               <small id="pbp-post-meta">timeline cut point 기준 possession 구간</small>
             </div>
