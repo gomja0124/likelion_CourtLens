@@ -12,11 +12,13 @@
                 └→ 스무딩 → 히스테리시스 임계값(hi/lo) → keep 구간 → ffmpeg 재컷
 ```
 
-**학습 신호 (NBA):** 정답 컷 라벨이 없는 대신,
-- NBA 공식 하이라이트 영상의 세그먼트 = 양성 (하이라이트다운 장면)
-- 풀경기 중계에서 랜덤 샘플한 세그먼트 = 음성 (대부분 버릴 장면)
+**학습 신호 (NBA) — 두 가지 모드:**
 
-으로 "이 1초가 하이라이트에 들어갈 만한 장면인가"를 분류하게 학습한다.
+1. **하이라이트-only (기본, 풀경기 불필요)**: NBA 공식 하이라이트 세그먼트의 임베딩을
+   '기준 은행'으로 저장하고, 새 세그먼트의 점수 = 은행 최근접 k개와의 평균 코사인 유사도.
+   하이라이트다운 장면일수록 은행과 가깝다 (one-class kNN, `src/knn_scorer.py`).
+2. **이진 분류 (선택, 풀경기 확보 시)**: 하이라이트 세그먼트 = 양성, 풀경기 랜덤 샘플 = 음성으로
+   "이 1초가 하이라이트에 들어갈 만한 장면인가"를 분류하는 MLP 학습 (`src/train.py`).
 농구 중계의 시각·청각 문법(속공, 덩크, 함성, 휘슬)은 리그가 달라도 유사하므로
 NBA로 학습한 점수 모델이 KBL 클립에도 동작하며, 임계값만 KBL 클립 몇 개로 보정한다.
 
@@ -30,9 +32,10 @@ CLIP 인코더는 동결하고 40만 파라미터 헤드만 학습하므로 Cola
 | `src/data_collect.py` | yt-dlp로 NBA 학습 영상 다운로드 |
 | `src/video_utils.py` | ffmpeg 프레임/오디오 추출, 구간 재컷 |
 | `src/features.py` | CLIP 임베딩 + 오디오 에너지 특징 (세그먼트당 516차원) |
-| `src/dataset.py` | 양성/음성 세그먼트 데이터셋(.npz) 구축 |
-| `src/model.py` | HighlightScorer (MLP 헤드) |
-| `src/train.py` | 학습 루프 (BCE + 클래스 불균형 보정, val AUC 출력) |
+| `src/knn_scorer.py` | [기본] 하이라이트-only kNN 유사도 스코어러 (은행 구축/점수) |
+| `src/dataset.py` | (선택) 양성/음성 세그먼트 데이터셋(.npz) 구축 |
+| `src/model.py` | (선택) HighlightScorer (MLP 헤드) |
+| `src/train.py` | (선택) 학습 루프 (BCE + 클래스 불균형 보정, val AUC 출력) |
 | `src/segment.py` | 점수 → keep 구간 결정 (스무딩/히스테리시스/병합/패딩) — 의존성 없음 |
 | `src/refine.py` | KBL 클립 엔드투엔드 정제 + 점수 타임라인 시각화 |
 | `notebooks/colab_highlight_refiner.ipynb` | Colab 원클릭 실행 노트북 |
