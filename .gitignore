@@ -5,3 +5,14 @@ tmp/
 node_modules/
 *.log
 .local/
+
+# Local-only presentation materials
+/발표대본.md
+/발표자료_ppt.pdf
+/Basketball Lesson Infographics by Slidesgo.pptx
+/Basketball Training Center by Slidesgo.pptx
+/Basketball Training Center XL by Slidesgo.pptx
+/outputs/courtlens-ir-deck.pptx
+/outputs/pdf/courtlens-ir-*.pdf
+/outputs/pdf/figma-slides/
+/outputs/pdf/figma-slides-b2b/
