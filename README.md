@@ -2,7 +2,7 @@
 
 > KBL 팬이 좋아하는 팀과 선수를 고르면 AI 하이라이트와 쉬운 해설을 보여주고, 그 반응을 구단의 이벤트·스폰서·ROI 액션으로 연결하는 MVP 프로토타입
 
-이 README는 현재 구현된 MVP를 실행하고 확인하기 위한 요약 문서입니다. 전체 서비스 기획은 [courtlens-service-plan.md](./courtlens-service-plan.md), 구현/디자인 정리안은 [courtlens-implementation-design-plan.md](./courtlens-implementation-design-plan.md), 발표 메시지는 [court-lens-ir-draft.md](./court-lens-ir-draft.md)를 기준으로 봅니다.
+이 README는 현재 구현된 MVP를 실행하고 확인하기 위한 요약 문서입니다. 전체 서비스 기획은 [courtlens-service-plan.md](./기획안/courtlens-service-plan.md), 구현/디자인 정리안은 [courtlens-implementation-design-plan.md](./기획안/courtlens-implementation-design-plan.md), 발표 메시지는 [court-lens-ir-draft.md](./기획안/court-lens-ir-draft.md)를 기준으로 봅니다.
 
 ## MVP 목표
 
@@ -85,7 +85,8 @@ http://127.0.0.1:5173/index.html
 ├── app.js                                  # 인터랙션, 팀 전환, 모달, 생성 결과함 로직
 ├── kbl-data.js                             # KBL 선수/기록 기반 정적 데이터
 ├── scripts/fetch-kbl-data.mjs              # KBL 데이터 수집 스크립트
-├── courtlens-service-plan.md               # 최신 서비스 기획안
-├── courtlens-implementation-design-plan.md  # MVP 구현/디자인 정리안
-└── court-lens-ir-draft.md                  # IR 발표 메시지 및 제출 문안
+└── 기획안/
+    ├── courtlens-service-plan.md               # 최신 서비스 기획안
+    ├── courtlens-implementation-design-plan.md  # MVP 구현/디자인 정리안
+    └── court-lens-ir-draft.md                  # IR 발표 메시지 및 제출 문안
 ```
