@@ -1,0 +1,6 @@
+# Colab 기준 (torch, numpy는 Colab에 기본 설치되어 있음)
+open_clip_torch>=2.24
+yt-dlp>=2026.1.1
+pillow
+matplotlib
+tqdm
