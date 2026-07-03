@@ -9385,6 +9385,9 @@ const profileButton = document.querySelector(".avatar-button");
 const profileSheet = document.querySelector("#profile-sheet");
 const profileCloseButtons = document.querySelectorAll("[data-close-profile]");
 const teamOptionList = document.querySelector(".team-option-list");
+const authForm = document.querySelector("#auth-form");
+const authStatus = document.querySelector("#auth-status");
+const authLogoutButton = document.querySelector("#auth-logout");
 const mateCreateButtons = document.querySelectorAll("[data-open-mate-create]");
 const mateCreateModal = document.querySelector("#mate-create-modal");
 const mateCreateForm = document.querySelector("#mate-create-form");
@@ -9515,15 +9518,7 @@ function sanitizePbpClipPart(value) {
 
 function pbpClipSource(clip) {
   const quarter = clip.quarter || selectedPbpQuarter;
-  const category = `${quarter.toLowerCase()}_cutpoint_segment`;
-  const fileName = [
-    String(clip.id).padStart(3, "0"),
-    quarter,
-    sanitizePbpClipPart(clip.clock),
-    category,
-  ].join("_");
-
-  return `${PBP_CLIP_DIRECTORIES[quarter]}/${fileName}.mov`;
+  return `/api/highlights/clips/${quarter}/${clip.id}/video`;
 }
 
 function currentPbpClips() {
@@ -12225,6 +12220,80 @@ function updateProfileSheet(context) {
   renderTeamOptions(context);
 }
 
+function updateAuthStatus(user) {
+  if (!authStatus) return;
+
+  if (user) {
+    authStatus.textContent = `${user.name}님으로 로그인 중 · ${currentContext.team.fullName} 세션`;
+    profileButton.textContent = user.name.slice(0, 2).toUpperCase();
+    return;
+  }
+
+  authStatus.textContent = "로그인하면 선호팀과 Play-by-Play 시청 흐름이 서버 세션에 연결됩니다.";
+  profileButton.textContent = "MY";
+}
+
+async function requestAuth(path, payload) {
+  const response = await fetch(path, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.message || "인증 요청에 실패했습니다.");
+  return data;
+}
+
+async function loadCurrentUser() {
+  try {
+    const response = await fetch("/api/auth/me");
+    const data = await response.json();
+    updateAuthStatus(data.user);
+    if (data.user?.favoriteTeamCode && TEAM_CONFIGS[data.user.favoriteTeamCode]) {
+      renderTeam(data.user.favoriteTeamCode);
+    }
+  } catch {
+    updateAuthStatus(null);
+  }
+}
+
+async function handleAuthSubmit(event) {
+  const submitter = event.submitter;
+  const action = submitter?.dataset.authAction || "login";
+  if (!submitter) return;
+
+  event.preventDefault();
+  const formData = new FormData(authForm);
+  const payload = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    password: formData.get("password"),
+    favoriteTeamCode: currentContext.team.code,
+  };
+
+  try {
+    submitter.disabled = true;
+    authStatus.textContent = action === "register" ? "회원가입 중..." : "로그인 중...";
+    const data = await requestAuth(`/api/auth/${action}`, payload);
+    updateAuthStatus(data.user);
+    showToast(`${data.user.name}님, CourtLens에 연결됐습니다.`);
+  } catch (error) {
+    authStatus.textContent = error.message;
+  } finally {
+    submitter.disabled = false;
+  }
+}
+
+async function logoutUser() {
+  try {
+    await requestAuth("/api/auth/logout", {});
+    updateAuthStatus(null);
+    showToast("로그아웃되었습니다.");
+  } catch (error) {
+    authStatus.textContent = error.message;
+  }
+}
+
 function renderTeam(teamCode = selectedTeamCode) {
   selectedTeamCode = teamCode;
   currentContext = buildTeamContext(selectedTeamCode);
@@ -12736,6 +12805,9 @@ profileSheet?.addEventListener("click", (event) => {
   renderTeam(teamButton.dataset.teamCode);
 });
 
+authForm?.addEventListener("submit", handleAuthSubmit);
+authLogoutButton?.addEventListener("click", logoutUser);
+
 mateCreateButtons.forEach((button) => {
   button.addEventListener("click", openMateModal);
 });
@@ -13001,3 +13073,4 @@ document.addEventListener("keydown", (event) => {
 renderPlayByPlayTimeline();
 setFanPanel(activePanel);
 renderTeam(selectedTeamCode);
+loadCurrentUser();

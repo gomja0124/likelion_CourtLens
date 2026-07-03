@@ -424,6 +424,28 @@
                   <strong id="profile-team-name">창원 LG 세이커스</strong>
                   <small id="profile-data-note">등록 선수 25명 · 기록 선수 19명</small>
                 </div>
+                <form class="auth-form" id="auth-form">
+                  <div class="auth-status" id="auth-status" aria-live="polite">
+                    로그인하면 선호팀과 Play-by-Play 시청 흐름이 서버 세션에 연결됩니다.
+                  </div>
+                  <label>
+                    <span>이름</span>
+                    <input id="auth-name" name="name" type="text" autocomplete="name" placeholder="케이트" />
+                  </label>
+                  <label>
+                    <span>이메일</span>
+                    <input id="auth-email" name="email" type="email" autocomplete="email" placeholder="fan@courtlens.kr" required />
+                  </label>
+                  <label>
+                    <span>비밀번호</span>
+                    <input id="auth-password" name="password" type="password" autocomplete="current-password" minlength="8" placeholder="8자 이상" required />
+                  </label>
+                  <div class="auth-actions">
+                    <button class="primary-action" type="submit" data-auth-action="login">로그인</button>
+                    <button class="secondary-action" type="submit" data-auth-action="register">회원가입</button>
+                    <button class="secondary-action" type="button" id="auth-logout">로그아웃</button>
+                  </div>
+                </form>
                 <div class="team-option-list" aria-label="선호팀 변경">
                   <button class="team-option active" type="button" data-team-code="50" aria-pressed="true">
                     <span class="team-mark lg-mark"></span>
