@@ -1103,6 +1103,107 @@ button {
   line-height: 1.4;
 }
 
+.pbp-post-modal {
+  align-items: flex-start;
+  padding: max(1rem, env(safe-area-inset-top)) clamp(0.75rem, 2vw, 2rem) 1rem;
+  overflow-y: auto;
+}
+
+.pbp-post-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(18rem, 1.1fr) minmax(20rem, 0.9fr);
+  width: min(76rem, 100%);
+  max-height: calc(100dvh - 2rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fff;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+}
+
+.pbp-post-media {
+  display: grid;
+  align-content: center;
+  min-height: 30rem;
+  padding: 1rem;
+  background:
+    linear-gradient(135deg, rgba(33, 25, 29, 0.96), rgba(33, 25, 29, 0.82)),
+    var(--ink);
+}
+
+.pbp-post-media video {
+  width: 100%;
+  max-height: min(62vh, 34rem);
+  border-radius: 8px;
+  background: #050708;
+}
+
+.pbp-post-video-note {
+  margin: 0.65rem 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.pbp-post-detail {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: 0;
+  overflow: hidden;
+  border-left: 1px solid var(--line);
+}
+
+.pbp-post-header,
+.pbp-post-summary {
+  padding: 1rem;
+}
+
+.pbp-post-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.pbp-post-header h3 {
+  margin: 0.15rem 0 0;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.pbp-post-header small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.pbp-post-summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.pbp-post-summary strong,
+.pbp-post-summary p {
+  display: block;
+}
+
+.pbp-post-summary strong {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.pbp-post-summary p {
+  margin: 0.45rem 0 0;
+  color: #3f484d;
+  line-height: 1.55;
+}
+
 .pbp-timeline {
   position: relative;
   display: grid;
@@ -3106,8 +3207,26 @@ button {
   }
 
   .pbp-video-shell,
+  .pbp-post-card,
   .pbp-row {
     grid-template-columns: 1fr;
+  }
+
+  .pbp-post-card {
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+
+  .pbp-post-media {
+    min-height: auto;
+  }
+
+  .pbp-post-media video {
+    max-height: 16rem;
+  }
+
+  .pbp-post-detail {
+    border-left: 0;
   }
 
   .pbp-timeline::before {

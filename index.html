@@ -767,6 +767,33 @@
       </form>
     </section>
 
+    <section class="app-modal pbp-post-modal" id="pbp-post-modal" aria-hidden="true" aria-labelledby="pbp-post-title">
+      <button class="modal-backdrop" type="button" aria-label="PBP 하이라이트 닫기" data-close-pbp-post></button>
+      <article class="pbp-post-card" role="dialog" aria-modal="true">
+        <div class="pbp-post-media">
+          <video id="pbp-post-video" controls playsinline preload="metadata"></video>
+          <p class="pbp-post-video-note" id="pbp-post-video-note">
+            클립 파일이 Git LFS 포인터 상태이면 영상은 재생되지 않습니다.
+          </p>
+        </div>
+        <div class="pbp-post-detail">
+          <header class="pbp-post-header">
+            <div>
+              <span class="mini-label">FIBA 1Q Highlight</span>
+              <h3 id="pbp-post-title">Play-by-Play 하이라이트</h3>
+              <small id="pbp-post-meta">timeline cut point 기준 possession 구간</small>
+            </div>
+            <button class="sheet-close" type="button" aria-label="닫기" data-close-pbp-post>×</button>
+          </header>
+          <section class="pbp-post-summary" aria-label="PBP 하이라이트 요약">
+            <span class="pill" id="pbp-post-team">Korea</span>
+            <strong id="pbp-post-event">타임라인 이벤트</strong>
+            <p id="pbp-post-copy">타임라인 row를 선택하면 해당 possession 구간의 핵심 이벤트가 표시됩니다.</p>
+          </section>
+        </div>
+      </article>
+    </section>
+
     <section class="app-modal" id="dashboard-modal" aria-hidden="true" aria-labelledby="dashboard-modal-title">
       <button class="modal-backdrop" type="button" aria-label="구단 상세 닫기" data-close-dashboard-modal></button>
       <article class="modal-card dashboard-modal-card" role="dialog" aria-modal="true">

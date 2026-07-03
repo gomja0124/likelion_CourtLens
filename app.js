@@ -8294,6 +8294,15 @@ const pbpVideoShell = document.querySelector("#pbp-video-shell");
 const pbpVideo = document.querySelector("#pbp-video");
 const pbpVideoTitle = document.querySelector("#pbp-video-title");
 const pbpVideoMeta = document.querySelector("#pbp-video-meta");
+const pbpPostModal = document.querySelector("#pbp-post-modal");
+const pbpPostVideo = document.querySelector("#pbp-post-video");
+const pbpPostVideoNote = document.querySelector("#pbp-post-video-note");
+const pbpPostCloseButtons = document.querySelectorAll("[data-close-pbp-post]");
+const pbpPostTitle = document.querySelector("#pbp-post-title");
+const pbpPostMeta = document.querySelector("#pbp-post-meta");
+const pbpPostTeam = document.querySelector("#pbp-post-team");
+const pbpPostEvent = document.querySelector("#pbp-post-event");
+const pbpPostCopy = document.querySelector("#pbp-post-copy");
 const clipCountLabel = document.querySelector("#clip-count-label");
 const clipFilterButtons = document.querySelectorAll(".clip-filter-button");
 const generatedEmptyState = document.querySelector("#ai-generated-empty");
@@ -8489,34 +8498,55 @@ function renderPlayByPlayTimeline() {
 
 function openPbpClip(clipId) {
   const clip = PBP_CLIPS.find((item) => item.id === Number(clipId));
-  if (!clip || !pbpVideo || !pbpVideoShell) return;
+  if (!clip || !pbpPostModal || !pbpPostVideo) return;
 
   activePbpClip = { ...clip, playbackEnd: clip.duration };
   pbpTimeline?.querySelectorAll(".pbp-row").forEach((row) => {
     row.classList.toggle("active", row.dataset.pbpClipId === String(clip.id));
   });
 
-  pbpVideoShell.hidden = false;
+  if (pbpVideoShell) pbpVideoShell.hidden = true;
   const clipSource = pbpClipSource(clip);
   const seekAndPlay = () => {
-    pbpVideo.currentTime = 0;
-    pbpVideo.play().catch(() => {});
+    pbpPostVideo.currentTime = 0;
+    pbpPostVideo.play().catch(() => {});
   };
 
-  if (pbpVideo.getAttribute("src") !== clipSource) {
-    pbpVideo.src = clipSource;
-    pbpVideo.load();
-    pbpVideo.addEventListener("loadedmetadata", seekAndPlay, { once: true });
+  if (pbpPostVideo.getAttribute("src") !== clipSource) {
+    pbpPostVideo.src = clipSource;
+    pbpPostVideo.load();
+    pbpPostVideo.addEventListener("loadedmetadata", seekAndPlay, { once: true });
   } else {
     seekAndPlay();
   }
 
-  if (pbpVideoTitle) {
-    pbpVideoTitle.textContent = `${formatPbpClock(clip.clock)} · ${clip.endEvent}`;
+  if (pbpPostTitle) {
+    pbpPostTitle.textContent = `${formatPbpClock(clip.clock)} · ${clip.endEvent}`;
   }
-  if (pbpVideoMeta) {
-    pbpVideoMeta.textContent = `${clip.duration}s · ${formatPbpType(clip.startType)} → ${formatPbpType(clip.endType)} · ${clip.startEvent}`;
+  if (pbpPostMeta) {
+    pbpPostMeta.textContent = `${clip.duration}s · ${formatPbpType(clip.startType)} → ${formatPbpType(clip.endType)}`;
   }
+  if (pbpPostTeam) {
+    pbpPostTeam.textContent = teamLabel(eventTeam(`${clip.startEvent} ${clip.endEvent}`));
+  }
+  if (pbpPostEvent) {
+    pbpPostEvent.textContent = clip.endEvent;
+  }
+  if (pbpPostCopy) {
+    pbpPostCopy.textContent = `${clip.startEvent} 이후 ${clip.duration}초 possession 구간입니다. 시작 이벤트와 종료 이벤트를 cut point로 매칭한 하이라이트 클립입니다.`;
+  }
+  if (pbpPostVideoNote) {
+    pbpPostVideoNote.textContent = "Git LFS 영상 파일이 내려와 있으면 여기서 바로 재생됩니다.";
+  }
+
+  pbpPostModal.classList.add("open");
+  pbpPostModal.setAttribute("aria-hidden", "false");
+}
+
+function closePbpPost() {
+  pbpPostModal?.classList.remove("open");
+  pbpPostModal?.setAttribute("aria-hidden", "true");
+  if (pbpPostVideo) pbpPostVideo.pause();
 }
 
 function gameIncludesTeam(game, teamCode) {
@@ -11409,6 +11439,13 @@ pbpVideo?.addEventListener("timeupdate", () => {
   pbpVideo.currentTime = activePbpClip.playbackEnd;
 });
 
+pbpPostVideo?.addEventListener("timeupdate", () => {
+  if (!activePbpClip || pbpPostVideo.currentTime < activePbpClip.playbackEnd) return;
+
+  pbpPostVideo.pause();
+  pbpPostVideo.currentTime = activePbpClip.playbackEnd;
+});
+
 levelButtons.forEach((button) => {
   button.addEventListener("click", () => {
     selectedLevel = button.dataset.level;
@@ -11740,6 +11777,10 @@ dashboardModalBody?.addEventListener("click", (event) => {
 
 generateButton.addEventListener("click", generateHighlightFromSelection);
 
+pbpPostCloseButtons.forEach((button) => {
+  button.addEventListener("click", closePbpPost);
+});
+
 document.addEventListener("keydown", (event) => {
   if ((event.key === "Enter" || event.key === " ") && event.target.matches("[role='button']")) {
     event.preventDefault();
@@ -11754,6 +11795,10 @@ document.addEventListener("keydown", (event) => {
 
   if (mateCreateModal?.classList.contains("open")) {
     closeMateModal();
+  }
+
+  if (pbpPostModal?.classList.contains("open")) {
+    closePbpPost();
   }
 
   if (dashboardModal?.classList.contains("open")) {
