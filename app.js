@@ -1,3 +1,16 @@
+// 목업 인증: 세션이 없으면 로그인 페이지로 이동 (auth.js와 키 공유)
+const AUTH_SESSION_KEY = "courtlens:session";
+const authSession = (() => {
+  try {
+    return JSON.parse(localStorage.getItem(AUTH_SESSION_KEY));
+  } catch {
+    return null;
+  }
+})();
+if (!authSession) {
+  location.replace("./login.html");
+}
+
 const kblData = window.COURTLENS_KBL_DATA || {};
 const seasonName = kblData.currentSeason?.seasonName || "2025-2026";
 const PLAYER_POSITIONS = new Set(["GD", "FD", "C"]);
@@ -241,6 +254,10 @@ const TEAM_CONFIGS = {
 
 const TEAM_ORDER = ["50", "06", "64", "10", "35", "16", "55", "66", "60", "70"];
 const TEAM_STORAGE_KEY = "courtlens:selectedTeam";
+
+// 경기 일정은 일단 하나의 구단(창원 LG) 기준으로 통일한다.
+// 팀별 일정은 이후 단계에서 SCHEDULE_TEAM_CODE 대신 teamCode를 사용해 되돌린다.
+const SCHEDULE_TEAM_CODE = "50";
 
 const FEATURED_KBL_MATCH = {
   id: "S47G01N258",
@@ -8026,8 +8043,8 @@ function gameIncludesTeam(game, teamCode) {
   return [game?.home?.code, game?.away?.code].includes(teamCode);
 }
 
-function seasonGamesForTeam(teamCode) {
-  return KBL_SEASON_GAMES.filter((game) => gameIncludesTeam(game, teamCode));
+function seasonGamesForTeam(_teamCode) {
+  return KBL_SEASON_GAMES.filter((game) => gameIncludesTeam(game, SCHEDULE_TEAM_CODE));
 }
 
 function winnerForMatch(match) {
@@ -8459,7 +8476,9 @@ function buildClips(context) {
 
 function applyTheme(context) {
   const root = document.documentElement;
-  const { colors } = context.team;
+  // 일단 모든 응원구단을 기존 기본(창원 LG) 팔레트로 통일한다.
+  // 팀별 색깔 테마는 이후 단계에서 context.team.colors로 되돌려 적용한다.
+  const colors = TEAM_CONFIGS["50"].colors;
 
   root.style.setProperty("--teal", colors.primary);
   root.style.setProperty("--teal-soft", colors.soft);
@@ -9057,6 +9076,7 @@ function renderTeamOptions(context) {
 }
 
 function updateProfileSheet(context) {
+  setText("#profile-title", `${authSession?.nickname || "팬"}님, 어떤 팀으로 볼까요?`);
   setText("#profile-team-name", context.team.fullName);
   setText(
     "#profile-summary",
@@ -9530,6 +9550,13 @@ profileCloseButtons.forEach((button) => {
 });
 
 profileSheet?.addEventListener("click", (event) => {
+  const logoutButton = event.target.closest("[data-logout]");
+  if (logoutButton) {
+    localStorage.removeItem(AUTH_SESSION_KEY);
+    location.replace("./login.html");
+    return;
+  }
+
   const teamButton = event.target.closest(".team-option");
   if (!teamButton) return;
 

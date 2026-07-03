@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CourtLens 회원가입</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="auth-shell">
+      <section class="auth-card" aria-label="CourtLens 회원가입">
+        <p class="eyebrow">AI Fan Engagement</p>
+        <h1>CourtLens</h1>
+        <p class="auth-copy">응원구단을 고르면 하이라이트와 직관메이트 추천이 그 팀 기준으로 개인화됩니다.</p>
+
+        <form id="signup-form" class="auth-form">
+          <label>
+            <span>닉네임</span>
+            <input id="signup-nickname-input" type="text" placeholder="코트의 케이트" maxlength="12" required />
+          </label>
+          <label>
+            <span>이메일</span>
+            <input id="signup-email-input" type="email" placeholder="fan@courtlens.kr" required />
+          </label>
+          <label>
+            <span>비밀번호</span>
+            <input id="signup-password-input" type="password" placeholder="4자 이상" required />
+          </label>
+          <label>
+            <span>비밀번호 확인</span>
+            <input id="signup-password-check-input" type="password" placeholder="비밀번호 다시 입력" required />
+          </label>
+          <label>
+            <span>응원구단</span>
+            <select id="signup-team-input"></select>
+          </label>
+          <p class="auth-error" id="auth-error" role="alert"></p>
+          <button class="primary-action auth-submit" type="submit">가입하고 시작하기</button>
+        </form>
+
+        <p class="auth-alt">
+          이미 계정이 있나요? <a href="./login.html">로그인</a>
+        </p>
+      </section>
+    </main>
+    <script src="./auth.js"></script>
+  </body>
+</html>

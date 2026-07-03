@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CourtLens 로그인</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="auth-shell">
+      <section class="auth-card" aria-label="CourtLens 로그인">
+        <p class="eyebrow">AI Fan Engagement</p>
+        <h1>CourtLens</h1>
+        <p class="auth-copy">하이라이트, 입덕패스, 직관메이트를 내 응원구단 기준으로 즐겨보세요.</p>
+
+        <form id="login-form" class="auth-form">
+          <label>
+            <span>이메일</span>
+            <input id="login-email-input" type="email" placeholder="fan@courtlens.kr" required />
+          </label>
+          <label>
+            <span>비밀번호</span>
+            <input id="login-password-input" type="password" placeholder="비밀번호" required />
+          </label>
+          <p class="auth-error" id="auth-error" role="alert"></p>
+          <button class="primary-action auth-submit" type="submit">로그인</button>
+        </form>
+
+        <p class="auth-alt">
+          아직 계정이 없나요? <a href="./signup.html">회원가입</a>
+        </p>
+      </section>
+    </main>
+    <script src="./auth.js"></script>
+  </body>
+</html>
