@@ -58,7 +58,7 @@ func recognizeClock(in image: CGImage) -> (clock: String, rawText: String)? {
 }
 
 for quarter in quarters {
-  let videoURL = baseURL.appendingPathComponent("영상자료/\(quarter).mov")
+  let videoURL = baseURL.appendingPathComponent("media/source/\(quarter).mov")
   let asset = AVURLAsset(url: videoURL)
   let duration = try await asset.load(.duration)
   let durationSeconds = Int(CMTimeGetSeconds(duration).rounded(.down))
@@ -102,4 +102,4 @@ let rows = samples.map { sample in
 
 try ([header.joined(separator: ",")] + rows)
   .joined(separator: "\n")
-  .write(to: baseURL.appendingPathComponent("video_clock_samples.csv"), atomically: true, encoding: .utf8)
+  .write(to: baseURL.appendingPathComponent("data/raw/video_clock_samples.csv"), atomically: true, encoding: .utf8)

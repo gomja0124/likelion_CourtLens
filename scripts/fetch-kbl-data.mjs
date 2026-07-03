@@ -1,7 +1,7 @@
 import { writeFile } from "node:fs/promises";
 
 const KBL_API = "https://api.kbl.or.kr";
-const OUTPUT_FILE = new URL("../kbl-data.js", import.meta.url);
+const OUTPUT_FILE = new URL("../frontend/kbl-data.js", import.meta.url);
 const FAVORITE_TEAM_CODE = "50";
 const ACTIVE_STATUS = "A";
 const PLAYER_POSITIONS = new Set(["GD", "FD", "C"]);

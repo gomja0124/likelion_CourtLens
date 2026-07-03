@@ -8146,11 +8146,6 @@ const generatedAssets = [];
 const BASE_CLIP_COUNT = 12;
 const PBP_QUARTERS = ["Q1", "Q2", "Q3", "Q4"];
 let selectedPbpQuarter = "Q1";
-const PBP_CLIP_DIRECTORIES = {
-  "Q1": "./q1_cutpoint_segmentss",
-  "Q2": "./q2_cutpoint_segmentss",
-  "Q3": "./q3_cutpoint_segmentss"
-};
 const PBP_CLIPS_BY_QUARTER = {
   "Q1": [
     {

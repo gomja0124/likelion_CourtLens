@@ -1,6 +1,6 @@
 import fs from "node:fs";
 
-const events = JSON.parse(fs.readFileSync("clip_plan.json", "utf8"))
+const events = JSON.parse(fs.readFileSync("data/highlights/clip_plan.json", "utf8"))
   .filter((event) => event.quarter === "Q1")
   .sort((a, b) => Number(a.quarter_elapsed_sec) - Number(b.quarter_elapsed_sec));
 
@@ -148,7 +148,7 @@ const csv = [
   ...highlights.map((row) => header.map((key) => csvCell(row[key])).join(",")),
 ].join("\n");
 
-fs.writeFileSync("korea_1q_highlight_plan.json", JSON.stringify(highlights, null, 2));
-fs.writeFileSync("korea_1q_highlight_plan.csv", csv);
+fs.writeFileSync("data/highlights/korea_1q_highlight_plan.json", JSON.stringify(highlights, null, 2));
+fs.writeFileSync("data/highlights/korea_1q_highlight_plan.csv", csv);
 
 console.log(JSON.stringify({ total: highlights.length, highlights }, null, 2));

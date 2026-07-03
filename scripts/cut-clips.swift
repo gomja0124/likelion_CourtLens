@@ -97,11 +97,14 @@ func exportClip(asset: AVURLAsset, start: Int, end: Int, outputURL: URL) async t
 
 let baseURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
 let arguments = CommandLine.arguments.dropFirst()
-let planFileName = arguments.first { $0.hasSuffix(".json") } ?? "clip_plan.json"
+let planFileName = arguments.first { $0.hasSuffix(".json") } ?? "data/highlights/clip_plan.json"
 let requestedQuarter = arguments.first { !$0.hasSuffix(".json") }
 let planURL = baseURL.appendingPathComponent(planFileName)
-let outputDirectoryName = planFileName == "clip_plan.json" ? "clips" : planFileName.replacingOccurrences(of: "_plan.json", with: "s")
-let outputDirectory = baseURL.appendingPathComponent(outputDirectoryName, isDirectory: true)
+let planStem = URL(fileURLWithPath: planFileName).deletingPathExtension().lastPathComponent
+let outputDirectoryName = planStem == "clip_plan" ? "clips" : planStem.replacingOccurrences(of: "_plan", with: "s")
+let outputDirectory = baseURL
+  .appendingPathComponent("media/clips", isDirectory: true)
+  .appendingPathComponent(outputDirectoryName, isDirectory: true)
 try FileManager.default.createDirectory(at: outputDirectory, withIntermediateDirectories: true)
 
 let plans = try JSONDecoder().decode([ClipPlan].self, from: Data(contentsOf: planURL))

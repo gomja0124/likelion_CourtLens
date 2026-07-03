@@ -1,7 +1,7 @@
 import fs from "node:fs";
 
-const events = JSON.parse(fs.readFileSync("fiba_clip_events.json", "utf8"));
-const sampleCsv = fs.readFileSync("video_clock_samples.csv", "utf8");
+const events = JSON.parse(fs.readFileSync("data/highlights/fiba_clip_events.json", "utf8"));
+const sampleCsv = fs.readFileSync("data/raw/video_clock_samples.csv", "utf8");
 const beforeSeconds = 5;
 const afterSeconds = 7;
 const toleranceSeconds = 2;
@@ -108,7 +108,7 @@ const rows = events.map((event, index) => {
 
   return {
     event_id: index + 1,
-    source_video: `영상자료/${event.quarter.replace(/^Q(\d)$/, "$1Q")}.mov`,
+    source_video: `media/source/${event.quarter.replace(/^Q(\d)$/, "$1Q")}.mov`,
     matched: match ? "yes" : "no",
     match_delta_clock_sec: match?.delta ?? "",
     video_sec: match?.video_sec ?? "",
@@ -146,8 +146,8 @@ const csv = [
   ...rows.map((row) => header.map((key) => csvCell(row[key])).join(",")),
 ].join("\n");
 
-fs.writeFileSync("clip_plan.csv", csv);
-fs.writeFileSync("clip_plan.json", JSON.stringify(rows, null, 2));
+fs.writeFileSync("data/highlights/clip_plan.csv", csv);
+fs.writeFileSync("data/highlights/clip_plan.json", JSON.stringify(rows, null, 2));
 
 const summary = rows.reduce(
   (acc, row) => {

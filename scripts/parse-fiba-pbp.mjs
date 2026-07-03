@@ -1,6 +1,6 @@
 import fs from "node:fs";
 
-const raw = JSON.parse(fs.readFileSync("fiba_pbp_raw.json", "utf8"));
+const raw = JSON.parse(fs.readFileSync("data/raw/fiba_pbp_raw.json", "utf8"));
 const scorePattern = /^\d+\s-\s\d+$/;
 const timePattern = /^\d{2}:\d{2}$/;
 
@@ -115,8 +115,8 @@ const csv = [
   ...rows.map((row) => header.map((key) => csvCell(row[key])).join(",")),
 ].join("\n");
 
-fs.writeFileSync("fiba_clip_events.csv", csv);
-fs.writeFileSync("fiba_clip_events.json", JSON.stringify(rows, null, 2));
+fs.writeFileSync("data/highlights/fiba_clip_events.csv", csv);
+fs.writeFileSync("data/highlights/fiba_clip_events.json", JSON.stringify(rows, null, 2));
 
 const byCategory = rows.reduce((acc, row) => {
   for (const category of row.categories.split(";")) {

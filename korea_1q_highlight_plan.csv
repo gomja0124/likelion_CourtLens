@@ -1,3 +1,0 @@
-event_id,matched,source_video,video_sec,video_time,clip_start_sec,clip_start,clip_end_sec,clip_end,quarter,clock_remaining,categories,duration_sec,start_event_id,score_event_id,score,start_description,score_description
-"1","yes","영상자료/1Q.mov","131","02:11","129","02:09","151","02:31","Q1","07:29_to_07:14","korea_highlight_korea_defensive_rebound_to_score","22","10","11","5 - 4","31 Jaeseok Jang defensive rebound","31 Jaeseok Jang | +1 | 2nd of 2 free throws made"
-"2","yes","영상자료/1Q.mov","388","06:28","386","06:26","414","06:54","Q1","04:37_to_04:28","korea_highlight_korea_defensive_rebound_to_score","28","17","18","12 - 9","team defensive rebound","22 Jun Seok Yeo | +2 | 2PtsFG under the basket, driving layup made"

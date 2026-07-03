@@ -13,6 +13,9 @@ from .models import UserProfile
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+FRONTEND_DIR = BASE_DIR / "frontend"
+HIGHLIGHT_DATA_DIR = BASE_DIR / "data" / "highlights"
+CLIP_MEDIA_DIR = BASE_DIR / "media" / "clips"
 
 QUARTER_CONFIGS = {
     "Q1": {
@@ -54,7 +57,7 @@ def public_user(user):
 
 
 def index(_request):
-    return FileResponse((BASE_DIR / "index.html").open("rb"), content_type="text/html; charset=utf-8")
+    return FileResponse((FRONTEND_DIR / "index.html").open("rb"), content_type="text/html; charset=utf-8")
 
 
 def root_asset(request):
@@ -62,7 +65,7 @@ def root_asset(request):
     if asset_name not in ROOT_ASSETS:
         raise Http404("지원하지 않는 정적 파일입니다.")
 
-    file_path = BASE_DIR / asset_name
+    file_path = FRONTEND_DIR / asset_name
     content_type = mimetypes.guess_type(file_path.name)[0] or "application/octet-stream"
     return FileResponse(file_path.open("rb"), content_type=content_type)
 
@@ -137,11 +140,11 @@ def normalize_quarter(value):
 
 
 def read_json_file(file_name):
-    return json.loads((BASE_DIR / file_name).read_text(encoding="utf-8"))
+    return json.loads((HIGHLIGHT_DATA_DIR / file_name).read_text(encoding="utf-8"))
 
 
 def list_clip_files(directory_name):
-    directory = BASE_DIR / directory_name
+    directory = CLIP_MEDIA_DIR / directory_name
     if not directory.exists():
         return []
     return sorted(item.name for item in directory.iterdir() if item.suffix == ".mov")
@@ -151,7 +154,7 @@ def normalize_highlight_clip(record, quarter, clip_files, index):
     config = QUARTER_CONFIGS[quarter]
     clip_id = int(record.get("clip_id") or record.get("event_id") or index + 1)
     clip_file = record.get("clip_file") or (clip_files[clip_id - 1] if clip_id - 1 < len(clip_files) else None)
-    clip_path = record.get("clip_path") or (f"{config['clip_directory']}/{clip_file}" if clip_file else None)
+    clip_path = f"media/clips/{config['clip_directory']}/{clip_file}" if clip_file else None
 
     return {
         "id": clip_id,
@@ -284,4 +287,4 @@ def highlight_clip_video(request, quarter, clip_id):
 def clip_file(request, directory, filename):
     if directory not in {config["clip_directory"] for config in QUARTER_CONFIGS.values()}:
         raise Http404("지원하지 않는 클립 디렉터리입니다.")
-    return ranged_file_response(request, BASE_DIR / directory / filename)
+    return ranged_file_response(request, CLIP_MEDIA_DIR / directory / filename)

@@ -84,7 +84,7 @@ MVP는 정적 프로토타입이지만, 지금까지 학습한 웹/Git, HTML/CSS
 
 - 현재 MVP 구현
   - HTML/CSS/Vanilla JS로 발표 가능한 정적 프로토타입 유지
-  - `kbl-data.js` 샘플 데이터를 화면 상태와 연결
+  - `frontend/kbl-data.js` 샘플 데이터를 화면 상태와 연결
   - `data-revenue-opportunity`, `data-event-builder`, `data-sponsor-builder`, `data-funnel-stage`, `data-fan-voice-category` 같은 DOM 트리거 관리
 - 팬 웹서비스 화면 구현
   - 선호팀 전환, KBL 공식 일정 기반 달력형 경기 선택
@@ -259,7 +259,7 @@ AI/데이터 산출물:
 - HTML
 - CSS
 - Vanilla JavaScript
-- `kbl-data.js` 정적 데이터
+- `frontend/kbl-data.js` 정적 데이터
 - 브라우저에서 바로 확인 가능한 구조
 
 이유:
@@ -935,7 +935,7 @@ TRANSCRIBE_MODEL=gpt-4o-mini-transcribe
 
 ### Sprint 1: HTML/CSS + JS/TS 정적 MVP
 
-- 현재 구조처럼 `index.html`, `styles.css`, `app.js`, `kbl-data.js`로 발표 가능한 화면 구현
+- 현재 구조처럼 `frontend/index.html`, `frontend/styles.css`, `frontend/app.js`, `frontend/kbl-data.js`로 발표 가능한 화면 구현
 - 달력형 경기 선택, 경기가 없는 날짜 disabled, 선택 경기 summary와 오늘 잘한 선수 시연
 - 하이라이트 탭 내부 하이라이트 메이커, 미출전 선수 비활성화, 댓글 반응, 직관메이트 모집 시연
 - 구단 웹 대시보드 Top 3/Builder/ROI/Fan Voice 시연

@@ -20,5 +20,5 @@ urlpatterns = [
     path("api/highlights/clips", views.highlight_clips),
     path("api/highlights/clips/<str:quarter>/<int:clip_id>", views.highlight_clip_detail),
     path("api/highlights/clips/<str:quarter>/<int:clip_id>/video", views.highlight_clip_video),
-    re_path(r"^(?P<directory>q[123]_cutpoint_segmentss)/(?P<filename>[^/]+\.mov)$", views.clip_file),
+    re_path(r"^media/clips/(?P<directory>q[123]_cutpoint_segmentss)/(?P<filename>[^/]+\.mov)$", views.clip_file),
 ]

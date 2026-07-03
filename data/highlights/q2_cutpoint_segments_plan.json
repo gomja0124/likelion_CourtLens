@@ -2,7 +2,7 @@
   {
     "event_id": 1,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 7,
     "video_time": "00:07",
     "clip_start_sec": 7,
@@ -21,7 +21,7 @@
   {
     "event_id": 2,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 34,
     "video_time": "00:34",
     "clip_start_sec": 34,
@@ -40,7 +40,7 @@
   {
     "event_id": 3,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 62,
     "video_time": "01:02",
     "clip_start_sec": 62,
@@ -59,7 +59,7 @@
   {
     "event_id": 4,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 74,
     "video_time": "01:14",
     "clip_start_sec": 74,
@@ -78,7 +78,7 @@
   {
     "event_id": 5,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 100,
     "video_time": "01:40",
     "clip_start_sec": 100,
@@ -97,7 +97,7 @@
   {
     "event_id": 6,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 122,
     "video_time": "02:02",
     "clip_start_sec": 122,
@@ -116,7 +116,7 @@
   {
     "event_id": 7,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 138,
     "video_time": "02:18",
     "clip_start_sec": 138,
@@ -135,7 +135,7 @@
   {
     "event_id": 8,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 167,
     "video_time": "02:47",
     "clip_start_sec": 167,
@@ -154,7 +154,7 @@
   {
     "event_id": 9,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 170,
     "video_time": "02:50",
     "clip_start_sec": 170,
@@ -173,7 +173,7 @@
   {
     "event_id": 10,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 294,
     "video_time": "04:54",
     "clip_start_sec": 294,
@@ -192,7 +192,7 @@
   {
     "event_id": 11,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 317,
     "video_time": "05:17",
     "clip_start_sec": 317,
@@ -211,7 +211,7 @@
   {
     "event_id": 12,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 362,
     "video_time": "06:02",
     "clip_start_sec": 362,
@@ -230,7 +230,7 @@
   {
     "event_id": 13,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 365,
     "video_time": "06:05",
     "clip_start_sec": 365,
@@ -249,7 +249,7 @@
   {
     "event_id": 14,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 411,
     "video_time": "06:51",
     "clip_start_sec": 411,
@@ -268,7 +268,7 @@
   {
     "event_id": 15,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 419,
     "video_time": "06:59",
     "clip_start_sec": 419,
@@ -287,7 +287,7 @@
   {
     "event_id": 16,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 447,
     "video_time": "07:27",
     "clip_start_sec": 447,
@@ -306,7 +306,7 @@
   {
     "event_id": 17,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 506,
     "video_time": "08:26",
     "clip_start_sec": 506,
@@ -325,7 +325,7 @@
   {
     "event_id": 18,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 571,
     "video_time": "09:31",
     "clip_start_sec": 571,
@@ -344,7 +344,7 @@
   {
     "event_id": 19,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 613,
     "video_time": "10:13",
     "clip_start_sec": 613,
@@ -363,7 +363,7 @@
   {
     "event_id": 20,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 620,
     "video_time": "10:20",
     "clip_start_sec": 620,
@@ -382,7 +382,7 @@
   {
     "event_id": 21,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 627,
     "video_time": "10:27",
     "clip_start_sec": 627,
@@ -401,7 +401,7 @@
   {
     "event_id": 22,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 634,
     "video_time": "10:34",
     "clip_start_sec": 634,
@@ -420,7 +420,7 @@
   {
     "event_id": 23,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 736,
     "video_time": "12:16",
     "clip_start_sec": 736,
@@ -439,7 +439,7 @@
   {
     "event_id": 24,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 753,
     "video_time": "12:33",
     "clip_start_sec": 753,
@@ -458,7 +458,7 @@
   {
     "event_id": 25,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 835,
     "video_time": "13:55",
     "clip_start_sec": 835,
@@ -477,7 +477,7 @@
   {
     "event_id": 26,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 843,
     "video_time": "14:03",
     "clip_start_sec": 843,
@@ -496,7 +496,7 @@
   {
     "event_id": 27,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 904,
     "video_time": "15:04",
     "clip_start_sec": 904,
@@ -515,7 +515,7 @@
   {
     "event_id": 28,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 925,
     "video_time": "15:25",
     "clip_start_sec": 925,
@@ -534,7 +534,7 @@
   {
     "event_id": 29,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 952,
     "video_time": "15:52",
     "clip_start_sec": 952,
@@ -553,7 +553,7 @@
   {
     "event_id": 30,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 954,
     "video_time": "15:54",
     "clip_start_sec": 954,
@@ -572,7 +572,7 @@
   {
     "event_id": 31,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 1087,
     "video_time": "18:07",
     "clip_start_sec": 1087,
@@ -591,7 +591,7 @@
   {
     "event_id": 32,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 1144,
     "video_time": "19:04",
     "clip_start_sec": 1144,
@@ -610,7 +610,7 @@
   {
     "event_id": 33,
     "matched": "yes",
-    "source_video": "video/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "video_sec": 1162,
     "video_time": "19:22",
     "clip_start_sec": 1162,

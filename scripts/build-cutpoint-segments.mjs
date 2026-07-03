@@ -1,8 +1,8 @@
 import fs from "node:fs";
 
 const quarter = process.argv[2] ?? "Q1";
-const raw = JSON.parse(fs.readFileSync("fiba_pbp_raw.json", "utf8"))[quarter];
-const samplesCsv = fs.readFileSync("video_clock_samples.csv", "utf8");
+const raw = JSON.parse(fs.readFileSync("data/raw/fiba_pbp_raw.json", "utf8"))[quarter];
+const samplesCsv = fs.readFileSync("data/raw/video_clock_samples.csv", "utf8");
 
 if (!raw) {
   throw new Error(`Missing play-by-play text for ${quarter}`);
@@ -165,7 +165,7 @@ for (let index = 0; index < mergedCutpoints.length - 1; index += 1) {
   segments.push({
     event_id: segments.length + 1,
     matched: "yes",
-    source_video: `video/${sampleQuarter}.mov`,
+    source_video: `media/source/${sampleQuarter}.mov`,
     video_sec: start.video_sec,
     video_time: formatSeconds(start.video_sec),
     clip_start_sec: start.video_sec,
@@ -184,7 +184,8 @@ for (let index = 0; index < mergedCutpoints.length - 1; index += 1) {
 }
 
 const baseName = `${quarter.toLowerCase()}_cutpoint_segments_plan`;
-fs.writeFileSync(`${baseName}.json`, JSON.stringify(segments, null, 2));
+const outputBase = `data/highlights/${baseName}`;
+fs.writeFileSync(`${outputBase}.json`, JSON.stringify(segments, null, 2));
 
 const header = [
   "event_id",
@@ -207,7 +208,7 @@ const header = [
 ];
 
 fs.writeFileSync(
-  `${baseName}.csv`,
+  `${outputBase}.csv`,
   [header.join(","), ...segments.map((row) => header.map((key) => csvCell(row[key])).join(","))].join("\n"),
 );
 
@@ -218,7 +219,7 @@ console.log(
       cutpoints: mergedCutpoints.length,
       segments: segments.length,
       totalDurationSec: segments.reduce((sum, segment) => sum + segment.duration_sec, 0),
-      output: `${baseName}.json`,
+      output: `${outputBase}.json`,
     },
     null,
     2,

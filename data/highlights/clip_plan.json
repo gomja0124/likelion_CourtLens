@@ -1,7 +1,7 @@
 [
   {
     "event_id": 1,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -20,7 +20,7 @@
   },
   {
     "event_id": 2,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -39,7 +39,7 @@
   },
   {
     "event_id": 3,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 2,
@@ -58,7 +58,7 @@
   },
   {
     "event_id": 4,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 27,
@@ -77,7 +77,7 @@
   },
   {
     "event_id": 5,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 43,
@@ -96,7 +96,7 @@
   },
   {
     "event_id": 6,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 56,
@@ -115,7 +115,7 @@
   },
   {
     "event_id": 7,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 66,
@@ -134,7 +134,7 @@
   },
   {
     "event_id": 8,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 109,
@@ -153,7 +153,7 @@
   },
   {
     "event_id": 9,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 125,
@@ -172,7 +172,7 @@
   },
   {
     "event_id": 10,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 131,
@@ -191,7 +191,7 @@
   },
   {
     "event_id": 11,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 146,
@@ -210,7 +210,7 @@
   },
   {
     "event_id": 12,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 233,
@@ -229,7 +229,7 @@
   },
   {
     "event_id": 13,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 252,
@@ -248,7 +248,7 @@
   },
   {
     "event_id": 14,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 272,
@@ -267,7 +267,7 @@
   },
   {
     "event_id": 15,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 320,
@@ -286,7 +286,7 @@
   },
   {
     "event_id": 16,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 359,
@@ -305,7 +305,7 @@
   },
   {
     "event_id": 17,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 388,
@@ -324,7 +324,7 @@
   },
   {
     "event_id": 18,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 409,
@@ -343,7 +343,7 @@
   },
   {
     "event_id": 19,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 552,
@@ -362,7 +362,7 @@
   },
   {
     "event_id": 20,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 570,
@@ -381,7 +381,7 @@
   },
   {
     "event_id": 21,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 1,
     "video_sec": 586,
@@ -400,7 +400,7 @@
   },
   {
     "event_id": 22,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 603,
@@ -419,7 +419,7 @@
   },
   {
     "event_id": 23,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 632,
@@ -438,7 +438,7 @@
   },
   {
     "event_id": 24,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 715,
@@ -457,7 +457,7 @@
   },
   {
     "event_id": 25,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 715,
@@ -476,7 +476,7 @@
   },
   {
     "event_id": 26,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 791,
@@ -495,7 +495,7 @@
   },
   {
     "event_id": 27,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 810,
@@ -514,7 +514,7 @@
   },
   {
     "event_id": 28,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 870,
@@ -533,7 +533,7 @@
   },
   {
     "event_id": 29,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -552,7 +552,7 @@
   },
   {
     "event_id": 30,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -571,7 +571,7 @@
   },
   {
     "event_id": 31,
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -590,7 +590,7 @@
   },
   {
     "event_id": 32,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 34,
@@ -609,7 +609,7 @@
   },
   {
     "event_id": 33,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 62,
@@ -628,7 +628,7 @@
   },
   {
     "event_id": 34,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 74,
@@ -647,7 +647,7 @@
   },
   {
     "event_id": 35,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 122,
@@ -666,7 +666,7 @@
   },
   {
     "event_id": 36,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 170,
@@ -685,7 +685,7 @@
   },
   {
     "event_id": 37,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 1,
     "video_sec": 294,
@@ -704,7 +704,7 @@
   },
   {
     "event_id": 38,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 317,
@@ -723,7 +723,7 @@
   },
   {
     "event_id": 39,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 362,
@@ -742,7 +742,7 @@
   },
   {
     "event_id": 40,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 411,
@@ -761,7 +761,7 @@
   },
   {
     "event_id": 41,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 419,
@@ -780,7 +780,7 @@
   },
   {
     "event_id": 42,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 506,
@@ -799,7 +799,7 @@
   },
   {
     "event_id": 43,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 571,
@@ -818,7 +818,7 @@
   },
   {
     "event_id": 44,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 620,
@@ -837,7 +837,7 @@
   },
   {
     "event_id": 45,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 620,
@@ -856,7 +856,7 @@
   },
   {
     "event_id": 46,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 634,
@@ -875,7 +875,7 @@
   },
   {
     "event_id": 47,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 736,
@@ -894,7 +894,7 @@
   },
   {
     "event_id": 48,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 753,
@@ -913,7 +913,7 @@
   },
   {
     "event_id": 49,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 753,
@@ -932,7 +932,7 @@
   },
   {
     "event_id": 50,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 835,
@@ -951,7 +951,7 @@
   },
   {
     "event_id": 51,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 843,
@@ -970,7 +970,7 @@
   },
   {
     "event_id": 52,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 843,
@@ -989,7 +989,7 @@
   },
   {
     "event_id": 53,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 904,
@@ -1008,7 +1008,7 @@
   },
   {
     "event_id": 54,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 925,
@@ -1027,7 +1027,7 @@
   },
   {
     "event_id": 55,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 954,
@@ -1046,7 +1046,7 @@
   },
   {
     "event_id": 56,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 1087,
@@ -1065,7 +1065,7 @@
   },
   {
     "event_id": 57,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 1144,
@@ -1084,7 +1084,7 @@
   },
   {
     "event_id": 58,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 1162,
@@ -1103,7 +1103,7 @@
   },
   {
     "event_id": 59,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 1176,
@@ -1122,7 +1122,7 @@
   },
   {
     "event_id": 60,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -1141,7 +1141,7 @@
   },
   {
     "event_id": 61,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -1160,7 +1160,7 @@
   },
   {
     "event_id": 62,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -1179,7 +1179,7 @@
   },
   {
     "event_id": 63,
-    "source_video": "영상자료/2Q.mov",
+    "source_video": "media/source/2Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -1198,7 +1198,7 @@
   },
   {
     "event_id": 64,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 19,
@@ -1217,7 +1217,7 @@
   },
   {
     "event_id": 65,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 75,
@@ -1236,7 +1236,7 @@
   },
   {
     "event_id": 66,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 83,
@@ -1255,7 +1255,7 @@
   },
   {
     "event_id": 67,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 90,
@@ -1274,7 +1274,7 @@
   },
   {
     "event_id": 68,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 114,
@@ -1293,7 +1293,7 @@
   },
   {
     "event_id": 69,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 119,
@@ -1312,7 +1312,7 @@
   },
   {
     "event_id": 70,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 1,
     "video_sec": 167,
@@ -1331,7 +1331,7 @@
   },
   {
     "event_id": 71,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 226,
@@ -1350,7 +1350,7 @@
   },
   {
     "event_id": 72,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 272,
@@ -1369,7 +1369,7 @@
   },
   {
     "event_id": 73,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 283,
@@ -1388,7 +1388,7 @@
   },
   {
     "event_id": 74,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 323,
@@ -1407,7 +1407,7 @@
   },
   {
     "event_id": 75,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 332,
@@ -1426,7 +1426,7 @@
   },
   {
     "event_id": 76,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 381,
@@ -1445,7 +1445,7 @@
   },
   {
     "event_id": 77,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 404,
@@ -1464,7 +1464,7 @@
   },
   {
     "event_id": 78,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 416,
@@ -1483,7 +1483,7 @@
   },
   {
     "event_id": 79,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 502,
@@ -1502,7 +1502,7 @@
   },
   {
     "event_id": 80,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 515,
@@ -1521,7 +1521,7 @@
   },
   {
     "event_id": 81,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 535,
@@ -1540,7 +1540,7 @@
   },
   {
     "event_id": 82,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 547,
@@ -1559,7 +1559,7 @@
   },
   {
     "event_id": 83,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 665,
@@ -1578,7 +1578,7 @@
   },
   {
     "event_id": 84,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 665,
@@ -1597,7 +1597,7 @@
   },
   {
     "event_id": 85,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 731,
@@ -1616,7 +1616,7 @@
   },
   {
     "event_id": 86,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 770,
@@ -1635,7 +1635,7 @@
   },
   {
     "event_id": 87,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 803,
@@ -1654,7 +1654,7 @@
   },
   {
     "event_id": 88,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 830,
@@ -1673,7 +1673,7 @@
   },
   {
     "event_id": 89,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 838,
@@ -1692,7 +1692,7 @@
   },
   {
     "event_id": 90,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 1,
     "video_sec": 855,
@@ -1711,7 +1711,7 @@
   },
   {
     "event_id": 91,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 985,
@@ -1730,7 +1730,7 @@
   },
   {
     "event_id": 92,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 1012,
@@ -1749,7 +1749,7 @@
   },
   {
     "event_id": 93,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 1019,
@@ -1768,7 +1768,7 @@
   },
   {
     "event_id": 94,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -1787,7 +1787,7 @@
   },
   {
     "event_id": 95,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -1806,7 +1806,7 @@
   },
   {
     "event_id": 96,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -1825,7 +1825,7 @@
   },
   {
     "event_id": 97,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -1844,7 +1844,7 @@
   },
   {
     "event_id": 98,
-    "source_video": "영상자료/3Q.mov",
+    "source_video": "media/source/3Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -1863,7 +1863,7 @@
   },
   {
     "event_id": 99,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 72,
@@ -1882,7 +1882,7 @@
   },
   {
     "event_id": 100,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 90,
@@ -1901,7 +1901,7 @@
   },
   {
     "event_id": 101,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 98,
@@ -1920,7 +1920,7 @@
   },
   {
     "event_id": 102,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 128,
@@ -1939,7 +1939,7 @@
   },
   {
     "event_id": 103,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 303,
@@ -1958,7 +1958,7 @@
   },
   {
     "event_id": 104,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 310,
@@ -1977,7 +1977,7 @@
   },
   {
     "event_id": 105,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 318,
@@ -1996,7 +1996,7 @@
   },
   {
     "event_id": 106,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 395,
@@ -2015,7 +2015,7 @@
   },
   {
     "event_id": 107,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 410,
@@ -2034,7 +2034,7 @@
   },
   {
     "event_id": 108,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 484,
@@ -2053,7 +2053,7 @@
   },
   {
     "event_id": 109,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 540,
@@ -2072,7 +2072,7 @@
   },
   {
     "event_id": 110,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 549,
@@ -2091,7 +2091,7 @@
   },
   {
     "event_id": 111,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 568,
@@ -2110,7 +2110,7 @@
   },
   {
     "event_id": 112,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 588,
@@ -2129,7 +2129,7 @@
   },
   {
     "event_id": 113,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 609,
@@ -2148,7 +2148,7 @@
   },
   {
     "event_id": 114,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 611,
@@ -2167,7 +2167,7 @@
   },
   {
     "event_id": 115,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 611,
@@ -2186,7 +2186,7 @@
   },
   {
     "event_id": 116,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 700,
@@ -2205,7 +2205,7 @@
   },
   {
     "event_id": 117,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 1,
     "video_sec": 750,
@@ -2224,7 +2224,7 @@
   },
   {
     "event_id": 118,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 770,
@@ -2243,7 +2243,7 @@
   },
   {
     "event_id": 119,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 780,
@@ -2262,7 +2262,7 @@
   },
   {
     "event_id": 120,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 808,
@@ -2281,7 +2281,7 @@
   },
   {
     "event_id": 121,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 821,
@@ -2300,7 +2300,7 @@
   },
   {
     "event_id": 122,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 946,
@@ -2319,7 +2319,7 @@
   },
   {
     "event_id": 123,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 972,
@@ -2338,7 +2338,7 @@
   },
   {
     "event_id": 124,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 996,
@@ -2357,7 +2357,7 @@
   },
   {
     "event_id": 125,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 997,
@@ -2376,7 +2376,7 @@
   },
   {
     "event_id": 126,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "yes",
     "match_delta_clock_sec": 0,
     "video_sec": 998,
@@ -2395,7 +2395,7 @@
   },
   {
     "event_id": 127,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -2414,7 +2414,7 @@
   },
   {
     "event_id": 128,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -2433,7 +2433,7 @@
   },
   {
     "event_id": 129,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",
@@ -2452,7 +2452,7 @@
   },
   {
     "event_id": 130,
-    "source_video": "영상자료/4Q.mov",
+    "source_video": "media/source/4Q.mov",
     "matched": "no",
     "match_delta_clock_sec": "",
     "video_sec": "",

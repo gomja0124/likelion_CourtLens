@@ -2,7 +2,7 @@
   {
     "event_id": 1,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "video_sec": 131,
     "video_time": "02:11",
     "clip_start_sec": 129,
@@ -22,7 +22,7 @@
   {
     "event_id": 2,
     "matched": "yes",
-    "source_video": "영상자료/1Q.mov",
+    "source_video": "media/source/1Q.mov",
     "video_sec": 388,
     "video_time": "06:28",
     "clip_start_sec": 386,
