@@ -1,6 +1,7 @@
 """ffmpeg 기반 영상 유틸 (Colab에는 ffmpeg이 기본 설치되어 있다)."""
 
 import json
+import shutil
 import subprocess
 import tempfile
 from pathlib import Path
@@ -71,10 +72,11 @@ def cut_video(video_path: str, intervals: List[Tuple[float, float]], out_path: s
             parts.append(part)
 
         if len(parts) == 1:
-            subprocess.run(["cp", str(parts[0]), str(out_path)], check=True)
+            shutil.copyfile(parts[0], out_path)
         else:
             concat_list = Path(tmp) / "concat.txt"
-            concat_list.write_text("".join(f"file '{p}'\n" for p in parts))
+            # Windows 경로 백슬래시 이슈를 피하기 위해 posix 형식으로 기록
+            concat_list.write_text("".join(f"file '{p.as_posix()}'\n" for p in parts))
             subprocess.run(
                 [
                     "ffmpeg", "-y", "-v", "error",
