@@ -8182,10 +8182,11 @@ let isGeneratingHighlight = false;
 let generatedAssetSequence = 1;
 let activeDashboardSection = "fan-insight";
 let activePbpClip = null;
+let activePbpPlaylist = null;
 let authenticatedUser = null;
 const generatedAssets = [];
 
-const BASE_CLIP_COUNT = 12;
+const BASE_CLIP_COUNT = 0;
 const PBP_QUARTERS = ["Q1", "Q2", "Q3", "Q4", "OT1"];
 let selectedPbpQuarter = "Q1";
 const PBP_CLIP_DIRECTORIES = {
@@ -9910,6 +9911,9 @@ const pbpPostMeta = document.querySelector("#pbp-post-meta");
 const pbpPostTeam = document.querySelector("#pbp-post-team");
 const pbpPostEvent = document.querySelector("#pbp-post-event");
 const pbpPostCopy = document.querySelector("#pbp-post-copy");
+const pbpPostPlaylist = document.querySelector("#pbp-post-playlist");
+const pbpPostPlaylistCount = document.querySelector("#pbp-post-playlist-count");
+const pbpPostPlaylistItems = document.querySelector("#pbp-post-playlist-items");
 const clipCountLabel = document.querySelector("#clip-count-label");
 const clipFilterButtons = document.querySelectorAll(".clip-filter-button");
 const generatedEmptyState = document.querySelector("#ai-generated-empty");
@@ -10072,7 +10076,8 @@ function sanitizePbpClipPart(value) {
 
 function pbpClipSource(clip) {
   const quarter = clip.quarter || selectedPbpQuarter;
-  return `/api/highlights/clips/${quarter}/${clip.id}/video`;
+  const path = `/api/highlights/clips/${quarter}/${clip.id}/video`;
+  return window.location.protocol === "file:" ? `http://127.0.0.1:8765${path}` : path;
 }
 
 function currentPbpClips() {
@@ -10340,7 +10345,10 @@ function openPbpClip(clipId) {
   const clip = currentPbpClips().find((item) => item.id === Number(clipId));
   if (!clip || !pbpPostModal || !pbpPostVideo) return;
 
+  activePbpPlaylist = null;
   activePbpClip = { ...clip, playbackEnd: clip.duration };
+  if (pbpPostPlaylist) pbpPostPlaylist.hidden = true;
+  if (pbpPostPlaylistItems) pbpPostPlaylistItems.innerHTML = "";
   pbpTimeline?.querySelectorAll(".pbp-row").forEach((row) => {
     row.classList.toggle("active", row.dataset.pbpClipId === String(clip.id));
   });
@@ -10383,10 +10391,112 @@ function openPbpClip(clipId) {
   pbpPostModal.setAttribute("aria-hidden", "false");
 }
 
+function updatePlayerPlaylistActiveItem() {
+  if (!pbpPostPlaylistItems || !activePbpPlaylist) return;
+
+  pbpPostPlaylistItems.querySelectorAll(".pbp-post-playlist-item").forEach((item) => {
+    item.classList.toggle("active", Number(item.dataset.playlistIndex) === activePbpPlaylist.index);
+  });
+}
+
+function renderPlayerPlaylistItems(clips) {
+  if (!pbpPostPlaylist || !pbpPostPlaylistItems) return;
+
+  pbpPostPlaylist.hidden = false;
+  pbpPostPlaylistItems.innerHTML = "";
+  if (pbpPostPlaylistCount) {
+    pbpPostPlaylistCount.textContent = `${clips.length} clips`;
+  }
+
+  clips.forEach((clip, index) => {
+    const item = document.createElement("button");
+    const copy = document.createElement("span");
+    const title = document.createElement("strong");
+    const meta = document.createElement("small");
+    const duration = document.createElement("span");
+
+    item.className = "pbp-post-playlist-item";
+    item.type = "button";
+    item.dataset.playlistIndex = String(index);
+    title.textContent = `${clip.quarter} ${formatPbpClock(clip.clock)}`;
+    meta.textContent = `${pbpActionDescription(clip.startEvent, clip.startType)} → ${pbpActionDescription(clip.endEvent, clip.endType)}`;
+    duration.textContent = `${clip.duration}s`;
+    copy.append(title, meta);
+    item.append(copy, duration);
+    pbpPostPlaylistItems.append(item);
+  });
+}
+
+function playPlayerHighlightClip(index = 0) {
+  if (!activePbpPlaylist || !pbpPostVideo) return;
+
+  const clip = activePbpPlaylist.clips[index];
+  if (!clip) return;
+
+  activePbpPlaylist.index = index;
+  activePbpClip = { ...clip, playbackEnd: clip.duration };
+  updatePlayerPlaylistActiveItem();
+
+  if (pbpPostMeta) {
+    pbpPostMeta.textContent = `${activePbpPlaylist.playerName} · ${index + 1}/${activePbpPlaylist.clips.length} clips`;
+  }
+  if (pbpPostEvent) {
+    pbpPostEvent.textContent = clip.endEvent;
+  }
+  if (pbpPostVideoNote) {
+    pbpPostVideoNote.textContent =
+      "선수에게 매칭된 clipped possession을 하나의 하이라이트 큐로 이어서 재생합니다.";
+  }
+
+  const clipSource = pbpClipSource(clip);
+  const seekAndPlay = () => {
+    pbpPostVideo.currentTime = 0;
+    pbpPostVideo.play().catch(() => {});
+  };
+
+  if (pbpPostVideo.getAttribute("src") !== clipSource) {
+    pbpPostVideo.src = clipSource;
+    pbpPostVideo.load();
+    pbpPostVideo.addEventListener("loadedmetadata", seekAndPlay, { once: true });
+  } else {
+    seekAndPlay();
+  }
+}
+
+function openPlayerHighlight(clipId) {
+  const clip = currentContext.clips[clipId];
+  const sourceClips = clip?.sourceClips || [];
+  if (!clip || !sourceClips.length || !pbpPostModal || !pbpPostVideo) return;
+
+  activePbpPlaylist = {
+    clipId,
+    playerName: clip.playerNames?.[0] || "선수",
+    clips: sourceClips,
+    index: 0,
+  };
+
+  renderPlayerPlaylistItems(sourceClips);
+
+  if (pbpPostTitle) {
+    pbpPostTitle.textContent = clip.title;
+  }
+  if (pbpPostTeam) {
+    pbpPostTeam.textContent = "Korea";
+  }
+  if (pbpPostCopy) {
+    pbpPostCopy.textContent = clip.easy;
+  }
+
+  pbpPostModal.classList.add("open");
+  pbpPostModal.setAttribute("aria-hidden", "false");
+  playPlayerHighlightClip(0);
+}
+
 function closePbpPost() {
   pbpPostModal?.classList.remove("open");
   pbpPostModal?.setAttribute("aria-hidden", "true");
   if (pbpPostVideo) pbpPostVideo.pause();
+  activePbpPlaylist = null;
 }
 
 function gameIncludesTeam(game, teamCode) {
@@ -11039,6 +11149,7 @@ function buildPlayerHighlightModel(context) {
           ctaCopy: `${player.name} 장면을 본 팬에게 같은 대표팀 경기 직관메이트와 입덕패스를 추천합니다.`,
           progress: `${Math.min(92, 34 + clips.length * 7)}%`,
           playerNames: [player.name],
+          sourceClips: clips,
           sourceClipIds: clips.map((clip) => `${clip.quarter}-${clip.id}`),
         },
       };
@@ -13603,6 +13714,9 @@ function handleHighlightCardClick(event) {
   if (!card) return;
 
   setSelectedClip(card.dataset.clip);
+  if (card.classList.contains("player-highlight")) {
+    openPlayerHighlight(card.dataset.clip);
+  }
 }
 
 clipList.addEventListener("click", handleHighlightCardClick);
@@ -13614,6 +13728,13 @@ pbpTimeline?.addEventListener("click", (event) => {
 
   selectedPbpQuarter = row.dataset.pbpClipQuarter || selectedPbpQuarter;
   openPbpClip(row.dataset.pbpClipId);
+});
+
+pbpPostPlaylistItems?.addEventListener("click", (event) => {
+  const item = event.target.closest(".pbp-post-playlist-item");
+  if (!item) return;
+
+  playPlayerHighlightClip(Number(item.dataset.playlistIndex || 0));
 });
 
 pbpQuarterButtons.forEach((button) => {
@@ -13638,6 +13759,14 @@ pbpVideo?.addEventListener("timeupdate", () => {
 
 pbpPostVideo?.addEventListener("timeupdate", () => {
   if (!activePbpClip || pbpPostVideo.currentTime < activePbpClip.playbackEnd) return;
+
+  if (activePbpPlaylist) {
+    const nextIndex = activePbpPlaylist.index + 1;
+    if (nextIndex < activePbpPlaylist.clips.length) {
+      playPlayerHighlightClip(nextIndex);
+      return;
+    }
+  }
 
   pbpPostVideo.pause();
   pbpPostVideo.currentTime = activePbpClip.playbackEnd;

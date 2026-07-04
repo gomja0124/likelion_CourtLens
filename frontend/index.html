@@ -220,46 +220,7 @@
                 <div class="player-highlight-list" id="player-highlight-list"></div>
               </section>
 
-              <div class="clip-list" id="clip-list">
-                <button class="highlight-card selected" type="button" data-clip="assist">
-                  <span class="clip-thumb court-visual">
-                    <span class="clip-time">0:18</span>
-                    <span class="player-dot dot-a"></span>
-                    <span class="player-dot dot-b"></span>
-                  </span>
-                  <span class="clip-copy">
-                    <strong>양준석 픽앤롤 → 유기상 코너 3점</strong>
-                    <small>양준석 · 4Q 01:22 · 어시스트</small>
-                  </span>
-                  <span class="clip-score">+3</span>
-                </button>
-
-                <button class="highlight-card" type="button" data-clip="clutch">
-                  <span class="clip-thumb court-visual warm">
-                    <span class="clip-time">0:12</span>
-                    <span class="player-dot dot-c"></span>
-                    <span class="ball-dot"></span>
-                  </span>
-                  <span class="clip-copy">
-                    <strong>유기상 트랜지션 3점</strong>
-                    <small>유기상 · 4Q 00:44 · 3점슛</small>
-                  </span>
-                  <span class="clip-score">+3</span>
-                </button>
-
-                <button class="highlight-card" type="button" data-clip="rookie">
-                  <span class="clip-thumb court-visual cool">
-                    <span class="clip-time">0:21</span>
-                    <span class="player-dot dot-d"></span>
-                    <span class="player-dot dot-e"></span>
-                  </span>
-                  <span class="clip-copy">
-                    <strong>아셈 마레이 세컨드 찬스</strong>
-                    <small>아셈 마레이 · 2Q 06:10 · 리바운드</small>
-                  </span>
-                  <span class="clip-score">+2</span>
-                </button>
-              </div>
+              <div class="clip-list" id="clip-list"></div>
 
               <section class="inline-tactic-panel" aria-label="AI 생성 하이라이트 작전판AI" hidden>
                 <div class="panel-topline">
@@ -570,6 +531,13 @@
             <span class="pill" id="pbp-post-team">Korea</span>
             <strong id="pbp-post-event">타임라인 이벤트</strong>
             <p id="pbp-post-copy">타임라인 row를 선택하면 해당 possession 구간의 핵심 이벤트가 표시됩니다.</p>
+          </section>
+          <section class="pbp-post-playlist" id="pbp-post-playlist" aria-label="선수별 하이라이트 클립 목록" hidden>
+            <div class="section-title-row">
+              <h4>선수별 클립 큐</h4>
+              <span id="pbp-post-playlist-count">0 clips</span>
+            </div>
+            <div class="pbp-post-playlist-items" id="pbp-post-playlist-items"></div>
           </section>
         </div>
       </article>
