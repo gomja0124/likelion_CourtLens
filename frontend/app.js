@@ -10246,6 +10246,79 @@ function renderPlayByPlayTimeline() {
   });
 }
 
+function pbpEventParts(eventText = "") {
+  return String(eventText)
+    .split("/")
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
+function pbpPrimaryActor(eventText = "") {
+  const part = pbpEventParts(eventText)[0] || String(eventText);
+  const match = part.match(
+    /^\d+\s+(.+?)\s+(?:\||3pt|2pt|2PtsFG|defensive|offensive|turnover|foul|Personal|Technical|made the assist|steal|blocked|1st|2nd)/i,
+  );
+  return match?.[1]?.trim() || "";
+}
+
+function pbpActionDescription(eventText = "", type = "") {
+  const lower = eventText.toLowerCase();
+  const normalizedType = String(type).toLowerCase();
+
+  if (lower.includes("3pt") && lower.includes("made")) return "외곽 3점 득점";
+  if (lower.includes("2ptsfg") && lower.includes("under the basket") && lower.includes("made")) {
+    return lower.includes("hook") ? "골밑 훅슛 득점" : "골밑 2점 득점";
+  }
+  if (lower.includes("2pt") && lower.includes("made")) return "2점 득점";
+  if (lower.includes("free throw") && lower.includes("made")) return "자유투 득점";
+  if (lower.includes("defensive rebound")) return "수비 리바운드";
+  if (lower.includes("offensive rebound")) return "공격 리바운드";
+  if (lower.includes("made the assist")) return "어시스트";
+  if (lower.includes("steal")) return "스틸";
+  if (lower.includes("blocked")) return "블록";
+  if (lower.includes("turnover")) return "턴오버";
+  if (lower.includes("foul drawn")) return "파울 유도";
+  if (lower.includes("personal foul") || lower.includes("technical foul") || lower.includes("offensive foul")) {
+    return "파울 발생";
+  }
+  if (lower.includes("missed")) return "야투 실패";
+  if (normalizedType.includes("score")) return "득점";
+  if (normalizedType.includes("rebound")) return "리바운드";
+  if (normalizedType.includes("foul")) return "파울 장면";
+  if (normalizedType.includes("turnover")) return "턴오버 장면";
+  return "핵심 이벤트";
+}
+
+function pbpFlowDescription(clip) {
+  const startActor = pbpPrimaryActor(clip.startEvent);
+  const endActor = pbpPrimaryActor(clip.endEvent);
+  const startAction = pbpActionDescription(clip.startEvent, clip.startType);
+  const endAction = pbpActionDescription(clip.endEvent, clip.endType);
+  const startText = startActor ? `${startActor}의 ${startAction}` : startAction;
+  const endText = endActor ? `${endActor}의 ${endAction}` : endAction;
+  const startType = String(clip.startType).toLowerCase();
+  const endType = String(clip.endType).toLowerCase();
+
+  let focus = "경기 흐름이 어떻게 다음 이벤트로 이어지는지 확인할 수 있습니다.";
+  if (startType.includes("score") && endType.includes("foul")) {
+    focus = "득점 이후 수비 전환과 다음 공격권에서 만들어진 파울 장면을 함께 볼 수 있습니다.";
+  } else if (startType.includes("rebound") && endType.includes("score")) {
+    focus = "리바운드 이후 공격 전개가 득점으로 연결되는 흐름을 보기 좋은 클립입니다.";
+  } else if (startType.includes("turnover") && endType.includes("score")) {
+    focus = "턴오버 직후 빠르게 득점으로 전환되는 장면을 확인할 수 있습니다.";
+  } else if (startType.includes("score") && endType.includes("rebound")) {
+    focus = "득점 이후 이어지는 상대 공격과 리바운드 경합까지 한 번에 볼 수 있습니다.";
+  } else if (startType.includes("foul") && endType.includes("score")) {
+    focus = "파울로 끊긴 흐름 뒤 공격이 다시 정리되어 득점으로 이어지는 장면입니다.";
+  } else if (startType.includes("turnover") && endType.includes("foul")) {
+    focus = "실책 이후 이어진 공격권 변화와 파울로 멈춘 흐름을 보여줍니다.";
+  } else if (startType.includes("rebound") && endType.includes("rebound")) {
+    focus = "양 팀의 슛 시도와 리바운드 경합이 이어지는 possession 흐름입니다.";
+  }
+
+  return `이 하이라이트는 ${startText}로 시작해 ${endText}까지 이어집니다. ${focus}`;
+}
+
 function openPbpClip(clipId) {
   const clip = currentPbpClips().find((item) => item.id === Number(clipId));
   if (!clip || !pbpPostModal || !pbpPostVideo) return;
@@ -10274,7 +10347,7 @@ function openPbpClip(clipId) {
     pbpPostTitle.textContent = `${formatPbpClock(clip.clock)} · ${clip.endEvent}`;
   }
   if (pbpPostMeta) {
-    pbpPostMeta.textContent = `${clip.duration}s · ${formatPbpType(clip.startType)} → ${formatPbpType(clip.endType)}`;
+    pbpPostMeta.textContent = `${pbpActionDescription(clip.startEvent, clip.startType)} → ${pbpActionDescription(clip.endEvent, clip.endType)}`;
   }
   if (pbpPostTeam) {
     pbpPostTeam.textContent = teamLabel(eventTeam(`${clip.startEvent} ${clip.endEvent}`));
@@ -10283,7 +10356,7 @@ function openPbpClip(clipId) {
     pbpPostEvent.textContent = clip.endEvent;
   }
   if (pbpPostCopy) {
-    pbpPostCopy.textContent = `${clip.startEvent} 이후 ${clip.duration}초 possession 구간입니다. 시작 이벤트와 종료 이벤트를 cut point로 매칭한 하이라이트 클립입니다.`;
+    pbpPostCopy.textContent = pbpFlowDescription(clip);
   }
   if (pbpPostVideoNote) {
     pbpPostVideoNote.textContent = "Git LFS 영상 파일이 내려와 있으면 여기서 바로 재생됩니다.";
