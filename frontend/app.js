@@ -1,6 +1,20 @@
 const kblData = window.COURTLENS_KBL_DATA || {};
 const seasonName = kblData.currentSeason?.seasonName || "2025-2026";
 const PLAYER_POSITIONS = new Set(["GD", "FD", "C"]);
+const KOREA_PLAYER_ALIASES = {
+  "kor-2": ["2 Junyong Choi", "Junyong Choi"],
+  "kor-3": ["3 Jihoon Park", "Jihoon Park"],
+  "kor-5": ["5 Junhyeong Byeon", "Junhyeong Byeon"],
+  "kor-6": ["6 Junghyun Lee", "Junghyun Lee"],
+  "kor-7": ["7 Kisang Yu", "Kisang Yu"],
+  "kor-11": ["11 Woosuk Lee", "Woosuk Lee"],
+  "kor-12": ["12 Jeonghyeon Moon", "Jeonghyeon Moon"],
+  "kor-21": ["21 Doowon Lee", "Doowon Lee"],
+  "kor-22": ["22 Jun Seok Yeo", "Jun Seok Yeo"],
+  "kor-31": ["31 Jaeseok Jang", "Jaeseok Jang"],
+  "kor-33": ["33 Seounghyun Lee", "Seounghyun Lee"],
+  "kor-36": ["36 Daniel Edi", "Daniel Edi"],
+};
 
 const TEAM_CONFIGS = {
   KR: {
@@ -9873,6 +9887,9 @@ const modeButtons = document.querySelectorAll(".mode-button");
 const fanView = document.querySelector("#fan-view");
 const clubView = document.querySelector("#club-view");
 const clipList = document.querySelector("#clip-list");
+const playerHighlightPanel = document.querySelector("#player-highlight-panel");
+const playerHighlightList = document.querySelector("#player-highlight-list");
+const playerHighlightCount = document.querySelector("#player-highlight-count");
 const playByPlayPanel = document.querySelector(".play-by-play-panel");
 const pbpTimeline = document.querySelector("#pbp-timeline");
 const pbpMatchTitle = document.querySelector("#pbp-match-title");
@@ -10953,9 +10970,89 @@ function updateFollowCount() {
   }
 }
 
+function allPlayablePbpClips() {
+  return PBP_QUARTERS.flatMap((quarter) => PBP_CLIPS_BY_QUARTER[quarter] || []);
+}
+
+function playerAliases(player) {
+  return [
+    player.name,
+    player.backNumber ? `${player.backNumber} ${player.name}` : "",
+    ...(KOREA_PLAYER_ALIASES[player.pcode] || []),
+  ].filter(Boolean);
+}
+
+function clipMatchesPlayer(clip, player) {
+  const haystack = `${clip.startEvent} / ${clip.endEvent}`.toLowerCase();
+  return playerAliases(player).some((alias) => haystack.includes(alias.toLowerCase()));
+}
+
+function primaryClipActionLabel(clips, player) {
+  const actionCounts = new Map();
+
+  clips.forEach((clip) => {
+    [
+      { event: clip.startEvent, type: clip.startType },
+      { event: clip.endEvent, type: clip.endType },
+    ]
+      .filter((item) => clipMatchesPlayer({ startEvent: item.event, endEvent: "" }, player))
+      .map((item) => pbpActionDescription(item.event, item.type))
+      .filter((label) => label !== "핵심 이벤트")
+      .forEach((label) => {
+        actionCounts.set(label, (actionCounts.get(label) || 0) + 1);
+      });
+  });
+
+  return [...actionCounts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] || "주요 장면";
+}
+
+function buildPlayerHighlightModel(context) {
+  if (context.team.code !== "KR") return [];
+
+  return displayRosterPlayers(context)
+    .map((player) => {
+      const clips = allPlayablePbpClips().filter((clip) => clipMatchesPlayer(clip, player));
+      if (!clips.length) return null;
+
+      const primaryAction = primaryClipActionLabel(clips, player);
+      const firstClip = clips[0];
+      const clipId = `player-${player.pcode}`;
+      const totalDuration = clips.reduce((sum, clip) => sum + Number(clip.duration || 0), 0);
+      const statLine = player.matchLine || [player.position, player.backNumber ? `#${player.backNumber}` : ""].filter(Boolean).join(" · ");
+
+      return {
+        id: clipId,
+        player,
+        clips,
+        title: `${player.name} 기본 하이라이트`,
+        meta: `${clips.length}개 클립 · ${Math.round(totalDuration)}초 · ${primaryAction}`,
+        score: `${clips.length}CL`,
+        firstClip,
+        model: {
+          title: `${player.name} 기본 하이라이트`,
+          meta: `${statLine} · Play-by-Play 자동 매칭`,
+          easy: `${player.name}이 등장한 play-by-play 이벤트를 기준으로 ${clips.length}개 클립을 자동으로 모았습니다. ${primaryAction} 장면을 중심으로 이 선수의 경기 흐름을 이어서 볼 수 있습니다.`,
+          pro: `FIBA play-by-play의 startEvent/endEvent에서 ${playerAliases(player).slice(0, 2).join(", ")} 이름 매칭을 수행하고, 매칭된 clipped possession을 선수 단위 하이라이트 후보로 묶었습니다. 실제 AI 모델에서는 이 결과를 feature input으로 사용해 득점, 리바운드, 어시스트, 수비 이벤트의 우선순위를 재정렬할 수 있습니다.`,
+          reason: `${player.name} 단일 선수 하이라이트는 기본 제공되어야 하므로, 별도 생성 버튼 없이 경기 이벤트 매칭만으로 바로 노출합니다.`,
+          next: `첫 장면은 ${firstClip.quarter} ${formatPbpClock(firstClip.clock)} 구간이며, Play-by-Play 탭에서 같은 클립을 눌러 원본 possession 영상으로 확인할 수 있습니다.`,
+          ctaTitle: `${player.name} 하이라이트로 메이트 찾기`,
+          ctaCopy: `${player.name} 장면을 본 팬에게 같은 대표팀 경기 직관메이트와 입덕패스를 추천합니다.`,
+          progress: `${Math.min(92, 34 + clips.length * 7)}%`,
+          playerNames: [player.name],
+          sourceClipIds: clips.map((clip) => `${clip.quarter}-${clip.id}`),
+        },
+      };
+    })
+    .filter(Boolean);
+}
+
+function playerHighlightCountForContext(context = currentContext) {
+  return buildPlayerHighlightModel(context).length;
+}
+
 function updateClipCount() {
   if (clipCountLabel) {
-    clipCountLabel.textContent = `${BASE_CLIP_COUNT + generatedClipCount}개`;
+    clipCountLabel.textContent = `${BASE_CLIP_COUNT + playerHighlightCountForContext() + generatedClipCount}개`;
   }
 }
 
@@ -10993,6 +11090,11 @@ function applyClipFilter() {
   clipFilterButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.clipFilter === activeClipFilter);
   });
+
+  if (playerHighlightPanel) {
+    const hasPlayerHighlights = Boolean(playerHighlightList?.children.length);
+    playerHighlightPanel.hidden = activeClipFilter === "generated" || !hasPlayerHighlights;
+  }
 
   document.querySelectorAll("#clip-list .highlight-card").forEach((card) => {
     const isGenerated = card.classList.contains("generated");
@@ -11075,6 +11177,66 @@ function updateHighlightCards(context) {
     setText(`[data-clip="${item.clip}"] .clip-copy strong`, item.title);
     setText(`[data-clip="${item.clip}"] .clip-copy small`, item.meta);
     setText(`[data-clip="${item.clip}"] .clip-score`, item.score);
+  });
+}
+
+function createPlayerHighlightCard(item) {
+  const card = document.createElement("button");
+  const thumb = document.createElement("span");
+  const time = document.createElement("span");
+  const dotA = document.createElement("span");
+  const dotB = document.createElement("span");
+  const ball = document.createElement("span");
+  const copy = document.createElement("span");
+  const title = document.createElement("strong");
+  const meta = document.createElement("small");
+  const score = document.createElement("span");
+
+  card.className = "highlight-card player-highlight";
+  card.type = "button";
+  card.dataset.clip = item.id;
+  card.dataset.playerCode = item.player.pcode;
+  card.dataset.source = "pbp-player-model";
+
+  thumb.className = "clip-thumb court-visual";
+  time.className = "clip-time";
+  time.textContent = `${item.clips.length} clips`;
+  dotA.className = "player-dot dot-a";
+  dotB.className = "player-dot dot-e";
+  ball.className = "ball-dot";
+  thumb.append(time, dotA, dotB, ball);
+
+  copy.className = "clip-copy";
+  title.textContent = item.title;
+  meta.textContent = item.meta;
+  copy.append(title, meta);
+
+  score.className = "clip-score";
+  score.textContent = item.score;
+
+  card.append(thumb, copy, score);
+  return card;
+}
+
+function renderPlayerHighlightList(context) {
+  if (!playerHighlightPanel || !playerHighlightList) return;
+
+  playerHighlightList.innerHTML = "";
+  Object.keys(context.clips)
+    .filter((key) => key.startsWith("player-"))
+    .forEach((key) => {
+      delete context.clips[key];
+    });
+
+  const highlights = buildPlayerHighlightModel(context);
+  playerHighlightPanel.hidden = highlights.length === 0;
+  if (playerHighlightCount) {
+    playerHighlightCount.textContent = highlights.length ? `${highlights.length}명` : "0명";
+  }
+
+  highlights.forEach((item) => {
+    context.clips[item.id] = item.model;
+    playerHighlightList.append(createPlayerHighlightCard(item));
   });
 }
 
@@ -11370,6 +11532,8 @@ function updateFanApp(context) {
   renderPlayerChips(context);
   updateMatchFlowPanel(context);
   updateHighlightCards(context);
+  renderPlayerHighlightList(context);
+  updateClipCount();
   applyClipFilter();
 }
 
@@ -13434,12 +13598,15 @@ modeButtons.forEach((button) => {
   button.addEventListener("click", () => setMode(button.dataset.view));
 });
 
-clipList.addEventListener("click", (event) => {
+function handleHighlightCardClick(event) {
   const card = event.target.closest(".highlight-card");
   if (!card) return;
 
   setSelectedClip(card.dataset.clip);
-});
+}
+
+clipList.addEventListener("click", handleHighlightCardClick);
+playerHighlightList?.addEventListener("click", handleHighlightCardClick);
 
 pbpTimeline?.addEventListener("click", (event) => {
   const row = event.target.closest(".pbp-row");

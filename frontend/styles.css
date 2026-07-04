@@ -865,6 +865,29 @@ button {
   display: none;
 }
 
+.player-highlight-panel {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(31, 37, 40, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.player-highlight-panel[hidden] {
+  display: none;
+}
+
+.player-highlight-panel .section-title-row h3 {
+  font-size: 0.95rem;
+}
+
+.player-highlight-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
 .inline-tactic-panel .panel-topline {
   align-items: flex-start;
 }
@@ -967,6 +990,22 @@ button {
   background:
     linear-gradient(135deg, rgba(245, 197, 66, 0.14), rgba(255, 255, 255, 0)),
     #fff;
+}
+
+.highlight-card.player-highlight {
+  margin-top: 0;
+  min-height: 5.4rem;
+  border-color: rgba(44, 67, 155, 0.18);
+  background:
+    linear-gradient(135deg, rgba(44, 67, 155, 0.08), rgba(255, 255, 255, 0)),
+    #fff;
+}
+
+.highlight-card.player-highlight .clip-thumb {
+  background:
+    linear-gradient(90deg, transparent 49.3%, rgba(255, 255, 255, 0.45) 49.3% 50.7%, transparent 50.7%),
+    radial-gradient(circle at 50% 50%, transparent 0 16%, rgba(255, 255, 255, 0.45) 16.4% 17.6%, transparent 18%),
+    linear-gradient(135deg, var(--teal), var(--court));
 }
 
 .clip-thumb {
