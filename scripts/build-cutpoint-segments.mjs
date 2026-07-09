@@ -21,6 +21,14 @@ function formatSeconds(totalSeconds) {
   return `${String(Math.floor(totalSeconds / 60)).padStart(2, "0")}:${String(totalSeconds % 60).padStart(2, "0")}`;
 }
 
+function appendUniqueClock(existingClock, nextClock) {
+  const clocks = new Set(String(existingClock || "").split("/").filter(Boolean));
+  if (clocks.has(nextClock)) {
+    return existingClock;
+  }
+  return `${existingClock}/${nextClock}`;
+}
+
 function csvCell(value) {
   return `"${String(value ?? "").replaceAll("\"", "\"\"")}"`;
 }
@@ -147,7 +155,7 @@ for (const cutpoint of cutpoints) {
   if (previous && Math.abs(previous.video_sec - cutpoint.video_sec) <= 1) {
     previous.type = previous.type === cutpoint.type ? previous.type : `${previous.type};${cutpoint.type}`;
     previous.description = `${previous.description} / ${cutpoint.description}`;
-    previous.clock = `${previous.clock}/${cutpoint.clock}`;
+    previous.clock = appendUniqueClock(previous.clock, cutpoint.clock);
     continue;
   }
   mergedCutpoints.push({ ...cutpoint });
