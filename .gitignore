@@ -4,7 +4,14 @@ outputs/pdf/.DS_Store
 tmp/
 node_modules/
 *.log
+__pycache__/
+*.py[cod]
 .local/
+.env
+.venv/
+venv/
+db.sqlite3
+staticfiles/
 
 # Local-only presentation artifacts
 /발표대본.md

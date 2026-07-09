@@ -1,0 +1,42 @@
+[
+  {
+    "event_id": 1,
+    "matched": "yes",
+    "source_video": "media/source/1Q.mov",
+    "video_sec": 131,
+    "video_time": "02:11",
+    "clip_start_sec": 129,
+    "clip_start": "02:09",
+    "clip_end_sec": 151,
+    "clip_end": "02:31",
+    "quarter": "Q1",
+    "clock_remaining": "07:29_to_07:14",
+    "categories": "korea_highlight_korea_defensive_rebound_to_score",
+    "duration_sec": 22,
+    "start_event_id": 10,
+    "score_event_id": 11,
+    "score": "5 - 4",
+    "start_description": "31 Jaeseok Jang defensive rebound",
+    "score_description": "31 Jaeseok Jang | +1 | 2nd of 2 free throws made"
+  },
+  {
+    "event_id": 2,
+    "matched": "yes",
+    "source_video": "media/source/1Q.mov",
+    "video_sec": 388,
+    "video_time": "06:28",
+    "clip_start_sec": 386,
+    "clip_start": "06:26",
+    "clip_end_sec": 414,
+    "clip_end": "06:54",
+    "quarter": "Q1",
+    "clock_remaining": "04:37_to_04:28",
+    "categories": "korea_highlight_korea_defensive_rebound_to_score",
+    "duration_sec": 28,
+    "start_event_id": 17,
+    "score_event_id": 18,
+    "score": "12 - 9",
+    "start_description": "team defensive rebound",
+    "score_description": "22 Jun Seok Yeo | +2 | 2PtsFG under the basket, driving layup made"
+  }
+]

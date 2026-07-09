@@ -1,0 +1,1172 @@
+[
+  {
+    "quarter": "Q1",
+    "clock_remaining": "09:44",
+    "quarter_elapsed_sec": 16,
+    "quarter_elapsed": "00:16",
+    "categories": "score",
+    "score": "2 - 0",
+    "description": "22 Jun Seok Yeo | +2 | 2pt jump shot made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "09:15",
+    "quarter_elapsed_sec": 45,
+    "quarter_elapsed": "00:45",
+    "categories": "score",
+    "score": "4 - 0",
+    "description": "2 Junyong Choi | +2 | 2pt turnaround jump shot made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "08:51",
+    "quarter_elapsed_sec": 69,
+    "quarter_elapsed": "01:09",
+    "categories": "score",
+    "score": "4 - 1",
+    "description": "34 Brandon Gilbeck | +1 | 1st of 2 free throws made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "08:49",
+    "quarter_elapsed_sec": 71,
+    "quarter_elapsed": "01:11",
+    "categories": "defensive_rebound",
+    "score": "4 - 1",
+    "description": "22 Jun Seok Yeo defensive rebound"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "08:33",
+    "quarter_elapsed_sec": 87,
+    "quarter_elapsed": "01:27",
+    "categories": "defensive_rebound",
+    "score": "4 - 1",
+    "description": "34 Brandon Gilbeck defensive rebound"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "08:20",
+    "quarter_elapsed_sec": 100,
+    "quarter_elapsed": "01:40",
+    "categories": "defensive_rebound",
+    "score": "4 - 1",
+    "description": "31 Jaeseok Jang defensive rebound"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "08:10",
+    "quarter_elapsed_sec": 110,
+    "quarter_elapsed": "01:50",
+    "categories": "defensive_rebound",
+    "score": "4 - 1",
+    "description": "34 Brandon Gilbeck defensive rebound"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "07:51",
+    "quarter_elapsed_sec": 129,
+    "quarter_elapsed": "02:09",
+    "categories": "score",
+    "score": "4 - 4",
+    "description": "10 Long-Mao Hu | +3 | 3pt jump shot made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "07:35",
+    "quarter_elapsed_sec": 145,
+    "quarter_elapsed": "02:25",
+    "categories": "defensive_rebound",
+    "score": "4 - 4",
+    "description": "9 Ying-Chun Chen defensive rebound"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "07:29",
+    "quarter_elapsed_sec": 151,
+    "quarter_elapsed": "02:31",
+    "categories": "defensive_rebound",
+    "score": "4 - 4",
+    "description": "31 Jaeseok Jang defensive rebound"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "07:14",
+    "quarter_elapsed_sec": 166,
+    "quarter_elapsed": "02:46",
+    "categories": "score",
+    "score": "5 - 4",
+    "description": "31 Jaeseok Jang | +1 | 2nd of 2 free throws made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "06:47",
+    "quarter_elapsed_sec": 193,
+    "quarter_elapsed": "03:13",
+    "categories": "score",
+    "score": "5 - 6",
+    "description": "1 Bachir Gadiaga | +2 | 2PtsFG under the basket, jump shot made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "06:28",
+    "quarter_elapsed_sec": 212,
+    "quarter_elapsed": "03:32",
+    "categories": "defensive_rebound",
+    "score": "5 - 6",
+    "description": "34 Brandon Gilbeck defensive rebound"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "06:08",
+    "quarter_elapsed_sec": 232,
+    "quarter_elapsed": "03:52",
+    "categories": "score",
+    "score": "5 - 9",
+    "description": "9 Ying-Chun Chen | +3 | 3pt jump shot made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "05:45",
+    "quarter_elapsed_sec": 255,
+    "quarter_elapsed": "04:15",
+    "categories": "score",
+    "score": "7 - 9",
+    "description": "22 Jun Seok Yeo | +2 | 2pt fadeaway jump shot made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "05:06",
+    "quarter_elapsed_sec": 294,
+    "quarter_elapsed": "04:54",
+    "categories": "score",
+    "score": "10 - 9",
+    "description": "6 Junghyun Lee | +3 | 3pt jump shot made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "04:37",
+    "quarter_elapsed_sec": 323,
+    "quarter_elapsed": "05:23",
+    "categories": "defensive_rebound",
+    "score": "10 - 9",
+    "description": "team defensive rebound"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "04:28",
+    "quarter_elapsed_sec": 332,
+    "quarter_elapsed": "05:32",
+    "categories": "score",
+    "score": "12 - 9",
+    "description": "22 Jun Seok Yeo | +2 | 2PtsFG under the basket, driving layup made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "03:53",
+    "quarter_elapsed_sec": 367,
+    "quarter_elapsed": "06:07",
+    "categories": "defensive_rebound",
+    "score": "12 - 9",
+    "description": "11 Woosuk Lee defensive rebound"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "03:35",
+    "quarter_elapsed_sec": 385,
+    "quarter_elapsed": "06:25",
+    "categories": "defensive_rebound",
+    "score": "12 - 9",
+    "description": "39 Chun Hsiang Lu defensive rebound"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "03:20",
+    "quarter_elapsed_sec": 400,
+    "quarter_elapsed": "06:40",
+    "categories": "score",
+    "score": "12 - 11",
+    "description": "0 Benson Lin | +2 | 2pt pullup jump shot made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "03:02",
+    "quarter_elapsed_sec": 418,
+    "quarter_elapsed": "06:58",
+    "categories": "score",
+    "score": "15 - 11",
+    "description": "2 Junyong Choi | +3 | 3pt jump shot made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "02:33",
+    "quarter_elapsed_sec": 447,
+    "quarter_elapsed": "07:27",
+    "categories": "score",
+    "score": "15 - 12",
+    "description": "34 Brandon Gilbeck | +1 | 2nd of 2 free throws made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "02:20",
+    "quarter_elapsed_sec": 460,
+    "quarter_elapsed": "07:40",
+    "categories": "score",
+    "score": "17 - 12",
+    "description": "11 Woosuk Lee | +1 | 2nd of 2 free throws made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "02:20",
+    "quarter_elapsed_sec": 460,
+    "quarter_elapsed": "07:40",
+    "categories": "score",
+    "score": "16 - 12",
+    "description": "11 Woosuk Lee | +1 | 1st of 2 free throws made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "02:01",
+    "quarter_elapsed_sec": 479,
+    "quarter_elapsed": "07:59",
+    "categories": "score",
+    "score": "17 - 15",
+    "description": "2 Riven Ma | +3 | 3pt pullup jump shot made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "01:42",
+    "quarter_elapsed_sec": 498,
+    "quarter_elapsed": "08:18",
+    "categories": "score",
+    "score": "19 - 15",
+    "description": "31 Jaeseok Jang | +2 | 2pt floating jump shot made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "01:13",
+    "quarter_elapsed_sec": 527,
+    "quarter_elapsed": "08:47",
+    "categories": "defensive_rebound",
+    "score": "19 - 15",
+    "description": "12 Jeonghyeon Moon defensive rebound"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "00:47",
+    "quarter_elapsed_sec": 553,
+    "quarter_elapsed": "09:13",
+    "categories": "score",
+    "score": "22 - 15",
+    "description": "7 Kisang Yu | +3 | 3pt jump shot made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "00:32",
+    "quarter_elapsed_sec": 568,
+    "quarter_elapsed": "09:28",
+    "categories": "score",
+    "score": "22 - 17",
+    "description": "0 Benson Lin | +2 | 2PtsFG under the basket, driving layup made"
+  },
+  {
+    "quarter": "Q1",
+    "clock_remaining": "00:06",
+    "quarter_elapsed_sec": 594,
+    "quarter_elapsed": "09:54",
+    "categories": "score",
+    "score": "25 - 17",
+    "description": "5 Junhyeong Byeon | +3 | 3pt jump shot from center made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "09:45",
+    "quarter_elapsed_sec": 15,
+    "quarter_elapsed": "00:15",
+    "categories": "score",
+    "score": "27 - 17",
+    "description": "31 Jaeseok Jang | +2 | 2PtsFG under the basket, hook shot made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "09:17",
+    "quarter_elapsed_sec": 43,
+    "quarter_elapsed": "00:43",
+    "categories": "defensive_rebound",
+    "score": "27 - 17",
+    "description": "31 Jaeseok Jang defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "09:08",
+    "quarter_elapsed_sec": 52,
+    "quarter_elapsed": "00:52",
+    "categories": "foul_possession_convert",
+    "score": "27 - 17",
+    "description": "12 Jeonghyeon Moon Offensive foul"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "08:49",
+    "quarter_elapsed_sec": 71,
+    "quarter_elapsed": "01:11",
+    "categories": "score",
+    "score": "30 - 17",
+    "description": "11 Woosuk Lee | +3 | 3pt jump shot made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "08:23",
+    "quarter_elapsed_sec": 97,
+    "quarter_elapsed": "01:37",
+    "categories": "score",
+    "score": "30 - 19",
+    "description": "9 Ying-Chun Chen | +2 | 2PtsFG under the basket, points from fastbreak + after turnover, layup made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "08:05",
+    "quarter_elapsed_sec": 115,
+    "quarter_elapsed": "01:55",
+    "categories": "defensive_rebound",
+    "score": "30 - 19",
+    "description": "1 Bachir Gadiaga defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "07:43",
+    "quarter_elapsed_sec": 137,
+    "quarter_elapsed": "02:17",
+    "categories": "defensive_rebound",
+    "score": "30 - 19",
+    "description": "team defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "07:16",
+    "quarter_elapsed_sec": 164,
+    "quarter_elapsed": "02:44",
+    "categories": "defensive_rebound",
+    "score": "30 - 19",
+    "description": "39 Chun Hsiang Lu defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "06:56",
+    "quarter_elapsed_sec": 184,
+    "quarter_elapsed": "03:04",
+    "categories": "defensive_rebound",
+    "score": "30 - 19",
+    "description": "11 Woosuk Lee defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "06:48",
+    "quarter_elapsed_sec": 192,
+    "quarter_elapsed": "03:12",
+    "categories": "score",
+    "score": "32 - 19",
+    "description": "22 Jun Seok Yeo | +2 | 2PtsFG under the basket, jump shot made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "05:55",
+    "quarter_elapsed_sec": 245,
+    "quarter_elapsed": "04:05",
+    "categories": "defensive_rebound",
+    "score": "32 - 19",
+    "description": "62 Kuan-Chuan Chen defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "05:38",
+    "quarter_elapsed_sec": 262,
+    "quarter_elapsed": "04:22",
+    "categories": "foul_possession_convert",
+    "score": "32 - 19",
+    "description": "62 Kuan-Chuan Chen Offensive foul"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "05:15",
+    "quarter_elapsed_sec": 285,
+    "quarter_elapsed": "04:45",
+    "categories": "score",
+    "score": "32 - 21",
+    "description": "1 Bachir Gadiaga | +2 | 2PtsFG under the basket, fast break, driving layup made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "05:15",
+    "quarter_elapsed_sec": 285,
+    "quarter_elapsed": "04:45",
+    "categories": "defensive_rebound",
+    "score": "32 - 19",
+    "description": "1 Bachir Gadiaga defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "05:03",
+    "quarter_elapsed_sec": 297,
+    "quarter_elapsed": "04:57",
+    "categories": "score",
+    "score": "32 - 23",
+    "description": "0 Benson Lin | +2 | 2PtsFG under the basket, points from fastbreak + after turnover, layup made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "04:50",
+    "quarter_elapsed_sec": 310,
+    "quarter_elapsed": "05:10",
+    "categories": "defensive_rebound",
+    "score": "32 - 23",
+    "description": "9 Ying-Chun Chen defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "04:33",
+    "quarter_elapsed_sec": 327,
+    "quarter_elapsed": "05:27",
+    "categories": "score",
+    "score": "32 - 25",
+    "description": "9 Ying-Chun Chen | +1 | 2nd of 2 free throws made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "04:33",
+    "quarter_elapsed_sec": 327,
+    "quarter_elapsed": "05:27",
+    "categories": "score",
+    "score": "32 - 24",
+    "description": "9 Ying-Chun Chen | +1 | 1st of 2 free throws made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "04:07",
+    "quarter_elapsed_sec": 353,
+    "quarter_elapsed": "05:53",
+    "categories": "score",
+    "score": "34 - 25",
+    "description": "2 Junyong Choi | +2 | 2pt jump shot made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "03:59",
+    "quarter_elapsed_sec": 361,
+    "quarter_elapsed": "06:01",
+    "categories": "defensive_rebound",
+    "score": "34 - 26",
+    "description": "22 Jun Seok Yeo defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "03:59",
+    "quarter_elapsed_sec": 361,
+    "quarter_elapsed": "06:01",
+    "categories": "score",
+    "score": "34 - 26",
+    "description": "9 Ying-Chun Chen | +1 | 1st of 2 free throws made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "03:44",
+    "quarter_elapsed_sec": 376,
+    "quarter_elapsed": "06:16",
+    "categories": "score",
+    "score": "36 - 26",
+    "description": "6 Junghyun Lee | +2 | 2PtsFG under the basket, jump shot made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "03:22",
+    "quarter_elapsed_sec": 398,
+    "quarter_elapsed": "06:38",
+    "categories": "defensive_rebound",
+    "score": "36 - 26",
+    "description": "22 Jun Seok Yeo defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "02:54",
+    "quarter_elapsed_sec": 426,
+    "quarter_elapsed": "07:06",
+    "categories": "score",
+    "score": "37 - 26",
+    "description": "6 Junghyun Lee | +1 | 2nd of 2 free throws made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "02:13",
+    "quarter_elapsed_sec": 467,
+    "quarter_elapsed": "07:47",
+    "categories": "defensive_rebound",
+    "score": "37 - 26",
+    "description": "11 Woosuk Lee defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "01:42",
+    "quarter_elapsed_sec": 498,
+    "quarter_elapsed": "08:18",
+    "categories": "score",
+    "score": "39 - 26",
+    "description": "11 Woosuk Lee | +2 | 2PtsFG inside right, jump shot made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "01:24",
+    "quarter_elapsed_sec": 516,
+    "quarter_elapsed": "08:36",
+    "categories": "score",
+    "score": "39 - 28",
+    "description": "0 Benson Lin | +2 | 2pt jump shot made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "01:10",
+    "quarter_elapsed_sec": 530,
+    "quarter_elapsed": "08:50",
+    "categories": "defensive_rebound",
+    "score": "39 - 28",
+    "description": "34 Brandon Gilbeck defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "00:53",
+    "quarter_elapsed_sec": 547,
+    "quarter_elapsed": "09:07",
+    "categories": "defensive_rebound",
+    "score": "39 - 28",
+    "description": "22 Jun Seok Yeo defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "00:32",
+    "quarter_elapsed_sec": 568,
+    "quarter_elapsed": "09:28",
+    "categories": "defensive_rebound",
+    "score": "39 - 28",
+    "description": "39 Chun Hsiang Lu defensive rebound"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "00:11",
+    "quarter_elapsed_sec": 589,
+    "quarter_elapsed": "09:49",
+    "categories": "score",
+    "score": "39 - 30",
+    "description": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket made"
+  },
+  {
+    "quarter": "Q2",
+    "clock_remaining": "00:00",
+    "quarter_elapsed_sec": 600,
+    "quarter_elapsed": "10:00",
+    "categories": "score",
+    "score": "41 - 30",
+    "description": "31 Jaeseok Jang | +2 | 2PtsFG under the basket made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "09:48",
+    "quarter_elapsed_sec": 12,
+    "quarter_elapsed": "00:12",
+    "categories": "defensive_rebound",
+    "score": "41 - 30",
+    "description": "31 Jaeseok Jang defensive rebound"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "09:18",
+    "quarter_elapsed_sec": 42,
+    "quarter_elapsed": "00:42",
+    "categories": "defensive_rebound",
+    "score": "41 - 30",
+    "description": "0 Benson Lin defensive rebound"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "09:10",
+    "quarter_elapsed_sec": 50,
+    "quarter_elapsed": "00:50",
+    "categories": "defensive_rebound",
+    "score": "41 - 30",
+    "description": "31 Jaeseok Jang defensive rebound"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "09:03",
+    "quarter_elapsed_sec": 57,
+    "quarter_elapsed": "00:57",
+    "categories": "score",
+    "score": "43 - 30",
+    "description": "6 Junghyun Lee | +2 | 2PtsFG under the basket, driving layup made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "08:39",
+    "quarter_elapsed_sec": 81,
+    "quarter_elapsed": "01:21",
+    "categories": "score",
+    "score": "43 - 32",
+    "description": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "08:34",
+    "quarter_elapsed_sec": 86,
+    "quarter_elapsed": "01:26",
+    "categories": "score",
+    "score": "45 - 32",
+    "description": "31 Jaeseok Jang | +2 | 2PtsFG under the basket, fast break, layup made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "08:07",
+    "quarter_elapsed_sec": 113,
+    "quarter_elapsed": "01:53",
+    "categories": "score",
+    "score": "47 - 32",
+    "description": "33 Seounghyun Lee | +2 | 2PtsFG inside right, points after turnover, jump shot made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "07:39",
+    "quarter_elapsed_sec": 141,
+    "quarter_elapsed": "02:21",
+    "categories": "score",
+    "score": "47 - 34",
+    "description": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket, alley oop dunk made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "07:24",
+    "quarter_elapsed_sec": 156,
+    "quarter_elapsed": "02:36",
+    "categories": "score",
+    "score": "49 - 34",
+    "description": "22 Jun Seok Yeo | +2 | 2PtsFG under the basket, jump shot made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "07:13",
+    "quarter_elapsed_sec": 167,
+    "quarter_elapsed": "02:47",
+    "categories": "score",
+    "score": "49 - 36",
+    "description": "9 Ying-Chun Chen | +2 | 2pt floating jump shot made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "06:53",
+    "quarter_elapsed_sec": 187,
+    "quarter_elapsed": "03:07",
+    "categories": "defensive_rebound",
+    "score": "49 - 36",
+    "description": "10 Long-Mao Hu defensive rebound"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "06:44",
+    "quarter_elapsed_sec": 196,
+    "quarter_elapsed": "03:16",
+    "categories": "defensive_rebound",
+    "score": "49 - 36",
+    "description": "33 Seounghyun Lee defensive rebound"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "06:11",
+    "quarter_elapsed_sec": 229,
+    "quarter_elapsed": "03:49",
+    "categories": "score",
+    "score": "51 - 36",
+    "description": "7 Kisang Yu | +2 | 2pt pullup jump shot made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "05:48",
+    "quarter_elapsed_sec": 252,
+    "quarter_elapsed": "04:12",
+    "categories": "defensive_rebound",
+    "score": "51 - 36",
+    "description": "2 Junyong Choi defensive rebound"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "05:36",
+    "quarter_elapsed_sec": 264,
+    "quarter_elapsed": "04:24",
+    "categories": "score",
+    "score": "52 - 36",
+    "description": "2 Junyong Choi | +1 | 2nd of 2 free throws made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "05:23",
+    "quarter_elapsed_sec": 277,
+    "quarter_elapsed": "04:37",
+    "categories": "defensive_rebound",
+    "score": "52 - 36",
+    "description": "5 Junhyeong Byeon defensive rebound"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "05:10",
+    "quarter_elapsed_sec": 290,
+    "quarter_elapsed": "04:50",
+    "categories": "score",
+    "score": "54 - 36",
+    "description": "36 Daniel Edi | +2 | 2PtsFG under the basket, layup made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "04:50",
+    "quarter_elapsed_sec": 310,
+    "quarter_elapsed": "05:10",
+    "categories": "score",
+    "score": "54 - 38",
+    "description": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "04:38",
+    "quarter_elapsed_sec": 322,
+    "quarter_elapsed": "05:22",
+    "categories": "score",
+    "score": "54 - 40",
+    "description": "2 Riven Ma | +2 | 2PtsFG under the basket, points from fastbreak + after turnover, driving layup made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "04:23",
+    "quarter_elapsed_sec": 337,
+    "quarter_elapsed": "05:37",
+    "categories": "score",
+    "score": "56 - 40",
+    "description": "7 Kisang Yu | +1 | 2nd of 2 free throws made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "04:23",
+    "quarter_elapsed_sec": 337,
+    "quarter_elapsed": "05:37",
+    "categories": "score",
+    "score": "55 - 40",
+    "description": "7 Kisang Yu | +1 | 1st of 2 free throws made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "04:11",
+    "quarter_elapsed_sec": 349,
+    "quarter_elapsed": "05:49",
+    "categories": "score",
+    "score": "56 - 42",
+    "description": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket, dunk made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "03:55",
+    "quarter_elapsed_sec": 365,
+    "quarter_elapsed": "06:05",
+    "categories": "score",
+    "score": "58 - 42",
+    "description": "22 Jun Seok Yeo | +2 | 2PtsFG under the basket, jump shot made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "03:22",
+    "quarter_elapsed_sec": 398,
+    "quarter_elapsed": "06:38",
+    "categories": "score",
+    "score": "58 - 44",
+    "description": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket, jump shot made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "02:55",
+    "quarter_elapsed_sec": 425,
+    "quarter_elapsed": "07:05",
+    "categories": "defensive_rebound",
+    "score": "58 - 44",
+    "description": "7 Kisang Yu defensive rebound"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "02:47",
+    "quarter_elapsed_sec": 433,
+    "quarter_elapsed": "07:13",
+    "categories": "score",
+    "score": "61 - 44",
+    "description": "7 Kisang Yu | +3 | 3pt jump shot from center made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "02:29",
+    "quarter_elapsed_sec": 451,
+    "quarter_elapsed": "07:31",
+    "categories": "score",
+    "score": "63 - 44",
+    "description": "36 Daniel Edi | +2 | 2PtsFG under the basket, points from fastbreak + after turnover, layup made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "02:10",
+    "quarter_elapsed_sec": 470,
+    "quarter_elapsed": "07:50",
+    "categories": "defensive_rebound",
+    "score": "63 - 44",
+    "description": "3 Jihoon Park defensive rebound"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "01:43",
+    "quarter_elapsed_sec": 497,
+    "quarter_elapsed": "08:17",
+    "categories": "defensive_rebound",
+    "score": "63 - 44",
+    "description": "1 Bachir Gadiaga defensive rebound"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "01:36",
+    "quarter_elapsed_sec": 504,
+    "quarter_elapsed": "08:24",
+    "categories": "score",
+    "score": "63 - 46",
+    "description": "1 Bachir Gadiaga | +2 | 2PtsFG under the basket, driving layup made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "00:52",
+    "quarter_elapsed_sec": 548,
+    "quarter_elapsed": "09:08",
+    "categories": "score",
+    "score": "63 - 49",
+    "description": "34 Brandon Gilbeck | +1 | 1st of 1 free throw made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "00:52",
+    "quarter_elapsed_sec": 548,
+    "quarter_elapsed": "09:08",
+    "categories": "score",
+    "score": "63 - 48",
+    "description": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket, points from second chance + after turnover, jump shot made"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "00:41",
+    "quarter_elapsed_sec": 559,
+    "quarter_elapsed": "09:19",
+    "categories": "defensive_rebound",
+    "score": "63 - 49",
+    "description": "1 Bachir Gadiaga defensive rebound"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "00:26",
+    "quarter_elapsed_sec": 574,
+    "quarter_elapsed": "09:34",
+    "categories": "defensive_rebound",
+    "score": "63 - 49",
+    "description": "22 Jun Seok Yeo defensive rebound"
+  },
+  {
+    "quarter": "Q3",
+    "clock_remaining": "00:10",
+    "quarter_elapsed_sec": 590,
+    "quarter_elapsed": "09:50",
+    "categories": "score",
+    "score": "65 - 49",
+    "description": "31 Jaeseok Jang | +2 | 2PtsFG inside paint, alley oop lay-up made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "09:25",
+    "quarter_elapsed_sec": 35,
+    "quarter_elapsed": "00:35",
+    "categories": "score",
+    "score": "65 - 51",
+    "description": "9 Ying-Chun Chen | +2 | 2PtsFG under the basket, points after turnover, driving layup made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "09:07",
+    "quarter_elapsed_sec": 53,
+    "quarter_elapsed": "00:53",
+    "categories": "defensive_rebound",
+    "score": "65 - 51",
+    "description": "1 Bachir Gadiaga defensive rebound"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "08:59",
+    "quarter_elapsed_sec": 61,
+    "quarter_elapsed": "01:01",
+    "categories": "score",
+    "score": "65 - 53",
+    "description": "9 Ying-Chun Chen | +2 | 2pt step back jump shot made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "08:29",
+    "quarter_elapsed_sec": 91,
+    "quarter_elapsed": "01:31",
+    "categories": "score",
+    "score": "65 - 56",
+    "description": "9 Ying-Chun Chen | +3 | 3PtsFG outside left, points from fastbreak + after turnover, jump shot made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "07:55",
+    "quarter_elapsed_sec": 125,
+    "quarter_elapsed": "02:05",
+    "categories": "score",
+    "score": "67 - 56",
+    "description": "11 Woosuk Lee | +2 | 2PtsFG under the basket, layup made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "07:48",
+    "quarter_elapsed_sec": 132,
+    "quarter_elapsed": "02:12",
+    "categories": "score",
+    "score": "67 - 58",
+    "description": "1 Bachir Gadiaga | +2 | 2PtsFG under the basket, fast break, driving layup made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "07:40",
+    "quarter_elapsed_sec": 140,
+    "quarter_elapsed": "02:20",
+    "categories": "score",
+    "score": "67 - 59",
+    "description": "9 Ying-Chun Chen | +1 | 1st free throw made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "07:21",
+    "quarter_elapsed_sec": 159,
+    "quarter_elapsed": "02:39",
+    "categories": "score",
+    "score": "67 - 61",
+    "description": "1 Bachir Gadiaga | +2 | 2PtsFG under the basket, points from fastbreak + after turnover, driving layup made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "07:06",
+    "quarter_elapsed_sec": 174,
+    "quarter_elapsed": "02:54",
+    "categories": "score",
+    "score": "69 - 61",
+    "description": "33 Seounghyun Lee | +2 | 2PtsFG inside center, jump shot made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "06:19",
+    "quarter_elapsed_sec": 221,
+    "quarter_elapsed": "03:41",
+    "categories": "foul_possession_convert",
+    "score": "69 - 61",
+    "description": "34 Brandon Gilbeck Offensive foul"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "05:58",
+    "quarter_elapsed_sec": 242,
+    "quarter_elapsed": "04:02",
+    "categories": "defensive_rebound",
+    "score": "69 - 61",
+    "description": "34 Brandon Gilbeck defensive rebound"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "05:49",
+    "quarter_elapsed_sec": 251,
+    "quarter_elapsed": "04:11",
+    "categories": "defensive_rebound",
+    "score": "69 - 61",
+    "description": "33 Seounghyun Lee defensive rebound"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "05:30",
+    "quarter_elapsed_sec": 270,
+    "quarter_elapsed": "04:30",
+    "categories": "defensive_rebound",
+    "score": "69 - 61",
+    "description": "7 Ai-Che Yu defensive rebound"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "05:10",
+    "quarter_elapsed_sec": 290,
+    "quarter_elapsed": "04:50",
+    "categories": "defensive_rebound",
+    "score": "69 - 61",
+    "description": "33 Seounghyun Lee defensive rebound"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "04:49",
+    "quarter_elapsed_sec": 311,
+    "quarter_elapsed": "05:11",
+    "categories": "defensive_rebound",
+    "score": "69 - 61",
+    "description": "7 Ai-Che Yu defensive rebound"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "04:47",
+    "quarter_elapsed_sec": 313,
+    "quarter_elapsed": "05:13",
+    "categories": "score",
+    "score": "69 - 64",
+    "description": "2 Riven Ma | +1 | 1st free throw made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "04:47",
+    "quarter_elapsed_sec": 313,
+    "quarter_elapsed": "05:13",
+    "categories": "score",
+    "score": "69 - 63",
+    "description": "2 Riven Ma | +2 | 2PtsFG under the basket, fast break, layup made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "04:13",
+    "quarter_elapsed_sec": 347,
+    "quarter_elapsed": "05:47",
+    "categories": "defensive_rebound",
+    "score": "69 - 64",
+    "description": "team defensive rebound"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "03:50",
+    "quarter_elapsed_sec": 370,
+    "quarter_elapsed": "06:10",
+    "categories": "defensive_rebound",
+    "score": "69 - 64",
+    "description": "2 Junyong Choi defensive rebound"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "03:29",
+    "quarter_elapsed_sec": 391,
+    "quarter_elapsed": "06:31",
+    "categories": "defensive_rebound",
+    "score": "69 - 64",
+    "description": "34 Brandon Gilbeck defensive rebound"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "03:19",
+    "quarter_elapsed_sec": 401,
+    "quarter_elapsed": "06:41",
+    "categories": "score",
+    "score": "69 - 66",
+    "description": "7 Ai-Che Yu | +2 | 2PtsFG under the basket, driving layup made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "02:51",
+    "quarter_elapsed_sec": 429,
+    "quarter_elapsed": "07:09",
+    "categories": "defensive_rebound",
+    "score": "69 - 66",
+    "description": "1 Bachir Gadiaga defensive rebound"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "02:38",
+    "quarter_elapsed_sec": 442,
+    "quarter_elapsed": "07:22",
+    "categories": "score",
+    "score": "69 - 68",
+    "description": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket, dunk made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "01:50",
+    "quarter_elapsed_sec": 490,
+    "quarter_elapsed": "08:10",
+    "categories": "defensive_rebound",
+    "score": "69 - 68",
+    "description": "1 Bachir Gadiaga defensive rebound"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "01:27",
+    "quarter_elapsed_sec": 513,
+    "quarter_elapsed": "08:33",
+    "categories": "score",
+    "score": "69 - 70",
+    "description": "34 Brandon Gilbeck | +2 | 2PtsFG under the basket made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "01:03",
+    "quarter_elapsed_sec": 537,
+    "quarter_elapsed": "08:57",
+    "categories": "defensive_rebound",
+    "score": "69 - 70",
+    "description": "11 Woosuk Lee defensive rebound"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "01:02",
+    "quarter_elapsed_sec": 538,
+    "quarter_elapsed": "08:58",
+    "categories": "score",
+    "score": "71 - 70",
+    "description": "11 Woosuk Lee | +2 | 2PtsFG under the basket, fast break, driving layup made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "01:01",
+    "quarter_elapsed_sec": 539,
+    "quarter_elapsed": "08:59",
+    "categories": "score",
+    "score": "72 - 70",
+    "description": "11 Woosuk Lee | +1 | 1st free throw made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "00:39",
+    "quarter_elapsed_sec": 561,
+    "quarter_elapsed": "09:21",
+    "categories": "score",
+    "score": "72 - 72",
+    "description": "34 Brandon Gilbeck | +1 | 2nd of 2 free throws made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "00:39",
+    "quarter_elapsed_sec": 561,
+    "quarter_elapsed": "09:21",
+    "categories": "score",
+    "score": "72 - 71",
+    "description": "34 Brandon Gilbeck | +1 | 1st of 2 free throws made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "00:20",
+    "quarter_elapsed_sec": 580,
+    "quarter_elapsed": "09:40",
+    "categories": "score",
+    "score": "75 - 72",
+    "description": "6 Junghyun Lee | +3 | 3pt jump shot from center made"
+  },
+  {
+    "quarter": "Q4",
+    "clock_remaining": "00:08",
+    "quarter_elapsed_sec": 592,
+    "quarter_elapsed": "09:52",
+    "categories": "score",
+    "score": "75 - 75",
+    "description": "0 Benson Lin | +3 | 3pt jump shot made"
+  }
+]
