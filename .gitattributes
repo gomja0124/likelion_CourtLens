@@ -1,4 +1,0 @@
-media/clips/q1_cutpoint_segmentss/*.mov filter=lfs diff=lfs merge=lfs -text
-media/clips/q2_cutpoint_segmentss/*.mov filter=lfs diff=lfs merge=lfs -text
-media/clips/q3_cutpoint_segmentss/*.mov filter=lfs diff=lfs merge=lfs -text
-media/clips/q4_cutpoint_segmentss/*.mov filter=lfs diff=lfs merge=lfs -text
